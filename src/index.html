@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="preload" href="../dist/styles.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="/dist/styles.css" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&family=Montserrat:wght@400;600&family=Work+Sans:wght@400;600&family=Raleway:wght@400;600&family=Bebas+Neue&family=Manrope:wght@400;600&family=Playfair+Display:wght@400;600&family=Libre+Baskerville:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Roboto+Mono:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body class="bg-zinc-900 text-gray-100 font-poppins">
+
+  <audio id="miAudio" autoplay hidden>
+    <source src="/mp3/lowx.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio>
+  
+  <!-- Presentación -->
+   <!-- <div id="intro-screen" class="intro-screen">
+    <button id="start-btn" class="start-btn rounded-full bg-rose-400 text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-ping">
+      <svg class="start-btn-icon transform transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+        <path d="M5 3v18l15-9-15-9z"/>
+      </svg>
+      <span>¡Bienvenido! <br> Welcome!</span>
+    </button>
+    <p id="intro-text" class="intro-text"></p>
+    <div id="profile" class="profile-container">
+      <img src="./img/nusky.jpeg" alt="Anime Profile" class="profile-img anime-img" >
+      <img src="./img/yo.jpg" alt="Real Profile" class="profile-img real-img hidden">
+    </div>
+  </div> -->
+
+  <div id="main-content" class="main-content">
+    <div id="header-wrapper" class="header-wrapper relative">
+      <div id="header-img" class="header-container bg-zinc-950 ">
+        <img src="./img/nusky.jpeg" alt="Anime Profile" id="perf" class="head-img header-anime-img cursor-pointer hover:scale-110 transition-transform ease-in-out">
+        <img src="./img/yo.jpg" alt="Real Profile" id="perf1" class="head-img header-real-img hidden cursor-pointer hover:scale-110 transition-transform ease-in-out">
+      </div>
+  
+      <div class="social flex -top-0.5">
+        <a href="https://github.com/Nusky7" target="_blank">
+          <img src="img/git3.jpg" alt="GitHub" class="w-20 h-20 social-img-g hover:scale-110 hover:animate-spin transition-transform ease-in-out"> 
+        </a>
+        <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank">
+          <img src="img/in4.jpg" alt="LinkedIn" class="w-20 h-20 social-img-i hover:scale-110 hover:animate-flash transition-transform ease-in-out"> 
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <header class="p-0 text-white text-center">
+    <h1  class="font-bold inline-block mr-4 text-rose-200 font-pix animate-pulse hover:animate-bounce cursor-pointer">
+      Alba Tolosa Bonora</h1>
+  </header>
+
+  <main class="p-1 text-center">
+    <p id="header-subtitle" class="text-x0">FullStack Developer ❤ FrontEnd Lover</p>
+    <div class="lang bg-black flex justify-center space-x-4 mt-4">
+      <button id="lang-switch-es" data-lang="es" class=" lang-btn active-lang" onclick="changeCVLang('es')">
+        <img src="img/es.png" alt="es" class="w-6 h-6"> </button>
+      <button id="lang-switch-en" data-lang="en" class="lang-btn" onclick="changeCVLang('en')">
+        <img src="img/en.png" alt="en" class="w-6 h-6">
+      </button>
+    </div>
+  </main>
+
+
+  <section id="about" class="bg-zinc-950 py-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 id="about-heading" class="text-3xl font-bold mb-4 text-rose-100 font-pixround"><span>Sobre mí</span>
+        <i class="fas fa-heart text-rose-300"></i>
+      </h2>
+      <p id="about-description" class="text-lg leading-7 text-gray-200 font-mono">
+        ¡Hello👋 World!
+
+        Estoy buscando trabajo como developer. Soy una persona independiente y perseverante, siempre encuentro la manera de conseguir lo que me propongo.  
+        Aunque siempre he trabajado de forma independiente, me encantaría formar parte de un equipo para aprender y crecer junto a otros profesionales.  
+        Si algo no lo sé, lo aprendo, y me considero resolutiva en cualquier situación. Al final, la vida es una constante aventura...  
+        ¡Gracias por leer chat@!
+        <!-- English -->
+        I’m currently looking for a job as a developer. I’m an independent and persistent person, always finding a way to achieve what I set my mind to.
+        Although I’ve mostly worked independently, I’d love to be part of a team to learn and grow alongside other professionals.
+        If there’s something I don’t know, I’ll learn it, and I consider myself resourceful in any situation. After all, life is a constant adventure…
+        Thanks for reading chat@!
+      </p>
+    </div>
+  </section>
+
+
+  <section id="projects" class="py-8">
+    <div class="max-w-6xl mx-auto">
+      <h2 id="project-title" class="text-3xl font-bold mb-8 text-rose-200 text-center font-pixround">Proyectos</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- Trabajando... -->
+        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center animate-pulse hover:animate-showUpTada">
+          <img src="./img/ns4.png" alt="Project 1" class="rounded-md mb-4">
+          <h3 class=" text-xl font-bold text-rose-300 font-sourceCode mb-1 animate-pulse">NSystems</h3>
+          <div class=" flex space-x-4 mr-7 justify-center">            
+            <img src="img/ico/angular.png" alt="html" class="icons">
+            <img src="img/ico/css.png" alt="html" class="icons">
+            <img src="img/ico/node.png" alt="html" class="icons">
+            <img src="img/ico/mongo.png" alt="html" class="icons">
+          </div>
+          <p id="working" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Working...</p> 
+            <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
+        </div>
+
+        <!-- Proyecto -->
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowRose">
+          <img src="./img/portfolio.jpg" alt="Project 1" class="rounded-md mb-4 ">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">My Porfolio</h3>
+            <div class=" flex space-x-4 mr-7 justify-center">
+              <img src="img/ico/html.png" alt="html" class="icons">
+              <img src="img/ico/css.png" alt="html" class="icons">
+              <img src="img/ico/js.png" alt="html" class="icons">
+              <img src="img/ico/tw.png" alt="html" class="icons">
+              <img src="img/ico/json.png" alt="html" class="icons">
+            </div>
+          <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">❤ Mi portfolio ❤
+          </p> 
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded mt-2 animate-pulse">
+            <a href="https://github.com/Nusky7" target="_blank" 
+            class="show text-white hover:text-rose-200  block">Ver proyecto</a>
+          </button>
+
+        </div> 
+        
+        <!-- Proyecto 1 -->
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowAmber">
+          <img src="./img/vplaces.jpg" alt="Project 1" class="rounded-md mb-4">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Valencia Places</h3>
+            <div class=" flex space-x-4 mr-7 justify-center">
+              <img src="img/ico/html.png" alt="html" class="icons">
+              <img src="img/ico/css.png" alt="html" class="icons">
+              <img src="img/ico/js.png" alt="html" class="icons">
+              <img src="img/ico/boots.png" alt="html" class="icons">
+              <img src="img/ico/json.png" alt="html" class="icons">
+
+            </div>
+          <p id="project1" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.</p>
+          
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-amber-400 hover:border-amber-200 rounded mt-2 animate-pulse">
+            <a href="https://github.com/Nusky7" target="_blank" 
+            class="show text-white hover:text-amber-100  block">Ver proyecto</a>
+          </button>
+
+        </div>
+
+        <!-- Proyecto 2 -->
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowOrange">
+          <img src="./img/transfers.jpg" alt="Project 1" class="rounded-md mb-4">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Deluxe Transfers</h3>
+          
+          <div class="flex space-x-4 mr-7 justify-center">            
+            <img src="img/ico/angular.png" alt="html" class="icons">
+            <img src="img/ico/css.png" alt="html" class="icons">
+            <img src="img/ico/boots.png" alt="html" class="icons">
+          </div>
+          
+          <p id="project2" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. Hecha con Angular17 y Bootstrap (Prototipo FrontEnd)</p>
+          
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-orange-500 hover:border-orange-400 rounded mt-2 animate-pulse">
+            <a href="https://github.com/Nusky7" target="_blank" 
+            class="show text-white hover:text-orange-200  block">Ver proyecto</a>
+          </button>
+        </div>
+
+        <!-- Proyecto 3 -->
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowPurple">
+          <img src="./img/tattoo.jpg" alt="Project 1" class="rounded-md mb-4">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">MaM Tattoo</h3>
+      
+          <div class=" flex space-x-4 mr-7 justify-center">            
+            <img src="img/ico/html.png" alt="html" class="icons">
+            <img src="img/ico/css.png" alt="html" class="icons">
+            <img src="img/ico/js.png" alt="html" class="icons">
+          </div>
+          
+          <p id="project3" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">M.Anguel Tattoo</p> 
+          
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-violet-500 hover:border-violet-400 rounded mt-2 animate-pulse">
+            <a href="https://github.com/Nusky7" target="_blank" 
+            class="show text-white hover:text-violet-300  block">Ver proyecto</a>
+          </button>
+        </div>
+        
+        <!-- Proyecto 4 -->
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowEme">
+          <img src="./img/st.jpg" alt="Project 1" class="rounded-md mb-4">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Smart Time</h3>
+      
+          <div class=" flex space-x-4 mr-7 justify-center">            
+            <img src="img/ico/angular.png" alt="html" class="icons">
+            <img src="img/ico/css.png" alt="html" class="icons">
+            <img src="img/ico/php.png" alt="html" class="icons">
+            <img src="img/ico/sql.png" alt="html" class="icons">
+          </div>
+          <p id="project4" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Final project of my CFGS</p> 
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-green-400 hover:border-green-300 rounded mt-2 animate-pulse">
+            <a href="https://github.com/Nusky7" target="_blank" 
+            class="show text-white hover:text-green-200  block">Ver proyecto</a>
+          </button>
+        </div>
+        
+        </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section id="skills" class="bg-zinc-950 py-8">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold mb-8 text-rose-300 text-center font-pixround">Stack</h2>
+    <div class="flex flex-wrap justify-center gap-8">
+      <div class="relative group text-center">
+        <img src="img/ico/html.png" alt="HTML" class="stack hover:animate-bounce">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-orange-500 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">HTML</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/css.png" alt="CSS" class="stack hover:animate-fade-in">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-teal-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">CSS</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/js.png" alt="JavaScript" class="stack hover:animate-spin">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-amber-300 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">JavaScript</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/angular.png" alt="Angular" class="stack hover:animate-shake ">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-red-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Angular</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/boots.png" alt="Bootstrap" class="stack hover:animate-spin hover:scale-125">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-purple-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Bootstrap</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/tw.png" alt="Tailwind CSS" class="stack hover:animate-pulse hover:scale-125">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-sky-200 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Tailwind</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/php.png" alt="PHP" class="stack hover:animate-bounce-slow">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">PHP</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/node.png" alt="Node.js" class="stack hover:animate-tada">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-yellow-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Node.js</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/mongo.png" alt="MongoDB" class="stack hover:animate-flipx ">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-emerald-200 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">MongoDB</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/ico/sql.png" alt="SQL" class="stack hover:animate-flash hover:scale-125">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-green-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">SQL</span>
+      </div>
+      <div class="relative group text-center">
+        <img src="img/git3.jpg" alt="Git" class="stack hover:animate-ping">
+        <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-rose-300 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Git</span>
+      </div>
+    </div>
+  </div>
+  </section>
+
+
+  <!-- <div class="banner bg-zinc-950 text-white flex justify-between items-center p-4 w-full shadow-lg">
+    <p class="text-sm  text-center">¡Descubre más sobre mí! Descarga mi CV en PDF ahora.</p>
+    <a href="path-to-your-cv.pdf" download="Alba_Tolosa_CV.pdf" class="btn-download px-4 py-2 bg-rose-500 hover:bg-rose-700 rounded-lg text-white">
+      Descargar CV
+    </a>
+  </div> -->
+
+  <div class="action-panel bg-zinc-950 text-white p-6 rounded-lg shadow-lg mt-6 text-center">
+    <h3 id="panel-title" class="text-2xl font-pixround mb-3 text-rose-400">¿Te gusta mi trabajo?</h3>
+    <p id="panel-text" class="mb-4">Descarga mi CV para más detalles o contáctame directamente.</p>
+    <button 
+      id="download-cv"
+      class="btn-download px-4 py-2 text-black bg-orange-400 rounded-lg hover:animate-tada hover:scale-110 hover:bg-violet-400 inline-flex items-center">
+      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg> 
+      <span id="button-text">Descargar CV</span>
+    </button>
+  </div>
+  
+  
+
+  <section id="contact" class="py-8">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-3xl font-pixround mb-8 text-rose-500 ">Contacto</h2>
+      <form action="#" method="POST" class="space-y-4">
+        <div>
+          <input type="text" name="name" placeholder="Tu nombre" 
+                  class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+        </div>
+        <div>
+          <input type="email" name="email" placeholder="Tu correo" 
+                  class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+        </div>
+        <div>
+          <textarea name="message" placeholder="Tu mensaje" rows="4" 
+                    class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+        </div>
+        <button type="submit" 
+                class="bg-rose-300 text-zinc-950 px-4 py-2 rounded hover:bg-rose-400 hover:animate-shake">
+          Enviar
+        </button>
+      </form>
+    </div>
+  </section>
+
+  
+  
+</div> 
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

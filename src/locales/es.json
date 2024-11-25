@@ -1,0 +1,30 @@
+{
+    "header": {
+      "subtitle": "FullStack Developer &nbsp;<span style='color: lightcoral'>❤</span> &nbsp; FrontEnd Lover"
+    },
+    "intro": {
+      "welcome": "Hola, soy",
+      "name": "Alba Tolosa Bonora",
+      "username": "@Nusky7"
+    },
+    "about": {
+      "heading": "Sobre mí",
+      "description": "Soy una desarrolladora FullStack apasionada por la tecnología con una gran motivación por el diseño y desarrollo frontend. Mi especialidad radica en crear interfaces modernas e intuitivas que conecten a las personas con la tecnología de forma fluida y atractiva.<br> Aunque trabajo tanto el desarrollo backend como la gestión de bases de datos, encuentro mi mayor pasión en dar vida al frontend, donde el diseño y la experiencia del usuario se unen. <br><br> Siempre busco innovar y explorar nuevas herramientas, tecnologías y métodos para construir soluciones web impactantes y efectivas. Me gusta trabajar con un enfoque práctico y creativo, combinando funcionalidad y sensibilidad estética para entregar resultados que superen expectativas."
+    },
+    "projects": {
+        "title": "Proyectos",
+        "show": "Ver Proyecto",
+        "working": "Proyecto en desarrollo.<br> Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
+        "project": "Portfolio personal creado con amor y dedicación para mostrar mis proyectos y habilidades. Destaca por su diseño oscuro con colores vivos, minimalista e interactivo.",
+        "project1": "Un mapa interactivo para explorar los lugares más importantes de Valencia, <br> con opción de tema Claro/Oscuro y soporte multi-idioma.",
+         "project2": "Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo frontend con Angular 17 y Bootstap.",
+         "project3": "Web portafolio de tatuajes diseñada para un amigo. Incluye una galería de fotos que muestra sus trabajos, formulario de contacto, un asistente virtual para citas y enlaces a sus redes sociales.",
+         "project4": "Smart Time es una aplicación de gestión de proyectos y tareas, con funcionalidades como notas, calendario y eventos. <br> Es el proyecto final de mi ciclo formativo de CFGS."
+    },
+    "panel": {
+      "buttonText": "Descargar CV",
+      "panelTitle": "¿Te gusta mi trabajo?",
+      "panelText": "Descarga mi CV para más detalles o contáctame directamente."
+    }
+  }
+  

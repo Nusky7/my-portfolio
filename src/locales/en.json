@@ -1,0 +1,31 @@
+{
+    "header": {
+      "subtitle": "FullStack Developer &nbsp;<span style='color: lightcoral'>❤</span> &nbsp; FrontEnd Lover"
+    },
+    "intro": {
+      "welcome": "Hello, I'm",
+      "name": "Alba Tolosa Bonora",
+      "username": "@Nusky7"
+    },
+    "about": {
+      "heading": "About Me",
+    "description": "I am a FullStack developer passionate about technology, with a strong motivation for design and frontend development. My expertise lies in creating modern and intuitive interfaces that seamlessly connect people with technology.<br> While I also work on backend development and database management, I find my greatest passion in bringing the frontend to life, where design and user experience come together <br><br> I am always looking to innovate and explore new tools, technologies, and methods to build personalized and effective web solutions. I enjoy working with a practical and creative approach, combining functionality and aesthetic sensibility to deliver results that exceed expectations."
+
+    },
+    "projects": {
+        "title": "Projects",
+        "show": "See Project",
+        "working": "A project under development.<br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+        "project1": "An interactive map to explore the most important places in Valencia. <br>Offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
+        "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angualar 17 and Bootstrap",
+        "project3": "A tattoo portfolio website designed for a friend. Includes a photo gallery showcasing their work, a contact form, a virtual assistant for appointments, and links to their social media.",
+        "project4": "Smart Time is a project and task management application with features like notes, a calendar, and events. <br> It is the final project of my Higher Vocational Education program (CFGS)."
+       
+    },
+    "panel": {
+      "buttonText": "Download CV",
+      "panelTitle": "Do you like my work?",
+      "panelText": "Download my CV for more details or contact me directly."
+    }
+  }
+  
