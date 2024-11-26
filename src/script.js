@@ -27,16 +27,39 @@ headerImg.addEventListener("click", () => {
   }
 });
 
-// startBtn.addEventListener("click", () => {
-//   audio.currentTime = startFromSecond;
-//   audio.play();
+startBtn.addEventListener("click", () => {
+  audio.currentTime = startFromSecond;
+  audio.volume = 0; 
+  audio.play();
 
-//   setTimeout(() => {
-//   typeText();
-//   }, 20); 
+  const fadeInDuration = 5000;
+  const intervalDuration = 33; 
+  const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
 
-//     startBtn.classList.add("hidden"); 
-// });
+  const fadeIn = setInterval(() => {
+    if (audio.volume < 1) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, 1);
+    } else {
+      clearInterval(fadeIn);
+    }
+  }, intervalDuration);
+
+
+  setTimeout(() => {
+  typeText();
+  }, 20); 
+
+    startBtn.classList.add("hidden"); 
+});
+
+stopAudioBtn.addEventListener("click", () => {
+  audio.pause();
+  audio.currentTime = 0; 
+  stopAudioBtn.classList.add("hidden"); 
+});
+audio.addEventListener("ended", () => {
+  stopAudioBtn.classList.add("hidden"); 
+});
 
 
 function typeText() {
@@ -123,6 +146,8 @@ const applyTranslations = (translations) => {
   document.getElementById("button-text").innerHTML = translations.panel.buttonText;
   document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
   document.getElementById("panel-text").innerHTML = translations.panel.panelText;
+  // Player
+  document.getElementById("song-title").innerHTML = translations.player.songs;
 
 };
 

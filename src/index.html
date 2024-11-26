@@ -13,25 +13,30 @@
 
 <body class="bg-zinc-900 text-gray-100 font-poppins">
 
-  <audio id="miAudio" autoplay hidden>
+  <!-- <audio id="miAudio" autoplay hidden>
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
+  </audio> -->
+  <audio id="miAudio" autoplay hidden>
+    <source src="https://nusky7studio.es/portfolio/mp3/lowx.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
   </audio>
+  <button id="stopAudioBtn" class="fixed bottom-4 left-4 text-white p-2 rounded-full shadow-lg hover:animate-spin hover:scale-125">
+    <img src="img/ico/stop.png" alt="stop">
+  </button>
   
   <!-- Presentación -->
-   <!-- <div id="intro-screen" class="intro-screen">
-    <button id="start-btn" class="start-btn rounded-full bg-rose-400 text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-ping">
-      <svg class="start-btn-icon transform transition-all" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-        <path d="M5 3v18l15-9-15-9z"/>
-      </svg>
-      <span>¡Bienvenido! <br> Welcome!</span>
+   <div id="intro-screen" class="intro-screen">
+    <button id="start-btn" class="start-btn rounded-full bg-rose-500 text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-ping">
+      <img src="img/ico/play.png" alt="play!">
+      <span>¡Bienvenido! <br>❤ Welcome!</span>
     </button>
     <p id="intro-text" class="intro-text"></p>
     <div id="profile" class="profile-container">
       <img src="./img/nusky.jpeg" alt="Anime Profile" class="profile-img anime-img" >
       <img src="./img/yo.jpg" alt="Real Profile" class="profile-img real-img hidden">
     </div>
-  </div> -->
+  </div>
 
   <div id="main-content" class="main-content">
     <div id="header-wrapper" class="header-wrapper relative">
@@ -52,7 +57,7 @@
   </div>
 
   <header class="p-0 text-white text-center">
-    <h1  class="font-bold inline-block mr-4 text-rose-200 font-pix animate-pulse hover:animate-bounce cursor-pointer">
+    <h1  class="font-bold inline-block mr-4 text-rose-200 font-pix animate-glowText hover:animate-bounce cursor-pointer ">
       Alba Tolosa Bonora</h1>
   </header>
 
@@ -266,14 +271,66 @@
   </section>
 
 
-  <!-- <div class="banner bg-zinc-950 text-white flex justify-between items-center p-4 w-full shadow-lg">
-    <p class="text-sm  text-center">¡Descubre más sobre mí! Descarga mi CV en PDF ahora.</p>
-    <a href="path-to-your-cv.pdf" download="Alba_Tolosa_CV.pdf" class="btn-download px-4 py-2 bg-rose-500 hover:bg-rose-700 rounded-lg text-white">
-      Descargar CV
-    </a>
-  </div> -->
+  <div class="audio-player grid-flow-col w-full p-6 rounded-lg shadow-xl grid gap-4">    
+    <div class="grid ">
+      <div class="player-screen mb-0 pb-6 w-120 h-64 bg-black rounded-lg flex items-center justify-center overflow-hidden">
+        <div class="grid w-full">
+      <p id="song-title" class="text-center text-2xl text-purple-400 mt-1 font-pixel mb-9">
+        Mientras trabajo...
+      </p>
+      <!-- media Player!!!!! -->
+      <div id="waveform" class="bg-black w-full h-full"></div>
+    </div>
+  </div>
+  
+    <audio id="audio" controls class="pt-0 mt-0 h-9 w-full rounded-md bg-violet-400 text-amber-400">
+      <!-- <source src="/mp3/lowx.mp3" type="audio/mp3">
+      <source src="/mp3/c152.mp3" type="audio/mp3">
+      <source src="/mp3/retroSynth.mp3" type="audio/mp3">
+      <source src="/mp3/handpan1.mp3" type="audio/mp3">
+      <source src="/mp3/handpan2.mp3" type="audio/mp3">
+      <source src="/mp3/egerie.mp3" type="audio/mp3">
+      <source src="/mp3/release.mp3" type="audio/mp3">
+      <source src="/mp3/euphorie.mp3" type="audio/mp3">
+      <source src="/mp3/fearless.mp3" type="audio/mp3">
+      <source src="/mp3/memoryReboot.mp3" type="audio/mp3">
+      <source src="/mp3/duneRiders.mp3" type="audio/mp3"> -->
+      
+      <source src="https://nusky7studio.es/portfolio/mp3/lowx.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/c152.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/retroSynth.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/handpan1.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/handpan2.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/egerie.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/release.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/euphorie.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/fearless.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/memoryReboot.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/portfolio/mp3/duneRiders.mp3" type="audio/mp3">
+      Tu navegador no soporta nah...
+    </audio>
+  </div>
+  <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-lg">
+    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-300 hover:animate-shake font-pixel">LOWX ❤ Crystal Dreams</button>
+    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-teal-400 rounded-lg hover:bg-teal-600 hover:animate-shake font-pixround">C-152 ❤ Illusions</button>
+    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-purple-400 rounded-lg hover:bg-purple-600 hover:animate-shake font-mono">𝙍𝙀𝙏𝙍𝙊 𝙉𝙄𝙂𝙃𝙏𝙎𝘾𝘼𝙋𝙀 ❤ Synthwave from the 80-s</button>
+    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-red-400 rounded-lg hover:bg-red-400 hover:animate-shake font-pixel">Dune Riders ❤ Ferus Melek</button>
+    <button data-file="release.mp3" class="song-btn px-4 py-2 text-pink-400 rounded-lg hover:bg-pink-600 hover:animate-shake ">Ｒｅｌｅａｓｅ ❤ Adieu Aru</button>
+    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-blue-400 rounded-lg hover:bg-blue-600 hover:animate-shake">Éɢéʀɨɛ ❤ Adieu Aru ＆ VIQ </button>
+    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-600 hover:animate-shake">EᑌᑭᕼOᖇIE ❤ Adieu Aru</button>
+    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-emerald-400 rounded-lg hover:bg-emerald-600 hover:animate-shake">MΣMӨЯY ЯΣBӨӨƬ ❤ Narvent</button>
+    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-orange-400 rounded-lg hover:bg-orange-600 hover:animate-shake">Fearless ❤ VIQ</button>
+    <button data-file="handpan1.mp3" class="song-btn px-4 py-2 text-green-400 rounded-lg hover:bg-green-600 hover:animate-shake">𝟣𝟣𝟣𝟣𝐻𝓏 𝒽𝒶𝓃𝒹𝓅𝒶𝓃 𝓂𝓊𝓈𝒾𝒸 ❤ Malte Marten ＆ Lynxk</button>
+    <button data-file="handpan2.mp3" class="song-btn px-4 py-2 text-yellow-400 rounded-lg hover:bg-yellow-600 hover:animate-shake">нєαят мє∂ιтαтι♡ɳ ❤ Malte Marten </button>
 
-  <div class="action-panel bg-zinc-950 text-white p-6 rounded-lg shadow-lg mt-6 text-center">
+   
+  </div>
+  
+
+  </div>
+  
+
+  <div class="action-panel bg-zinc-950 text-white p-6 rounded-lg shadow-lg  text-center">
     <h3 id="panel-title" class="text-2xl font-pixround mb-3 text-rose-400">¿Te gusta mi trabajo?</h3>
     <p id="panel-text" class="mb-4">Descarga mi CV para más detalles o contáctame directamente.</p>
     <button 
@@ -310,11 +367,12 @@
     </div>
   </section>
 
-  
-  
+
 </div> 
 
-
+<script src="https://unpkg.com/wavesurfer.js@7"></script>
+<script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
+<script src="./wave.js"></script>
 <script src="script.js"></script>
 
 </body>

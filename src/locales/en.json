@@ -26,6 +26,9 @@
       "buttonText": "Download CV",
       "panelTitle": "Do you like my work?",
       "panelText": "Download my CV for more details or contact me directly."
+    },
+    "player": {
+      "songs": "While I'm working..."
     }
   }
   

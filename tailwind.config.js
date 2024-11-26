@@ -56,6 +56,8 @@ module.exports = {
         flippydown: 'flippy-down 1s ease 0.25s 1',
         pulseright: 'pulse-right 1s ease-in-out infinite',
         showUpTada: 'showUpTada 1.5s ease-in-out 1', 
+        rotateDisk: 'rotateDisk 3s linear infinite',
+        glowText: 'glowText 1.5s ease-in-out infinite alternate'
       },
       keyframes: {
         shake: {
@@ -187,6 +189,14 @@ module.exports = {
         '90%': { transform: 'scale(1.1)' },
         '100%': { transform: 'scale(1)' },
         
+      },
+      rotateDisk: {
+        '0%': { transform: 'rotate(0deg)' },
+        '100%': { transform: 'rotate(360deg)' },
+      },
+      glowText: {
+        '0%': { textShadow: '0 0 5px #000, 0 0 10px #FF69B4, 0 0 15px #000' },
+        '100%': { textShadow: '0 0 10px #000, 0 0 15px #4B0082, 0 0 30px #00CED1' },
       },
       },
     },
