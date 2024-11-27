@@ -8,25 +8,29 @@
   <noscript><link href="/dist/styles.css" rel="stylesheet"></noscript>
   <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&family=Montserrat:wght@400;600&family=Work+Sans:wght@400;600&family=Raleway:wght@400;600&family=Bebas+Neue&family=Manrope:wght@400;600&family=Playfair+Display:wght@400;600&family=Libre+Baskerville:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Roboto+Mono:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DotGothic16&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 
 <body class="bg-zinc-900 text-gray-100 font-poppins">
 
-  <!-- <audio id="miAudio" autoplay hidden>
+  <audio id="miAudio" autoplay hidden>
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
-  </audio> -->
-  <audio id="miAudio" autoplay hidden>
-    <source src="https://nusky7studio.es/portfolio/mp3/lowx.mp3" type="audio/mpeg">
-    Tu navegador no soporta la reproducción de audio.
   </audio>
-  <button id="stopAudioBtn" class="fixed bottom-4 left-4 text-white p-2 rounded-full shadow-lg hover:animate-spin hover:scale-125">
-    <img src="img/ico/stop.png" alt="stop">
+  <!-- <audio id="miAudio" autoplay hidden>
+    <source src="https://nusky7studio.es/mp3/lowx.mp3" type="audio/mpeg">
+    Tu navegador no soporta la reproducción de audio.
+  </audio> -->
+  <button id="stopAudioBtn" class="fixed bottom-4 left-4 text-white p-2 rounded-full bg-transparent shadow-lg hover:scale-125 z-50">
+    <img src="img/ico/stop.png" alt="stop" class=" w-25 h-25">
   </button>
   
   <!-- Presentación -->
-   <div id="intro-screen" class="intro-screen">
+   <!-- <div id="intro-screen" class="intro-screen">
     <button id="start-btn" class="start-btn rounded-full bg-rose-500 text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-ping">
       <img src="img/ico/play.png" alt="play!">
       <span>¡Bienvenido! <br>❤ Welcome!</span>
@@ -36,7 +40,7 @@
       <img src="./img/nusky.jpeg" alt="Anime Profile" class="profile-img anime-img" >
       <img src="./img/yo.jpg" alt="Real Profile" class="profile-img real-img hidden">
     </div>
-  </div>
+  </div> -->
 
   <div id="main-content" class="main-content">
     <div id="header-wrapper" class="header-wrapper relative">
@@ -47,7 +51,7 @@
   
       <div class="social flex -top-0.5">
         <a href="https://github.com/Nusky7" target="_blank">
-          <img src="img/git3.jpg" alt="GitHub" class="w-20 h-20 social-img-g hover:scale-110 hover:animate-spin transition-transform ease-in-out"> 
+          <img src="img/git3.jpg" alt="GitHub" class="w-20 h-20 social-img-g hover:scale-110 hover:animate-flash transition-transform ease-in-out"> 
         </a>
         <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank">
           <img src="img/in4.jpg" alt="LinkedIn" class="w-20 h-20 social-img-i hover:scale-110 hover:animate-flash transition-transform ease-in-out"> 
@@ -57,7 +61,7 @@
   </div>
 
   <header class="p-0 text-white text-center">
-    <h1  class="font-bold inline-block mr-4 text-rose-200 font-pix animate-glowText hover:animate-bounce cursor-pointer ">
+    <h1  class="font-bold inline-block text-rose-200 font-pix animate-glowText hover:animate-colorSlow hover:scale-110 ">
       Alba Tolosa Bonora</h1>
   </header>
 
@@ -97,13 +101,13 @@
 
   <section id="projects" class="py-8">
     <div class="max-w-6xl mx-auto">
-      <h2 id="project-title" class="text-3xl font-bold mb-8 text-rose-200 text-center font-pixround">Proyectos</h2>
+      <h2 id="project-title" class="text-3xl font-bold mb-8 text-rose-200 text-center font-pixel">Proyectos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Trabajando... -->
-        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center animate-pulse hover:animate-showUpTada">
+        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center animate-pulse hover:animate-showUpTada ">
           <img src="./img/ns4.png" alt="Project 1" class="rounded-md mb-4">
-          <h3 class=" text-xl font-bold text-rose-300 font-sourceCode mb-1 animate-pulse">NSystems</h3>
+          <h3 class=" text-xl font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
           <div class=" flex space-x-4 mr-7 justify-center">            
             <img src="img/ico/angular.png" alt="html" class="icons">
             <img src="img/ico/css.png" alt="html" class="icons">
@@ -115,7 +119,7 @@
         </div>
 
         <!-- Proyecto -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowRose">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowRose flex flex-col">
           <img src="./img/portfolio.jpg" alt="Project 1" class="rounded-md mb-4 ">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">My Porfolio</h3>
             <div class=" flex space-x-4 mr-7 justify-center">
@@ -127,15 +131,14 @@
             </div>
           <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">❤ Mi portfolio ❤
           </p> 
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded mt-2 animate-pulse">
-            <a href="https://github.com/Nusky7" target="_blank" 
-            class="show text-white hover:text-rose-200  block">Ver proyecto</a>
+          <button type="button" class="bg-neutral-800 hover:bg-neutral-700 text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded animate-pulse mt-auto mx-3 mb-3 ">
+            <a href="https://github.com/Nusky7/my-portfolio" target="_blank" 
+            class="show text-white hover:text-rose-200 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
-
         </div> 
         
         <!-- Proyecto 1 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowAmber">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowAmber flex flex-col">
           <img src="./img/vplaces.jpg" alt="Project 1" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Valencia Places</h3>
             <div class=" flex space-x-4 mr-7 justify-center">
@@ -148,15 +151,14 @@
             </div>
           <p id="project1" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.</p>
           
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-amber-400 hover:border-amber-200 rounded mt-2 animate-pulse">
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-amber-400 hover:border-amber-200 rounded animate-pulse mt-auto mx-3 mb-3">
             <a href="https://github.com/Nusky7" target="_blank" 
-            class="show text-white hover:text-amber-100  block">Ver proyecto</a>
+            class="show text-white hover:text-amber-100 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
-
         </div>
 
         <!-- Proyecto 2 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowOrange">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowOrange flex flex-col">
           <img src="./img/transfers.jpg" alt="Project 1" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Deluxe Transfers</h3>
           
@@ -168,14 +170,14 @@
           
           <p id="project2" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. Hecha con Angular17 y Bootstrap (Prototipo FrontEnd)</p>
           
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-orange-500 hover:border-orange-400 rounded mt-2 animate-pulse">
+          <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white py-2 px-4 border-b-4 border-orange-500 hover:border-orange-400 rounded animate-pulse mt-auto mx-3 mb-3">
             <a href="https://github.com/Nusky7" target="_blank" 
-            class="show text-white hover:text-orange-200  block">Ver proyecto</a>
+            class="show text-white hover:text-orange-200 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
         </div>
 
         <!-- Proyecto 3 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowPurple">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowPurple flex flex-col ">
           <img src="./img/tattoo.jpg" alt="Project 1" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">MaM Tattoo</h3>
       
@@ -187,14 +189,14 @@
           
           <p id="project3" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">M.Anguel Tattoo</p> 
           
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-violet-500 hover:border-violet-400 rounded mt-2 animate-pulse">
+          <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white py-2 px-4 border-b-4 border-violet-500 hover:border-violet-400 rounded animate-pulse mt-auto mx-3 mb-3">
             <a href="https://github.com/Nusky7" target="_blank" 
-            class="show text-white hover:text-violet-300  block">Ver proyecto</a>
+            class="show text-white hover:text-violet-300 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
         </div>
         
         <!-- Proyecto 4 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowEme">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowEme flex flex-col">
           <img src="./img/st.jpg" alt="Project 1" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Smart Time</h3>
       
@@ -205,9 +207,9 @@
             <img src="img/ico/sql.png" alt="html" class="icons">
           </div>
           <p id="project4" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Final project of my CFGS</p> 
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white py-2 px-4 border-b-4 border-green-400 hover:border-green-300 rounded mt-2 animate-pulse">
+          <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white py-2 px-4 border-b-4 border-green-400 hover:border-green-300 rounded animate-pulse mt-auto mx-3 mb-3">
             <a href="https://github.com/Nusky7" target="_blank" 
-            class="show text-white hover:text-green-200  block">Ver proyecto</a>
+            class="show text-white hover:text-green-200 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
         </div>
         
@@ -220,7 +222,7 @@
 
   <section id="skills" class="bg-zinc-950 py-8">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold mb-8 text-rose-300 text-center font-pixround">Stack</h2>
+    <h2 class="text-3xl font-bold mb-8 text-rose-300 text-center font-pixel">Stack</h2>
     <div class="flex flex-wrap justify-center gap-8">
       <div class="relative group text-center">
         <img src="img/ico/html.png" alt="HTML" class="stack hover:animate-bounce">
@@ -275,7 +277,7 @@
     <div class="grid ">
       <div class="player-screen mb-0 pb-6 w-120 h-64 bg-black rounded-lg flex items-center justify-center overflow-hidden">
         <div class="grid w-full">
-      <p id="song-title" class="text-center text-2xl text-purple-400 mt-1 font-pixel mb-9">
+      <p id="song-title" class="text-center text-2xl text-purple-400 mt-1 font-orbi font-semibold mb-9">
         Mientras trabajo...
       </p>
       <!-- media Player!!!!! -->
@@ -284,7 +286,7 @@
   </div>
   
     <audio id="audio" controls class="pt-0 mt-0 h-9 w-full rounded-md bg-violet-400 text-amber-400">
-      <!-- <source src="/mp3/lowx.mp3" type="audio/mp3">
+      <source src="/mp3/lowx.mp3" type="audio/mp3">
       <source src="/mp3/c152.mp3" type="audio/mp3">
       <source src="/mp3/retroSynth.mp3" type="audio/mp3">
       <source src="/mp3/handpan1.mp3" type="audio/mp3">
@@ -294,34 +296,44 @@
       <source src="/mp3/euphorie.mp3" type="audio/mp3">
       <source src="/mp3/fearless.mp3" type="audio/mp3">
       <source src="/mp3/memoryReboot.mp3" type="audio/mp3">
-      <source src="/mp3/duneRiders.mp3" type="audio/mp3"> -->
+      <source src="/mp3/duneRiders.mp3" type="audio/mp3">
       
-      <source src="https://nusky7studio.es/portfolio/mp3/lowx.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/c152.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/retroSynth.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/handpan1.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/handpan2.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/egerie.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/release.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/euphorie.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/fearless.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/memoryReboot.mp3" type="audio/mp3">
-      <source src="https://nusky7studio.es/portfolio/mp3/duneRiders.mp3" type="audio/mp3">
+      <!-- <source src="https://nusky7studio.es/mp3/lowx.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/c152.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/retroSynth.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/handpan1.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/handpan2.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/egerie.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/release.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/euphorie.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/fearless.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/memoryReboot.mp3" type="audio/mp3">
+      <source src="https://nusky7studio.es/mp3/duneRiders.mp3" type="audio/mp3"> -->
       Tu navegador no soporta nah...
     </audio>
   </div>
   <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-lg">
-    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-300 hover:animate-shake font-pixel">LOWX ❤ Crystal Dreams</button>
-    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-teal-400 rounded-lg hover:bg-teal-600 hover:animate-shake font-pixround">C-152 ❤ Illusions</button>
-    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-purple-400 rounded-lg hover:bg-purple-600 hover:animate-shake font-mono">𝙍𝙀𝙏𝙍𝙊 𝙉𝙄𝙂𝙃𝙏𝙎𝘾𝘼𝙋𝙀 ❤ Synthwave from the 80-s</button>
-    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-red-400 rounded-lg hover:bg-red-400 hover:animate-shake font-pixel">Dune Riders ❤ Ferus Melek</button>
-    <button data-file="release.mp3" class="song-btn px-4 py-2 text-pink-400 rounded-lg hover:bg-pink-600 hover:animate-shake ">Ｒｅｌｅａｓｅ ❤ Adieu Aru</button>
-    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-blue-400 rounded-lg hover:bg-blue-600 hover:animate-shake">Éɢéʀɨɛ ❤ Adieu Aru ＆ VIQ </button>
-    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-600 hover:animate-shake">EᑌᑭᕼOᖇIE ❤ Adieu Aru</button>
-    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-emerald-400 rounded-lg hover:bg-emerald-600 hover:animate-shake">MΣMӨЯY ЯΣBӨӨƬ ❤ Narvent</button>
-    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-orange-400 rounded-lg hover:bg-orange-600 hover:animate-shake">Fearless ❤ VIQ</button>
-    <button data-file="handpan1.mp3" class="song-btn px-4 py-2 text-green-400 rounded-lg hover:bg-green-600 hover:animate-shake">𝟣𝟣𝟣𝟣𝐻𝓏 𝒽𝒶𝓃𝒹𝓅𝒶𝓃 𝓂𝓊𝓈𝒾𝒸 ❤ Malte Marten ＆ Lynxk</button>
-    <button data-file="handpan2.mp3" class="song-btn px-4 py-2 text-yellow-400 rounded-lg hover:bg-yellow-600 hover:animate-shake">нєαят мє∂ιтαтι♡ɳ ❤ Malte Marten </button>
+    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-300 hover:animate-shake font-orbi">LOWX ❤ Crystal Dreams</button>
+    <hr class="border-zinc-950">
+    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-teal-400 rounded-lg hover:bg-teal-600 hover:animate-shake font-orbi">Illusions ❤ C-152</button>
+    <hr class="border-zinc-950">
+    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-purple-400 rounded-lg hover:bg-purple-600 hover:animate-shake font-orbi">Retro Nightscape ❤ 80's synthwave</button>
+    <hr class="border-zinc-950">
+    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-amber-400 rounded-lg hover:bg-amber-600 hover:animate-shake font-orbi">Dune Riders ❤ Ferus Melek</button>
+    <hr class="border-zinc-950">
+    <button data-file="release.mp3" class="song-btn px-4 py-2 text-emerald-400 rounded-lg hover:bg-emerald-600 hover:animate-shake font-orbi">Release ❤ Adieu Aru</button>
+    <hr class="border-zinc-950">
+    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-cyan-400 rounded-lg hover:bg-cyan-600 hover:animate-shake font-orbi">Égérie ❤ Adieu Aru ＆ VIQ </button>
+    <hr class="border-zinc-950">
+    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-600 hover:animate-shake font-orbi">Euphorie ❤ Adieu Aru</button>
+    <hr class="border-zinc-950">
+    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-600 hover:animate-shake font-orbi">Memory Reboot ❤ Narvent</button>
+    <hr class="border-zinc-950">
+    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-fuchsia-400 rounded-lg hover:bg-fuchsia-600 hover:animate-shake font-orbi">Fearless ❤ VIQ</button>
+    <hr class="border-zinc-950">
+    <button data-file="handpan1.mp3" class="song-btn px-4 py-2 text-green-500 rounded-lg hover:bg-green-700 hover:animate-shake font-orbi">1111Hz Handpan ❤ Malte Marten ＆ Lynxk</button>
+    <hr class="border-zinc-950">
+    <button data-file="handpan2.mp3" class="song-btn px-4 py-2 text-yellow-500 rounded-lg hover:bg-yellow-700 hover:animate-shake font-orbi">Heart Meditati♡n ❤ Malte Marten </button>
 
    
   </div>
@@ -331,7 +343,7 @@
   
 
   <div class="action-panel bg-zinc-950 text-white p-6 rounded-lg shadow-lg  text-center">
-    <h3 id="panel-title" class="text-2xl font-pixround mb-3 text-rose-400">¿Te gusta mi trabajo?</h3>
+    <h3 id="panel-title" class="text-2xl font-pix mb-3 text-rose-400">¿Te gusta mi trabajo?</h3>
     <p id="panel-text" class="mb-4">Descarga mi CV para más detalles o contáctame directamente.</p>
     <button 
       id="download-cv"
@@ -342,38 +354,94 @@
   </div>
   
   
-
   <section id="contact" class="py-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 class="text-3xl font-pixround mb-8 text-rose-500 ">Contacto</h2>
-      <form action="#" method="POST" class="space-y-4">
-        <div>
-          <input type="text" name="name" placeholder="Tu nombre" 
-                  class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+      <h2 id="contact-title" class="text-3xl font-pixel mb-8 text-rose-500">Contacto</h2>
+  
+      <!-- Contenedor carpeta -->
+      <div class="relative bg-black rounded-lg shadow-lg ">
+        <div class="flex">
+        <div id="loading-spinner" class="hidden m-3 rounded-md animate-colorFast text-lg font-pix">Enviando...</div>
+        <!-- Pestañas - Tabs -->
+        <div class="flex justify-end w-full">
+          <button id="email-tab" class="tab-button border-l-2 border-stone-600 bg-black text-rose-900  text-lg px-4 py-2 rounded-t-lg hover:bg-neutral-700 mx-0">
+            <p class="flex"> <span class="f-tab">Email &nbsp;</span> 
+              <svg class="svg-tab" fill="currentColor" height="24px" width="24px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 237.832 237.832" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M228.977,33.916H8.854C3.969,33.916,0,37.881,0,42.771V195.06c0,4.891,3.969,8.856,8.854,8.856h220.123 c4.887,0,8.855-3.965,8.855-8.856V42.771C237.832,37.881,233.864,33.916,228.977,33.916z M221.026,182.184 c0,4.063-3.364,7.356-7.512,7.356h-12.339V73.379l-76.693,49.79c-1.687,1.096-3.627,1.641-5.566,1.641s-3.88-0.545-5.566-1.641 l-76.692-49.79V189.54h-12.34c-4.147,0-7.512-3.293-7.512-7.356V55.647c0-4.063,3.364-7.356,7.512-7.356h10.176l84.423,54.808 l84.423-54.808h10.176c4.147,0,7.512,3.293,7.512,7.356V182.184z"></path> </g></svg>
+            </p>
+          </button>
+          <button id="telegram-tab" class="tab-button border-l-2 border-stone-600 bg-black text-cyan-800 text-lg px-4 py-2 rounded-t-lg hover:bg-neutral-700 mx-0">
+            <p class="flex"> <span class="f-tab">Telegram &nbsp;</span>
+              <!-- SVG Telegram Icon -->
+              <svg class="svg-tab" fill="currentColor" height="24px" width="24px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.857 16.469c-.392-.164-.622-.306-1.105-.495-.428-.172-.758-.287-1.254-.437-.51-.156-.818-.23-1.27-.38-.162-.055-.189-.088-.138-.168.056-.089.175-.176.366-.362.333-.318 1.362-1.347 2.212-2.174l.048-.047c.451-.444.901-.893 1.357-1.332l5.343-4.972c.532-.504.919-.874 1.372-.91.298-.022.587.14.722.426.127.268.074.612-.137 1.057-.163.357-2.723 7.071-3.94 10.252-.236.592-.446 1.096-.626 1.488-.225.5-.441.919-.655 1.262-.214.346-.412.611-.606.796-.174.166-.312.234-.436.238-.05.002-.178.003-.49-.158-.228-.123-.521-.332-.85-.605-.325-.271-.606-.545-.817-.765-.226-.234-.345-.367-.475-.51-.132-.146-.295-.321-.554-.568z"/></svg>
+            </p>
+          </button>
+          <button id="whatsapp-tab" class="tab-button active border-stone-600 bg-stone-500 text-green-700 animate-colorSlow text-lg px-4 py-2 rounded-t-lg hover:bg-neutral-700 mx-0">
+            <p class="flex"> <span class="f-tab">WhatsApp &nbsp;</span>
+            <svg class="svg-tab" fill="currentColor" height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_468_"> <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z"></path> <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z"></path> </g> </g></svg>
+            </p>
+          </button>
         </div>
-        <div>
-          <input type="email" name="email" placeholder="Tu correo" 
-                  class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+      </div>
+        <!-- Contenedor fomularios -->
+        <div class="p-6 bg-stone-500 rounded-b-lg">
+          <form id="email-form" method="POST" class="space-y-4 hidden">
+            <div>
+              <input type="text" name="name" placeholder="Tu nombre" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+            </div>
+            <div>
+              <input type="email" name="email" placeholder="Tu correo" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+            </div>
+            <div>
+              <textarea name="message" placeholder="Tu mensaje" rows="5" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+             
+            </div>
+            <button type="submit" 
+                class="bg-black text-gray-300 px-4 py-2 rounded hover:bg-zinc-800 hover:animate-shake">
+                Enviar
+            </button>
+          </form>
+
+          <form id="telegram-form" action="https://t.me/@Nusky_7" target="_blank" method="GET" class="space-y-4 hidden">
+            <div>
+              <input type="text" name="username" placeholder="Tu usuario de Telegram" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+            </div>
+            <div>
+              <textarea name="message" placeholder="Tu mensaje" rows="6" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+            </div>
+            <button type="submit" class="bg-black text-gray-300 px-4 py-2 rounded hover:bg-zinc-800 hover:animate-shake">
+              Enviar
+            </button>
+          </form>
+
+          <form id="whatsapp-form" action="https://wa.me/+34675260296" target="_blank" method="GET" class="space-y-4 ">
+            <div>
+              <input type="text" name="name" placeholder="🤷🏼‍♂️" 
+                     class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+            </div>
+            <div>
+              <textarea name="message" placeholder="Tu mensaje" rows="6" 
+                        class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+            </div>
+            <button type="submit" 
+                    class="bg-black text-gray-300 px-4 py-2 rounded hover:bg-zinc-800 hover:animate-shake">
+                    Enviar
+              
+              </button>
+          </form>
         </div>
-        <div>
-          <textarea name="message" placeholder="Tu mensaje" rows="4" 
-                    class="w-full p-2 rounded bg-zinc-800 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
-        </div>
-        <button type="submit" 
-                class="bg-rose-300 text-zinc-950 px-4 py-2 rounded hover:bg-rose-400 hover:animate-shake">
-          Enviar
-        </button>
-      </form>
+      </div>
     </div>
   </section>
 
 
 </div> 
-
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+<script>emailjs.init("39FmjBf7JrQSw9E-2");</script>
+<!-- <script type="module" src="/email.js"></script> -->
 <script src="https://unpkg.com/wavesurfer.js@7"></script>
 <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"></script>
 <script src="./wave.js"></script>
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>

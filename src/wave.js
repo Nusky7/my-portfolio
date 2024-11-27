@@ -19,17 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentPlayingButton = null;
   
     function playSong(songFile, songTitle, button) {
-      audio.src = `https://nusky7studio.es/portfolio/mp3/${songFile}`;
-      // audio.src = `/mp3/${songFile}`;
+      // audio.src = `https://nusky7studio.es/mp3/${songFile}`;
+      audio.src = `/mp3/${songFile}`;
       title = document.getElementById('song-title');
       title.textContent = songTitle;
 
       if (currentPlayingButton) {
-        currentPlayingButton.classList.remove('animate-glowText');
+        currentPlayingButton.classList.remove('font-bold', 'text-xl',  'scale-150', 'animate-colorCycle');
       }
   
       currentPlayingButton = button;
-      button.classList.add('animate-glowText');
+      button.classList.add('animate-colorCycle', 'text-xl', 'scale-150', 'font-bold');
       title.classList.add('animate-glowText');
   
       audio.load();
@@ -51,12 +51,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
     audio.addEventListener('ended', () => {
       if (currentPlayingButton) {
-        currentPlayingButton.classList.remove('animate-glowText');
+        currentPlayingButton.classList.remove('animate-colorCycle');
         title.classList.remove('animate-glowText');
         
       }
       wavesurfer.stop();
-      audio.stop();
     });
   });
 

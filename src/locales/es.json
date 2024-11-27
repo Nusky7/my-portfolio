@@ -24,10 +24,17 @@
     "panel": {
       "buttonText": "Descargar CV",
       "panelTitle": "¿Te gusta mi trabajo?",
-      "panelText": "Descarga mi CV para más detalles o contáctame directamente."
+      "panelText": "Descarga mi CV para más detalles o contáctame directamente.",
+      "contact": "Contacto"
     },
     "player": {
       "songs": "Mientras trabajo..."
+    },
+    "format": {
+      "namePlaceholder": "Tu nombre",
+      "emailPlaceholder": "Tu correo",
+      "messagePlaceholder": "Tu mensaje",
+      "whatsappPlaceholder": "Tu nombre"
     }
   }
   

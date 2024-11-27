@@ -5,22 +5,22 @@
 
 @font-face {
   font-family: 'pix'; 
-  src: url('../src/fonts/30.woff2') format('woff2'), 
-       url('../src/fonts/30.woff') format('woff'),   
-       url('../src/fonts/30.ttf') format('truetype');
+  src: url('/fonts/30.woff2') format('woff2'), 
+       url('/fonts/30.woff') format('woff'),   
+       url('/fonts/30.ttf') format('truetype');
 }
 
 @font-face {
   font-family: 'pixel'; 
-  src: url('../src/fonts/Minecraft.woff2') format('woff2'), 
-       url('../src/fonts/Minecraft.woff') format('woff'),   
-       url('../src/fonts/Minecraft.ttf') format('truetype');
+  src: url('/fonts/Minecraft.woff2') format('woff2'), 
+       url('/fonts/Minecraft.woff') format('woff'),   
+       url('/fonts/Minecraft.ttf') format('truetype');
 }
 @font-face {
   font-family: 'pixround'; 
-  src: url('../src/fonts/pixround.woff2') format('woff2'), 
-       url('../src/fonts/pixround.woff') format('woff'),   
-       url('../src/fonts/pixround.ttf') format('truetype');
+  src: url('/fonts/pixround.woff2') format('woff2'), 
+       url('/fonts/pixround.woff') format('woff'),   
+       url('/fonts/pixround.ttf') format('truetype');
 }
 
 @keyframes typing {
@@ -184,7 +184,7 @@ a, button{
 
 h1 {
   font-size: 3rem;
-  cursor: url('../src/img/pointer.png') 16 16, pointer;
+  cursor: url('../src/img/pointer.png') 16 16, pointer !important;
   text-shadow: 0 0 5px rgb(192 132 252);
 }
 .stack{
@@ -223,19 +223,24 @@ h1 {
 #waveform ::part(region) {
   font-family: fantasy;
 }
+audio::-webkit-media-controls-panel {
+
+  background-color: #a78cfa;
+  color: #a78cfa;
+
+}
+audio::-webkit-media-controls{
+  background-color: #a78cfa;
+}
 
 audio::-webkit-media-controls-play-button {
-  background-color: #9370DB;
+  /* background-color: #663399 ; */
   border-radius: 50%; 
 
 }
-audio::-webkit-media-controls {
-  background-color: transparent !important;
-
-}
-.song-btn {
+/* .song-btn {
   border-bottom: 1.5px solid #000;
-}
+} */
 /* .audio-controls{
   border-left: 2px solid #111;
   border-right: 2px solid #111;
@@ -323,6 +328,19 @@ audio::-webkit-media-controls {
   }
   .song-btn {
     border-bottom: 2px solid #111;
+  }
+  .f-tab{
+    font-size: 0.9rem;
+  }
+  #whatsapp-tab p,
+  #email-tab p,
+  #telegram-tab p{
+    display: !important;
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .loading-spinner{
+    font-size: 0.8rem;
   }
 }
 
