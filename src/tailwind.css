@@ -57,10 +57,10 @@
 }
 
 body{
-  cursor: url('../src/img/cursor.png') 16 16, auto;
+  cursor: url('/img/cursor.png') 16 16, auto;
 }
 a, button{
-  cursor: url('../src/img/pointer.png') 16 16, pointer;
+  cursor: url('/img/pointer.png') 16 16, pointer;
 }
 
 /* Pantalla de introducción */
@@ -125,7 +125,7 @@ a, button{
   left: 6%;
   object-fit: cover;
   border-radius: 50%;
-  cursor: url('../src/img/pointer.png') 16 16, pointer;
+  cursor: url('/img/pointer.png') 16 16, pointer;
   transition: transform 0.5s ease, box-shadow 0.3s ease;
 }
 
@@ -184,12 +184,12 @@ a, button{
 
 h1 {
   font-size: 3rem;
-  cursor: url('../src/img/pointer.png') 16 16, pointer !important;
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
   text-shadow: 0 0 5px rgb(192 132 252);
 }
 .stack{
   width: 51px;
-  cursor: url('../src/img/pointer.png') 16 16, pointer;
+  cursor: url('/img/pointer.png') 16 16, pointer;
 }
 .work{
   width: 60px;

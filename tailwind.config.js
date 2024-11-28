@@ -8,6 +8,7 @@ module.exports = {
         background: "#121212",
         text: "#e0e0e0",
         accent: "#F4D9D0",
+        customGreen: '#cef2db',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'], 

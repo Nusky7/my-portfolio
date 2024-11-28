@@ -26,22 +26,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (currentPlayingButton) {
         currentPlayingButton.classList.remove(
-          'font-semibold', 'animate-glowText', 
-          'animate-flashSlow', 'text-green-200',  
-          'drop-shadow-lg'
+           'animate-glowText', 'animate-flashSlow', 'text-green-200', 'drop-shadow-lg'
         );
       }
   
       currentPlayingButton = button;
       console.log(currentPlayingButton);
-      button.classList.add('animate-glowText', 'font-semibold',  'text-green-200',  'drop-shadow-lg', 'important');
+      button.classList.add('animate-glowText',  'text-green-200',  'drop-shadow-lg');
       title.classList.add('animate-glowText', 'text-green-300');
   
       audio.load();
       audio.addEventListener('canplay', () => {
-        if (!wavesurfer.isReady) {
-          wavesurfer.load(audio.src);
-        }
+        wavesurfer.load(audio.src);
         audio.play();
       });
     }
@@ -67,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   audio.addEventListener('pause', () => {
       if (currentPlayingButton) {
-        currentPlayingButton.classList.remove('animate-glowText', 'text-green-200', 'drop-shadow-sm');
+        currentPlayingButton.classList.remove('animate-glowText', 'drop-shadow-sm');
         title.classList.remove('animate-glowText', 'text-green-300');
         title.classList.add('text-violet-300');
         currentPlayingButton.classList.add('animate-flashSlow');

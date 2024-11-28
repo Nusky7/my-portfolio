@@ -59,21 +59,21 @@ headerImg.addEventListener("click", () => {
 //     startBtn.classList.add("hidden"); 
 // });
 
-// stopAudioBtn.addEventListener("click", () => {
-//   audio.pause();
-//   audio.currentTime = 0; 
-//   stopAudioBtn.classList.add("animate-reduceAndFade");
-//   setTimeout(() => {
-//     stopAudioBtn.classList.add("animate-reduceAndFade"); 
-//   }, 100); 
-// });
+stopAudioBtn.addEventListener("click", () => {
+  audio.pause();
+  audio.currentTime = 0; 
+  stopAudioBtn.classList.add("animate-reduceAndFade");
+  setTimeout(() => {
+    stopAudioBtn.classList.add("animate-reduceAndFade"); 
+  }, 100); 
+});
 
-// audio.addEventListener("ended", () => {
-//   stopAudioBtn.classList.add("fadeOutScale");
-//   setTimeout(() => {
-//     stopAudioBtn.classList.add("hidden"); 
-//   }, 100); 
-// });
+audio.addEventListener("ended", () => {
+  stopAudioBtn.classList.add("fadeOutScale");
+  setTimeout(() => {
+    stopAudioBtn.classList.add("hidden"); 
+  }, 100); 
+});
 
 
 function typeText() {
@@ -87,7 +87,7 @@ function typeText() {
 
       setTimeout(() => {
         introText.classList.remove("erase");
-        introText.innerHTML = "<span class='typing git animate-colorFast'>@Nusky7</span>";
+        introText.innerHTML = "<span class='typing git animate-colorFast>@Nusky7</span>";
 
         setTimeout(() => {
           introText.classList.add("erase");
@@ -271,16 +271,16 @@ const applyTranslations = (translations) => {
   document.querySelectorAll("form").forEach(form => {
     form.querySelectorAll("input, textarea").forEach(input => {
       const name = input.getAttribute("name");
-      const submitButton = form.querySelector("button[type='submit']");
-
       if (translations.form[name]) {
         input.placeholder = translations.form[name]; 
       }
     });
+    const submitButton = form.querySelector("button[type='submit']");
       if (submitButton) {
         submitButton.textContent = translations.form.submit;
       }
     });
+    
 };
 
 const langButtons = document.querySelectorAll('.lang-btn');

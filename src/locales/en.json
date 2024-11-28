@@ -8,7 +8,7 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "About Me",
+      "heading": "Hello World!",
     "description": "I am a FullStack developer passionate about technology, with a strong motivation for design and frontend development. My expertise lies in creating modern and intuitive interfaces that seamlessly connect people with technology.<br> While I also work on backend development and database management, I find my greatest passion in bringing the frontend to life, where design and user experience come together <br><br> I am always looking to innovate and explore new tools, technologies, and methods to build personalized and effective web solutions. I enjoy working with a practical and creative approach, combining functionality and aesthetic sensibility to deliver results that exceed expectations."
 
     },
@@ -27,7 +27,7 @@
       "buttonText": "Download CV",
       "panelTitle": "Do you like my work?",
       "panelSubitle": "Need your own Website?",
-      "panelText": "Download my CV for more details or contact me directly.",
+      "panelText": "Let's bring your goals to life and create something amazing! <br>Download my CV for more details or contact me directly",
       "contact": "Contact"
     },
     "player": {
