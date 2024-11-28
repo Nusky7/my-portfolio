@@ -1,6 +1,6 @@
 {
     "header": {
-      "subtitle": "FullStack Developer &nbsp;<span style='color: lightcoral'>❤</span> &nbsp; FrontEnd Lover"
+      "subtitle": "FrontEnd Lover &nbsp;<span style='color: lightcoral'>❤</span> &nbsp; FullStack Developer "
     },
     "intro": {
       "welcome": "Hello, I'm",
@@ -26,6 +26,7 @@
     "panel": {
       "buttonText": "Download CV",
       "panelTitle": "Do you like my work?",
+      "panelSubitle": "Need your own Website?",
       "panelText": "Download my CV for more details or contact me directly.",
       "contact": "Contact"
     },
@@ -33,10 +34,11 @@
       "songs": "While i'm Working..."
     },
     "form": {
-      "namePlaceholder": "Tu nombre",
-      "emailPlaceholder": "Your email",
-      "messagePlaceholder": "Your message",
-      "whatsappPlaceholder": "Your name"
+      "name": "🙂 Name",
+      "email": "📧 Email",
+      "user": "👤 User or Name",
+      "message": "💌 Message",
+      "submit": "Send 📩"
     }
   }
   

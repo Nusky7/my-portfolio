@@ -45,6 +45,7 @@ module.exports = {
         flyoutdown: 'fly-out-down 0.6s ease-in-out 0.25s 1',
         jiggle: 'jiggle 0.6s ease-in-out 0.25s 1',
         flash: 'flash 0.6s ease-in-out infinite',
+        flashSlow: 'flash 1.2s ease-in-out infinite',
         glowTeal: 'glowTeal 1.6s ease-in-out infinite',
         glowPink: 'glowPink 5s ease-in-out infinite',
         glowPurple: 'glowPurple 1.6s ease-in-out infinite',
@@ -68,6 +69,7 @@ module.exports = {
         colorCycle: 'colorCycle 2.5s infinite',
         colorFast: 'colorCycle 0.8s infinite',
         colorSlow: 'colorCycle 6s infinite',
+        blinkAndBounce: 'blinkAndBounce 4s ease-in-out infinite',
       },
       keyframes: {
         shake: {
@@ -228,6 +230,14 @@ module.exports = {
         '83%': { color: '#facc15' }, 
         '93%': { color: '#a855f7' }, 
         '100%': { color: '#f472b6' }, 
+      },
+      blinkAndBounce: {
+        '0%, 20%, 40%': { opacity: '1', transform: 'scale(1)' },
+        '10%, 30%': { opacity: '0' },
+        '50%': { transform: 'scale(1.2)' },
+        '70%': { transform: 'scale(0.95)' },
+        '80%': { transform: 'scale(1.05)' },
+        '90%, 100%': { opacity: '1', transform: 'scale(1)' }, // Pausa hasta el final del ciclo
       },
       },
     },

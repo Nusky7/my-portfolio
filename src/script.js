@@ -1,5 +1,3 @@
-// import { sendEmail } from '/email';
-// import emailjs from 'emailjs-com';
 document.addEventListener("DOMContentLoaded", () => {
 const startBtn = document.getElementById("start-btn");
 const introScreen = document.getElementById("intro-screen");
@@ -20,38 +18,9 @@ const emailForm = document.getElementById('email-form');
 const whatsappForm = document.getElementById('whatsapp-form');
 const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
+const subtitle = document.getElementById("panel-subtitle");
 
 
-emailForm.addEventListener("submit", async (event) => {
-  event.preventDefault(); 
-
-  emailjs.init("39FmjBf7JrQSw9E-2");
-  loadingSpinner.classList.remove("hidden"); // Muestra el spinner
-
-  const formData = {
-    from_name: emailForm.elements["name"].value,
-    from_email: emailForm.elements["email"].value,
-    message: emailForm.elements["message"].value,
-  };
-
-  try {
-    // Envío con EmailJS
-    const serviceID = "nusky_service";
-    const templateID = "nusky_template";
-    await emailjs.send(serviceID, templateID, formData, "39FmjBf7JrQSw9E-2");
-    console.log("Enviando datos:", formData);
-
-    alert("¡Mensaje enviado con éxito! 😄");
-    emailForm.reset();
-  } catch (error) {
-    console.error("Error al enviar el mensaje:", error);
-    alert("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥");
-  } finally {
-    loadingSpinner.classList.add("hidden"); // Oculta el spinner
-  }
-});
-
-// loadTranslations("es");
 headerImg.addEventListener("click", () => {
   // Añadir giro
   headerAnimeImg.style.animation = "rotateImage 0.5s forwards";
@@ -83,7 +52,6 @@ headerImg.addEventListener("click", () => {
 //     }
 //   }, intervalDuration);
 
-
 //   setTimeout(() => {
 //   typeText();
 //   }, 20); 
@@ -91,21 +59,21 @@ headerImg.addEventListener("click", () => {
 //     startBtn.classList.add("hidden"); 
 // });
 
-stopAudioBtn.addEventListener("click", () => {
-  audio.pause();
-  audio.currentTime = 0; 
-  stopAudioBtn.classList.add("animate-reduceAndFade");
-  setTimeout(() => {
-    stopAudioBtn.classList.add("animate-reduceAndFade"); 
-  }, 100); 
-});
+// stopAudioBtn.addEventListener("click", () => {
+//   audio.pause();
+//   audio.currentTime = 0; 
+//   stopAudioBtn.classList.add("animate-reduceAndFade");
+//   setTimeout(() => {
+//     stopAudioBtn.classList.add("animate-reduceAndFade"); 
+//   }, 100); 
+// });
 
-audio.addEventListener("ended", () => {
-  stopAudioBtn.classList.add("fadeOutScale");
-  setTimeout(() => {
-    stopAudioBtn.classList.add("hidden"); 
-  }, 100); 
-});
+// audio.addEventListener("ended", () => {
+//   stopAudioBtn.classList.add("fadeOutScale");
+//   setTimeout(() => {
+//     stopAudioBtn.classList.add("hidden"); 
+//   }, 100); 
+// });
 
 
 function typeText() {
@@ -158,6 +126,65 @@ function typeText() {
 
 changeCVLang('es');
 
+// Enviar email
+emailForm.addEventListener("submit", async (event) => {
+  event.preventDefault(); 
+  emailjs.init("39FmjBf7JrQSw9E-2");
+  loadingSpinner.classList.remove("hidden");
+
+  const formData = {
+    from_name: emailForm.elements["name"].value,
+    from_email: emailForm.elements["email"].value,
+    message: emailForm.elements["message"].value,
+  };
+
+  try {
+    // Envío con EmailJS
+    const serviceID = "nusky_service";
+    const templateID = "nusky_template";
+    await emailjs.send(serviceID, templateID, formData, "39FmjBf7JrQSw9E-2");
+    console.log("Enviando datos:", formData);
+
+    alert("¡Mensaje enviado con éxito! 😄");
+    emailForm.reset();
+  } catch (error) {
+    console.error("Error al enviar el mensaje:", error);
+    alert("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥");
+  } finally {
+    loadingSpinner.classList.add("hidden");
+  }
+});
+// Enviar Whatsapp
+document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+  event.preventDefault(); 
+  
+  let name = document.getElementById('name').value.trim();
+  let msg = document.getElementById('message').value.trim();
+  let encodedMessage = encodeURIComponent(`Nombre: ${name}\nMensaje: ${msg}`);
+  let phoneNumber = '+34675260296';
+  let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+  if (!name || !msg) {
+    alert("Por favor, completa ambos campos antes de enviar el mensaje.");
+    return;
+  }
+  window.open(whatsappURL, '_blank');
+});
+// Enviar Telegram
+document.getElementById('telegram-form').addEventListener('submit', function(event) {
+  event.preventDefault();
+  let username = document.getElementById('telegram-username').value.trim();
+  let msg = document.getElementById('telegram-message').value.trim();
+  let encodedMessage = encodeURIComponent(`Usuario: ${username}\nMensaje: ${msg}`);
+  let telegramURL = `https://t.me/Nusky_7?text=${encodedMessage}`;
+
+  if (!username || !msg) {
+    alert("Por favor, completa ambos campos antes de enviar el mensaje.");
+    return;
+  }
+  window.open(telegramURL, '_blank');
+});
+// Cambios estilo carpetita contacto
 emailTab.addEventListener('click', () => {
   emailForm.classList.remove('hidden');
   whatsappForm.classList.add('hidden');
@@ -174,7 +201,7 @@ whatsappTab.addEventListener('click', () => {
   whatsappForm.classList.remove('hidden');
   emailForm.classList.add('hidden');
   telegramForm.classList.add('hidden');
-  whatsappTab.classList.remove('bg-zinc-800', 'border-l-2');
+  whatsappTab.classList.remove('bg-stone-500', 'border-l-2');
   whatsappTab.classList.add('bg-stone-500', 'animate-colorSlow');
   emailTab.classList.remove('bg-stone-500', 'animate-colorSlow');
   telegramTab.classList.add('border-l-2');
@@ -192,9 +219,17 @@ telegramTab.addEventListener('click', () => {
   emailTab.classList.remove('bg-stone-500', 'animate-colorSlow');
   emailTab.classList.add('bg-black', 'border-l-2');
   
-
 });
+// Animación CV - Contrata mis servicios hoy misme
+function startAnimation() {
+  subtitle.classList.add("animate-blinkAndBounce");
 
+  setTimeout(() => {
+    subtitle.classList.remove("animate-blinkAndBounce");
+  }, 4000);
+  setTimeout(startAnimation, 9999);
+}
+startAnimation();
 
 const loadTranslations = async (lang) => {
   try {
@@ -227,14 +262,27 @@ const applyTranslations = (translations) => {
   //Action Panel
   document.getElementById("button-text").innerHTML = translations.panel.buttonText;
   document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
+  document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
   document.getElementById("panel-text").innerHTML = translations.panel.panelText;
   document.getElementById("contact-title").innerHTML = translations.panel.contact;
   // Player
   document.getElementById("song-title").innerHTML = translations.player.songs;
+  // Forms
+  document.querySelectorAll("form").forEach(form => {
+    form.querySelectorAll("input, textarea").forEach(input => {
+      const name = input.getAttribute("name");
+      const submitButton = form.querySelector("button[type='submit']");
 
+      if (translations.form[name]) {
+        input.placeholder = translations.form[name]; 
+      }
+    });
+      if (submitButton) {
+        submitButton.textContent = translations.form.submit;
+      }
+    });
 };
 
-// Animar botón seleccionado
 const langButtons = document.querySelectorAll('.lang-btn');
 const activeClass = 'animate-spin';
 
@@ -253,11 +301,8 @@ document.getElementById("lang-switch-es").addEventListener("click", () => {
 document.getElementById("lang-switch-en").addEventListener("click", () => {
   loadTranslations("en");
 });
-
-// Idioma predeterminado
 loadTranslations("es");
 
-});
 
 function changeCVLang(language) {
   const downloadButton = document.getElementById('download-cv');
@@ -291,5 +336,4 @@ document.getElementById('lang-switch-es').onclick = function() {
 };
 
 
-
-
+});

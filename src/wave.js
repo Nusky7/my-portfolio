@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     let currentPlayingButton = null;
-  
+
     function playSong(songFile, songTitle, button) {
       // audio.src = `https://nusky7studio.es/mp3/${songFile}`;
       audio.src = `/mp3/${songFile}`;
@@ -25,16 +25,23 @@ document.addEventListener('DOMContentLoaded', () => {
       title.textContent = songTitle;
 
       if (currentPlayingButton) {
-        currentPlayingButton.classList.remove('font-bold', 'text-xl',  'scale-150', 'animate-colorCycle');
+        currentPlayingButton.classList.remove(
+          'font-semibold', 'animate-glowText', 
+          'animate-flashSlow', 'text-green-200',  
+          'drop-shadow-lg'
+        );
       }
   
       currentPlayingButton = button;
-      button.classList.add('animate-colorCycle', 'text-xl', 'scale-150', 'font-bold');
-      title.classList.add('animate-glowText');
+      console.log(currentPlayingButton);
+      button.classList.add('animate-glowText', 'font-semibold',  'text-green-200',  'drop-shadow-lg', 'important');
+      title.classList.add('animate-glowText', 'text-green-300');
   
       audio.load();
       audio.addEventListener('canplay', () => {
-        wavesurfer.load(audio);
+        if (!wavesurfer.isReady) {
+          wavesurfer.load(audio.src);
+        }
         audio.play();
       });
     }
@@ -51,14 +58,33 @@ document.addEventListener('DOMContentLoaded', () => {
   
     audio.addEventListener('ended', () => {
       if (currentPlayingButton) {
-        currentPlayingButton.classList.remove('animate-colorCycle');
-        title.classList.remove('animate-glowText');
-        
+        currentPlayingButton.classList.remove('animate-glowText', 'text-green-200');
+        title.classList.remove('animate-glowText', 'text-green-300');
+        title.classList.add('text-violet-300');
       }
       wavesurfer.stop();
     });
+
+  audio.addEventListener('pause', () => {
+      if (currentPlayingButton) {
+        currentPlayingButton.classList.remove('animate-glowText', 'text-green-200', 'drop-shadow-sm');
+        title.classList.remove('animate-glowText', 'text-green-300');
+        title.classList.add('text-violet-300');
+        currentPlayingButton.classList.add('animate-flashSlow');
+      }
+      wavesurfer.pause();
+    });
+    audio.addEventListener('play', () => {
+      if (currentPlayingButton) {
+        currentPlayingButton.classList.add('animate-glowText', 'text-green-200');
+        currentPlayingButton.classList.remove('animate-flashSlow');
+        title.classList.remove('text-violet-300');
+        title.classList.add('animate-glowText', 'text-green-300');
+       
+
+        
+      }
+      wavesurfer.play();
+    });
   });
 
-
-//   𝙍𝙀𝙏𝙍𝙊 𝙉𝙄𝙂𝙃𝙏𝙎𝘾𝘼𝙋𝙀 Synthwave album from the 80-s
-  
