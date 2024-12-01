@@ -71,6 +71,9 @@ module.exports = {
         colorFast: 'colorCycle 0.8s infinite',
         colorSlow: 'colorCycle 6s infinite',
         blinkAndBounce: 'blinkAndBounce 4s ease-in-out infinite',
+        glowColorCycle: 'glowColorCycle 5s ease-in-out infinite',
+        glowShadowCycle: 'glowShadowCycle 5s ease-in-out infinite',
+        glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
       },
       keyframes: {
         shake: {
@@ -240,6 +243,103 @@ module.exports = {
         '80%': { transform: 'scale(1.05)' },
         '90%, 100%': { opacity: '1', transform: 'scale(1)' }, // Pausa hasta el final del ciclo
       },
+      glowColorCycle: {
+        '0%': {
+          textShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          color: '#f472b6',
+        },
+        '12.5%': {
+          textShadow: '0 0 5px #000, 0 0 10px #db85c7, 0 0 15px #4B0082',
+          color: '#db85c7',
+        },
+        '25%': {
+          textShadow: '0 0 10px #000, 0 0 15px #c084fc, 0 0 20px #22d3ee',
+          color: '#c084fc',
+        },
+        '37.5%': {
+          textShadow: '0 0 10px #000, 0 0 15px #22d3ee, 0 0 25px #14b8a6',
+          color: '#22d3ee',
+        },
+        '50%': {
+          textShadow: '0 0 15px #000, 0 0 20px #14b8a6, 0 0 30px #19ff4b',
+          color: '#14b8a6',
+        },
+        '62.5%': {
+          textShadow: '0 0 15px #000, 0 0 20px #19ff4b, 0 0 30px #facc15',
+          color: '#19ff4b',
+        },
+        '75%': {
+          textShadow: '0 0 15px #000, 0 0 20px #facc15, 0 0 30px #a855f7',
+          color: '#facc15',
+        },
+        '87.5%': {
+          textShadow: '0 0 15px #000, 0 0 20px #a855f7, 0 0 30px #f472b6',
+          color: '#a855f7',
+        },
+        '100%': {
+          textShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          color: '#f472b6',
+        },
+        },
+        glowShadowCycle: {
+          '0%': {
+            textShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          },
+          '12.5%': {
+            textShadow: '0 0 5px #000, 0 0 10px #db85c7, 0 0 15px #4B0082',
+          },
+          '25%': {
+            textShadow: '0 0 10px #000, 0 0 15px #c084fc, 0 0 20px #22d3ee',
+          },
+          '37.5%': {
+            textShadow: '0 0 10px #000, 0 0 15px #22d3ee, 0 0 25px #14b8a6',
+          },
+          '50%': {
+            textShadow: '0 0 15px #000, 0 0 20px #14b8a6, 0 0 30px #19ff4b',
+          },
+          '62.5%': {
+            textShadow: '0 0 15px #000, 0 0 20px #19ff4b, 0 0 30px #facc15',
+          },
+          '75%': {
+            textShadow: '0 0 15px #000, 0 0 20px #facc15, 0 0 30px #a855f7',
+          },
+          '87.5%': {
+            textShadow: '0 0 15px #000, 0 0 20px #a855f7, 0 0 30px #f472b6',
+          },
+          '100%': {
+            textShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          },
+        },
+        glowGreenShadowCycle: {
+          '0%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #f472b6, 0 0 10px #db85c7, 0 0 15px #c084fc',
+          },
+          '16.6%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #22d3ee, 0 0 10px #14b8a6, 0 0 15px #19ff4b',
+          },
+          '33.3%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #facc15, 0 0 10px #a855f7, 0 0 15px #f472b6',
+          },
+          '50%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #db85c7, 0 0 10px #c084fc, 0 0 15px #22d3ee',
+          },
+          '66.6%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #14b8a6, 0 0 10px #19ff4b, 0 0 15px #facc15',
+          },
+          '83.3%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #a855f7, 0 0 10px #f472b6, 0 0 15px #db85c7',
+          },
+          '100%': {
+            color: '#cef2db',
+            textShadow: '0 0 5px #f472b6, 0 0 10px #db85c7, 0 0 15px #c084fc',
+          },
+        },
       },
     },
   },

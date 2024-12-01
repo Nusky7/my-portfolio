@@ -58,6 +58,9 @@
 
 body{
   cursor: url('/img/cursor.png') 16 16, auto;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; 
 }
 a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
@@ -369,3 +372,5 @@ audio::-webkit-media-controls-play-button {
     padding-right: 2%;
   }
 }
+
+

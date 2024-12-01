@@ -20,44 +20,33 @@ const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 
+window.addEventListener('load', () => {
+  audio.load();
 
-headerImg.addEventListener("click", () => {
-  // Añadir giro
-  headerAnimeImg.style.animation = "rotateImage 0.5s forwards";
-  headerRealImg.style.animation = "rotateImage 0.5s forwards";
-  // Cambiar la foto de perfil
-  if (headerAnimeImg.classList.contains("hidden")) {
-    headerAnimeImg.classList.remove("hidden");
-    headerRealImg.classList.add("hidden");
-  } else {
-    headerAnimeImg.classList.add("hidden");
-    headerRealImg.classList.remove("hidden");
-  }
+
+startBtn.addEventListener("click", () => {
+  audio.currentTime = startFromSecond;
+  audio.volume = 0; 
+  audio.play();
+
+  const fadeInDuration = 5000;
+  const intervalDuration = 33; 
+  const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
+
+  const fadeIn = setInterval(() => {
+    if (audio.volume < 1) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, 1);
+    } else {
+      clearInterval(fadeIn);
+    }
+  }, intervalDuration);
+
+  setTimeout(() => {
+  typeText();
+  }, 20); 
+
+    startBtn.classList.add("hidden"); 
 });
-
-// startBtn.addEventListener("click", () => {
-//   audio.currentTime = startFromSecond;
-//   audio.volume = 0; 
-//   audio.play();
-
-//   const fadeInDuration = 5000;
-//   const intervalDuration = 33; 
-//   const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
-
-//   const fadeIn = setInterval(() => {
-//     if (audio.volume < 1) {
-//       audio.volume = Math.min(audio.volume + volumeIncrement, 1);
-//     } else {
-//       clearInterval(fadeIn);
-//     }
-//   }, intervalDuration);
-
-//   setTimeout(() => {
-//   typeText();
-//   }, 20); 
-
-//     startBtn.classList.add("hidden"); 
-// });
 
 stopAudioBtn.addEventListener("click", () => {
   audio.pause();
@@ -75,6 +64,22 @@ audio.addEventListener("ended", () => {
   }, 100); 
 });
 
+});
+
+headerImg.addEventListener("click", () => {
+  // Añadir giro
+  headerAnimeImg.style.animation = "rotateImage 0.5s forwards";
+  headerRealImg.style.animation = "rotateImage 0.5s forwards";
+  // Cambiar la foto de perfil
+  if (headerAnimeImg.classList.contains("hidden")) {
+    headerAnimeImg.classList.remove("hidden");
+    headerRealImg.classList.add("hidden");
+  } else {
+    headerAnimeImg.classList.add("hidden");
+    headerRealImg.classList.remove("hidden");
+  }
+});
+
 
 function typeText() {
   introText.innerHTML = "<span class='typing'>Hello, I'm</span>";
@@ -87,7 +92,7 @@ function typeText() {
 
       setTimeout(() => {
         introText.classList.remove("erase");
-        introText.innerHTML = "<span class='typing git animate-colorFast>@Nusky7</span>";
+        introText.innerHTML = "<span class='typing git animate-colorFast'>@Nusky7</span>";
 
         setTimeout(() => {
           introText.classList.add("erase");
