@@ -19,12 +19,26 @@ const whatsappForm = document.getElementById('whatsapp-form');
 const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
+const skipBtn = document.getElementById("skip-btn");
+const introContent = document.getElementById("intro-content");
 
 window.addEventListener('load', () => {
+  document.getElementById("preloader").style.display = "none";
   audio.load();
+  document.getElementById("intro-content").classList.remove("hidden");
+  document.getElementById("stopAudioBtn").classList.remove("hidden");
+});
 
+function skipIntro() {
+  introScreen.classList.add("hidden"); 
+  introContent.classList.add("hidden"); 
+  mainContent.classList.remove("hidden"); 
+  audio.play();
+}
+skipBtn.addEventListener("click", skipIntro);
 
 startBtn.addEventListener("click", () => {
+  skipBtn.addEventListener("click", skipIntro);
   audio.currentTime = startFromSecond;
   audio.volume = 0; 
   audio.play();
@@ -46,6 +60,7 @@ startBtn.addEventListener("click", () => {
   }, 20); 
 
     startBtn.classList.add("hidden"); 
+    skipBtn.classList.add("animate-jiggle");
 });
 
 stopAudioBtn.addEventListener("click", () => {
@@ -64,7 +79,7 @@ audio.addEventListener("ended", () => {
   }, 100); 
 });
 
-});
+
 
 headerImg.addEventListener("click", () => {
   // Añadir giro

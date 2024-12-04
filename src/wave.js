@@ -17,7 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
     { file: "egerie.mp3" },
     { file: "euphorie.mp3" },
     { file: "memoryReboot.mp3" },
-    { file: "fearless.mp3" }
+    { file: "fearless.mp3" },
+    { file: "prag.mp3" },
+    { file: "soulshine.mp3" },
+    { file: "eyeShut.mp3" },
+    // { file: "listenMountains.mp3" },
+    { file: "urban.mp3" }
+   
   ];
 
 
@@ -26,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function createWaveformContainer(index) {
     const container = document.createElement('div');
     container.id = `waveform-${index}`;
-    container.style.display = 'none'; // Inicialmente oculto
+    container.style.display = 'none'; 
     document.getElementById('waveform').appendChild(container);
     return container;
   }

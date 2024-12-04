@@ -140,8 +140,8 @@ a, button{
 .social {
   position: absolute;
   display: flex;
-  left: 350px;
-  margin-top: 167px;
+  left: 352px;
+  margin-top: 182px;
   gap: 1rem;
 }
 
@@ -241,19 +241,16 @@ audio::-webkit-media-controls-play-button {
   border-radius: 50%; 
 
 }
-/* .song-btn {
-  border-bottom: 1.5px solid #000;
-} */
-/* .audio-controls{
-  border-left: 2px solid #111;
-  border-right: 2px solid #111;
-  border-radius: 10px;
-  padding: 1%;
-  background-color: #000;
-} */
+.ask {
+  display: inline-block;
+  transform: rotateY(180deg) rotateX(180deg);
+}
 
 
 @media screen and (max-width: 820px) {
+  .skip-btn{
+    margin-bottom: 2.5rem;
+  }
   h1{
     font-size: 1.5em;
     margin-top: 2%;
@@ -327,10 +324,10 @@ audio::-webkit-media-controls-play-button {
     border-right: 2px solid #111;
     border-radius: 10px;
     padding: 1%;
-    background-color: #000;
+    background-color: #101010;
   }
-  .song-btn {
-    border-bottom: 2px solid #111;
+  hr{
+    border-color: #322a44 !important;
   }
   .f-tab{
     font-size: 0.9rem;
@@ -357,7 +354,7 @@ audio::-webkit-media-controls-play-button {
   }
   .social{
     left: 22%;
-    top: 18%;
+    top: 22%;
   }
   .social-img-i, .social-img-g{
     width: 66px;
@@ -373,4 +370,18 @@ audio::-webkit-media-controls-play-button {
   }
 }
 
+
+@media screen and (min-width: 1920px) {
+  .social {
+    left: 18%;
+    top: 8.5%;
+  }
+}
+
+@media screen and (min-width: 2560px) {
+  .social {
+    left: 14%;
+    top: 7%;
+  }
+}
 
