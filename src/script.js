@@ -48,8 +48,8 @@ startBtn.addEventListener("click", () => {
   const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
 
   const fadeIn = setInterval(() => {
-    if (audio.volume < 1) {
-      audio.volume = Math.min(audio.volume + volumeIncrement, 1);
+    if (audio.volume < 0.5) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, 0.5);
     } else {
       clearInterval(fadeIn);
     }

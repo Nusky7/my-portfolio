@@ -1460,6 +1460,14 @@ video {
   padding: 1.75rem;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
+.p-3 {
+  padding: 0.75rem;
+}
+
 .px-2 {
   padding-left: 0.5rem;
   padding-right: 0.5rem;
@@ -1951,6 +1959,10 @@ a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
 }
 
+.container{
+  padding: 1rem;
+}
+
 /* Pantalla de introducción */
 
 .intro-screen {
@@ -2164,6 +2176,12 @@ audio::-webkit-media-controls-play-button {
   transform: rotateY(180deg) rotateX(180deg);
 }
 
+/* @media screen and (max-width: 380px){
+  #header-content{
+    top: -6% !important;
+  }
+} */
+
 @media screen and (max-width: 820px) {
   .skip-btn{
     margin-bottom: 2.5rem;
@@ -2171,7 +2189,7 @@ audio::-webkit-media-controls-play-button {
 
   h1{
     font-size: 1.5em;
-    margin-top: 2%;
+    margin-top: -1%;
   }
 
   .stack{
@@ -2187,7 +2205,8 @@ audio::-webkit-media-controls-play-button {
   }
 
   #header-img .head-img {
-    width: 35vw !important;
+    width: 43vw !important;
+    /* width: 10.5rem !important; */
     height: auto;
     position: relative;
     border-radius: 50%;
@@ -2198,10 +2217,9 @@ audio::-webkit-media-controls-play-button {
   }
 
   .social {
-    position: absolute !important;
     width: 75% ;
-    top: 40% !important;
-    left: 13% !important;
+    top: 33% !important;
+    left: 12.5% !important;
     padding-bottom: 6% !important;
     flex-direction: row !important;
     justify-content: space-between !important;
@@ -2623,6 +2641,10 @@ audio::-webkit-media-controls-play-button {
 
 .hover\:animate-tada:hover {
   animation: tada 1s ease-in-out infinite;
+}
+
+.hover\:animate-none:hover {
+  animation: none;
 }
 
 .hover\:border-none:hover {

@@ -10,6 +10,7 @@ const copyBtcBtn = document.getElementById("copyBtcBtn");
 const headerContent = document.getElementById("header-content");
 const coffee = document.getElementById('coffee');
 const coffeeImg = document.getElementById('coffee-img');
+const name = document.getElementById('name');
 
 /**
  * Muestra el modal de donaciones al hacer clic en el botón de donación.
@@ -98,10 +99,20 @@ function updateLayout() {
         donateBtn.classList.add('mx-3');
         coffee.classList.remove('hidden');
         coffeeImg.classList.remove('mt-3');
+        
     }
-  }
-  window.addEventListener('resize', updateLayout);
+    }
+    function updateName() {
+        if (window.innerWidth <= 680) {
+            name.textContent = 'Alba T.B.';
+        } else {
+            name.textContent = 'Alba Tolosa Bonora';
+        }
+    }
+    window.addEventListener('resize', function () {
+        updateLayout(); updateName();
+    });
+
     updateLayout();
-    
-    
+    updateName();
 });
