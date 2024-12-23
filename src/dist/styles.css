@@ -2182,8 +2182,12 @@ audio::-webkit-media-controls-play-button {
     hover: none !important;
   }
 
+  #header-subtitle{
+    padding-top: 0.6rem;
+  }
+
   #header-img .head-img {
-    width: 55vw !important;
+    width: 35vw !important;
     height: auto;
     position: relative;
     border-radius: 50%;
@@ -2194,10 +2198,11 @@ audio::-webkit-media-controls-play-button {
   }
 
   .social {
-    width: 90% !important;
-    top: 0 !important;
-    left: 6% !important;
-    bottom: 6% !important;
+    position: absolute !important;
+    width: 75% ;
+    top: 40% !important;
+    left: 13% !important;
+    padding-bottom: 6% !important;
     flex-direction: row !important;
     justify-content: space-between !important;
   }

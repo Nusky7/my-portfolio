@@ -1,3 +1,4 @@
+document.addEventListener("DOMContentLoaded", () => {
 const donateBtn = document.getElementById('donateBtn');
 const donationModal = document.getElementById('donationModal');
 const closeModal = document.getElementById('closeModal');
@@ -100,4 +101,7 @@ function updateLayout() {
     }
   }
   window.addEventListener('resize', updateLayout);
-  updateLayout();
+    updateLayout();
+    
+    
+});
