@@ -16,7 +16,7 @@
         "title": "Projects",
         "show": "See Project",
         "working": "A project under development.<br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
-        "project": "Personal portfolio created with tons of love and animations to showcase my projects and skills. It stands out for its dark design with vibrant colors, minimalism, and interactivity.",
+        "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators.<br> Uses the FFmpeg and Fontmin libraries.",
         "project1": "An interactive map to explore the most important places in Valencia. <br>Offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
         "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angualar 17 and Bootstrap",
         "project3": "A tattoo portfolio website designed for a friend. Includes a photo gallery showcasing their work, a contact form, a virtual assistant for appointments, and links to their social media.",

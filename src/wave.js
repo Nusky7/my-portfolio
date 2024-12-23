@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { file: "lowx.mp3" },
     { file: "c152.mp3" },
     { file: "duneRiders.mp3" },
+    { file: "havoc.mp3" },
     { file: "proxima.mp3" },
     { file: "destination.mp3" },
     { file: "retroSynth.mp3" },

@@ -23,13 +23,11 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
  
-  <link rel="preload" href="../dist/styles.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link href="/dist/styles.css" rel="stylesheet"></noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Poppins:wght@400;600&family=Montserrat:wght@400;600&family=Work+Sans:wght@400;600&family=Raleway:wght@400;600&family=Bebas+Neue&family=Manrope:wght@400;600&family=Playfair+Display:wght@400;600&family=Libre+Baskerville:wght@400;600&family=Cormorant+Garamond:wght@400;600&family=Roboto+Mono:wght@400;600&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=DotGothic16&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/styles.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="dist/styles.css" rel="stylesheet"></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
 
-  <audio preload="auto" id="miAudio" autoplay hidden>
+  <audio preload="auto" id="miAudio" hidden>
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
   </audio>
@@ -63,7 +61,6 @@
     </div>
   </div> 
 
-    
   <button id="stopAudioBtn" class="fixed hidden bottom-4 left-4 text-white p-2 rounded-full bg-transparent shadow-lg hover:scale-125 z-50">
     <img src="img/ico/stop.png" alt="stop" class=" w-25 h-25">
   </button>
@@ -86,11 +83,23 @@
     </div> 
   </div>
 
-  <header class="p-0 text-white text-center">
-    <h1  class="font-bold inline-block text-rose-200 font-pix animate-glowText hover:animate-colorSlow hover:scale-110 ">
-      Alba Tolosa Bonora</h1>
+  <header class="pb-3 text-white text-center">
+    <div id="header-content" class="flex justify-center">
+      <h1 class="font-bold inline-block text-rose-200 font-pix animate-glowText hover:animate-colorSlow mr-3">
+        Alba Tolosa Bonora
+      </h1>
+      <button id="donateBtn" class="relative group hover:scale-110">
+        <img width="55px" height="55px" src="img/coffee.png" alt="Donations" id="coffee-img" class=" ml-2 animate-borderGlow hover:animate-flash hover:border-none border-1 p-1 border-rose-300"/>
+        
+        <!-- El texto que aparece con el hover -->
+        <span  id="coffee" class="font-mono text-sm coffee-btn absolute block mt-2 text-rose-100 font-semibold py-1 rounded opacity-0 group-hover:opacity-100 group-hover:left[170px] transition-all duration-300">
+          Invítame a Café ☕︎
+        </span>
+      </button>
+      
+    </div>
   </header>
-
+  
   <main class="p-1 text-center">
     <p id="header-subtitle" class="text-x0">FrontEnd Lover ❤ FullStack Developer</p>
     <div class="lang bg-black flex justify-center space-x-3 mt-4">
@@ -102,6 +111,37 @@
       </button>
     </div>
     
+  </main>
+
+  <!-- Modal de opciones de donación -->
+        <div id="donationModal" class="fixed flex hidden inset-0 bg-stone-900 bg-opacity-60 justify-center items-center z-50">
+          <div class="bg-neutral-800 p-7 rounded-lg w-90">
+            <div class="w-full flex scpace-between">
+              <h2 class="text-xl font-bold mb-4 text-slate-200">Elige tu opción de donación</h2>
+              <button id="closeModal" class="ml-5 w-6 h-8 hover:animate-spin">❌</button>
+            </div>
+
+            <div class="flex items-center justify-between pr-2">
+            <div>
+              <button id="paypalBtn" class="w-20 bg-blue-600 hover:bg-blue-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">PayPal</button>
+              <button id="stripeBtn" class="w-20 bg-purple-600 hover:bg-purple-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">Stripe</button>
+              <button id="kofiBtn" class="w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">Ko-fi</button>
+              <button id="copyBtcBtn" class="w-20 text-orange-300 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 block">
+              <div class="flex">
+                <img src="./img/ico/bitcoin.png" alt="btc" width="20px" height="auto" class="mx-auto">
+              </div>
+              Copiar
+            </button>
+            </div>
+            <!-- Código QR de Bitcoin -->
+            <div id="btcQrCode" class="mt-0 pl-6 mb-4">
+              <h3 class="font-bold mb-2 font-sans text-center ">Donar con <span class="font-pike text-orange-300 font-pix">Bitcoin</span></h3>
+              <!-- Generar QR de la dirección BTC -->
+              <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
+            </div>
+          </div>
+          </div>
+        </div>
   </main>
 
 
@@ -134,9 +174,9 @@
 
         <!-- Trabajando... -->
         <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center animate-pulse hover:animate-showUpTada ">
-          <img src="./img/ns4.webp" alt="Project 1" class="rounded-md mb-4">
+          <img src="./img/ns4.webp" alt="Project 1" width="420px" height="auto" class="rounded-md mb-4">
           <h3 class=" text-xl font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
-          <div class=" flex space-x-4 mr-7 justify-center">            
+          <div class=" flex space-x-4 mx-0 justify-center">            
             <img src="img/ico/angular.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/node.webp" alt="html" class="icons">
@@ -147,35 +187,35 @@
         </div>
 
         <!-- Proyecto -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowRose flex flex-col">
-          <img src="./img/portfolio.webp" alt="Project 1" class="rounded-md mb-4 ">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">My Porfolio</h3>
-            <div class=" flex space-x-4 mr-7 justify-center">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-pink flex flex-col">
+          <img src="./img/n7tools.webp" alt="Portfolio" width="420px" height="auto" class="rounded-md mb-4 ">
+          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">N7Tools</h3>
+            <div class="flex space-x-4 mx-0 justify-center">
               <img src="img/ico/html.webp" alt="html" class="icons">
               <img src="img/ico/css.webp" alt="html" class="icons">
               <img src="img/ico/js.webp" alt="html" class="icons">
               <img src="img/ico/tw.webp" alt="html" class="icons">
-              <img src="img/ico/json.webp" alt="html" class="icons">
+              <img src="img/ico/node.webp" alt="html" class="icons">
             </div>
-          <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">❤ Mi portfolio ❤
+          <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">N7Tools ❤
           </p> 
           <div class="flex mt-auto">
           <button type="button" class="bg-neutral-800 hover:bg-neutral-700 w-full text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded animate-pulse mt-auto mx-3 mb-3 ">
-            <a href="https://github.com/Nusky7/my-portfolio" target="_blank" 
+            <a href="https://github.com/Nusky7/conversionTool" target="_blank" 
             class="show block text-white hover:text-rose-200 hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
           </button>
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 hover:border-amber-200 rounded animate-pulse mt-auto mx-3 mb-3">
-            <a href="https://nusky7studio.es" target="_blank" 
-            class="text-white hover:text-amber-100 block hover:animate-colorCycle text-xl">🌐</a>
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
+            <a href="https://www.nusky7studio.es/N7Tools/index.html" target="_blank" 
+            class="text-white block text-xl">🌐</a>
           </button>
           </div>
         </div> 
         
         <!-- Proyecto 1 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowAmber flex flex-col">
-          <img src="./img/vplaces.webp" alt="Project 1" class="rounded-md mb-4">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-amber flex flex-col">
+          <img src="./img/vplaces.webp" alt="ValenciaPlaces" width="420px" height="auto" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Valencia Places</h3>
-            <div class=" flex space-x-4 mr-7 justify-center">
+            <div class=" flex space-x-4 mx-0 justify-center">
               <img src="img/ico/html.webp" alt="html" class="icons">
               <img src="img/ico/css.webp" alt="html" class="icons">
               <img src="img/ico/js.webp" alt="html" class="icons">
@@ -198,11 +238,11 @@
         </div>
 
         <!-- Proyecto 2 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowOrange flex flex-col">
-          <img src="./img/transfers.webp" alt="Project 1" class="rounded-md mb-4">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-orange flex flex-col">
+          <img src="./img/transfers.webp" alt="TransfersVIP" width="420px" height="auto" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Deluxe Transfers</h3>
           
-          <div class="flex space-x-4 mr-7 justify-center">            
+          <div class="flex space-x-4 mx-0 justify-center">            
             <img src="img/ico/angular.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/boots.webp" alt="html" class="icons">
@@ -222,11 +262,11 @@
         </div>
 
         <!-- Proyecto 3 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowPurple flex flex-col ">
-          <img src="./img/tattoo.webp" alt="Project 1" class="rounded-md mb-4">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-purple flex flex-col ">
+          <img src="./img/tattoo.webp" alt="MaMTattoo" width="420px" height="auto" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">MaM Tattoo</h3>
       
-          <div class=" flex space-x-4 mr-7 justify-center">            
+          <div class=" flex space-x-4 mx-0 justify-center">            
             <img src="img/ico/html.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/js.webp" alt="html" class="icons">
@@ -246,11 +286,11 @@
         </div>
         
         <!-- Proyecto 4 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:animate-glowEme flex flex-col">
-          <img src="./img/st.webp" alt="Project 1" class="rounded-md mb-4">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-emerald flex flex-col">
+          <img src="./img/st.webp" alt="SmartTime" width="420px" height="auto" class="rounded-md mb-4">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Smart Time</h3>
       
-          <div class=" flex space-x-4 mr-7 justify-center">            
+          <div class=" flex space-x-4 mx-0 justify-center">            
             <img src="img/ico/angular.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/php.webp" alt="html" class="icons">
@@ -347,42 +387,43 @@
   </div>
   <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-base">
     <p class="text-xl text-center text-violet-300 font-pixround animate-glowText bg-black w-full rounded-lg p-4">ELECTRO 🎧 SYNTH </p>
-    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-300 hover:animate-shake font-orbi">LOWX ❤ Crystal Dreams</button>
+    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-red-500 rounded-lg hover:bg-red-400 hover:animate-shake font-orbi">LOWX ❤ Crystal Dreams</button>
     <hr class="border-zinc-950">
-    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-teal-400 rounded-lg hover:bg-teal-600 hover:animate-shake font-orbi">Illusions ❤ C-152</button>
+    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-orange-500 rounded-lg hover:bg-orange-400 hover:animate-shake font-orbi">Illusions ❤ C-152</button>
     <hr class="border-zinc-950">
-    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-amber-400 rounded-lg hover:bg-amber-600 hover:animate-shake font-orbi">Dune Riders ❤ Ferus Melek</button>
+    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-yellow-500 rounded-lg hover:bg-yellow-400 hover:animate-shake font-orbi">Dune Riders ❤ Ferus Melek</button>
     <hr class="border-zinc-950">
-    <button data-file="proxima.mp3" class="song-btn px-4 py-2 text-indigo-400 rounded-lg hover:bg-indigo-600 hover:animate-shake font-orbi">Proxima ❤ LukHash</button>
+    <button data-file="havoc.mp3" class="song-btn px-4 py-2 text-green-500 rounded-lg hover:bg-green-400 hover:animate-shake font-orbi">Hooker Havoc ❤ Nightstop</button>
     <hr class="border-zinc-950">
-    <button data-file="destination.mp3" class="song-btn px-4 py-2 text-pink-400 rounded-lg hover:bg-pink-600 hover:animate-shake font-orbi">Destination ❤ Fantom '87</button>
+    <button data-file="proxima.mp3" class="song-btn px-4 py-2 text-teal-500 rounded-lg hover:bg-teal-400 hover:animate-shake font-orbi">Proxima ❤ LukHash</button>
     <hr class="border-zinc-950">
-    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-purple-400 rounded-lg hover:bg-purple-600 hover:animate-shake font-orbi">Retro Nightscape ❤ 80's synthwave</button>
+    <button data-file="destination.mp3" class="song-btn px-4 py-2 text-blue-500 rounded-lg hover:bg-blue-400 hover:animate-shake font-orbi">Destination ❤ Fantom '87</button>
     <hr class="border-zinc-950">
-    <button data-file="aloneTogether.mp3" class="song-btn px-4 py-2 text-orange-400 rounded-lg hover:bg-orange-600 hover:animate-shake font-orbi">Alone Together ❤ LukHash</button>
+    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-indigo-500 rounded-lg hover:bg-indigo-400 hover:animate-shake font-orbi">Retro Nightscape ❤ 80's synthwave</button>
     <hr class="border-zinc-950">
-    <button data-file="mountains.mp3" class="song-btn px-4 py-2 text-blue-400 rounded-lg hover:bg-blue-600 hover:animate-shake font-orbi">Mountains ❤ Saffari</button>
+    <button data-file="aloneTogether.mp3" class="song-btn px-4 py-2 text-purple-500 rounded-lg hover:bg-purple-400 hover:animate-shake font-orbi">Alone Together ❤ LukHash</button>
     <hr class="border-zinc-950">
-    <button data-file="release.mp3" class="song-btn px-4 py-2 text-emerald-400 rounded-lg hover:bg-emerald-600 hover:animate-shake font-orbi">Release ❤ Adieu Aru</button>
+    <button data-file="mountains.mp3" class="song-btn px-4 py-2 text-pink-500 rounded-lg hover:bg-pink-400 hover:animate-shake font-orbi">Mountains ❤ Saffari</button>
     <hr class="border-zinc-950">
-    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-cyan-400 rounded-lg hover:bg-cyan-600 hover:animate-shake font-orbi">Égérie ❤ Adieu Aru ＆ VIQ </button>
+    <button data-file="release.mp3" class="song-btn px-4 py-2 text-rose-500 rounded-lg hover:bg-rose-400 hover:animate-shake font-orbi">Release ❤ Adieu Aru</button>
     <hr class="border-zinc-950">
-    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-600 hover:animate-shake font-orbi">Euphorie ❤ Adieu Aru</button>
+    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-amber-500 rounded-lg hover:bg-amber-400 hover:animate-shake font-orbi">Égérie ❤ Adieu Aru ＆ VIQ</button>
     <hr class="border-zinc-950">
-    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-600 hover:animate-shake font-orbi">Memory Reboot ❤ Narvent</button>
+    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-500 rounded-lg hover:bg-lime-400 hover:animate-shake font-orbi">Euphorie ❤ Adieu Aru</button>
     <hr class="border-zinc-950">
-    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-fuchsia-400 rounded-lg hover:bg-fuchsia-600 hover:animate-shake font-orbi">Fearless ❤ VIQ</button>
-    <!-- handpan -->
+    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-fuchsia-500 rounded-lg hover:bg-fuchsia-400 hover:animate-shake font-orbi">Memory Reboot ❤ Narvent</button>
+    <hr class="border-zinc-950">
+    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-cyan-500 rounded-lg hover:bg-cyan-400 hover:animate-shake font-orbi">Fearless ❤ VIQ</button>
+      <!-- handpan -->
     <p class="text-xl text-center text-violet-300 font-pixround animate-glowText bg-black w-full rounded-lg p-4"> HANDPAN 🎧 MUSIC</p>
-    <button data-file="prag.mp3" class="song-btn px-4 py-2 text-indigo-400 rounded-lg hover:bg-indigo-500 hover:animate-shake font-orbi">Prag ❤ Malte Marten</button>
+    <button data-file="prag.mp3" class="song-btn px-4 py-2 text-blue-400 rounded-lg hover:bg-blue-500 hover:animate-shake font-orbi">Prag ❤ Malte Marten</button>
     <hr class="border-zinc-950">
-    <button data-file="soulshine.mp3" class="song-btn px-4 py-2 text-purple-400 rounded-lg hover:bg-purple-500 hover:animate-shake font-orbi">Soulshine ❤ Malte Marten</button>
+    <button data-file="soulshine.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-500 hover:animate-shake font-orbi">Soulshine ❤ Malte Marten</button>
     <hr class="border-zinc-950">
-    <button data-file="eyeShut.mp3" class="song-btn px-4 py-2 text-pink-400 rounded-lg hover:bg-pink-500 hover:animate-shake font-orbi">Eyes Shut, Soul Alive ❤ Malte Marten  </button>
+    <button data-file="eyeShut.mp3" class="song-btn px-4 py-2 text-orange-400 rounded-lg hover:bg-orange-500 hover:animate-shake font-orbi">Eyes Shut, Soul Alive ❤ Malte Marten</button>
     <hr class="border-zinc-950">
-    <!-- <button data-file="listenMountains.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-500 hover:animate-shake font-orbi">Listen to the Mountains ❤ Malte Marten  </button>
-    <hr class="border-zinc-950"> -->
-    <button data-file="urban.mp3" class="song-btn px-4 py-2 text-cyan-400 rounded-lg hover:bg-cyan-500 hover:animate-shake font-orbi">Urban ❤ Kate Stone </button>
+    <button data-file="urban.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-500 hover:animate-shake font-orbi">Urban ❤ Kate Stone</button>
+    
   </div>
   
 
@@ -481,6 +522,7 @@
   <script src="https://unpkg.com/wavesurfer.js@7" defer></script>
   <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js" defer></script>
   <script type="module" src="script.js"></script>
-  <script type="module" src="./wave.js"></script>
+  <script type="module" src="donations.js"></script>
+  <script type="module" src="wave.js"></script>
 </body>
 </html>

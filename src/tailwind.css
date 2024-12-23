@@ -3,11 +3,13 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: 'pix'; 
   src: url('/fonts/30.woff2') format('woff2'), 
        url('/fonts/30.woff') format('woff'),   
        url('/fonts/30.ttf') format('truetype');
+       font-display: swap;
 }
 
 @font-face {
@@ -15,12 +17,14 @@
   src: url('/fonts/Minecraft.woff2') format('woff2'), 
        url('/fonts/Minecraft.woff') format('woff'),   
        url('/fonts/Minecraft.ttf') format('truetype');
+       font-display: swap;
 }
 @font-face {
   font-family: 'pixround'; 
   src: url('/fonts/pixround.woff2') format('woff2'), 
        url('/fonts/pixround.woff') format('woff'),   
        url('/fonts/pixround.ttf') format('truetype');
+       font-display: swap;
 }
 
 @keyframes typing {
@@ -59,9 +63,14 @@
 body{
   cursor: url('/img/cursor.png') 16 16, auto;
   margin: 0;
-  padding: 0;
   overflow-x: hidden; 
+  /* background: url('/img/asfas.jpg') !important; */
 }
+html{
+  scrollbar-width: thin; 
+  scrollbar-color: #AAF8D4 #000 !important;  
+}
+
 a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
 }
@@ -96,6 +105,18 @@ a, button{
   animation: erase 2s steps(30) forwards;
 }
 
+/* Modal donaciones */
+/* .btn-donate-modal {
+    padding: 10px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: block;
+    text-decoration: none;
+} */
+
+#coffee-img{
+  border-radius: 1.5rem !important;
+}
 /* Contenido principal */
 #profile {
   display: none;
@@ -223,9 +244,14 @@ h1 {
 /* #waveform ::part(cursor):before {
   content: '💜';
 } */
+ #waveform {
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
+ }
 #waveform ::part(region) {
   font-family: fantasy;
+
 }
+
 audio::-webkit-media-controls-panel {
 
   background-color: #a78cfa;
@@ -234,6 +260,7 @@ audio::-webkit-media-controls-panel {
 }
 audio::-webkit-media-controls{
   background-color: #a78cfa;
+ 
 }
 
 audio::-webkit-media-controls-play-button {

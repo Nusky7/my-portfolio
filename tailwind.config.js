@@ -3,12 +3,19 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
-      
       colors: {
         background: "#121212",
         text: "#e0e0e0",
         accent: "#F4D9D0",
         customGreen: '#cef2db',
+      },
+       boxShadow: {
+        pink: '0 0 3px rgb(249 168 212)',
+        amber: '0 0 3px rgb(224, 183, 20)',
+        rose: '0 0 3px rgb(224 09 72)',
+        emerald: '0 0 3px  rgb(52 211 153)',
+        orange: '0 0 3px  rgb(194 65 12)',
+        purple: '0 0 3px  rgb(147 51 234)',
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'], 
@@ -16,6 +23,7 @@ module.exports = {
         pixel: ['pixel', 'sans-serif'],
         kiwi: ['kiwi', 'sans-serif'],
         pixround: ['pixround', 'sans-serif'],
+        // pubpixel: ['pubpixel', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         chakra: ['Chakra Petch', 'sans-serif'],
         gotic: ['DotGothic16', 'sans-serif'],
@@ -47,13 +55,13 @@ module.exports = {
         jiggle: 'jiggle 0.6s ease-in-out 0.25s 1',
         flash: 'flash 0.6s ease-in-out infinite',
         flashSlow: 'flash 1.2s ease-in-out infinite',
-        glowTeal: 'glowTeal 1.6s ease-in-out infinite',
-        glowPink: 'glowPink 5s ease-in-out infinite',
-        glowPurple: 'glowPurple 1.6s ease-in-out infinite',
-        glowAmber: 'glowAmber 1.6s ease-in-out infinite',
-        glowOrange: 'glowOrange 1.6s ease-in-out infinite',
-        glowRose: 'glowRose 1.6s ease-in-out infinite',
-        glowEme: 'glowEme 1.6s ease-in-out infinite',
+        glowTeal: 'glowTeal 1.6s ease-in-out forwards',
+        glowPink: 'glowPink 5s ease-in-out forwards',
+        glowPurple: 'glowPurple 1.6s ease-in-out forwards',
+        glowAmber: 'glowAmber 1s ease-in-out forwards',
+        glowOrange: 'glowOrange 1.6s ease-in-out forwards',
+        glowRose: 'glowRose 1.6s ease-in-out forwards',
+        glowEme: 'glowEme 1.6s ease-in-out forwards',
         zoomIn: 'zoomin 1s ease-out 0.25s 1',
         zoomOut: 'zoomout 1s ease-out 0.25s 1',
         flipx: 'flipx 1.5s ease-out infinite',
@@ -74,6 +82,7 @@ module.exports = {
         glowColorCycle: 'glowColorCycle 5s ease-in-out infinite',
         glowShadowCycle: 'glowShadowCycle 5s ease-in-out infinite',
         glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
+        borderGlow: 'borderGlow 1.5s ease-in-out infinite alternate',
       },
       keyframes: {
         shake: {
@@ -114,37 +123,37 @@ module.exports = {
         },
         glowTeal: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(45 212 191)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(45 212 191)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowPink: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(249 168 212)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(249 168 212)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowPurple: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(147 51 234)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(147 51 234)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowAmber: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(245 158 11)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(245 158 11)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowOrange: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(194 65 12)'},
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(194 65 12)'},
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowEme: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(52 211 153)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(52 211 153)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         glowRose: {
           '0%': { boxShadow: '0 0 5px #fff' },
-          '50%': { boxShadow: '0 0 20px #fff, 0 0 21px rgb(225 29 72)' },
+          '50%': { boxShadow: '0 0 10px #fff, 0 0 15px rgb(225 29 72)' },
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         zoomin: {
@@ -213,7 +222,11 @@ module.exports = {
       glowText: {
         '0%': { textShadow: '0 0 5px #000, 0 0 10px #FF69B4, 0 0 15px #000' },
         '100%': { textShadow: '0 0 10px #000, 0 0 15px #4B0082, 0 0 30px #00CED1' },
-      },
+        },
+        borderGlow: {
+        '0%': { boxShadow: '0 0 1px #000, 0 0 6px #FF69B4, 0 0 12px #000' },
+        '100%': { boxShadow: '0 0 12px #000, 0 0 15px #4B0082, 0 0 30px #00CED1' },
+    },
       fadeOutScale: {
         '0%': { opacity: 1, transform: 'scale(1)' },
         '100%': { opacity: 0, transform: 'scale(0.9)' },
@@ -341,7 +354,9 @@ module.exports = {
           },
         },
       },
+      
     },
   },
+  purge: false,
   plugins: [],
 }
