@@ -8,13 +8,13 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "¡Hola Mundo!",
+      "heading": "<span class='ask mr-1'>!</span>Hola Mundo!",
       "description": "Soy una desarrolladora FullStack apasionada por la tecnología con una gran motivación por el diseño y desarrollo frontend. Mi especialidad radica en crear interfaces modernas e intuitivas que conecten a las personas con la tecnología de forma fluida y atractiva.<br> Aunque trabajo tanto el desarrollo backend como la gestión de bases de datos, encuentro mi mayor pasión en dar vida al frontend, donde el diseño y la experiencia del usuario se unen. <br><br> Siempre busco innovar y explorar nuevas herramientas, tecnologías y métodos para construir soluciones web impactantes y efectivas. Me gusta trabajar con un enfoque práctico y creativo, combinando funcionalidad y sensibilidad estética para entregar resultados que superen expectativas."
     },
     "projects": {
         "title": "Proyectos",
-        "show": "Ver Proyecto",
-        "working": "Proyecto en desarrollo.<br> Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
+        "show": "Ver Código",
+        "working": "Proyecto en desarrollo.<br><br> Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
         "project": "Herramienta online para convertir formatos de imágenes, fuentes y videos, diseñada para facilitar el trabajo de desarrolladores y creadores.<br> Utiliza las bibliotecas FFmpeg y Fontmin.",
         "project1": "Un mapa interactivo para explorar los lugares más importantes de Valencia, <br> con opción de tema Claro/Oscuro y soporte multi-idioma.",
          "project2": "Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo frontend con Angular 17 y Bootstap.",
@@ -38,6 +38,21 @@
       "message": "💌 Mensaje",
       "submit": "Enviar 📩"
 
+    },
+    
+    "donations": {
+      "title": "☕ Elige cómo donar",
+      "text": "Donar con ",
+      "button": "Invítame<br>a Café ☕︎",
+      "btext": "Copiar"
+    },
+    "terminal": {
+      "title": "## RECURSOS ##",
+      "txt": "# Librerías",
+      "txt1": "# Herramientas",
+      "txt2": "# Documentación",
+      "txt3": "# Recursos Útiles Adicionales",
+      "txt4": "Comenta tus Ideas 😀"
     }
   }
   

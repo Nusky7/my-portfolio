@@ -21,24 +21,40 @@ const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 const skipBtn = document.getElementById("skip-btn");
 const introContent = document.getElementById("intro-content");
+const stopBtn = document.getElementById("stopAudioBtn");
+  audio.load();
+  
 
 window.addEventListener('load', () => {
   document.getElementById("preloader").style.display = "none";
-  audio.load();
   document.getElementById("intro-content").classList.remove("hidden");
-  document.getElementById("stopAudioBtn").classList.remove("hidden");
+  setTimeout(() => {
+    skipBtn.classList.remove("opacity-0");
+  }, 900);
+  skipBtn.classList.add("animate-flyIn"); 
+
+  setTimeout(() => {
+  skipBtn.classList.remove("animate-flyIn"); 
+}, 1900);
+  
 });
 
 function skipIntro() {
+  let startFromSecond = 126.8; 
   introScreen.classList.add("hidden"); 
   introContent.classList.add("hidden"); 
   mainContent.classList.remove("hidden"); 
+  audio.currentTime = startFromSecond;
+  audio.volume = 0.70; 
   audio.play();
+  // setTimeout(() => {
+    stopBtn.classList.remove("opacity-0"); 
+  // }, 3750); 
 }
 skipBtn.addEventListener("click", skipIntro);
+  
 
 startBtn.addEventListener("click", () => {
-  skipBtn.addEventListener("click", skipIntro);
   audio.currentTime = startFromSecond;
   audio.volume = 0; 
   audio.play();
@@ -48,8 +64,8 @@ startBtn.addEventListener("click", () => {
   const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
 
   const fadeIn = setInterval(() => {
-    if (audio.volume < 0.5) {
-      audio.volume = Math.min(audio.volume + volumeIncrement, 0.5);
+    if (audio.volume < 0.6) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, 0.6);
     } else {
       clearInterval(fadeIn);
     }
@@ -59,32 +75,41 @@ startBtn.addEventListener("click", () => {
   typeText();
   }, 20); 
 
-    startBtn.classList.add("hidden"); 
+  startBtn.classList.add("fadeOutScale");
+    setTimeout(() => {
+      startBtn.classList.add("hidden");
+    }, 20);
+     
+    skipBtn.classList.remove("animate-pulse");
     skipBtn.classList.add("animate-jiggle");
 });
+  
+  
 
-stopAudioBtn.addEventListener("click", () => {
+stopBtn.addEventListener("click", () => {
   audio.pause();
   audio.currentTime = 0; 
-  stopAudioBtn.classList.add("animate-reduceAndFade");
+  stopBtn.classList.remove("animate-tadaTwo");
+  stopBtn.classList.add("animate-fadeOutScale");
   setTimeout(() => {
-    stopAudioBtn.classList.add("animate-reduceAndFade"); 
-  }, 100); 
+    stopBtn.classList.add("opacity-0"); 
+    rotateImage();
+  }, 500);
 });
 
-audio.addEventListener("ended", () => {
-  stopAudioBtn.classList.add("fadeOutScale");
+  audio.addEventListener("ended", () => {
+  stopBtn.classList.remove("animate-tadaTwo");
+  stopBtn.classList.add("fadeOutScale");
   setTimeout(() => {
-    stopAudioBtn.classList.add("hidden"); 
-  }, 100); 
+    stopBtn.classList.add("opacity-0"); 
+    rotateImage();
+  }, 500); 
 });
 
 
-
-headerImg.addEventListener("click", () => {
-  // Añadir giro
-  headerAnimeImg.style.animation = "rotateImage 0.5s forwards";
-  headerRealImg.style.animation = "rotateImage 0.5s forwards";
+  function rotateImage() {
+  headerAnimeImg.style.animation = "rotateImage 0.5s ease-in-out forwards";
+  headerRealImg.style.animation = "rotateImage 0.5s ease-in-out forwards";
   // Cambiar la foto de perfil
   if (headerAnimeImg.classList.contains("hidden")) {
     headerAnimeImg.classList.remove("hidden");
@@ -93,6 +118,11 @@ headerImg.addEventListener("click", () => {
     headerAnimeImg.classList.add("hidden");
     headerRealImg.classList.remove("hidden");
   }
+}
+  
+headerImg.addEventListener("click", () => {
+  // Añadir giro
+  rotateImage();
 });
 
 
@@ -130,13 +160,9 @@ function typeText() {
           setTimeout(() => {
             mainContent.style.display = "block";
             introScreen.style.display = "none";
-            headerAnimeImg.classList.add("rotate");
-            headerRealImg.classList.remove("hidden");
-            headerRealImg.classList.add("rotate");
-            headerRealImg.classList.add("hidden");
-            headerAnimeImg.style.animation = "rotateImage 0.5s forwards";
-            headerRealImg.style.animation = "rotateImage 0.5s forwards";
-            
+            stopBtn.classList.remove("opacity-0"); 
+            rotateImage();
+            rotateImage();
           }, 7200);
         }, 2000);
       }, 2000);
@@ -210,9 +236,9 @@ emailTab.addEventListener('click', () => {
   whatsappForm.classList.add('hidden');
   telegramForm.classList.add('hidden');
   emailTab.classList.remove('bg-black', 'border-l-2');
-  emailTab.classList.add('bg-stone-500', 'animate-colorSlow');
-  whatsappTab.classList.remove('bg-stone-500', 'animate-colorSlow');
-  telegramTab.classList.remove('bg-stone-500', 'animate-colorSlow', 'border-l-2');
+  emailTab.classList.add('bg-stone-600', 'animate-colorSlow');
+  whatsappTab.classList.remove('bg-stone-600', 'animate-colorSlow');
+  telegramTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-l-2');
   telegramTab.classList.add('border-r-2');
   whatsappTab.classList.add('bg-black');
 });
@@ -221,11 +247,11 @@ whatsappTab.addEventListener('click', () => {
   whatsappForm.classList.remove('hidden');
   emailForm.classList.add('hidden');
   telegramForm.classList.add('hidden');
-  whatsappTab.classList.remove('bg-stone-500', 'border-l-2');
-  whatsappTab.classList.add('bg-stone-500', 'animate-colorSlow');
-  emailTab.classList.remove('bg-stone-500', 'animate-colorSlow');
+  whatsappTab.classList.remove('bg-stone-600', 'border-l-2');
+  whatsappTab.classList.add('bg-stone-600', 'animate-colorSlow');
+  emailTab.classList.remove('bg-stone-600', 'animate-colorSlow');
   telegramTab.classList.add('border-l-2');
-  telegramTab.classList.remove('bg-stone-500', 'animate-colorSlow', 'border-r-2');
+  telegramTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-r-2');
   emailTab.classList.add('bg-black','border-l-2');
 });
 
@@ -234,18 +260,20 @@ telegramTab.addEventListener('click', () => {
   whatsappForm.classList.add('hidden');
   emailForm.classList.add('hidden');
   telegramTab.classList.remove('bg-black', 'border-l-2');
-  telegramTab.classList.add('bg-stone-500', 'animate-colorSlow');
-  whatsappTab.classList.remove('bg-stone-500', 'animate-colorSlow', 'border-l-2');
-  emailTab.classList.remove('bg-stone-500', 'animate-colorSlow');
+  telegramTab.classList.add('bg-stone-600', 'animate-colorSlow');
+  whatsappTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-l-2');
+  emailTab.classList.remove('bg-stone-600', 'animate-colorSlow');
   emailTab.classList.add('bg-black', 'border-l-2');
   
 });
 // Animación CV - Contrata mis servicios hoy misme
 function startAnimation() {
   subtitle.classList.add("animate-blinkAndBounce");
+  // donationTitle.classList.add("animate-blinkAndBounce");
 
   setTimeout(() => {
     subtitle.classList.remove("animate-blinkAndBounce");
+    // donationTitle.classList.remove("animate-blinkAndBounce");
   }, 4000);
   setTimeout(startAnimation, 9999);
 }
@@ -265,7 +293,7 @@ const loadTranslations = async (lang) => {
 const applyTranslations = (translations) => {
   // Principal
   document.getElementById("header-subtitle").innerHTML = translations.header.subtitle;
-  document.getElementById("about-heading").textContent = translations.about.heading;
+  document.getElementById("about-heading").innerHTML = translations.about.heading;
   document.getElementById("about-description").innerHTML = translations.about.description;
   // Proyectos
   const showElements = document.querySelectorAll(".show");
@@ -294,6 +322,19 @@ const applyTranslations = (translations) => {
       if (translations.form[name]) {
         input.placeholder = translations.form[name]; 
       }
+      // Donations 
+      document.getElementById('donation-title').innerHTML = translations.donations.title;
+      document.getElementById('donate-with').innerHTML = translations.donations.text;
+      document.getElementById('coffee').innerHTML = translations.donations.button;
+      document.getElementById('btext').innerHTML = translations.donations.btext;
+      // Terminal
+       document.getElementById('t-text').innerHTML = translations.terminal.title;
+       document.getElementById('t-text1').innerHTML = translations.terminal.txt;
+       document.getElementById('t-text2').innerHTML = translations.terminal.txt1;
+       document.getElementById('t-text3').innerHTML = translations.terminal.txt2;
+       document.getElementById('t-text4').innerHTML = translations.terminal.txt3;
+       document.getElementById('comments-title').innerHTML = translations.terminal.txt4;
+  
     });
     const submitButton = form.querySelector("button[type='submit']");
       if (submitButton) {
@@ -304,7 +345,7 @@ const applyTranslations = (translations) => {
 };
 
 const langButtons = document.querySelectorAll('.lang-btn');
-const activeClass = 'animate-spin';
+const activeClass = 'animate-pulse';
 
 document.getElementById('lang-switch-es').classList.add(activeClass);
 langButtons.forEach(button => {
@@ -353,7 +394,21 @@ document.getElementById('lang-switch-en').onclick = function() {
 
 document.getElementById('lang-switch-es').onclick = function() {
   changeCVLang('es');
-};
-
+  };
+  
+  VANTA.TOPOLOGY({
+  el: "#html",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.30,
+  scaleMobile: 1.20,
+  color: 0x9f7a8f,
+  /*color: 0x9f8898,*/
+  backgroundColor: 0x18181B
+})
+  
 
 });
