@@ -11,6 +11,9 @@ const headerContent = document.getElementById("header-content");
 const coffee = document.getElementById('coffee');
 const coffeeImg = document.getElementById('coffee-img');
 const name = document.getElementById('name');
+const socialBts = document.getElementById('social-bts');
+
+    
 
 /**
  * Muestra el modal de donaciones al hacer clic en el botón de donación.
@@ -84,35 +87,5 @@ copyBtcBtn.addEventListener("click", () => {
         alert("Fallo al copiar la dirección. Por favor inténtalo de nuevo."); 
       });
 });
-
-function updateLayout() {
-    if (window.innerWidth <= 820) {
-        headerContent.classList.remove('flex');
-        headerContent.classList.add('grid');
-        donateBtn.classList.add('mx-auto');
-        coffee.classList.add('hidden');
-        coffeeImg.classList.add('mt-3');
-    } else {
-        headerContent.classList.remove('grid');
-        headerContent.classList.add('flex');
-        donateBtn.classList.remove('mx-auto');
-        donateBtn.classList.add('mx-3');
-        coffee.classList.remove('hidden');
-        coffeeImg.classList.remove('mt-3');
-        
-    }
-    }
-    function updateName() {
-        if (window.innerWidth <= 680) {
-            name.textContent = 'Alba T.B.';
-        } else {
-            name.textContent = 'Alba Tolosa Bonora';
-        }
-    }
-    window.addEventListener('resize', function () {
-        updateLayout(); updateName();
-    });
-
-    updateLayout();
-    updateName();
 });
+

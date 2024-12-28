@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" id="html">
   <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -31,9 +31,11 @@
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
   </audio>
+
 </head>
 
-<body class="bg-zinc-900 text-gray-100 font-poppins">
+<body id="body" class="bg-zinc-900 text-gray-100 font-poppins z-50 h-full">
+   <!-- <div id="background" style="height:100vh"> -->
 
   <div id="preloader" class="fixed top-0 left-0 w-full h-full bg-black flex justify-center items-center z-50">
     <div class="animate-spin w-14 h-14 border-4 border-t-rose-500 border-gray-700 rounded-full"></div>
@@ -42,37 +44,37 @@
   <!-- Presentación -->
   <div id="intro-content" class="hidden">
   <div id="intro-screen" class="intro-screen">
-    <button id="skip-btn" class="skip-btn  text-white text-sm bg-zinc-800 hover:bg-zinc-700 p-2 rounded-full absolute bottom-4 right-4">
-      <p class="flex"> Skip &nbsp;
-        <svg version="1.1" width="20px" height="20px" id="designs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .sketchy_een{fill:#ffffff;} </style> <path class="sketchy_een" d="M29.998,16.648c0.004-0.073,0.002-0.143-0.015-0.213c-0.004-0.024,0.001-0.048-0.005-0.071 c-0.012-0.043-0.038-0.071-0.056-0.107c-0.006-0.012-0.006-0.025-0.013-0.037c-0.004-0.007-0.012-0.011-0.016-0.019 c-0.065-0.105-0.146-0.194-0.252-0.276c-0.229-0.173-0.457-0.345-0.687-0.516c-0.575-0.451-1.11-0.942-1.645-1.437 c-0.58-0.538-1.191-1.039-1.798-1.545c-0.605-0.504-1.233-0.984-1.834-1.492c-0.623-0.528-1.235-1.068-1.842-1.616 c-0.56-0.506-1.11-1.03-1.697-1.505c-0.646-0.522-1.307-1.022-1.971-1.522c-0.636-0.501-1.261-1.015-1.878-1.539 c-0.169-0.141-0.341-0.234-0.568-0.234c-0.21,0-0.417,0.085-0.566,0.234c-0.149,0.149-0.234,0.356-0.234,0.566 c0,0.128,0.046,0.264,0.112,0.387c-0.124,0.147-0.208,0.329-0.208,0.532c0.006,1.479-0.006,2.958-0.03,4.436 c-0.012,0.651-0.01,1.3-0.006,1.953c0.003,0.392,0.011,0.785,0.014,1.178c-0.689-0.514-1.376-1.03-2.06-1.554 c-0.683-0.54-1.352-1.1-2.037-1.638c-0.673-0.528-1.346-1.054-1.999-1.61c-0.705-0.599-1.391-1.221-2.114-1.8 C5.899,6.646,5.212,6.078,4.51,5.53C4.202,5.292,3.896,5.054,3.589,4.818c-0.111-0.085-0.27-0.119-0.422-0.119 c-0.088,0-0.174,0.012-0.247,0.032C2.701,4.79,2.515,4.935,2.4,5.129c-0.035,0.06-0.047,0.129-0.066,0.195 C2.202,5.473,2.116,5.665,2.106,5.878C1.965,9.369,2.005,12.865,2.005,16.36c0,1.61-0.002,3.222,0.018,4.832 c0.012,0.818,0.018,1.638,0.016,2.455c-0.002,0.776-0.02,1.554-0.014,2.33c0.004,0.419,0.333,0.761,0.744,0.798 c0.067,0.042,0.134,0.085,0.211,0.106c0.197,0.053,0.465,0.042,0.635-0.084c0.748-0.542,1.495-1.084,2.245-1.62 c0.703-0.504,1.38-1.038,2.084-1.536c1.411-1,2.884-1.905,4.295-2.902c0.735-0.518,1.467-1.039,2.211-1.544 c-0.051,1.055-0.085,2.11-0.101,3.166c-0.02,1.251-0.038,2.499-0.038,3.749c0,0.272,0.146,0.503,0.354,0.653 c0.01,0.114,0.039,0.227,0.098,0.326c0.202,0.347,0.717,0.522,1.068,0.28c1.344-0.923,2.658-1.888,3.968-2.856 c0.619-0.456,1.243-0.905,1.864-1.36c0.637-0.469,1.264-0.949,1.906-1.413c1.034-0.748,2.062-1.507,3.083-2.273 c0.482-0.362,0.965-0.725,1.449-1.084c0.23-0.17,0.457-0.347,0.691-0.516c0.28-0.203,0.568-0.397,0.844-0.605 c0.167-0.123,0.294-0.246,0.351-0.455c0.013-0.049,0.007-0.099,0.01-0.149C29.998,16.654,29.998,16.651,29.998,16.648z M12.004,18.843c-1.386,0.989-2.787,1.951-4.202,2.898C6.97,22.299,6.19,22.923,5.388,23.52c-0.574,0.428-1.162,0.839-1.749,1.251 c-0.007-1.194-0.013-2.387-0.028-3.579c-0.018-1.61-0.008-3.222-0.006-4.832c0.004-1.671,0.006-3.343,0.004-5.014 c0-1.421,0.05-2.839,0.11-4.256C4.31,7.551,4.902,8.011,5.486,8.48c0.703,0.564,1.358,1.181,2.042,1.765 c0.661,0.562,1.334,1.108,2.013,1.646c0.703,0.557,1.386,1.143,2.094,1.693c1.002,0.777,2.025,1.525,3.032,2.296 c0.244,0.191,0.484,0.386,0.726,0.58c-0.108,0.078-0.213,0.16-0.325,0.235c-0.341,0.23-0.679,0.466-1.014,0.706 C13.376,17.887,12.685,18.359,12.004,18.843z M25.18,18.716c-1.251,0.945-2.513,1.872-3.779,2.792 c-1.012,0.739-2.033,1.465-3.045,2.206c-0.788,0.575-1.598,1.122-2.404,1.673c0.004-1.008,0.008-2.017,0.016-3.027 c0.006-0.623,0.006-1.246,0.03-1.87c0.028-0.707,0.083-1.411,0.129-2.118c0.006-0.102-0.016-0.199-0.052-0.29 c0.301-0.207,0.6-0.417,0.903-0.623c0.193-0.131,0.337-0.292,0.401-0.522c0.008-0.03,0.001-0.061,0.006-0.091 c0.097-0.144,0.165-0.307,0.165-0.483c0-0.157-0.042-0.306-0.121-0.443c-0.077-0.131-0.183-0.236-0.314-0.316 c-0.076-0.058-0.153-0.116-0.229-0.173c-0.147-0.116-0.292-0.235-0.438-0.354c0.044-0.102,0.067-0.213,0.063-0.329 c-0.024-0.699-0.018-1.399-0.032-2.098c-0.012-0.659-0.022-1.318-0.024-1.977c-0.003-1.238,0.033-2.476,0.049-3.714 c0.2,0.155,0.393,0.32,0.595,0.473c0.54,0.405,1.09,0.796,1.631,1.202c1.227,0.986,2.356,2.089,3.56,3.103 c1.237,1.043,2.527,2.021,3.744,3.089c0.431,0.379,0.846,0.776,1.284,1.147c0.239,0.201,0.486,0.392,0.734,0.581 c-0.352,0.261-0.704,0.522-1.053,0.786C26.393,17.797,25.788,18.258,25.18,18.716z"></path> </g></svg>
+    <button id="skip-btn" class="skip-btn opacity-0 bg-zinc-700 hover:bg-zinc-700 p-3 rounded-full absolute bottom-4 right-4 hover:scale-110">
+      <p class="flex hover:animate-flash" > Skip &nbsp;
+        <svg version="1.1" width="25px" height="25px" id="designs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .sketchy_een{fill:#ffffff;} </style> <path class="sketchy_een" d="M29.998,16.648c0.004-0.073,0.002-0.143-0.015-0.213c-0.004-0.024,0.001-0.048-0.005-0.071 c-0.012-0.043-0.038-0.071-0.056-0.107c-0.006-0.012-0.006-0.025-0.013-0.037c-0.004-0.007-0.012-0.011-0.016-0.019 c-0.065-0.105-0.146-0.194-0.252-0.276c-0.229-0.173-0.457-0.345-0.687-0.516c-0.575-0.451-1.11-0.942-1.645-1.437 c-0.58-0.538-1.191-1.039-1.798-1.545c-0.605-0.504-1.233-0.984-1.834-1.492c-0.623-0.528-1.235-1.068-1.842-1.616 c-0.56-0.506-1.11-1.03-1.697-1.505c-0.646-0.522-1.307-1.022-1.971-1.522c-0.636-0.501-1.261-1.015-1.878-1.539 c-0.169-0.141-0.341-0.234-0.568-0.234c-0.21,0-0.417,0.085-0.566,0.234c-0.149,0.149-0.234,0.356-0.234,0.566 c0,0.128,0.046,0.264,0.112,0.387c-0.124,0.147-0.208,0.329-0.208,0.532c0.006,1.479-0.006,2.958-0.03,4.436 c-0.012,0.651-0.01,1.3-0.006,1.953c0.003,0.392,0.011,0.785,0.014,1.178c-0.689-0.514-1.376-1.03-2.06-1.554 c-0.683-0.54-1.352-1.1-2.037-1.638c-0.673-0.528-1.346-1.054-1.999-1.61c-0.705-0.599-1.391-1.221-2.114-1.8 C5.899,6.646,5.212,6.078,4.51,5.53C4.202,5.292,3.896,5.054,3.589,4.818c-0.111-0.085-0.27-0.119-0.422-0.119 c-0.088,0-0.174,0.012-0.247,0.032C2.701,4.79,2.515,4.935,2.4,5.129c-0.035,0.06-0.047,0.129-0.066,0.195 C2.202,5.473,2.116,5.665,2.106,5.878C1.965,9.369,2.005,12.865,2.005,16.36c0,1.61-0.002,3.222,0.018,4.832 c0.012,0.818,0.018,1.638,0.016,2.455c-0.002,0.776-0.02,1.554-0.014,2.33c0.004,0.419,0.333,0.761,0.744,0.798 c0.067,0.042,0.134,0.085,0.211,0.106c0.197,0.053,0.465,0.042,0.635-0.084c0.748-0.542,1.495-1.084,2.245-1.62 c0.703-0.504,1.38-1.038,2.084-1.536c1.411-1,2.884-1.905,4.295-2.902c0.735-0.518,1.467-1.039,2.211-1.544 c-0.051,1.055-0.085,2.11-0.101,3.166c-0.02,1.251-0.038,2.499-0.038,3.749c0,0.272,0.146,0.503,0.354,0.653 c0.01,0.114,0.039,0.227,0.098,0.326c0.202,0.347,0.717,0.522,1.068,0.28c1.344-0.923,2.658-1.888,3.968-2.856 c0.619-0.456,1.243-0.905,1.864-1.36c0.637-0.469,1.264-0.949,1.906-1.413c1.034-0.748,2.062-1.507,3.083-2.273 c0.482-0.362,0.965-0.725,1.449-1.084c0.23-0.17,0.457-0.347,0.691-0.516c0.28-0.203,0.568-0.397,0.844-0.605 c0.167-0.123,0.294-0.246,0.351-0.455c0.013-0.049,0.007-0.099,0.01-0.149C29.998,16.654,29.998,16.651,29.998,16.648z M12.004,18.843c-1.386,0.989-2.787,1.951-4.202,2.898C6.97,22.299,6.19,22.923,5.388,23.52c-0.574,0.428-1.162,0.839-1.749,1.251 c-0.007-1.194-0.013-2.387-0.028-3.579c-0.018-1.61-0.008-3.222-0.006-4.832c0.004-1.671,0.006-3.343,0.004-5.014 c0-1.421,0.05-2.839,0.11-4.256C4.31,7.551,4.902,8.011,5.486,8.48c0.703,0.564,1.358,1.181,2.042,1.765 c0.661,0.562,1.334,1.108,2.013,1.646c0.703,0.557,1.386,1.143,2.094,1.693c1.002,0.777,2.025,1.525,3.032,2.296 c0.244,0.191,0.484,0.386,0.726,0.58c-0.108,0.078-0.213,0.16-0.325,0.235c-0.341,0.23-0.679,0.466-1.014,0.706 C13.376,17.887,12.685,18.359,12.004,18.843z M25.18,18.716c-1.251,0.945-2.513,1.872-3.779,2.792 c-1.012,0.739-2.033,1.465-3.045,2.206c-0.788,0.575-1.598,1.122-2.404,1.673c0.004-1.008,0.008-2.017,0.016-3.027 c0.006-0.623,0.006-1.246,0.03-1.87c0.028-0.707,0.083-1.411,0.129-2.118c0.006-0.102-0.016-0.199-0.052-0.29 c0.301-0.207,0.6-0.417,0.903-0.623c0.193-0.131,0.337-0.292,0.401-0.522c0.008-0.03,0.001-0.061,0.006-0.091 c0.097-0.144,0.165-0.307,0.165-0.483c0-0.157-0.042-0.306-0.121-0.443c-0.077-0.131-0.183-0.236-0.314-0.316 c-0.076-0.058-0.153-0.116-0.229-0.173c-0.147-0.116-0.292-0.235-0.438-0.354c0.044-0.102,0.067-0.213,0.063-0.329 c-0.024-0.699-0.018-1.399-0.032-2.098c-0.012-0.659-0.022-1.318-0.024-1.977c-0.003-1.238,0.033-2.476,0.049-3.714 c0.2,0.155,0.393,0.32,0.595,0.473c0.54,0.405,1.09,0.796,1.631,1.202c1.227,0.986,2.356,2.089,3.56,3.103 c1.237,1.043,2.527,2.021,3.744,3.089c0.431,0.379,0.846,0.776,1.284,1.147c0.239,0.201,0.486,0.392,0.734,0.581 c-0.352,0.261-0.704,0.522-1.053,0.786C26.393,17.797,25.788,18.258,25.18,18.716z"></path> </g></svg>
       </p>
     </button>
-    <button id="start-btn" class="start-btn rounded-full bg-rose-500 text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-ping">
+    <button id="start-btn" class="start-btn rounded-full bg-rose-500 hover:bg-zinc-800 hover:border-2 border-rose-500 hover:text-rose-500 hover:text-xl text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-shake">
       <img src="img/ico/play.png" alt="play!">
-      <span>¡Bienvenido! <br>❤ Welcome!</span>
+      <span class="font-mono">¡Bienvenid@! <br>❤ Welcome!</span>
     </button>
   
     <p id="intro-text" class="intro-text "></p>
     <div id="profile" class="profile-container">
       <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img" >
-      <img src="./img/yo.webp" alt="Real Profile" class="profile-img real-img hidden">
+      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden">
     </div>
      
     </div>
   </div> 
 
-  <button id="stopAudioBtn" class="fixed hidden bottom-4 left-4 text-white p-2 rounded-full bg-transparent shadow-lg hover:scale-125 z-50">
-    <img src="img/ico/stop.png" alt="stop" class=" w-25 h-25">
+  <button id="stopAudioBtn" class="fixed opacity-0 bottom-4 right-4 text-white p-2 rounded-full bg-transparent animate-tadaTwo hover:animate-none hover:scale-125 z-50">
+    <img src="img/ico/stop.png" alt="stop" class="shadow-lg w-25 h-25 rounded-full">
   </button>
 
   <div id="main-content" class="main-content">
     <div id="header-wrapper" class="header-wrapper relative">
       <div id="header-img" class="header-container bg-zinc-950 ">
-        <img src="./img/nusky.webp" alt="Anime Profile" id="perf" class="head-img header-anime-img cursor-pointer hover:scale-110 transition-transform ease-in-out">
-        <img src="./img/yo.webp" alt="Real Profile" id="perf1" class="head-img header-real-img hidden cursor-pointer hover:scale-110 transition-transform ease-in-out">
+        <img src="./img/nusky.webp" alt="Anime Profile" id="perf" class="head-img header-anime-img border-b-4 border-r-3 border-rose-300 cursor-pointer hover:scale-110 transition-transform ease-in-out">
+        <img src="./img/yo2.webp" alt="Real Profile" id="perf1" class="head-img header-real-img border-b-4 border-r-3 border-rose-400 hidden cursor-pointer hover:scale-110 transition-transform ease-in-out">
       </div>
   
-      <div class="social flex -top-0.5">
+      <div id="social-bts" class="social flex top-3 ml-7">
         <a href="https://github.com/Nusky7" target="_blank">
           <img src="img/git3.webp" alt="GitHub" class="social-img w-20 h-20 social-img-g hover:scale-110 hover:animate-flash transition-transform ease-in-out"> 
         </a>
@@ -83,13 +85,13 @@
     </div> 
   </div>
 
-  <header class="pb-3 text-white text-center">
-    <div id="header-content" class="flex justify-center">
+  <header id="header" class="pb-3 text-white text-center">
+    <div id="header-content" class="flex justify-center z-50">
       <h1 id="name" class="font-bold inline-block text-rose-200 font-pix animate-glowText hover:animate-colorSlow mr-3">
         Alba Tolosa Bonora
       </h1>
-      <button id="donateBtn" class="relative group hover:scale-110">
-        <img width="55px" height="55px" src="img/coffee.png" alt="Donations" id="coffee-img" class=" ml-2 animate-borderGlow hover:animate-flash hover:border-none border-1 p-1 border-rose-300"/>
+      <button id="donateBtn" class="relative group hover:scale-110 ">
+        <img width="55px" height="55px" src="img/coffee.png" alt="Donations" id="coffee-img" class="bg-zinc-900 hover:bg-transparent ml-2 animate-borderGlow hover:animate-flash hover:border-none border-1 p-1 border-rose-300"/>
         
         <!-- El texto que aparece con el hover -->
         <span  id="coffee" class="font-mono text-sm coffee-btn absolute block mt-2 text-rose-100 font-semibold py-1 rounded opacity-0 group-hover:opacity-100 group-hover:left[170px] transition-all duration-300">
@@ -101,12 +103,12 @@
   </header>
   
   <main class="p-1 text-center">
-    <p id="header-subtitle" class="text-x0">FrontEnd Lover ❤ FullStack Developer</p>
+    <p id="header-subtitle" class="text-x0 drop-shadow">FrontEnd Lover ❤ FullStack Developer</p>
     <div class="lang bg-black flex justify-center space-x-3 mt-4">
-      <button id="lang-switch-es" data-lang="es" class="lang-btn active-lang p-1" onclick="changeCVLang('es')">
+      <button id="lang-switch-es" data-lang="es" class="lang-btn active-lang p-1 hover:animate-spin" onclick="changeCVLang('es') ">
         <img src="img/es.webp" alt="es" class="w-full h-7"> 
       </button>
-      <button id="lang-switch-en" data-lang="en" class="lang-btn p-1" onclick="changeCVLang('en')">
+      <button id="lang-switch-en" data-lang="en" class="lang-btn p-1 hover:animate-spin " onclick="changeCVLang('en')">
         <img src="img/en.webp" alt="en" class="w-full h-7">
       </button>
     </div>
@@ -114,28 +116,29 @@
   </main>
 
   <!-- Modal de opciones de donación -->
-        <div id="donationModal" class="fixed flex hidden inset-0 bg-stone-900 bg-opacity-60 justify-center items-center z-50">
+        <div id="donationModal" class="fixed flex hidden inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
           <div class="bg-neutral-800 p-7 rounded-lg w-90">
-            <div class="w-full flex scpace-between">
-              <h2 class="text-xl font-bold mb-4 text-slate-200">Elige tu opción de donación</h2>
-              <button id="closeModal" class="ml-5 w-6 h-8 hover:animate-spin">❌</button>
+            <div class="w-full flex items-center align-middle justify-between">
+              <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-xl animate-glowText inline-block font-orbi">☕ Elige cómo donar</h2>
+              <button id="closeModal" class="w-8 h-8 mb-4 hover:animate-spin hover:bg-transparent rounded-lg bg-rose-500 bg-opacity-20">❌</button>
             </div>
 
             <div class="flex items-center justify-between pr-2">
             <div>
-              <button id="paypalBtn" class="w-20 bg-blue-600 hover:bg-blue-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">PayPal</button>
-              <button id="stripeBtn" class="w-20 bg-purple-600 hover:bg-purple-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">Stripe</button>
-              <button id="kofiBtn" class="w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 text-white block">Ko-fi</button>
-              <button id="copyBtcBtn" class="w-20 text-orange-300 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold px-2 py-2 rounded mb-2 block">
+              <button id="paypalBtn" class="btn-donate-modal w-20 bg-blue-600 hover:bg-blue-500 hover:scale-110 font-semibold text-md">PayPal</button>
+              <button id="stripeBtn" class="btn-donate-modal w-20 bg-purple-600 hover:bg-purple-500 hover:scale-110 font-semibold text-md">Stripe</button>
+              <button id="kofiBtn" class="btn-donate-modal w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold text-md">Ko-fi</button>
+              <button id="copyBtcBtn" class="btn-donate-modal w-20 text-orange-00 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold text-md">
               <div class="flex">
                 <img src="./img/ico/bitcoin.png" alt="btc" width="20px" height="auto" class="mx-auto">
               </div>
-              Copiar
+             <span id="btext">Copiar</span> 
             </button>
             </div>
-            <!-- Código QR de Bitcoin -->
+           <!-- Código QR de Bitcoin -->
             <div id="btcQrCode" class="mt-0 pl-6 mb-4">
-              <h3 class="font-bold mb-2 font-sans text-center ">Donar con <span class="font-pike text-orange-300 font-pix">Bitcoin</span></h3>
+              <h3 class="font-semibold mb-2 text-center font-mono text-sm"><span id="donate-with">Donar con</span> <span class="font-pix text-orange-400">Bitcoin</span></h3>
+              <!-- <h3 class="font-pix text-orange-300 text-center">Bitcoin</h3> -->
               <!-- Generar QR de la dirección BTC -->
               <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
             </div>
@@ -147,7 +150,7 @@
 
   <section id="about" class="bg-zinc-950 p-8">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 id="about-heading" class="text-3xl font-bold mb-4 text-rose-100 font-pixel p-3"><span>Sobre mí</span>
+      <h2 id="about-heading" class="text-xl font-bold mb-4 text-rose-100 font-gba p-3"><span>Sobre mí</span>
         <i class="fas fa-heart text-rose-300"></i>
       </h2>
       <p id="about-description" class="text-lg leading-7 text-gray-200 font-mono">
@@ -169,11 +172,11 @@
 
   <section id="projects" class="p-8">
     <div class="max-w-6xl mx-auto">
-      <h2 id="project-title" class="text-3xl font-bold mb-8 text-rose-200 text-center font-pixel p-3">Proyectos</h2>
+      <h2 id="project-title" class="text-xl font-bold mb-8 text-rose-200 text-center font-gba p-3">Proyectos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
         <!-- Trabajando... -->
-        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center animate-pulse hover:animate-none">
+        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center">
           <img src="./img/ns4.webp" alt="Project 1" width="100%" height="auto" class="rounded-md mb-4">
           <h3 class=" text-xl font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
           <div class=" flex space-x-4 mx-0 justify-center">            
@@ -200,13 +203,20 @@
           <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">N7Tools ❤
           </p> 
           <div class="flex mt-auto">
-          <button type="button" class="bg-neutral-800 hover:bg-neutral-700 w-full text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded animate-pulse mt-auto mx-3 mb-3 ">
+          <!-- <button type="button" class="bg-neutral-800 hover:bg-neutral-700 w-full text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded animate-pulse mt-auto mx-3 mb-3 ">
             <a href="https://github.com/Nusky7/conversionTool" target="_blank" 
             class="show block text-white hover:text-rose-200 hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
-          </button>
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
+          </button> -->
+           <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
+           
+          <!-- <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
             <a href="https://www.nusky7studio.es/N7Tools/index.html" target="_blank" 
             class="text-white block text-xl">🌐</a>
+          </button> -->
+          
+          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
+            <a href="https://www.nusky7studio.es/N7Tools/index.html" target="_blank" 
+            class="text-white block hover:animate-colorCycle hover:text-lg">Preview 👀</a>
           </button>
           </div>
         </div> 
@@ -318,7 +328,7 @@
 
   <section id="skills" class="bg-zinc-950 py-8">
   <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl font-bold text-rose-300 text-center font-pixel mb-8 p-3">Stack</h2>
+    <h2 class="text-xl font-bold text-rose-300 text-center font-gba mb-8 p-3">Stack</h2>
     <div class="flex flex-wrap justify-center gap-8">
       <div class="relative group text-center">
         <img src="img/ico/html.webp" alt="HTML" class="stack hover:animate-bounce">
@@ -369,7 +379,7 @@
   </section>
 
 
-  <div class="audio-player grid-flow-col w-full p-8 rounded-lg shadow-xl grid gap-4">    
+  <div id="audio-player" class="audio-player grid-flow-col w-full p-8 rounded-lg shadow-xl grid gap-4">    
     <div class="grid ">
       <div class="player-screen mb-0 pb-6 w-120 h-64 bg-black rounded-lg flex items-center justify-center overflow-hidden">
         <div class="grid w-full">
@@ -385,7 +395,7 @@
       Tu navegador no soporta nah...
     </audio>
   </div>
-  <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-base">
+  <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-base bg-zinc-950 bg-opacity-50 rounded-lg">
     <p class="text-xl text-center text-violet-300 font-pixround animate-glowText bg-black w-full rounded-lg p-4">ELECTRO 🎧 SYNTH </p>
     <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-red-500 rounded-lg hover:bg-red-400 hover:animate-shake font-orbi">LOWX ❤ Crystal Dreams</button>
     <hr class="border-zinc-950">
@@ -430,21 +440,177 @@
   </div>
   
 
-  <div class="action-panel bg-zinc-950 text-white p-8 rounded-lg shadow-lg text-center">
-    <h3 id="panel-title" class="text-3xl font-pix mb-3 text-rose-400 animate-colorSlow">¿Te gusta mi trabajo?</h3>
+  <div class="action-panel bg-zinc-950 text-white p-8 rounded-t shadow-lg text-center">
+    <h3 id="panel-title" class="text-2xl font-pix mb-3 text-rose-400 animate-colorSlow">¿Te gusta mi trabajo?</h3>
     <p id="panel-subtitle" class="text-orange-200 text-xl mb-2 font-pixround">¿Necesitas tu propia Web?</p>
     <p id="panel-text" class="mb-8">Descarga mi CV para más detalles o contáctame directamente.</p>
     <button id="download-cv"
-      class="btn-download px-4 py-2 text-black bg-orange-400 rounded-lg hover:animate-tada hover:scale-110 hover:bg-violet-400 inline-flex items-center">
+      class="btn-download px-4 py-2 text-black bg-orange-400 rounded-lg hover:animate-tadaTwo hover:scale-110 hover:bg-violet-400 inline-flex items-center">
       <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg> 
       <span id="button-text">Descargar CV</span>
     </button>
   </div>
   
+
+  <!-- Seccion comentarios y recursosTV -->
+  <div id="comments-section" class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 shadow-xl bg-black bg-opacity-50">
+  <div id="monitor" class="flex flex-col">
+    <!-- Monitor Screen -->
+    <div id="monitorscreen" class="h-full grid p-0.5 mt-1 max-h-[400px] min-h-[400px] overflow-auto scrollbar-hide">
+      <div id="screen-list" class="monitor-frame relative w-full h-full overflow-y-auto scrollbar-hide">
+        <h2 class="text-base font-semibold mb-2 text-emerald-300">
+          Nusky7Studio.es [Version 2.0.22631]<br>
+          (c) N7Studio Corporation. All Rights Reserved.<br><br>
+
+          @Nusky7> <span class="animate-flashSlow">█</span>
+        </h2>
+        <h2 id="t-text" class="text-xl text-center font-semibold mb-3 mt-3 divide-y divide-dashed">### RESOURCES ###</h2>
+        <div class="grid gap-6 max-h-[400px] ">
+          <!-- Frameworks Section -->
+          <section>
+            <h2 class="text-lg font-semibold border-b border-emerald-700 divide-y divide-dashed mb-2"># Frameworks</h2>
+            <ul class="list-disc pl-5">
+              <li><a href="https://angular.io/" class="text-emerald-400 hover:underline" target="_blank">Angular</a></li>
+              <li><a href="https://nodejs.org/" class="text-emerald-400 hover:underline" target="_blank">Node.js</a></li>
+              <li><a href="https://expressjs.com/" class="text-emerald-400 hover:underline" target="_blank">Express.js</a></li>
+            </ul>
+          </section>
+
+          <!-- Libraries Section -->
+          <section>
+            <h2 id="t-text1" class="text-lg font-semibold border-b border-emerald-700 mb-2"># Libraries</h2>
+            <ul class="list-disc pl-5">
+              <li><a href="https://getbootstrap.com/" class="text-emerald-400 hover:underline" target="_blank">Bootstrap</a></li>
+              <li><a href="https://tailwindcss.com/" class="text-emerald-400 hover:underline" target="_blank">Tailwind CSS</a></li>
+              <li><a href="https://axios-http.com/" class="text-emerald-400 hover:underline" target="_blank">Axios</a></li>
+              <li><a href="https://wavesurfer-js.org/" class="text-emerald-400 hover:underline" target="_blank">Wave.js</a></li>
+              <li><a href="https://www.vantajs.com/" class="text-emerald-400 hover:underline" target="_blank">Vanta.js</a></li>
+            </ul>
+          </section>
+
+          <!-- Tools Section -->
+          <section>
+            <h2 id="t-text2" class="text-lg font-semibold border-b border-emerald-700 mb-2"># Tools</h2>
+            <ul class="list-disc pl-5">
+              <li><a href="https://git-scm.com/" class="text-emerald-400 hover:underline" target="_blank">Git</a></li>
+              <li><a href="https://code.visualstudio.com/" class="text-emerald-400 hover:underline" target="_blank">VS Code</a></li>
+              <li><a href="https://www.thunderclient.com/" class="text-emerald-400 hover:underline" target="_blank">Thunder Client</a></li>
+              <li><a href="https://ffmpeg.org/" class="text-emerald-400 hover:underline" target="_blank">FFmpeg</a></li>
+              <li><a href="https://github.com/yt-dl/yt-dl-exec" class="text-emerald-400 hover:underline" target="_blank">youtube-dl-exec</a></li>
+              <li><a href="https://render.com/" class="text-emerald-400 hover:underline" target="_blank">Render</a></li>
+              <li><a href="https://www.mongodb.com/atlas/database" class="text-emerald-400 hover:underline" target="_blank">MongoDB Atlas</a></li>
+              <li><a href="https://www.openstreetmap.org/" class="text-emerald-400 hover:underline" target="_blank">OpenStreetMap</a></li>
+            </ul>
+          </section>
+
+          <!-- Documentation Section -->
+          <section>
+            <h2 id="t-text3" class="text-lg font-semibold border-b border-emerald-700 mb-2"># Documentation</h2>
+            <ul class="list-disc pl-5">
+              <!-- JavaScript -->
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" class="text-emerald-400 hover:underline" target="_blank">JavaScript Docs</a></li>
+              <li><a href="https://www.ecma-international.org/publications/standards/Ecma-262.htm" class="text-emerald-400 hover:underline" target="_blank">ECMAScript Docs</a></li>
+
+              <!-- CSS -->
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS" class="text-emerald-400 hover:underline" target="_blank">CSS Docs</a></li>
+              <li><a href="https://www.w3.org/TR/CSS/" class="text-emerald-400 hover:underline" target="_blank">CSS Spec</a></li>
+
+              <!-- HTML -->
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" class="text-emerald-400 hover:underline" target="_blank">HTML Docs</a></li>
+              <li><a href="https://www.w3.org/TR/html52/" class="text-emerald-400 hover:underline" target="_blank">HTML5 Spec</a></li>
+
+              <!-- Miscellaneous -->
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/API" class="text-emerald-400 hover:underline" target="_blank">Web APIs Docs</a></li>
+              <li><a href="https://developer.mozilla.org/en-US/docs/Web/Performance" class="text-emerald-400 hover:underline" target="_blank">Web Performance Docs</a></li>
+              <li><a href="https://www.w3.org/standards/webdesign/" class="text-emerald-400 hover:underline" target="_blank">Web Standards Docs</a></li>
+            </ul>
+          </section>
+
+
+          <!-- Additional Useful Resources Section -->
+          <section>
+            <h2 id="t-text4" class="text-lg font-semibold border-b border-emerald-700 mb-2"># Additional Useful Resources</h2>
+            <ul class="list-disc pl-5">
+              <li><a href="https://caniuse.com/" class="text-emerald-400 hover:underline" target="_blank">Can I Use</a></li>
+              <li><a href="https://css-tricks.com/" class="text-emerald-400 hover:underline" target="_blank">CSS Tricks</a></li>
+              <li><a href="https://developer.mozilla.org/" class="text-emerald-400 hover:underline" target="_blank">MDN Web Docs</a></li>
+              <li><a href="https://www.freecodecamp.org/" class="text-emerald-400 hover:underline" target="_blank">FreeCodeCamp</a></li>
+              <li><a href="https://stackoverflow.com/" class="text-emerald-400 hover:underline" target="_blank">Stack Overflow</a></li>
+            </ul>
+          </section>
+
+        </div>
+      </div>
+    </div>
+<!-- Boton y LED -->
+<div class="flex justify-between items-center mt-9 w-full px-5 pb-4">
+  <div class="flex items-center space-x-4">
+    
+    <button id="offBtn" class="rounded-full bg-rose-900 hover:bg-rose-500 relative border border-black shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+      <svg class="svg-icon" fill="#161616" height="38px" width="38px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" stroke="#44403C">
+          <g>
+              <path d="M256,0C114.842,0,0,114.842,0,256c0,141.157,114.842,256,256,256s256-114.843,256-256C512,114.842,397.158,0,256,0z M232.727,116.364c0-12.853,10.42-23.273,23.273-23.273c12.853,0,23.273,10.42,23.273,23.273v99.739c0,12.853-10.42,23.273-23.273,23.273c-12.853,0-23.273-10.42-23.273-23.273V116.364z M256,418.909c-81.579,0-147.948-66.369-147.948-147.948c0-36.357,13.312-71.309,37.485-98.425c8.552-9.595,23.263-10.437,32.858-1.884c9.595,8.554,10.439,23.265,1.885,32.858c-16.561,18.578-25.682,42.532-25.682,67.451c0,55.912,45.489,101.402,101.402,101.402s101.402-45.49,101.402-101.402c-0.002-24.917-9.123-48.871-25.684-67.449c-8.553-9.595-7.708-24.306,1.887-32.86c9.593-8.552,24.305-7.709,32.86,1.887c24.169,27.114,37.482,62.067,37.483,98.42C403.948,352.54,337.579,418.909,256,418.909z"></path>
+          </g>
+      </svg>
+    </button>
+
+    <div id="led" class="p-0.5 mt-5 rounded-full bg-green-500 border border-green-500 shadow-[0_0_3px_1.5px_rgba(0,255,0,0.6)] "></div>
+  </div>
+
+  <h5 id="tv-brand" class="text-sm font-orbi text-gray-300 tracking-wide font-semibold">N7STUDIO</h5>
+  <!-- Botones de scroll a la derecha -->
+  <div class="flex space-x-3">
+    <button id="prevBtn" class="p-1.5 bg-neutral-900 hover:bg-neutral-700 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+      <span class="text-lg">
+        <svg fill="#ededed" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.002 330.002" xml:space="preserve" stroke="#ededed" transform="rotate(180)">
+          <path id="XMLID_23_" d="M329.155,100.036c-2.108-6.011-7.784-10.035-14.154-10.035h-300c-6.371,0-12.046,4.024-14.154,10.035 c-2.109,6.011-0.19,12.699,4.784,16.678l150.004,120c2.739,2.191,6.055,3.287,9.37,3.287c3.316,0,6.631-1.096,9.371-3.287 l149.996-120C329.346,112.734,331.264,106.047,329.155,100.036z"></path>
+        </svg>
+      </span>
+    </button>
+
+    <button id="nextBtn" class="p-1.5 bg-neutral-900 hover:bg-neutral-700 rounded-full shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+      <span class="text-lg">
+        <svg fill="#ededed" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 330.002 330.002" xml:space="preserve" stroke="#ededed">
+          <path id="XMLID_23_" d="M329.155,100.036c-2.108-6.011-7.784-10.035-14.154-10.035h-300c-6.371,0-12.046,4.024-14.154,10.035 c-2.109,6.011-0.19,12.699,4.784,16.678l150.004,120c2.739,2.191,6.055,3.287,9.37,3.287c3.316,0,6.631-1.096,9.371-3.287 l149.996-120C329.346,112.734,331.264,106.047,329.155,100.036z"></path>
+        </svg>
+      </span>
+    </button>
+  </div>
+</div>
+
+  </div>
+
+
+  <!-- Giscus a la derecha -->
+  <div id="giscus-container" class="bg-emerald-300 bg-opacity-10 p-3 rounded-lg">
+    
+    <h2 id="comments-title" class="text-xl text-center text-emerald-500 font-semibold mb-4 font-gba">¡Comenta tus ideas!</h2>
+    <div class="bg-black rounded-lg p-4">
+      <script src="https://giscus.app/client.js"
+              data-repo="Nusky7/N7Comments"
+              data-repo-id="R_kgDONiskbw"
+              data-category="General"
+              data-category-id="DIC_kwDONiskb84ClimC"
+              data-mapping="pathname"
+              data-strict="0"
+              data-reactions-enabled="1"
+              data-emit-metadata="0"
+              data-input-position="top"
+              data-theme="noborder_dark"
+              data-lang="es"
+              data-loading="lazy"
+              crossorigin="anonymous"
+              async>
+      </script>
+      <noscript>Por favor habilita JavaScript para ver los comentarios.</noscript>
+    </div>
+  </div>
+</div>
+
   
-  <section id="contact" class="p-2 mb-8">
+  <section id="contact" class="bg-black bg-opacity-70 p-3">
     <div class="max-w-4xl mx-auto text-center">
-      <h2 id="contact-title" class="text-3xl font-pixel mb-3 text-rose-500 p-6">Contacto</h2>
+      <h2 id="contact-title" class="text-2xl font-gba mb-3 text-emerald-700 p-6">Contacto</h2>
       <!-- Contenedor carpeta -->
       <div class="relative bg-black rounded-lg shadow-lg ">
         <div class="flex">
@@ -461,7 +627,7 @@
               <svg fill="currentColor" height="24px" width="24px"  viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M233.86621,28.7051a19.95058,19.95058,0,0,0-20.36328-3.459L28.94629,97.751a19.99924,19.99924,0,0,0,3.39062,38.22558L76,144.71V199.9844a19.99269,19.99269,0,0,0,34.14209,14.1416l23.28906-23.28882,36.55908,32.17261a19.834,19.834,0,0,0,13.14649,5.00195,20.20114,20.20114,0,0,0,6.2041-.9834,19.83327,19.83327,0,0,0,13.35645-14.5664L240.31055,48.32912A19.95249,19.95249,0,0,0,233.86621,28.7051ZM147.9126,76.79934,85.21826,122.07839l-34.82861-6.96606ZM100,190.32717V161.41726l15.37744,13.53247Zm80.80371,10.22754L107.21582,135.7969,213.18164,59.26613Z"></path> </g></svg>
             </p>
           </button>
-          <button id="whatsapp-tab" class="tab-button active border-stone-500 bg-stone-500 text-green-700 animate-colorSlow text-lg px-4 py-2 rounded-t-lg mx-0">
+          <button id="whatsapp-tab" class="tab-button active border-stone-500 bg-stone-600 text-green-700 animate-colorSlow text-lg px-4 py-2 rounded-t-lg mx-0">
             <p class="flex"> <span class="f-tab">WhatsApp &nbsp;</span>
             <svg class="svg-tab" fill="currentColor" height="24px" width="24px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 308 308" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_468_"> <path id="XMLID_469_" d="M227.904,176.981c-0.6-0.288-23.054-11.345-27.044-12.781c-1.629-0.585-3.374-1.156-5.23-1.156 c-3.032,0-5.579,1.511-7.563,4.479c-2.243,3.334-9.033,11.271-11.131,13.642c-0.274,0.313-0.648,0.687-0.872,0.687 c-0.201,0-3.676-1.431-4.728-1.888c-24.087-10.463-42.37-35.624-44.877-39.867c-0.358-0.61-0.373-0.887-0.376-0.887 c0.088-0.323,0.898-1.135,1.316-1.554c1.223-1.21,2.548-2.805,3.83-4.348c0.607-0.731,1.215-1.463,1.812-2.153 c1.86-2.164,2.688-3.844,3.648-5.79l0.503-1.011c2.344-4.657,0.342-8.587-0.305-9.856c-0.531-1.062-10.012-23.944-11.02-26.348 c-2.424-5.801-5.627-8.502-10.078-8.502c-0.413,0,0,0-1.732,0.073c-2.109,0.089-13.594,1.601-18.672,4.802 c-5.385,3.395-14.495,14.217-14.495,33.249c0,17.129,10.87,33.302,15.537,39.453c0.116,0.155,0.329,0.47,0.638,0.922 c17.873,26.102,40.154,45.446,62.741,54.469c21.745,8.686,32.042,9.69,37.896,9.69c0.001,0,0.001,0,0.001,0 c2.46,0,4.429-0.193,6.166-0.364l1.102-0.105c7.512-0.666,24.02-9.22,27.775-19.655c2.958-8.219,3.738-17.199,1.77-20.458 C233.168,179.508,230.845,178.393,227.904,176.981z"></path> <path id="XMLID_470_" d="M156.734,0C73.318,0,5.454,67.354,5.454,150.143c0,26.777,7.166,52.988,20.741,75.928L0.212,302.716 c-0.484,1.429-0.124,3.009,0.933,4.085C1.908,307.58,2.943,308,4,308c0.405,0,0.813-0.061,1.211-0.188l79.92-25.396 c21.87,11.685,46.588,17.853,71.604,17.853C240.143,300.27,308,232.923,308,150.143C308,67.354,240.143,0,156.734,0z M156.734,268.994c-23.539,0-46.338-6.797-65.936-19.657c-0.659-0.433-1.424-0.655-2.194-0.655c-0.407,0-0.815,0.062-1.212,0.188 l-40.035,12.726l12.924-38.129c0.418-1.234,0.209-2.595-0.561-3.647c-14.924-20.392-22.813-44.485-22.813-69.677 c0-65.543,53.754-118.867,119.826-118.867c66.064,0,119.812,53.324,119.812,118.867 C276.546,215.678,222.799,268.994,156.734,268.994z"></path> </g> </g></svg>
             </p>
@@ -469,7 +635,7 @@
         </div>
       </div>
       
-        <div class="p-6 bg-stone-500 rounded-b-lg">
+        <div class="p-6 bg-stone-600 rounded-b-lg">
             <!-- EmailJS -->
           <form id="email-form" method="POST" class="space-y-4 hidden">
             <div>
@@ -515,14 +681,26 @@
     </div>
   </section>
 
+
+  <!-- ScrollReveal -->
+
+
+  <!-- fondo animado -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+  <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
   <script defer>
     emailjs.init("39FmjBf7JrQSw9E-2");
   </script>
+  <!-- waveSurfer -->
   <script src="https://unpkg.com/wavesurfer.js@7" defer></script>
   <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js" defer></script>
+  <!-- Scripts -->
   <script type="module" src="script.js"></script>
   <script type="module" src="donations.js"></script>
+  <script type="module" src="animations.js"></script>
   <script type="module" src="wave.js"></script>
 </body>
 </html>

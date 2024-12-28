@@ -17,8 +17,15 @@ module.exports = {
         orange: '0 0 3px  rgb(194 65 12)',
         purple: '0 0 3px  rgb(147 51 234)',
       },
+      borderWidth: {
+        '3': '3px',
+      },
+        borderStyle: {
+        outset: 'outset',
+      },
       fontFamily: {
         sans: ['Inter', 'sans-serif'], 
+        gba: ['gba', 'sans-serif'], 
         pix: ['pix', 'sans-serif'],
         pixel: ['pixel', 'sans-serif'],
         kiwi: ['kiwi', 'sans-serif'],
@@ -42,19 +49,21 @@ module.exports = {
         zoomin: 'zoom-in 1s ease-in-out 0.25s 1',
         zoomout: 'zoom-out 1s ease-in-out 0.25s 1',
         tada: 'tada 1s ease-in-out infinite',
-        tadaOne: 'tada 1s ease-in-out 0.25 1',
+        tadaTwo: 'tada 2.77s ease-in-out infinite',
+        tadaOne: 'tada 1s ease-in-out 0.25 forwards',
         spinnergrow: 'spinner-grow 1s ease-in-out 0.25s 1',
         placeholderwave: 'placeholder-wave 1s ease-in-out 0.25s 1',
         showUpClock: 'showUpClock 1s ease-in-out 0.25s 1',
         dropin: 'dropIn  0.5s ease-in-out 0.25s 1',
         dropout: 'drop-out 0.5s ease-in-out 0.25s 1',
-        flyin: 'flyin 0.6s ease-in-out 0.25s 1',
+        flyIn: 'flyIn 0.6s ease-in-out 0.25s 1',
         flyout: 'flyout 0.6s ease-in-out 0.25s 1',
         flyoutup: 'fly-out-up 0.6s ease-in-out 0.25s 1',
         flyoutdown: 'fly-out-down 0.6s ease-in-out 0.25s 1',
         jiggle: 'jiggle 0.6s ease-in-out 0.25s 1',
         flash: 'flash 0.6s ease-in-out infinite',
-        flashSlow: 'flash 1.2s ease-in-out infinite',
+        flash1: 'flash 1s ease-in-out 3 forwards',
+        flashSlow: 'flash 1s ease-in-out infinite',
         glowTeal: 'glowTeal 1.6s ease-in-out forwards',
         glowPink: 'glowPink 5s ease-in-out forwards',
         glowPurple: 'glowPurple 1.6s ease-in-out forwards',
@@ -79,12 +88,14 @@ module.exports = {
         colorFast: 'colorCycle 0.8s infinite',
         colorSlow: 'colorCycle 6s infinite',
         blinkAndBounce: 'blinkAndBounce 4s ease-in-out infinite',
+        blinkAndBounce1: 'blinkAndBounce 4s ease-in-out forwards',
         glowColorCycle: 'glowColorCycle 5s ease-in-out infinite',
         glowShadowCycle: 'glowShadowCycle 5s ease-in-out infinite',
         glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
         borderGlow: 'borderGlow 1.5s ease-in-out infinite alternate',
       },
       keyframes: {
+        
         shake: {
           '0%': { transform: 'translateX(0)' },
           '25%': { transform: 'translateX(-5px)' },
@@ -157,8 +168,8 @@ module.exports = {
           '100%': { boxShadow: '0 0 5px #fff' },
         },
         zoomin: {
-          '0%': { transform: 'scale(0)' },
-          '100%': { transform: 'scale(1)' },
+          '0%, 1%': { transform: 'scale(0), opacity(0)' },
+          '100%': { transform: 'scale(1), opacity(1)' },
         },
         jiggle: {
           '0%': { transform: 'translateX(0)' },
@@ -172,10 +183,10 @@ module.exports = {
           '50%': { opacity: '0' },
           '100%': { opacity: '1' },
         },
-        flyin: {
-          '0%': { transform: 'translateX(-100%)', opacity: 0 },
-          '100%': { transform: 'translateX(0)', opacity: 1 },
-        },
+        flyIn: {
+        '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' },
+      },
         flyout: {
           '0%': { transform: 'translateX(0)', opacity: 1 },
           '100%': { transform: 'translateX(-100%)', opacity: 0 },
@@ -202,18 +213,13 @@ module.exports = {
         '50%': { transform: 'scale(1)', opacity: 1 },
         '100%': { transform: 'scale(0)', opacity: 1 },
       },
-      flyIn: {
-        '0%': { transform: 'translateX(-100%)', opacity: 0 },
-        '100%': { transform: 'translateX(0)', opacity: 1 },
-      },
+     
       showUpTada: {
-        
         '60%': { transform: 'scale(0.9)' }, 
         '70%': { transform: 'scale(1.1)' },
         '80%': { transform: 'scale(1)' },
         '90%': { transform: 'scale(1.1)' },
         '100%': { transform: 'scale(1)' },
-        
       },
       rotateDisk: {
         '0%': { transform: 'rotate(0deg)' },
