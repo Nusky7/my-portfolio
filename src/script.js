@@ -20,16 +20,21 @@ const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 const skipBtn = document.getElementById("skip-btn");
+const skipBtn2 = document.getElementById("skip-btn2");
 const introContent = document.getElementById("intro-content");
 const stopBtn = document.getElementById("stopAudioBtn");
 const controlPanel = document.getElementById("control-panel");
 //Intro Box
 const toggleMusic = document.querySelector('.peer');
 const volumeSlider = document.getElementById('volume-slider');
+const volumeSlider2 = document.getElementById('volume-slider2');
 const ledOff = document.getElementById('led-off'); 
 const ledOn = document.getElementById('led-on'); 
 const ledOnTxt = document.getElementById('led-txt'); 
 const ledOffTxt = document.getElementById('led-txt-off'); 
+const sliderContainer = document.getElementById('slider-container'); 
+  const sliderContainer2 = document.getElementById('slider-container2'); 
+  const fill = document.querySelector('.slider-fill');
 
 audio.load();
   
@@ -37,14 +42,7 @@ audio.load();
 window.addEventListener('load', () => {
   document.getElementById("preloader").style.display = "none";
   document.getElementById("intro-content").classList.remove("hidden");
-  setTimeout(() => {
-    skipBtn.classList.remove("opacity-0");
-  }, 900);
-//   skipBtn.classList.add("animate-flyIn"); 
-
-//   setTimeout(() => {
-//   skipBtn.classList.remove("animate-flyIn"); 
-// }, 1900);
+  sliderContainer.classList.remove("hidden");
   
 });
   
@@ -75,13 +73,103 @@ toggleMusic.addEventListener('change', () => {
     stopBtn.classList.add("hidden"); 
   }
 });
+  
+  // Sincronización de sliders con ajuste visual
+function syncSliders(source, target) {
+  target.value = source.value;
+}
+const slider = document.querySelector('.slider');
 
-// Función para manejar el volumen del slider
-volumeSlider.addEventListener('input', () => {
-  const volume = (volumeSlider.value / 100) * 0.6; // Escalar volumen al 60%
-  if (isMusicOn) {
-    audio.volume = volume; 
+slider.addEventListener('input', (e) => {
+  const value = (e.target.value / e.target.max) * 100;
+  slider.style.setProperty('--progress', `${value}%`);
+});
+
+  // function volumeChange() {
+    volumeSlider.addEventListener('input', () => {
+      const volume = (volumeSlider.value / 100) * 0.7;
+      volumeSlider2.value = volumeSlider.value;
+      const value = (volumeSlider.value - volumeSlider.min) / (volumeSlider.max - volumeSlider.min) * 100;
+      if (isMusicOn) {
+        audio.volume = volume;
+      }
+       syncSliders(volumeSlider, volumeSlider2);
+    });
+  // }
+
+   volumeSlider2.addEventListener('input', () => {
+     let volume = (volumeSlider2.value / 100) * 0.7;
+      let value = (volumeSlider2.value - volumeSlider2.min) / (volumeSlider2.max - volumeSlider2.min) * 100;
+      fill.style.width = `${value}%`;
+      if (isMusicOn) {
+        audio.volume = volume; 
+     }
+      syncSliders(volumeSlider2, volumeSlider);
+    });
+  
+ var isFF = true;
+
+var addRule = (function (style) {
+  var sheet = document.head.appendChild(style).sheet;
+  return function (selector, css) {
+    if (isFF) {
+      if (sheet.cssRules.length > 0) {
+        sheet.deleteRule(0);
+      }
+      try {
+        sheet.insertRule(`${selector} { ${css} }`, 0);
+      } catch (ex) {
+        isFF = false;
+      }
+    }
+  };
+})(document.createElement("style"));
+
+function updateSliderBackground(slider) {
+  var value = volumeSlider.value;  
+
+  // Mantener el gradiente de arcoíris fijo
+  var gradient = `linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)`;
+  
+  // Ajustar el progreso visible según el valor del slider
+  volumeSlider.style.background = `
+    ${gradient} no-repeat, 
+    linear-gradient(to right, #fff ${value}%, #fff 100%)`;
+  
+  volumeSlider2.style.background = `
+    ${gradient} no-repeat, 
+    linear-gradient(to right, #fff ${value}%, #fff 100%)`;
+  
+  // Ajustar el tamaño del gradiente visible dinámicamente
+  volumeSlider.style.backgroundSize = `${value}% 100%, 100% 100%`;
+  volumeSlider2.style.backgroundSize = `${value}% 100%, 100% 100%`;
+
+  if (isFF) {
+    // Actualizar para navegadores Firefox
+    addRule(
+      `#${slider.id}::-moz-range-progress`, 
+      `background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)`
+    );
   }
+}
+
+// Inicializar el slider con un valor del 50% al cargar la página
+window.addEventListener('load', function () {
+ 
+  volumeSlider.value = 50; // Valor inicial del slider principal
+  volumeSlider2.value = volumeSlider.value; // Sincroniza el segundo slider
+  
+  // Actualiza el fondo de ambos sliders
+  updateSliderBackground(volumeSlider);
+  updateSliderBackground(volumeSlider2);
+});
+
+
+// Asigna eventos a todos los sliders
+document.querySelectorAll(".slider").forEach((slider) => {
+  slider.addEventListener("input", function () {
+    updateSliderBackground(slider);
+  });
 });
 
 // Función para saltar la introducción
@@ -95,7 +183,8 @@ function skipIntro() {
 
   if (isMusicOn) {
     audio.play();
-    audio.volume = (volumeSlider.value / 100) * 0.6; // Respetar el volumen del slider (escalado)
+    audio.volume = (volumeSlider2.value / 100) * 0.7;
+    updateSliderBackground(volumeSlider2);
   } else {
     audio.pause(); 
     stopBtn.classList.add("hidden"); 
@@ -103,20 +192,25 @@ function skipIntro() {
   }
 }
 skipBtn.addEventListener("click", skipIntro);
+skipBtn2.addEventListener("click", skipIntro);
 
 // Función para manejar el botón de inicio
 startBtn.addEventListener("click", () => {
   audio.currentTime = startFromSecond;
   audio.volume = 0; 
   audio.play();
+  skipBtn2.classList.remove("hidden");
+  sliderContainer2.classList.remove("hidden");
+  // sliderContainer.classList.add("mt-12", "z-50");
+  skipBtn2.classList.add("animate-flyIn"); 
 
   const fadeInDuration = 5000;
   const intervalDuration = 33; 
-  const volumeIncrement = ((volumeSlider.value / 100) * 0.6) / (fadeInDuration / intervalDuration); 
+  const volumeIncrement = ((volumeSlider2.value / 100) * 0.7) / (fadeInDuration / intervalDuration); 
 
   const fadeIn = setInterval(() => {
-    if (isMusicOn && audio.volume < (volumeSlider.value / 100) * 0.6) {
-      audio.volume = Math.min(audio.volume + volumeIncrement, (volumeSlider.value / 100) * 0.6);
+    if (isMusicOn && audio.volume < (volumeSlider2.value / 100) * 0.7) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, (volumeSlider2.value / 100) * 0.7);
     } else {
       clearInterval(fadeIn);
     }
@@ -130,10 +224,11 @@ startBtn.addEventListener("click", () => {
   setTimeout(() => {
     startBtn.classList.add("hidden");
   }, 20);
+  
      
-  skipBtn.classList.remove("hiden");
+  skipBtn2.classList.remove("hiden");
   controlPanel.classList.add("hidden");
-  skipBtn.classList.add("animate-jiggle");
+  skipBtn2.classList.add("animate-jiggle");
 });
 
   

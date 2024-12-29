@@ -751,6 +751,10 @@ video {
   margin-top: 0.25rem;
 }
 
+.mt-12 {
+  margin-top: 3rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -877,6 +881,10 @@ video {
 
 .w-8 {
   width: 2rem;
+}
+
+.w-80 {
+  width: 20rem;
 }
 
 .w-9 {
@@ -1464,6 +1472,10 @@ video {
   border-radius: 0.375rem;
 }
 
+.rounded-xl {
+  border-radius: 0.75rem;
+}
+
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
@@ -1726,6 +1738,11 @@ video {
   background-color: rgb(225 29 72 / var(--tw-bg-opacity, 1));
 }
 
+.bg-rose-700 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(190 18 60 / var(--tw-bg-opacity, 1));
+}
+
 .bg-rose-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(136 19 55 / var(--tw-bg-opacity, 1));
@@ -1763,11 +1780,6 @@ video {
 .bg-zinc-950 {
   --tw-bg-opacity: 1;
   background-color: rgb(9 9 11 / var(--tw-bg-opacity, 1));
-}
-
-.bg-rose-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(190 18 60 / var(--tw-bg-opacity, 1));
 }
 
 .bg-opacity-10 {
@@ -2645,95 +2657,283 @@ html, body{
   border: none;
 }
 
-/* ----- Estilos pantalla inicio ------- */
+html, body{
+  cursor: url('/img/cursor.png') 16 16, auto;
+  margin: 0;
+  overflow-x: hidden;
+  scrollbar-width: thin;
+  scrollbar-color: #AAF8D4 #09090B !important;
+  height: 100%;
+}
 
-.slider {
+{
+}
+
+#monitorscreen {
+  /* background-color: #0f5c48; */
+  background-color: #0e513f;
+  color: #b0f2d4;
+  font-family: "Courier New", Courier, monospace;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+  border-radius: 12px;
+  border: 30px solid transparent;
+  /* border-image-source: url('/tvBorder.png');
+    border-image-slice: 30%;
+  border-image-width: 200px;
+  border-image-repeat: round; */
+  border-top: 30px inset #292524;
+  border-left: 30px inset #44403C;
+  border-right: 30px inset #44403C;
+  border-bottom: 30px inset #222;
+  text-shadow: 0 0 2px rgba(176, 242, 212, 0.8), 0 0 5px rgba(176, 242, 212, 0.6);
+}
+
+@media all and (min-width: 960px) {
+  /* #monitor {
+		-webkit-animation: tvflicker .2s infinite alternate; 
+		-moz-animation:    tvflicker .5s infinite alternate; 
+		-o-animation:      tvflicker .5s infinite alternate; 
+		animation:         tvflicker .5s infinite alternate; 
+	} */
+
+  #monitorscreen {
+    animation: tvScreenFlicker 6s infinite, tvflicker 3s infinite;
+    animation-timing-function: ease-in-out;
+  }
+}
+
+.screen-off {
+  background-color: black !important;
+  /* Fondo negro */
+  color: transparent !important;
+  /* Texto invisible */
+  pointer-events: none !important;
+  animation: none !important;
+}
+
+.screen-off * {
+  animation: none !important;
+  /* Eliminar animaciones */
+}
+
+#offBtn {
+  position: relative;
+  padding: 0;
+}
+
+.svg-icon {
+  position: relative;
+  transform: scale(1.15);
+  display: block;
+}
+
+@keyframes scanline {
+  0% {
+    bottom: 100%;
+  }
+
+  80% {
+    bottom: 100%;
+  }
+
+  100% {
+    bottom: -20%;
+  }
+}
+
+@keyframes tvflicker {
+  0%   {
+    box-shadow: 0 0 90px 0 rgba(23, 146, 106, 0.4);
+  }
+
+  20%  {
+    box-shadow: 0 0 70px 0 rgba(23, 146, 106, 0.5);
+  }
+
+  40%  {
+    box-shadow: 0 0 60px 0 rgba(23, 146, 106, 0.6);
+  }
+
+  60%  {
+    box-shadow: 0 0 40px 0 rgba(23, 146, 106, 0.7);
+  }
+
+  80%  {
+    box-shadow: 0 0 80px 0 rgba(23, 146, 106, 0.5);
+  }
+
+  100% {
+    box-shadow: 0 0 100px 0 rgba(23, 146, 106, 0.4);
+  }
+}
+
+@keyframes tvScreenFlicker {
+  0%   {
+    opacity: 0.7;
+  }
+
+  10%  {
+    opacity: 0.75;
+  }
+
+  20%  {
+    opacity: 0.78;
+  }
+
+  30%  {
+    opacity: 0.82;
+  }
+
+  40%  {
+    opacity: 0.76;
+  }
+
+  50%  {
+    opacity: 0.79;
+  }
+
+  60%  {
+    opacity: 0.85;
+  }
+
+  70%  {
+    opacity: 0.72;
+  }
+
+  80%  {
+    opacity: 0.75;
+  }
+
+  90%  {
+    opacity: 0.78;
+  }
+
+  100% {
+    opacity: 0.7;
+  }
+}
+
+#prevBtn, 
+#nextBtn {
+  border: 2.5px outset #161616;
+}
+
+#offBtn {
+  border: 4.5px outset #161616;
+}
+
+.giscus {
+  max-height: 540px;
+  overflow-y: auto;
+  border-radius: 8px;
+  scrollbar-width: thin !important;
+  scrollbar-color: #0f5c48 #09090B !important;
+}
+
+.giscus-frame {
+  max-height: 100%;
+  border: none;
+}
+
+/**
+ * Styling for Input type=["range"]
+ */
+
+/* .chrome {
+  input {
+    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+    border: solid 1px #707070;
+    border-radius: 8px;
+    height: 7px;
+    width: 356px;
+    outline: none;
+    transition: background 450ms ease-in;
+
+    -webkit-appearance: none;
+  }
+
+  input::-webkit-slider-thumb {
+    background-color: white;
+    border: solid 3px #707070;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    -webkit-appearance: none;
+    transition: transform 0.2s ease;
+  }
+
+  input::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  input:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  input::-moz-range-thumb {
+    background-color: white;
+    border: solid 3px #707070;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+
+  input::-moz-range-thumb:hover {
+    transform: scale(1.2);
+  }
+
+  input:focus::-moz-range-thumb {
+    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
+  }
+
+  input::-ms-thumb {
+    background-color: white;
+    border: solid 3px #707070;
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+} */
+
+input[type="range"]::-webkit-slider-thumb {
+  background-color: #F43F5E;
+  border: solid 1px #F43F5E;
+  border-radius: 30%;
+  height: 18px;
+  width: 18px;
   -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+}
+
+/* Firefox */
+
+input[type="range"]::-moz-range-thumb {
+  background-color: #F43F5E;
+  border: solid 1px #F43F5E;
+  border-radius: 30%;
+  height: 18px;
+  width: 18px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Para Firefox */
+  appearance: none;
+  /* Para otros navegadores */
+  height: 9px;
+  /* Control de altura del slider */
   width: 100%;
-  height: 8px;
-  border-radius: 9999px;
-  background: #e0e0e0;
-  /* Fondo gris para la parte no rellena */
-  position: relative;
-  outline: none;
-}
-
-/* Parte rellena dinámica (solo visible hasta el thumb) */
-
-.slider::-webkit-slider-runnable-track {
+  border-radius: 5px;
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-  height: 8px;
-  border-radius: 9999px;
-  position: relative;
-  z-index: 1;
-  /* Asegura que no tape el thumb */
+  /* El fondo que ya configuraste */
 }
-
-.slider::-moz-range-progress {
-  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-  height: 8px;
-  border-radius: 9999px;
-}
-
-.slider::-moz-range-track {
-  background: #e0e0e0;
-  /* Fondo gris para la parte no rellena */
-  height: 8px;
-  border-radius: 9999px;
-}
-
-.slider::-ms-fill-lower {
-  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-  height: 8px;
-  border-radius: 9999px;
-}
-
-.slider::-ms-fill-upper {
-  background: #e0e0e0;
-  /* Fondo gris para la parte no rellena */
-  height: 8px;
-  border-radius: 9999px;
-}
-
-/* Thumb (botón del slider) */
-
-.slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-          appearance: none;
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #999;
-  cursor: pointer;
-  position: relative;
-  z-index: 10;
-  /* Por encima del track */
-}
-
-.slider::-moz-range-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #999;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.slider::-ms-thumb {
-  width: 16px;
-  height: 16px;
-  border-radius: 50%;
-  background: white;
-  border: 2px solid #999;
-  cursor: pointer;
-  z-index: 10;
-}
-
-/* ---- Fin Estilos pantalla inicio ----- */
 
 a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
@@ -2755,8 +2955,12 @@ a, button{
   justify-content: center;
   align-items: center;
   background-color: black;
-  z-index: 1000;
+  z-index: 100;
   color: white;
+}
+
+#slider-container2{
+  z-index: 1000 !important;
 }
 
 .intro-text {
@@ -2929,7 +3133,7 @@ h1 {
   content: '💜';
 } */
 
-#waveform {
+#waveform, #toggle, #volume-slider, #volume-btn {
   cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
 
@@ -3509,14 +3713,6 @@ audio::-webkit-media-controls-play-button {
 
 .hover\:animate-tadaTwo:hover {
   animation: tada 2.77s ease-in-out infinite;
-}
-
-.hover\:rounded-full:hover {
-  border-radius: 9999px;
-}
-
-.hover\:rounded-lg:hover {
-  border-radius: 0.5rem;
 }
 
 .hover\:border-2:hover {

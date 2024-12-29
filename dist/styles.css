@@ -1810,7 +1810,7 @@ html{
 }
 
 a, button{
-  cursor: url('/img/pointer.png') 16 16, pointer;
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
 
 /* Pantalla de introducción */
