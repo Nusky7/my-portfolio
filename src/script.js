@@ -22,7 +22,16 @@ const subtitle = document.getElementById("panel-subtitle");
 const skipBtn = document.getElementById("skip-btn");
 const introContent = document.getElementById("intro-content");
 const stopBtn = document.getElementById("stopAudioBtn");
-  audio.load();
+const controlPanel = document.getElementById("control-panel");
+//Intro Box
+const toggleMusic = document.querySelector('.peer');
+const volumeSlider = document.getElementById('volume-slider');
+const ledOff = document.getElementById('led-off'); 
+const ledOn = document.getElementById('led-on'); 
+const ledOnTxt = document.getElementById('led-txt'); 
+const ledOffTxt = document.getElementById('led-txt-off'); 
+
+audio.load();
   
 
 window.addEventListener('load', () => {
@@ -31,29 +40,71 @@ window.addEventListener('load', () => {
   setTimeout(() => {
     skipBtn.classList.remove("opacity-0");
   }, 900);
-  skipBtn.classList.add("animate-flyIn"); 
+//   skipBtn.classList.add("animate-flyIn"); 
 
-  setTimeout(() => {
-  skipBtn.classList.remove("animate-flyIn"); 
-}, 1900);
+//   setTimeout(() => {
+//   skipBtn.classList.remove("animate-flyIn"); 
+// }, 1900);
   
 });
+  
+  
+  
+// audio.loop = true;
 
+// Estado inicial
+let isMusicOn = true;
+// document.querySelector('input[type="checkbox"]').checked = true;
+// Función para manejar el estado del toggle
+toggleMusic.addEventListener('change', () => {
+  isMusicOn = toggleMusic.checked;
+  if (isMusicOn) {
+    // Volver al volumen seleccionado por el slider (escalado al 60%)
+    audio.volume = (volumeSlider.value / 100) * 0.6; 
+    ledOn.classList.remove('hidden'); 
+    ledOnTxt.classList.remove('hidden');
+    ledOffTxt.classList.add('hidden'); 
+    ledOff.classList.add('hidden'); 
+  } else {
+    // Silenciar el audio
+    audio.pause();
+    ledOn.classList.add('hidden'); 
+    ledOnTxt.classList.add('hidden'); 
+    ledOff.classList.remove('hidden'); 
+    ledOffTxt.classList.remove('hidden'); 
+    stopBtn.classList.add("hidden"); 
+  }
+});
+
+// Función para manejar el volumen del slider
+volumeSlider.addEventListener('input', () => {
+  const volume = (volumeSlider.value / 100) * 0.6; // Escalar volumen al 60%
+  if (isMusicOn) {
+    audio.volume = volume; 
+  }
+});
+
+// Función para saltar la introducción
 function skipIntro() {
   let startFromSecond = 126.8; 
   introScreen.classList.add("hidden"); 
   introContent.classList.add("hidden"); 
   mainContent.classList.remove("hidden"); 
+  stopBtn.classList.remove("hidden"); 
   audio.currentTime = startFromSecond;
-  audio.volume = 0.70; 
-  audio.play();
-  // setTimeout(() => {
-    stopBtn.classList.remove("opacity-0"); 
-  // }, 3750); 
+
+  if (isMusicOn) {
+    audio.play();
+    audio.volume = (volumeSlider.value / 100) * 0.6; // Respetar el volumen del slider (escalado)
+  } else {
+    audio.pause(); 
+    stopBtn.classList.add("hidden"); 
+    rotateImage();
+  }
 }
 skipBtn.addEventListener("click", skipIntro);
-  
 
+// Función para manejar el botón de inicio
 startBtn.addEventListener("click", () => {
   audio.currentTime = startFromSecond;
   audio.volume = 0; 
@@ -61,28 +112,30 @@ startBtn.addEventListener("click", () => {
 
   const fadeInDuration = 5000;
   const intervalDuration = 33; 
-  const volumeIncrement = 1 / (fadeInDuration / intervalDuration); 
+  const volumeIncrement = ((volumeSlider.value / 100) * 0.6) / (fadeInDuration / intervalDuration); 
 
   const fadeIn = setInterval(() => {
-    if (audio.volume < 0.6) {
-      audio.volume = Math.min(audio.volume + volumeIncrement, 0.6);
+    if (isMusicOn && audio.volume < (volumeSlider.value / 100) * 0.6) {
+      audio.volume = Math.min(audio.volume + volumeIncrement, (volumeSlider.value / 100) * 0.6);
     } else {
       clearInterval(fadeIn);
     }
   }, intervalDuration);
 
   setTimeout(() => {
-  typeText();
+    typeText();
   }, 20); 
 
   startBtn.classList.add("fadeOutScale");
-    setTimeout(() => {
-      startBtn.classList.add("hidden");
-    }, 20);
+  setTimeout(() => {
+    startBtn.classList.add("hidden");
+  }, 20);
      
-    skipBtn.classList.remove("animate-pulse");
-    skipBtn.classList.add("animate-jiggle");
+  skipBtn.classList.remove("hiden");
+  controlPanel.classList.add("hidden");
+  skipBtn.classList.add("animate-jiggle");
 });
+
   
   
 
@@ -92,7 +145,7 @@ stopBtn.addEventListener("click", () => {
   stopBtn.classList.remove("animate-tadaTwo");
   stopBtn.classList.add("animate-fadeOutScale");
   setTimeout(() => {
-    stopBtn.classList.add("opacity-0"); 
+    stopBtn.classList.add("hidden"); 
     rotateImage();
   }, 500);
 });
@@ -101,7 +154,7 @@ stopBtn.addEventListener("click", () => {
   stopBtn.classList.remove("animate-tadaTwo");
   stopBtn.classList.add("fadeOutScale");
   setTimeout(() => {
-    stopBtn.classList.add("opacity-0"); 
+    stopBtn.classList.add("hidden"); 
     rotateImage();
   }, 500); 
 });
@@ -160,7 +213,12 @@ function typeText() {
           setTimeout(() => {
             mainContent.style.display = "block";
             introScreen.style.display = "none";
-            stopBtn.classList.remove("opacity-0"); 
+            if (isMusicOn) {
+              stopBtn.classList.remove("hidden");
+            } else {
+              stopBtn.classList.add("hidden");
+              rotateImage();
+            }
             rotateImage();
             rotateImage();
           }, 7200);

@@ -3,7 +3,15 @@
 @tailwind components;
 @tailwind utilities;
 
-
+html, body{
+  cursor: url('/img/cursor.png') 16 16, auto;
+  margin: 0;
+  overflow-x: hidden; 
+  height: 100%;
+  scrollbar-width: thin; 
+  scrollbar-color: #AAF8D4 #09090B !important;  
+  height: 100%;
+}
 
 
 @font-face {
@@ -206,20 +214,84 @@
   border: none;
 }
 
-
-
-html, body{
-  cursor: url('/img/cursor.png') 16 16, auto;
-  margin: 0;
-  overflow-x: hidden; 
-  height: 100%;
-  scrollbar-width: thin; 
-  scrollbar-color: #AAF8D4 #09090B !important;  
-  height: 100%;
+/* ----- Estilos pantalla inicio ------- */
+.slider {
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 9999px;
+  background: #e0e0e0; /* Fondo gris para la parte no rellena */
+  position: relative;
+  outline: none;
 }
-{
-  
+
+/* Parte rellena dinámica (solo visible hasta el thumb) */
+.slider::-webkit-slider-runnable-track {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  height: 8px;
+  border-radius: 9999px;
+  position: relative;
+  z-index: 1; /* Asegura que no tape el thumb */
 }
+
+.slider::-moz-range-progress {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.slider::-moz-range-track {
+  background: #e0e0e0; /* Fondo gris para la parte no rellena */
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.slider::-ms-fill-lower {
+  background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
+  height: 8px;
+  border-radius: 9999px;
+}
+
+.slider::-ms-fill-upper {
+  background: #e0e0e0; /* Fondo gris para la parte no rellena */
+  height: 8px;
+  border-radius: 9999px;
+}
+
+/* Thumb (botón del slider) */
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #999;
+  cursor: pointer;
+  position: relative;
+  z-index: 10; /* Por encima del track */
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #999;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.slider::-ms-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid #999;
+  cursor: pointer;
+  z-index: 10;
+}
+/* ---- Fin Estilos pantalla inicio ----- */
+
 
 a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
@@ -374,10 +446,10 @@ h1 {
 .icons {
   max-width: 33px;
 }
-.start-btn {
+/* .start-btn {
   position: absolute;
   transition: opacity 0.3s ease-out;
-}
+} */
 
 .start-btn.hidden {
   opacity: 0;

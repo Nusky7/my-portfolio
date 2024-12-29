@@ -42,7 +42,7 @@
   </div>
   
   <!-- Presentación -->
-  <div id="intro-content" class="hidden">
+  <!-- <div id="intro-content" class="hidden">
   <div id="intro-screen" class="intro-screen">
     <button id="skip-btn" class="skip-btn opacity-0 bg-zinc-700 hover:bg-zinc-700 p-3 rounded-full absolute bottom-4 right-4 hover:scale-110">
       <p class="flex hover:animate-flash" > Skip &nbsp;
@@ -52,20 +52,18 @@
     <button id="start-btn" class="start-btn rounded-full bg-rose-500 hover:bg-zinc-800 hover:border-2 border-rose-500 hover:text-rose-500 hover:text-xl text-white p-6 flex items-center justify-center space-x-4 text-lg font-bold shadow-lg hover:animate-shake">
       <img src="img/ico/play.png" alt="play!">
       <span class="font-mono">¡Bienvenid@! <br>❤ Welcome!</span>
-    </button>
-  
-    <p id="intro-text" class="intro-text "></p>
-    <div id="profile" class="profile-container">
-      <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img" >
-      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden">
-    </div>
-     
-    </div>
-  </div> 
+    </button> -->
 
-  <button id="stopAudioBtn" class="fixed opacity-0 bottom-4 right-4 text-white p-2 rounded-full bg-transparent animate-tadaTwo hover:animate-none hover:scale-125 z-50">
-    <img src="img/ico/stop.png" alt="stop" class="shadow-lg w-25 h-25 rounded-full">
-  </button>
+ <div id="content"></div>
+  <script>
+    // Cargar el archivo HTML en un contenedor
+    fetch('introScreen.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('content').innerHTML = data;
+      })
+      .catch(error => console.error('Error al cargar el archivo:', error));
+  </script>
 
   <div id="main-content" class="main-content">
     <div id="header-wrapper" class="header-wrapper relative">
