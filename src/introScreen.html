@@ -8,30 +8,27 @@
     <link rel="stylesheet" href="dist/styles.css">
 </head>
 
-<body class="bg-black flex flex-col p-4">
+<body class="bg-rose-950 flex flex-col">
  
  
- 
- <!-- Presentación -->
-  <div id="intro-content" class="hidden">
-  <!-- <div id="intro-content" > -->
-  <div id="intro-screen" class="intro-screen">
+
 
     
-    <!-- <h1 class="absolute top-28 text-3xl text-rose-300 font-pix animate-flyIn">WELCOME</h1> -->
-    <button id="skip-btn2" class="skip-btn hidden bg-zinc-700 hover:bg-zinc-700 p-3 rounded-full absolute bottom-4 right-4 hover:scale-110">
-      <p class="flex hover:animate-flash" > Skip &nbsp;
-        <svg version="1.1" width="25px" height="25px" id="designs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .sketchy_een{fill:#ffffff;} </style> <path class="sketchy_een" d="M29.998,16.648c0.004-0.073,0.002-0.143-0.015-0.213c-0.004-0.024,0.001-0.048-0.005-0.071 c-0.012-0.043-0.038-0.071-0.056-0.107c-0.006-0.012-0.006-0.025-0.013-0.037c-0.004-0.007-0.012-0.011-0.016-0.019 c-0.065-0.105-0.146-0.194-0.252-0.276c-0.229-0.173-0.457-0.345-0.687-0.516c-0.575-0.451-1.11-0.942-1.645-1.437 c-0.58-0.538-1.191-1.039-1.798-1.545c-0.605-0.504-1.233-0.984-1.834-1.492c-0.623-0.528-1.235-1.068-1.842-1.616 c-0.56-0.506-1.11-1.03-1.697-1.505c-0.646-0.522-1.307-1.022-1.971-1.522c-0.636-0.501-1.261-1.015-1.878-1.539 c-0.169-0.141-0.341-0.234-0.568-0.234c-0.21,0-0.417,0.085-0.566,0.234c-0.149,0.149-0.234,0.356-0.234,0.566 c0,0.128,0.046,0.264,0.112,0.387c-0.124,0.147-0.208,0.329-0.208,0.532c0.006,1.479-0.006,2.958-0.03,4.436 c-0.012,0.651-0.01,1.3-0.006,1.953c0.003,0.392,0.011,0.785,0.014,1.178c-0.689-0.514-1.376-1.03-2.06-1.554 c-0.683-0.54-1.352-1.1-2.037-1.638c-0.673-0.528-1.346-1.054-1.999-1.61c-0.705-0.599-1.391-1.221-2.114-1.8 C5.899,6.646,5.212,6.078,4.51,5.53C4.202,5.292,3.896,5.054,3.589,4.818c-0.111-0.085-0.27-0.119-0.422-0.119 c-0.088,0-0.174,0.012-0.247,0.032C2.701,4.79,2.515,4.935,2.4,5.129c-0.035,0.06-0.047,0.129-0.066,0.195 C2.202,5.473,2.116,5.665,2.106,5.878C1.965,9.369,2.005,12.865,2.005,16.36c0,1.61-0.002,3.222,0.018,4.832 c0.012,0.818,0.018,1.638,0.016,2.455c-0.002,0.776-0.02,1.554-0.014,2.33c0.004,0.419,0.333,0.761,0.744,0.798 c0.067,0.042,0.134,0.085,0.211,0.106c0.197,0.053,0.465,0.042,0.635-0.084c0.748-0.542,1.495-1.084,2.245-1.62 c0.703-0.504,1.38-1.038,2.084-1.536c1.411-1,2.884-1.905,4.295-2.902c0.735-0.518,1.467-1.039,2.211-1.544 c-0.051,1.055-0.085,2.11-0.101,3.166c-0.02,1.251-0.038,2.499-0.038,3.749c0,0.272,0.146,0.503,0.354,0.653 c0.01,0.114,0.039,0.227,0.098,0.326c0.202,0.347,0.717,0.522,1.068,0.28c1.344-0.923,2.658-1.888,3.968-2.856 c0.619-0.456,1.243-0.905,1.864-1.36c0.637-0.469,1.264-0.949,1.906-1.413c1.034-0.748,2.062-1.507,3.083-2.273 c0.482-0.362,0.965-0.725,1.449-1.084c0.23-0.17,0.457-0.347,0.691-0.516c0.28-0.203,0.568-0.397,0.844-0.605 c0.167-0.123,0.294-0.246,0.351-0.455c0.013-0.049,0.007-0.099,0.01-0.149C29.998,16.654,29.998,16.651,29.998,16.648z M12.004,18.843c-1.386,0.989-2.787,1.951-4.202,2.898C6.97,22.299,6.19,22.923,5.388,23.52c-0.574,0.428-1.162,0.839-1.749,1.251 c-0.007-1.194-0.013-2.387-0.028-3.579c-0.018-1.61-0.008-3.222-0.006-4.832c0.004-1.671,0.006-3.343,0.004-5.014 c0-1.421,0.05-2.839,0.11-4.256C4.31,7.551,4.902,8.011,5.486,8.48c0.703,0.564,1.358,1.181,2.042,1.765 c0.661,0.562,1.334,1.108,2.013,1.646c0.703,0.557,1.386,1.143,2.094,1.693c1.002,0.777,2.025,1.525,3.032,2.296 c0.244,0.191,0.484,0.386,0.726,0.58c-0.108,0.078-0.213,0.16-0.325,0.235c-0.341,0.23-0.679,0.466-1.014,0.706 C13.376,17.887,12.685,18.359,12.004,18.843z M25.18,18.716c-1.251,0.945-2.513,1.872-3.779,2.792 c-1.012,0.739-2.033,1.465-3.045,2.206c-0.788,0.575-1.598,1.122-2.404,1.673c0.004-1.008,0.008-2.017,0.016-3.027 c0.006-0.623,0.006-1.246,0.03-1.87c0.028-0.707,0.083-1.411,0.129-2.118c0.006-0.102-0.016-0.199-0.052-0.29 c0.301-0.207,0.6-0.417,0.903-0.623c0.193-0.131,0.337-0.292,0.401-0.522c0.008-0.03,0.001-0.061,0.006-0.091 c0.097-0.144,0.165-0.307,0.165-0.483c0-0.157-0.042-0.306-0.121-0.443c-0.077-0.131-0.183-0.236-0.314-0.316 c-0.076-0.058-0.153-0.116-0.229-0.173c-0.147-0.116-0.292-0.235-0.438-0.354c0.044-0.102,0.067-0.213,0.063-0.329 c-0.024-0.699-0.018-1.399-0.032-2.098c-0.012-0.659-0.022-1.318-0.024-1.977c-0.003-1.238,0.033-2.476,0.049-3.714 c0.2,0.155,0.393,0.32,0.595,0.473c0.54,0.405,1.09,0.796,1.631,1.202c1.227,0.986,2.356,2.089,3.56,3.103 c1.237,1.043,2.527,2.021,3.744,3.089c0.431,0.379,0.846,0.776,1.284,1.147c0.239,0.201,0.486,0.392,0.734,0.581 c-0.352,0.261-0.704,0.522-1.053,0.786C26.393,17.797,25.788,18.258,25.18,18.716z"></path> </g></svg>
-      </p>
-    </button>
-  
+ <!-- Presentación -->
+  <div id="intro-content" class="hidden">
+  <div id="intro-screen" class="intro-screen">
+    
+   
+<!-- <h1 class="absolute top-32 mb-6 text-3xl text-rose-300 font-pix animate-flyIn">WELCOME</h1> -->
+ <h1 id="welcome" class="font-orbi text-4xl text-rose-200 animate-glowText absolute top-32 mb-6">WELCOME</h1>
 
 <!-- Mini Panel -->
-<div id="control-panel" class="absolute -p-1 animate-borderGlow bg-gradient-to-tr from-rose-500 to-emerald-400 rounded-lg bg-black flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+<div id="control-panel" class="absolute overflow-x-hidden scale-80 -p-1 animate-borderGlow bg-gradient-to-tr from-rose-500 to-emerald-400 rounded-lg bg-black flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
  <!-- <div class="w-full h-full rounded-lg bg-zinc-900 flex flex-col items-center justify-between p-8 pb-8 shadow-lg  bg-fill bg-[url('https://cdn.vectorstock.com/i/500p/80/38/hexagon-metal-background-vector-378038.jpg')] bg-opacity-50"> -->
  <div class="w-full h-full rounded-lg bg-neutral-800 flex flex-col items-center justify-between p-7 shadow-lg">
 
-  <h2 class="font-pix text-4xl pb-6 text-rose-200 animate-colorSlow ">N7STUDIO</h2>
+  <h2 class="font-pix text-4xl pt-1 pb-6 text-rose-200 animate-colorSlow ">N7STUDIO</h2>
+  
 
   <!-- Botones Play y Skip -->
   <div class="flex space-x-4 w-full m-0 p-0">
@@ -59,7 +56,7 @@
   <label id="toggle" class="inline-flex items-center cursor-pointer ">
     <input type="checkbox" value="checked" class="sr-only peer" checked>
    
-    <div class="relative -rotate-90 w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-lg peer dark:bg-neutral-900 peer-checked:after:translate-x-full 
+    <div class="relative -rotate-90 w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-lg peer dark:bg-neutral-800 peer-checked:after:translate-x-full 
     rtl:peer-checked:after:-translate-x-full peer-checked:after:border-rose-100 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-rose-100 after:border-rose-100 after:border-3 after:rounded-lg 
     after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700"></div>  
      <span class="ms-3 text-md font-medium text-gray-900 dark:text-gray-300 font-gba mr-4">Music?</span>
@@ -86,7 +83,7 @@
   
   <!-- Control de Volumen -->
 <div id="slider-container" class="w-full mt-1 p-2 flex items-center space-x-2">
-  <div  class="rounded-xl bg-rose-700 p-1 border-outset mr-1" style="border: 2.5px inset #707070;">
+  <div class="rounded-xl bg-rose-700 p-1 border-outset mr-1" style="border: 2.5px inset #707070;">
   <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
   </div>
   <input 
@@ -95,7 +92,7 @@
     min="0" 
     max="100" 
     value="50"
-    class="slider w-full h-2 rounded-lg appearance-none cursor-pointer">
+    class="slider w-full h-8 rounded-lg appearance-none cursor-pointer">
     <div class="slider-fill"></div>
 </div>
 
@@ -105,24 +102,25 @@
 
 </div>
 
-   <!-- Control de Volumen -->
-<!-- <div id="slider-container2" class="w-80 absolute bottom-4 items-center justify-center flex space-x-2">
-  <div  class="rounded-xl bg-rose-700 p-1 border-outset mr-1" style="border: 2.5px inset #707070;">
-  <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-  </div>
-  <input 
-    id="volume-slider2" 
-    type="range" 
-    min="0" 
-    max="100" 
-    class="slider w-full h-2 rounded-lg appearance-none cursor-pointer">
-    <div class="slider-fill"></div>
-</div> -->
+
+
+
+  <!-- Skip Button -->
+    <button id="skip-btn2" class="bg-neutral-600 hidden hover:bg-zinc-700 rounded-xl hover:scale-125 left-3 mb-5 fixed bottom-0">
+      <p class="flex hover:animate-flash p-2.5" > 
+      <svg fill="#c0c0c0" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M315.001,0.001c-8.284,0-15,6.716-15,15v113.788L175.607,4.394c-4.29-4.29-10.743-5.574-16.347-3.252 c-5.605,2.322-9.26,7.792-9.26,13.858v113.788L25.607,4.394C21.317,0.104,14.864-1.18,9.26,1.142 c-5.605,2.322-9.26,7.792-9.26,13.858v300c0,6.067,3.654,11.537,9.26,13.858c1.855,0.769,3.805,1.143,5.736,1.143 c3.904,0,7.741-1.524,10.61-4.394l124.394-124.392v113.786c0,6.067,3.654,11.537,9.26,13.858c1.855,0.769,3.805,1.143,5.736,1.143 c3.904,0,7.741-1.524,10.61-4.394l124.394-124.392v113.786c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-300 C330.001,6.716,323.285,0.001,315.001,0.001z"></path>
+        </g>
+      </svg>
+      </p>
+    </button>
   
     <p id="intro-text" class="intro-text "></p>
     <div id="profile" class="profile-container">
-      <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img" >
-      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden">
+      <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img z-50" >
+      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden z-50">
     </div>
      
     </div>
@@ -130,28 +128,41 @@
 
   </div> 
 
+  <div id="sliderSkip-container" 
+  class="fixed bottom-0 right-0 w-30 h-full items-right justify-right z-40 space-y-3 hidden">
+  <div class="h-full w-full p-1 flex flex-col justify-end items-center space-y-3">
+  <div id="volume-bkg" class="py-5 h-28 w-12 flex flex-col justify-end items-center space-y-4 bg-black bg-opacity-40 p-2 rounded-xl">
 
-  
-      <div id="slider-container2" class="w-80 absolute bottom-4 items-center justify-center flex space-x-2 z-50">
-        <div  class="rounded-xl bg-rose-700 p-1 border-outset mr-1" style="border: 2.5px inset #707070;">
-        <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
-        </div>
-        <input 
-          id="volume-slider2" 
-          type="range" 
-          min="0" 
-          max="100" 
-          class="slider w-full h-2 rounded-lg appearance-none cursor-pointer">
-          <div class="slider-fill"></div>
-      </div>
-  
+    <!-- Slider -->
+    <div id="slider-container2" class="flex flex-col items-center justify-end space-y-2 mt-auto">
+      <input 
+        id="volume-slider2" 
+        type="range" 
+        min="0" 
+        max="100" 
+        class="slider rounded-lg appearance-none cursor-pointer transform mb-12 -rotate-90 hidden"> &nbsp;&nbsp;
+      
+      <!-- SVG -->
+      <button id="hide-volume"  class="rounded-xl bg-rose-600 hover:bg-rose-500 p-1 border-2 border-gray-500">
+         <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+      </button>
+    </div>
 
-  <!-- Fin presentacion -->
 
-  <button id="stopAudioBtn" class="fixed hidden bottom-4 right-4 text-white p-2 rounded-full bg-transparent animate-tadaTwo hover:animate-none hover:scale-125 z-50">
-    <img src="img/ico/stop.png" alt="stop" class="shadow-lg w-25 h-25 rounded-full">
+     <button id="stopAudioBtn" class="text-white hidden -p-2 rounded-full bg-transparent animate-tadaTwo hover:animate-none hover:scale-125 z-50">
+    <img src="img/ico/stop.png" alt="stop" class="shadow-lg w-18 h-18  rounded-full">
   </button>
 
+
+    </div>
+  </div>
+</div>
+
+
+   
+  <!-- Fin presentacion -->
+
+ 
   
 </body>
 </html>

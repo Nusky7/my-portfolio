@@ -17,6 +17,9 @@ module.exports = {
         orange: '0 0 3px  rgb(194 65 12)',
         purple: '0 0 3px  rgb(147 51 234)',
       },
+       scale: {
+        '80': '0.8',
+      },
       borderWidth: {
         '3': '3px',
       },

@@ -430,9 +430,9 @@ input[type="range"]::-moz-range-thumb {
 
 input[type="range"] {
   -webkit-appearance: none;
-  -moz-appearance: none; /* Para Firefox */
-  appearance: none; /* Para otros navegadores */
-  height: 9px; /* Control de altura del slider */
+  -moz-appearance: none;
+  appearance: none;
+  height: 11px; 
   width: 100%;
   border-radius: 5px;
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* El fondo que ya configuraste */
@@ -452,6 +452,7 @@ a, button{
   position: fixed;
   top: 0;
   left: 0;
+  bottom: 6%;
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -461,8 +462,13 @@ a, button{
   z-index: 100;
   color: white;
 }
-#slider-container2{
+#slider-container2,
+#sliderSkip-container{
   z-index: 1000 !important;
+}
+
+#volume-slider2{
+  width: 18vh;
 }
 
 .intro-text {
@@ -566,6 +572,7 @@ a, button{
   height: 100%;
   border-radius: 50%;
   transition: opacity 0.3s ease;
+ 
 }
 
 .rotate {
