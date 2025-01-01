@@ -40,11 +40,11 @@ emailForm.addEventListener("submit", async (event) => {
   }
 });
 // Enviar Whatsapp
-document.getElementById('whatsapp-form').addEventListener('submit', function(event) {
+whatsappForm.addEventListener('submit', function(event) {
   event.preventDefault(); 
   
-  let name = document.getElementById('name').value.trim();
-  let msg = document.getElementById('message').value.trim();
+  let name = document.getElementById('wName').value.trim();
+  let msg = document.getElementById('wMessage').value.trim();
   let encodedMessage = encodeURIComponent(`Nombre: ${name}\nMensaje: ${msg}`);
   let phoneNumber = '+34675260296';
   let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
@@ -56,7 +56,7 @@ document.getElementById('whatsapp-form').addEventListener('submit', function(eve
   window.open(whatsappURL, '_blank');
 });
 // Enviar Telegram
-document.getElementById('telegram-form').addEventListener('submit', function(event) {
+telegramForm.addEventListener('submit', function(event) {
   event.preventDefault();
   let username = document.getElementById('telegram-username').value.trim();
   let msg = document.getElementById('telegram-message').value.trim();

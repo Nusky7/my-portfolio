@@ -23,15 +23,16 @@
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
   <link rel="manifest" href="/site.webmanifest">
  
-  <link rel="stylesheet" href="dist/styles.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link href="dist/styles.css" rel="stylesheet"></noscript>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Major+Mono+Display&family=Orbitron:wght@400..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dist/styles.min.css" as="style" onload="this.rel='stylesheet'">
+  <noscript><link href="dist/styles.min.css" rel="stylesheet"></noscript>
+ <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Orbitron:wght@400..900&display=swap" rel="stylesheet">
 
   <audio preload="auto" id="miAudio" hidden>
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
   </audio>
 
+  <script type="module" src="animations.js" defer></script>
 </head>
 
 <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
@@ -40,7 +41,7 @@
     <div class="animate-spin w-14 h-14 border-4 border-t-rose-500 border-gray-700 rounded-full"></div>
   </div>
   
- <div id="content"></div>
+ <!-- <div id="content"></div>
   <script>
     // Cargar introScreen
     fetch('introScreen.html')
@@ -49,7 +50,148 @@
         document.getElementById('content').innerHTML = data;
       })
       .catch(error => console.error('Error al cargar el archivo:', error));
-  </script>
+  </script> -->
+
+  <!-- Presentación -->
+<div id="intro-content" class="hidden">
+<div id="intro-screen" class="intro-screen">
+
+<!-- Mini Panel -->
+<div id="control-panel" class="absolute overflow-x-hidden scale-80 -p-1 animate-borderGlow1 bg-gradient-to-tr from-rose-500 to-emerald-400 rounded-lg bg-black flex justify-center items-center top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+ <div class="w-full h-full rounded-lg bg-neutral-800 flex flex-col items-center justify-between p-7 shadow-lg">
+  <h2 class="font-pix text-4xl pt-1 pb-6 text-rose-200 animate-colorSlow ">N7STUDIO</h2>
+
+  <!-- Botones Play y Skip -->
+  <div class="flex space-x-3 w-full m-0 p-0">
+    <button id="start-btn" class="start-btn bg-rose-800 shadow-lg w-full h-auto p-6 font-gba text-white hover:bg-neutral-700 hover:text-rose-500  justify-center rounded-xl focus:outline-none">
+      <div class="hover:animate-flashSlow m-0 p-0 flex flex-col items-center">
+        <img src="img/ico/play.png" alt="play!" class="w-9 h-9 mb-2 rounded-full shadow-inner">
+        <span class="text-center">Play!</span>
+      </div>
+    </button>
+
+    <button id="skip-btn" class="bg-neutral-500 bg-opacity-60 w-full h-auto p-6 font-gba text-white justify-center rounded-xl shadow-md hover:bg-neutral-700 focus:outline-none">
+      <div class="hover:animate-flashSlow m-0 p-0 flex flex-col items-center">
+        <svg id="skip-svg" version="1.1" width="40px" height="40px" id="designs" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .sketchy_een{fill:#ffffff;} </style> <path class="sketchy_een" d="M29.998,16.648c0.004-0.073,0.002-0.143-0.015-0.213c-0.004-0.024,0.001-0.048-0.005-0.071 c-0.012-0.043-0.038-0.071-0.056-0.107c-0.006-0.012-0.006-0.025-0.013-0.037c-0.004-0.007-0.012-0.011-0.016-0.019 c-0.065-0.105-0.146-0.194-0.252-0.276c-0.229-0.173-0.457-0.345-0.687-0.516c-0.575-0.451-1.11-0.942-1.645-1.437 c-0.58-0.538-1.191-1.039-1.798-1.545c-0.605-0.504-1.233-0.984-1.834-1.492c-0.623-0.528-1.235-1.068-1.842-1.616 c-0.56-0.506-1.11-1.03-1.697-1.505c-0.646-0.522-1.307-1.022-1.971-1.522c-0.636-0.501-1.261-1.015-1.878-1.539 c-0.169-0.141-0.341-0.234-0.568-0.234c-0.21,0-0.417,0.085-0.566,0.234c-0.149,0.149-0.234,0.356-0.234,0.566 c0,0.128,0.046,0.264,0.112,0.387c-0.124,0.147-0.208,0.329-0.208,0.532c0.006,1.479-0.006,2.958-0.03,4.436 c-0.012,0.651-0.01,1.3-0.006,1.953c0.003,0.392,0.011,0.785,0.014,1.178c-0.689-0.514-1.376-1.03-2.06-1.554 c-0.683-0.54-1.352-1.1-2.037-1.638c-0.673-0.528-1.346-1.054-1.999-1.61c-0.705-0.599-1.391-1.221-2.114-1.8 C5.899,6.646,5.212,6.078,4.51,5.53C4.202,5.292,3.896,5.054,3.589,4.818c-0.111-0.085-0.27-0.119-0.422-0.119 c-0.088,0-0.174,0.012-0.247,0.032C2.701,4.79,2.515,4.935,2.4,5.129c-0.035,0.06-0.047,0.129-0.066,0.195 C2.202,5.473,2.116,5.665,2.106,5.878C1.965,9.369,2.005,12.865,2.005,16.36c0,1.61-0.002,3.222,0.018,4.832 c0.012,0.818,0.018,1.638,0.016,2.455c-0.002,0.776-0.02,1.554-0.014,2.33c0.004,0.419,0.333,0.761,0.744,0.798 c0.067,0.042,0.134,0.085,0.211,0.106c0.197,0.053,0.465,0.042,0.635-0.084c0.748-0.542,1.495-1.084,2.245-1.62 c0.703-0.504,1.38-1.038,2.084-1.536c1.411-1,2.884-1.905,4.295-2.902c0.735-0.518,1.467-1.039,2.211-1.544 c-0.051,1.055-0.085,2.11-0.101,3.166c-0.02,1.251-0.038,2.499-0.038,3.749c0,0.272,0.146,0.503,0.354,0.653 c0.01,0.114,0.039,0.227,0.098,0.326c0.202,0.347,0.717,0.522,1.068,0.28c1.344-0.923,2.658-1.888,3.968-2.856 c0.619-0.456,1.243-0.905,1.864-1.36c0.637-0.469,1.264-0.949,1.906-1.413c1.034-0.748,2.062-1.507,3.083-2.273 c0.482-0.362,0.965-0.725,1.449-1.084c0.23-0.17,0.457-0.347,0.691-0.516c0.28-0.203,0.568-0.397,0.844-0.605 c0.167-0.123,0.294-0.246,0.351-0.455c0.013-0.049,0.007-0.099,0.01-0.149C29.998,16.654,29.998,16.651,29.998,16.648z M12.004,18.843c-1.386,0.989-2.787,1.951-4.202,2.898C6.97,22.299,6.19,22.923,5.388,23.52c-0.574,0.428-1.162,0.839-1.749,1.251 c-0.007-1.194-0.013-2.387-0.028-3.579c-0.018-1.61-0.008-3.222-0.006-4.832c0.004-1.671,0.006-3.343,0.004-5.014 c0-1.421,0.05-2.839,0.11-4.256C4.31,7.551,4.902,8.011,5.486,8.48c0.703,0.564,1.358,1.181,2.042,1.765 c0.661,0.562,1.334,1.108,2.013,1.646c0.703,0.557,1.386,1.143,2.094,1.693c1.002,0.777,2.025,1.525,3.032,2.296 c0.244,0.191,0.484,0.386,0.726,0.58c-0.108,0.078-0.213,0.16-0.325,0.235c-0.341,0.23-0.679,0.466-1.014,0.706 C13.376,17.887,12.685,18.359,12.004,18.843z M25.18,18.716c-1.251,0.945-2.513,1.872-3.779,2.792 c-1.012,0.739-2.033,1.465-3.045,2.206c-0.788,0.575-1.598,1.122-2.404,1.673c0.004-1.008,0.008-2.017,0.016-3.027 c0.006-0.623,0.006-1.246,0.03-1.87c0.028-0.707,0.083-1.411,0.129-2.118c0.006-0.102-0.016-0.199-0.052-0.29 c0.301-0.207,0.6-0.417,0.903-0.623c0.193-0.131,0.337-0.292,0.401-0.522c0.008-0.03,0.001-0.061,0.006-0.091 c0.097-0.144,0.165-0.307,0.165-0.483c0-0.157-0.042-0.306-0.121-0.443c-0.077-0.131-0.183-0.236-0.314-0.316 c-0.076-0.058-0.153-0.116-0.229-0.173c-0.147-0.116-0.292-0.235-0.438-0.354c0.044-0.102,0.067-0.213,0.063-0.329 c-0.024-0.699-0.018-1.399-0.032-2.098c-0.012-0.659-0.022-1.318-0.024-1.977c-0.003-1.238,0.033-2.476,0.049-3.714 c0.2,0.155,0.393,0.32,0.595,0.473c0.54,0.405,1.09,0.796,1.631,1.202c1.227,0.986,2.356,2.089,3.56,3.103 c1.237,1.043,2.527,2.021,3.744,3.089c0.431,0.379,0.846,0.776,1.284,1.147c0.239,0.201,0.486,0.392,0.734,0.581 c-0.352,0.261-0.704,0.522-1.053,0.786C26.393,17.797,25.788,18.258,25.18,18.716z"></path> </g></svg>
+        <span class="text-center mt-2">Skip</span>
+      <div class="hover:animate-flashSlow w-full h-full flex flex-col items-center">
+    </button>
+  </div>
+  
+
+
+  <div class="p-1 w-full mt-5 rounded-lg bg-gradient-to-tb from-rose-700 to-fuchsia-500" >
+  <div class="w-full p-4 bg-neutral-950 rounded-lg border-l-[6px] border-t-[6px] border-r-[6px] border-b-[6px] border-gray-700 border-opacity-50 
+    shadow-inner border-t-neutral-900 border-l-neutral-700 border-b-neutral-400 border-r-neutral-500">
+  <!-- Contenedor de Toggle y LEDs -->
+
+  <div class="flex items-center justify-between w-full space-x-4 bg-zinc-950 bg-opacity-50 py-2 rounded-lg shadow-md">
+  <!-- Toggle -->
+  <label id="toggle" class="inline-flex items-center cursor-pointer ">
+    <input type="checkbox" value="checked" class="sr-only peer" checked>
+   
+    <div class="relative -rotate-90 w-11 h-6 bg-gray-200 peer-focus:outline-none rounded-lg peer dark:bg-neutral-800 peer-checked:after:translate-x-full 
+    rtl:peer-checked:after:-translate-x-full peer-checked:after:border-rose-100 after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-rose-100 after:border-rose-100 after:border-3 after:rounded-md 
+    after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-rose-700"></div>  
+     <span class="ms-3 text-md text-gray-300 dark:text-gray-300 font-gba mr-4">Music?</span>
+  </label>
+
+  
+
+  <!-- LEDs -->
+  <div class="flex space-x-4 ml-14 pr-0 mb-1">
+    <!-- Contenedor del LED -->
+ <div class="flex flex-col items-center w-16">
+    <!-- LED Off -->
+    <span class="text-sm text-gray-300 mb-2 font-gba hidden" id="led-txt-off">Off</span>
+    <div class="leds p-1 bg-red-500 rounded-full hidden shadow-[0_0_4px_2px_rgba(255,0,0,0.6)]" id="led-off"></div>
+
+    <!-- LED On -->
+    <span class="text-sm text-gray-300 mb-2 font-gba" id="led-txt">On</span>
+    <div class="leds p-1 bg-green-500 rounded-full  shadow-[0_0_4px_2px_rgba(0,255,0,0.6)]" id="led-on"></div>
+  </div>
+  </div>
+
+
+</div>
+  
+  <!-- Control de Volumen -->
+<div id="slider-container" class="w-full mt-1 p-2 flex items-center space-x-2">
+  <div class="rounded-xl bg-rose-700 p-1 border-outset mr-1" style="border: 2.5px inset #707070;">
+  <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+  </div>
+  <input 
+    id="volume-slider" 
+    type="range" 
+    min="0" 
+    max="100" 
+    value="50"
+    class="slider w-full h-8 rounded-lg appearance-none cursor-pointer">
+    <div class="slider-fill"></div>
+</div>
+
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+
+  <!-- Skip Button -->
+    <button id="skip-btn2" class="bg-neutral-600 hidden hover:bg-zinc-700 rounded-xl hover:scale-125 left-3 mb-5 fixed bottom-0">
+      <p class="flex hover:animate-flash p-2.5" > 
+      <svg fill="#c0c0c0" height="15px" width="15px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 330.001 330.001">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M315.001,0.001c-8.284,0-15,6.716-15,15v113.788L175.607,4.394c-4.29-4.29-10.743-5.574-16.347-3.252 c-5.605,2.322-9.26,7.792-9.26,13.858v113.788L25.607,4.394C21.317,0.104,14.864-1.18,9.26,1.142 c-5.605,2.322-9.26,7.792-9.26,13.858v300c0,6.067,3.654,11.537,9.26,13.858c1.855,0.769,3.805,1.143,5.736,1.143 c3.904,0,7.741-1.524,10.61-4.394l124.394-124.392v113.786c0,6.067,3.654,11.537,9.26,13.858c1.855,0.769,3.805,1.143,5.736,1.143 c3.904,0,7.741-1.524,10.61-4.394l124.394-124.392v113.786c0,8.284,6.716,15,15,15c8.284,0,15-6.716,15-15v-300 C330.001,6.716,323.285,0.001,315.001,0.001z"></path>
+        </g>
+      </svg>
+      </p>
+    </button>
+  
+    <p id="intro-text" class="intro-text "></p>
+    <div id="profile" class="profile-container">
+      <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img z-50" >
+      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden z-50">
+    </div>
+     
+    </div>
+    
+
+  </div> 
+
+  <div id="sliderSkip-container" 
+  class="fixed bottom-0 right-0 w-30 h-full items-right justify-right z-40 space-y-3 hidden">
+  <div class="h-full w-full p-1 flex flex-col justify-end items-center space-y-3">
+  <div id="volume-bkg" class="py-5 h-28 w-12 flex flex-col justify-end items-center space-y-4 bg-black bg-opacity-40 p-2 rounded-xl">
+
+    <!-- Slider -->
+    <div id="slider-container2" class="flex flex-col items-center justify-end space-y-2 mt-auto">
+      <input 
+        id="volume-slider2" 
+        type="range" 
+        min="0" 
+        max="100" 
+        class="slider rounded-lg appearance-none cursor-pointer transform mb-12 -rotate-90 hidden"> &nbsp;&nbsp;
+      
+      <!-- SVG -->
+      <button id="hide-volume"  class="rounded-xl bg-rose-600 hover:bg-rose-500 p-1 border-2 border-gray-500">
+         <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
+      </button>
+    </div>
+
+
+     <button id="stopAudioBtn" class="text-white hidden -p-2 rounded-full bg-transparent animate-tadaTwo hover:animate-none hover:scale-125 z-50">
+    <img src="img/ico/stop.png" alt="stop" class="shadow-lg w-18 h-18  rounded-full">
+  </button>
+
+
+    </div>
+  </div>
+</div>
+<!-- Fin de presentacion -->
 
   <div id="main-content" class="main-content bg-black bg-opacity-20">
     <div id="header-wrapper" class="header-wrapper relative">
@@ -104,7 +246,7 @@
         <div id="donationModal" class="fixed flex hidden inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
           <div class="bg-neutral-800 p-7 rounded-lg w-90">
             <div class="w-full flex items-center align-middle justify-between">
-              <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-xl animate-glowText1 inline-block font-gba">☕ Elige cómo donar</h2>
+              <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-sm animate-glowText1 inline-block font-gba">☕︎ Elige cómo donar</h2>
               <button id="closeModal" class="w-8 h-8 mb-4 hover:animate-spin hover:bg-transparent rounded-lg bg-rose-500 bg-opacity-20">❌</button>
             </div>
 
@@ -115,7 +257,7 @@
               <button id="kofiBtn" class="btn-donate-modal w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold text-md">Ko-fi</button>
               <button id="copyBtcBtn" class="btn-donate-modal w-20 text-orange-00 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold text-md">
               <div class="flex">
-                <img src="./img/ico/bitcoin.png" alt="btc" width="20px" height="auto" class="mx-auto">
+                <img src="./img/ico/bitcoin.webp" alt="btc" width="20px" height="auto" class="mx-auto">
               </div>
              <span id="btext">Copiar</span> 
             </button>
@@ -123,7 +265,6 @@
            <!-- Código QR de Bitcoin -->
             <div id="btcQrCode" class="mt-0 pl-6 mb-4">
               <h3 class="font-semibold mb-2 text-center font-mono text-sm"><span id="donate-with">Donar con</span> <span class="font-pix text-orange-400">Bitcoin</span></h3>
-              <!-- <h3 class="font-pix text-orange-300 text-center">Bitcoin</h3> -->
               <!-- Generar QR de la dirección BTC -->
               <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
             </div>
@@ -162,28 +303,28 @@
 
         <!-- Trabajando... -->
         <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center">
-          <img src="./img/ns4.webp" alt="Project 1" width="100%" height="auto" class="rounded-md mb-4">
+          <img src="./img/ns4.webp" alt="Project 1" width="100%" height="auto" class="rounded-md mb-4" loading="lazy">
           <h3 class=" text-xl font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
           <div class=" flex space-x-4 mx-0 justify-center">            
-            <img src="img/ico/angular.webp" alt="html" class="icons">
-            <img src="img/ico/css.webp" alt="html" class="icons">
-            <img src="img/ico/node.webp" alt="html" class="icons">
-            <img src="img/ico/mongo.webp" alt="html" class="icons">
+            <img src="img/ico/angular.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/node.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/mongo.webp" alt="html" class="icons" loading="lazy">
           </div>
           <p id="working" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Working...</p> 
-            <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
+            <img src="./img/gearx.webp" alt="work" class="work mx-auto drop-shadow-md animate-spin">
         </div>
 
         <!-- Proyecto -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-pink flex flex-col">
+        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-pink flex flex-col" loading="lazy">
           <img src="./img/n7tools.webp" alt="Portfolio" width="100%" height="auto" class="rounded-md mb-4 ">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">N7Tools</h3>
             <div class="flex space-x-4 mx-0 justify-center">
-              <img src="img/ico/html.webp" alt="html" class="icons">
-              <img src="img/ico/css.webp" alt="html" class="icons">
-              <img src="img/ico/js.webp" alt="html" class="icons">
-              <img src="img/ico/tw.webp" alt="html" class="icons">
-              <img src="img/ico/node.webp" alt="html" class="icons">
+              <img src="img/ico/html.webp" alt="html" class="icons" loading="lazy" >
+              <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/js.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/tw.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/node.webp" alt="html" class="icons" loading="lazy">
             </div>
           <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">N7Tools ❤
           </p> 
@@ -208,14 +349,14 @@
         
         <!-- Proyecto 1 -->
         <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-amber flex flex-col">
-          <img src="./img/vplaces.webp" alt="ValenciaPlaces" width="100%" height="auto" class="rounded-md mb-4">
+          <img src="./img/vplaces.webp" alt="ValenciaPlaces" width="100%" height="auto" class="rounded-md mb-4" loading="lazy">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Valencia Places</h3>
             <div class=" flex space-x-4 mx-0 justify-center">
-              <img src="img/ico/html.webp" alt="html" class="icons">
-              <img src="img/ico/css.webp" alt="html" class="icons">
-              <img src="img/ico/js.webp" alt="html" class="icons">
-              <img src="img/ico/boots.webp" alt="html" class="icons">
-              <img src="img/ico/json.webp" alt="html" class="icons">
+              <img src="img/ico/html.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/js.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/boots.webp" alt="html" class="icons" loading="lazy">
+              <img src="img/ico/json.webp" alt="html" class="icons" loading="lazy">
 
             </div>
           <p id="project1" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.</p>
@@ -234,13 +375,13 @@
 
         <!-- Proyecto 2 -->
         <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-orange flex flex-col">
-          <img src="./img/transfers.webp" alt="TransfersVIP" width="100%" height="auto" class="rounded-md mb-4">
+          <img src="./img/transfers.webp" alt="TransfersVIP" width="100%" height="auto" class="rounded-md mb-4" loading="lazy">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Deluxe Transfers</h3>
           
           <div class="flex space-x-4 mx-0 justify-center">            
-            <img src="img/ico/angular.webp" alt="html" class="icons">
-            <img src="img/ico/css.webp" alt="html" class="icons">
-            <img src="img/ico/boots.webp" alt="html" class="icons">
+            <img src="img/ico/angular.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/boots.webp" alt="html" class="icons" loading="lazy">
           </div>
           
           <p id="project2" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. Hecha con Angular17 y Bootstrap (Prototipo FrontEnd)</p>
@@ -258,13 +399,13 @@
 
         <!-- Proyecto 3 -->
         <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-purple flex flex-col ">
-          <img src="./img/tattoo.webp" alt="MaMTattoo" width="100%" height="auto" class="rounded-md mb-4">
+          <img src="./img/tattoo.webp" alt="MaMTattoo" width="100%" height="auto" class="rounded-md mb-4" loading="lazy">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">MaM Tattoo</h3>
       
           <div class=" flex space-x-4 mx-0 justify-center">            
-            <img src="img/ico/html.webp" alt="html" class="icons">
-            <img src="img/ico/css.webp" alt="html" class="icons">
-            <img src="img/ico/js.webp" alt="html" class="icons">
+            <img src="img/ico/html.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/js.webp" alt="html" class="icons" loading="lazy">
           </div>
           
           <p id="project3" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">M.Anguel Tattoo</p> 
@@ -282,14 +423,14 @@
         
         <!-- Proyecto 4 -->
         <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-emerald flex flex-col">
-          <img src="./img/st.webp" alt="SmartTime" width="100%" height="auto" class="rounded-md mb-4">
+          <img src="./img/st.webp" alt="SmartTime" width="100%" height="auto" class="rounded-md mb-4" loading="lazy">
           <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Smart Time</h3>
       
           <div class=" flex space-x-4 mx-0 justify-center">            
-            <img src="img/ico/angular.webp" alt="html" class="icons">
-            <img src="img/ico/css.webp" alt="html" class="icons">
-            <img src="img/ico/php.webp" alt="html" class="icons">
-            <img src="img/ico/sql.webp" alt="html" class="icons">
+            <img src="img/ico/angular.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/css.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/php.webp" alt="html" class="icons" loading="lazy">
+            <img src="img/ico/sql.webp" alt="html" class="icons" loading="lazy">
           </div>
           <p id="project4" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Final project of my CFGS</p> 
           <div class="flex mt-auto">
@@ -316,47 +457,47 @@
     <h2 class="text-xl font-bold text-rose-300 text-center font-gba mb-8 p-3">Stack</h2>
     <div class="flex flex-wrap justify-center gap-8">
       <div class="relative group text-center">
-        <img src="img/ico/html.webp" alt="HTML" class="stack hover:animate-bounce">
+        <img src="img/ico/html.webp" alt="HTML" class="stack hover:animate-bounce" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-orange-500 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">HTML</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/css.webp" alt="CSS" class="stack hover:animate-fade-in">
+        <img src="img/ico/css.webp" alt="CSS" class="stack hover:animate-fade-in" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-teal-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">CSS</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/js.webp" alt="JavaScript" class="stack hover:animate-spin">
+        <img src="img/ico/js.webp" alt="JavaScript" class="stack hover:animate-spin" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-amber-300 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">JavaScript</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/angular.webp" alt="Angular" class="stack hover:animate-shake ">
+        <img src="img/ico/angular.webp" alt="Angular" class="stack hover:animate-shake " loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-red-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Angular</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/boots.webp" alt="Bootstrap" class="stack hover:animate-spin hover:scale-125">
+        <img src="img/ico/boots.webp" alt="Bootstrap" class="stack hover:animate-spin hover:scale-125" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-purple-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Bootstrap</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/tw.webp" alt="Tailwind CSS" class="stack hover:animate-pulse hover:scale-125">
+        <img src="img/ico/tw.webp" alt="Tailwind CSS" class="stack hover:animate-pulse hover:scale-125" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-sky-200 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Tailwind</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/php.webp" alt="PHP" class="stack hover:animate-bounce-slow">
+        <img src="img/ico/php.webp" alt="PHP" class="stack hover:animate-bounce-slow" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-gray-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">PHP</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/node.webp" alt="Node.js" class="stack hover:animate-tada">
+        <img src="img/ico/node.webp" alt="Node.js" class="stack hover:animate-tada" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-yellow-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Node.js</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/mongo.webp" alt="MongoDB" class="stack hover:animate-flipx ">
+        <img src="img/ico/mongo.webp" alt="MongoDB" class="stack hover:animate-flipx " loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-emerald-200 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">MongoDB</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/ico/sql.webp" alt="SQL" class="stack hover:animate-flash hover:scale-125">
+        <img src="img/ico/sql.webp" alt="SQL" class="stack hover:animate-flash hover:scale-125" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-green-400 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">SQL</span>
       </div>
       <div class="relative group text-center">
-        <img src="img/git3.webp" alt="Git" class="stack hover:animate-ping">
+        <img src="img/git3.webp" alt="Git" class="stack hover:animate-ping" loading="lazy">
         <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-full text-rose-300 text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">Git</span>
       </div>
     </div>
@@ -593,6 +734,7 @@
   </div>
 </div>
 
+<!-- seccion comentarios y TV -->
   
   <section id="contact" class="bg-black bg-opacity-60 p-3">
     <div class="max-w-4xl mx-auto text-center">
@@ -653,10 +795,10 @@
           <!-- Whatsapp -->
           <form id="whatsapp-form" class="space-y-4">
             <div>
-              <input type="text" id="name" name="name" placeholder="Tu nombre" autocomplete="off" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
+              <input type="text" id="wName" name="name" placeholder="Tu nombre" autocomplete="off" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none">
             </div>
             <div>
-              <textarea id="message" name="message" placeholder="Tu mensaje" rows="6" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
+              <textarea id="message" name="wMessage" placeholder="Tu mensaje" rows="6" class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"></textarea>
             </div>
             <button type="submit" class="bg-black text-gray-300 px-4 py-2 rounded hover:bg-zinc-800 hover:animate-shake">
               Enviar
@@ -669,9 +811,9 @@
 
 
   <!-- fondo animado -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.topology.min.js" defer></script>
   <!-- EmailJS -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js" defer></script>
   <script defer>
@@ -682,9 +824,8 @@
   <script src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js" defer></script>
   <!-- Scripts -->
   
-  <script type="module" src="donations.js"></script>
-  <script type="module" src="script.js"></script>
-  <script type="module" src="wave.js"></script>
-  <script type="module" src="animations.js"></script>
+  <script type="module" src="donations.js" defer></script>
+  <script type="module" src="wave.js" defer></script>
+  <script type="module" src="script.js" defer></script>
 </body>
 </html>

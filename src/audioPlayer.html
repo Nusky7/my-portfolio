@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reproductor de Audio</title>
+       <link rel="stylesheet" href="dist/styles.css">
+</head>
+
+<body class="m-0 bg-neutral-800 flex flex-col">
+  
+      <div id="audio-player" class="audio-player grid-flow-col w-full p-8 rounded-lg shadow-xl grid gap-4 bg-black bg-opacity-20">    
+    <div class="grid ">
+      <div class="player-screen mb-0 pb-6 w-120 h-64 bg-black rounded-lg flex items-center justify-center overflow-hidden">
+        <div class="grid w-full">
+      <p id="song-title" class="text-center text-2xl text-violet-300 mt-1 font-orbi font-semibold mb-9">
+        Mientras trabajo...
+      </p>
+      <!-- media Player!!!!! -->
+        <div id="waveform" class="bg-black w-full h-full"></div>
+    </div>
+  </div>
+  
+    <audio preload="auto" id="audio" controls class="pt-0 mt-0 h-9 w-full rounded-md bg-violet-400 text-amber-400">
+      Tu navegador no soporta nah...
+    </audio>
+  </div>
+  <div class="audio-controls grid gap-4 text-white max-h-72 overflow-x-hidden overflow-auto scrollbar-hide text-base bg-zinc-950 bg-opacity-50 rounded-lg">
+    <p class="text-xl text-center text-violet-300 font-pixround animate-glowText bg-black w-full rounded-lg p-4">ELECTRO 🎧 SYNTH </p>
+    <button data-file="lowx.mp3" class="song-btn px-4 py-2 text-red-500 rounded-lg hover:bg-red-400 hover:animate-shake font-orbi">LOWX ❤ Crystal Dreams</button>
+    <hr class="border-zinc-950">
+    <button data-file="c152.mp3" class="song-btn px-4 py-2 text-orange-500 rounded-lg hover:bg-orange-400 hover:animate-shake font-orbi">Illusions ❤ C-152</button>
+    <hr class="border-zinc-950">
+    <button data-file="duneRiders.mp3" class="song-btn px-4 py-2 text-yellow-500 rounded-lg hover:bg-yellow-400 hover:animate-shake font-orbi">Dune Riders ❤ Ferus Melek</button>
+    <hr class="border-zinc-950">
+    <button data-file="havoc.mp3" class="song-btn px-4 py-2 text-green-500 rounded-lg hover:bg-green-400 hover:animate-shake font-orbi">Hooker Havoc ❤ Nightstop</button>
+    <hr class="border-zinc-950">
+    <button data-file="proxima.mp3" class="song-btn px-4 py-2 text-teal-500 rounded-lg hover:bg-teal-400 hover:animate-shake font-orbi">Proxima ❤ LukHash</button>
+    <hr class="border-zinc-950">
+    <button data-file="destination.mp3" class="song-btn px-4 py-2 text-blue-500 rounded-lg hover:bg-blue-400 hover:animate-shake font-orbi">Destination ❤ Fantom '87</button>
+    <hr class="border-zinc-950">
+    <button data-file="retroSynth.mp3" class="song-btn px-4 py-2 text-indigo-500 rounded-lg hover:bg-indigo-400 hover:animate-shake font-orbi">Retro Nightscape ❤ 80's synthwave</button>
+    <hr class="border-zinc-950">
+    <button data-file="aloneTogether.mp3" class="song-btn px-4 py-2 text-purple-500 rounded-lg hover:bg-purple-400 hover:animate-shake font-orbi">Alone Together ❤ LukHash</button>
+    <hr class="border-zinc-950">
+    <button data-file="mountains.mp3" class="song-btn px-4 py-2 text-pink-500 rounded-lg hover:bg-pink-400 hover:animate-shake font-orbi">Mountains ❤ Saffari</button>
+    <hr class="border-zinc-950">
+    <button data-file="release.mp3" class="song-btn px-4 py-2 text-rose-500 rounded-lg hover:bg-rose-400 hover:animate-shake font-orbi">Release ❤ Adieu Aru</button>
+    <hr class="border-zinc-950">
+    <button data-file="egerie.mp3" class="song-btn px-4 py-2 text-amber-500 rounded-lg hover:bg-amber-400 hover:animate-shake font-orbi">Égérie ❤ Adieu Aru ＆ VIQ</button>
+    <hr class="border-zinc-950">
+    <button data-file="euphorie.mp3" class="song-btn px-4 py-2 text-lime-500 rounded-lg hover:bg-lime-400 hover:animate-shake font-orbi">Euphorie ❤ Adieu Aru</button>
+    <hr class="border-zinc-950">
+    <button data-file="memoryReboot.mp3" class="song-btn px-4 py-2 text-fuchsia-500 rounded-lg hover:bg-fuchsia-400 hover:animate-shake font-orbi">Memory Reboot ❤ Narvent</button>
+    <hr class="border-zinc-950">
+    <button data-file="fearless.mp3" class="song-btn px-4 py-2 text-cyan-500 rounded-lg hover:bg-cyan-400 hover:animate-shake font-orbi">Fearless ❤ VIQ</button>
+      <!-- handpan -->
+    <p class="text-xl text-center text-violet-300 font-pixround animate-glowText bg-black w-full rounded-lg p-4"> HANDPAN 🎧 MUSIC</p>
+    <button data-file="prag.mp3" class="song-btn px-4 py-2 text-blue-400 rounded-lg hover:bg-blue-500 hover:animate-shake font-orbi">Prag ❤ Malte Marten</button>
+    <hr class="border-zinc-950">
+    <button data-file="soulshine.mp3" class="song-btn px-4 py-2 text-lime-400 rounded-lg hover:bg-lime-500 hover:animate-shake font-orbi">Soulshine ❤ Malte Marten</button>
+    <hr class="border-zinc-950">
+    <button data-file="eyeShut.mp3" class="song-btn px-4 py-2 text-orange-400 rounded-lg hover:bg-orange-500 hover:animate-shake font-orbi">Eyes Shut, Soul Alive ❤ Malte Marten</button>
+    <hr class="border-zinc-950">
+    <button data-file="urban.mp3" class="song-btn px-4 py-2 text-rose-400 rounded-lg hover:bg-rose-500 hover:animate-shake font-orbi">Urban ❤ Kate Stone</button>
+    
+  </div>
+  
+
+  </div>
+
+
+</body>
+</html>

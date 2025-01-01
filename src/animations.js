@@ -89,11 +89,9 @@ document.querySelectorAll(".slider").forEach((slider) => {
 });
 
   
-window.addEventListener('load', () => {
-  // Ocultar el preloader y mostrar el contenido de introducción
-  document.getElementById("preloader").style.display = "none";
+  window.addEventListener('load', () => {
   document.getElementById("intro-content").classList.remove("hidden");
-
+  document.getElementById("preloader").classList.add("hidden");
 });
 
     
@@ -341,13 +339,12 @@ function typeText() {
                 stopBtn.classList.remove("hidden")
                 skipBtn2.classList.add("hidden");
                 volumeBkg.classList.add("bg-black");
-                rotateImage();
+                // rotateImage();
               
             } else {
               stopBtn.classList.add("hidden");
-              // rotateImage();
+              rotateImage();
             }
-            
             // rotateImage();
           }, 7200);
         }, 2000);
