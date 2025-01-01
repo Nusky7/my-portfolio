@@ -84,6 +84,7 @@ module.exports = {
         showUpTada: 'showUpTada 1.5s ease-in-out 1', 
         rotateDisk: 'rotateDisk 3s linear infinite',
         glowText: 'glowText 1.5s ease-in-out infinite alternate',
+        glowText1: 'glowText1 1.5s ease-in-out infinite alternate',
         fadeOutScale: 'fadeOutScale 0.5s ease-out forwards',
         disappear: 'disappear 1.5s ease-out forwards',
         reduceAndFade: 'reduceAndFade 0.1s ease-out forwards',
@@ -96,6 +97,8 @@ module.exports = {
         glowShadowCycle: 'glowShadowCycle 5s ease-in-out infinite',
         glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
         borderGlow: 'borderGlow 1.5s ease-in-out infinite alternate',
+        borderGlow1: 'borderGlow1 1.5s ease-in-out infinite alternate',
+        glowBoxCycle: 'glowBoxCycle 3s ease-in-out infinite',
       },
       keyframes: {
         
@@ -232,14 +235,22 @@ module.exports = {
         '0%': { textShadow: '0 0 5px #000, 0 0 10px #FF69B4, 0 0 15px #000' },
         '100%': { textShadow: '0 0 10px #000, 0 0 15px #4B0082, 0 0 30px #00CED1' },
         },
-        borderGlow: {
+      borderGlow: {
         '0%': { boxShadow: '0 0 1px #000, 0 0 6px #FF69B4, 0 0 12px #000' },
         '100%': { boxShadow: '0 0 12px #000, 0 0 15px #4B0082, 0 0 30px #00CED1' },
-    },
+        },
+      borderGlow1: {
+        '0%': { boxShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #ea3376' },
+        '100%': { boxShadow: '0 0 10px #10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+        },
+      glowText1: {
+        '0%': { textShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #ea3376' },
+        '100%': { textShadow: '0 0 10px ##10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+      },
       fadeOutScale: {
         '0%': { opacity: 1, transform: 'scale(1)' },
         '100%': { opacity: 0, transform: 'scale(0.9)' },
-    },  
+      },  
       reduceAndFade: {
         '0%': { transform: 'scale(1)', opacity: 1 },
         '60%': { transform: 'scale(0.9)', opacity: 0.8 },
@@ -303,6 +314,45 @@ module.exports = {
           color: '#f472b6',
         },
         },
+      glowBoxCycle: {
+        '0%': {
+          boxShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          backgroundColor: '#f472b6',
+        },
+        '12.5%': {
+          boxShadow: '0 0 5px #000, 0 0 10px #db85c7, 0 0 15px #4B0082',
+          backgroundColor: '#db85c7',
+        },
+        '25%': {
+          boxShadow: '0 0 10px #000, 0 0 15px #c084fc, 0 0 20px #22d3ee',
+          backgroundColor: '#c084fc',
+        },
+        '37.5%': {
+          boxShadow: '0 0 10px #000, 0 0 15px #22d3ee, 0 0 25px #14b8a6',
+          backgroundColor: '#22d3ee',
+        },
+        '50%': {
+          boxShadow: '0 0 15px #000, 0 0 20px #14b8a6, 0 0 30px #19ff4b',
+          backgroundColor: '#14b8a6',
+        },
+        '62.5%': {
+          boxShadow: '0 0 15px #000, 0 0 20px #19ff4b, 0 0 30px #facc15',
+          backgroundColor: '#19ff4b',
+        },
+        '75%': {
+          boxShadow: '0 0 15px #000, 0 0 20px #facc15, 0 0 30px #a855f7',
+          backgroundColor: '#facc15',
+        },
+        '87.5%': {
+          boxShadow: '0 0 15px #000, 0 0 20px #a855f7, 0 0 30px #f472b6',
+          backgroundColor: '#a855f7',
+        },
+        '100%': {
+          boxShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',
+          backgroundColor: '#f472b6',
+        },
+      },
+
         glowShadowCycle: {
           '0%': {
             textShadow: '0 0 5px #000, 0 0 10px #f472b6, 0 0 15px #000',

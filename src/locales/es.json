@@ -24,7 +24,7 @@
     "panel": {
       "buttonText": "Descargar CV",
       "panelTitle": " <span class='ask'>?</span>Te gusta mi trabajo?",
-      "panelSubitle": "¿Necesitas tu propia Web?",
+      "panelSubitle": "<span class='ask mr-1'>?</span>Necesitas tu propia Web?",
       "panelText": "¡Hagamos realidad tus metas y creemos algo increíble!<br>Descarga mi CV para más detalles o contáctame directamente.",
       "contact": "Contacto"
     },
@@ -41,7 +41,7 @@
     },
     
     "donations": {
-      "title": "☕ Elige cómo donar",
+      "title": "☕ Elige tu opción",
       "text": "Donar con ",
       "button": "Invítame<br>a Café ☕︎",
       "btext": "Copiar"

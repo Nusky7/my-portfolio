@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
 // header - donations
 const headerContent = document.getElementById("header-content");
 const coffee = document.getElementById('coffee');
@@ -49,6 +49,7 @@ const welcome = document.getElementById("welcome");
 // MusicOn - Delay
 let isMusicOn = true;
 const startFromSecond = 116.5;
+let isFF = true;
 
 // Función para añadir reglas CSS dinámicamente
 const addRule = (function (style) {
@@ -71,12 +72,37 @@ const addRule = (function (style) {
 
 // IntroScreen - cPanel - Volume
 audio.load();
+// Inicializar los sliders
+volumeSlider.value = 50;
+toggleMusic.checked = true;
 
-window.addEventListener('load', () => {
-    document.getElementById("preloader").style.display = "none";
-    document.getElementById("intro-content").classList.remove("hidden");
-    volumeSlider.value = 50;
+// Actualizar el fondo de ambos sliders
+// initializeAudio();
+updateSliderBackground(volumeSlider);
+updateSliderBackground(volumeSlider2);
+
+// Asigna eventos a todos los sliders
+document.querySelectorAll(".slider").forEach((slider) => {
+    slider.addEventListener("input", function () {
+        updateSliderBackground(slider);
+    });
 });
+
+  
+window.addEventListener('load', () => {
+  // Ocultar el preloader y mostrar el contenido de introducción
+  document.getElementById("preloader").style.display = "none";
+  document.getElementById("intro-content").classList.remove("hidden");
+
+});
+
+    
+// function initializeAudio() {
+//   audio.volume = (volumeSlider.value / 100) * 0.7;
+//   updateSliderBackground(volumeSlider);
+//   syncSliders(volumeSlider, volumeSlider2);
+// }
+
   
 // Estado inicial
 toggleMusic.addEventListener('change', () => {
@@ -90,7 +116,8 @@ if (isMusicOn) {
     ledOff.classList.add('hidden');
 
 } else {
-    // Silenciar el audio
+  // Silenciar el audio
+    // audio.volume = (volumeSlider.value / 0);
     audio.pause();
     ledOn.classList.add('hidden');
     ledOnTxt.classList.add('hidden');
@@ -117,7 +144,7 @@ slider.addEventListener('input', (e) => {
 volumeSlider.addEventListener('input', () => {
     const volume = (volumeSlider.value / 100) * 0.7;
     volumeSlider2.value = volumeSlider.value;
-    const value = (volumeSlider.value - volumeSlider.min) / (volumeSlider.max - volumeSlider.min) * 100;
+    // const value = (volumeSlider.value - volumeSlider.min) / (volumeSlider.max - volumeSlider.min) * 100;
     if (isMusicOn) {
         audio.volume = volume;
     }
@@ -127,7 +154,7 @@ volumeSlider.addEventListener('input', () => {
 volumeSlider2.addEventListener('input', () => {
     let volume = (volumeSlider2.value / 100) * 0.7;
     let value = (volumeSlider2.value - volumeSlider2.min) / (volumeSlider2.max - volumeSlider2.min) * 100;
-    fill.style.width = `${value}%`;
+    // fill.style.width = `${value}%`;
     if (isMusicOn) {
         audio.volume = volume;
     }
@@ -135,7 +162,8 @@ volumeSlider2.addEventListener('input', () => {
 });
 
 function updateSliderBackground(slider) {
-var value = volumeSlider.value;
+  var value = volumeSlider.value;
+  var value2 = volumeSlider2.value;
 
 // Gardiente arcoiris
 var gradient = `linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)`;
@@ -147,11 +175,11 @@ volumeSlider.style.background = `
 
 volumeSlider2.style.background = `
     ${gradient} no-repeat, 
-    linear-gradient(to right, #363636 ${value}%, #363636 100%)`;
+    linear-gradient(to right, #363636 ${value2}%, #363636 100%)`;
 
 // Ajustar el tamaño del gradiente visible dinámicamente
 volumeSlider.style.backgroundSize = `${value}% 100%, 100% 100%`;
-volumeSlider2.style.backgroundSize = `${value}% 100%, 100% 100%`;
+volumeSlider2.style.backgroundSize = `${value2}% 100%, 100% 100%`;
 
 if (isFF) {
     // Actualizar para Firefox
@@ -161,22 +189,6 @@ if (isFF) {
     );
 }
 }
-
-// Inicializar el slider con un valor del 50% al cargar la página
-window.addEventListener('load', function () {
-volumeSlider.value = 50;
-volumeSlider2.value = volumeSlider.value; 
-    
-    // Actualiza el fondo de ambos sliders
-    updateSliderBackground(volumeSlider);
-    updateSliderBackground(volumeSlider2);
-    });
-    // Asigna eventos a todos los sliders
-    document.querySelectorAll(".slider").forEach((slider) => {
-    slider.addEventListener("input", function () {
-        updateSliderBackground(slider);
-    });
-});
 
 // Función para saltar la introducción
 function skipIntro() {
@@ -193,6 +205,7 @@ if (isMusicOn) {
     audio.play();
     audio.volume = (volumeSlider2.value / 100) * 0.7;
     sliderSkip.classList.remove("hidden");
+    volumeBkg.classList.add("bg-black");
     updateSliderBackground(volumeSlider2);
 } else {
     audio.pause();
@@ -213,7 +226,7 @@ audio.play();
 skipBtn2.classList.remove("hidden");
 sliderContainer2.classList.remove("hidden");
 skipBtn2.classList.remove("hidden");
-welcome.classList.add("opacity-0");
+// welcome.classList.add("opacity-0");
 skipBtn2.classList.add("animate-flyIn");
 volumeBkg.classList.remove("bg-black");
 
@@ -328,14 +341,14 @@ function typeText() {
                 stopBtn.classList.remove("hidden")
                 skipBtn2.classList.add("hidden");
                 volumeBkg.classList.add("bg-black");
+                rotateImage();
               
             } else {
               stopBtn.classList.add("hidden");
-              rotateImage();
+              // rotateImage();
             }
             
-            rotateImage();
-            rotateImage();
+            // rotateImage();
           }, 7200);
         }, 2000);
       }, 2000);

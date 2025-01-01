@@ -1,16 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const emailTab = document.getElementById('email-tab');
-  const telegramTab = document.getElementById('telegram-tab');
-  const whatsappTab = document.getElementById('whatsapp-tab');
-  const emailForm = document.getElementById('email-form');
-  const whatsappForm = document.getElementById('whatsapp-form');
-  const telegramForm = document.getElementById('telegram-form');
-  const loadingSpinner = document.getElementById("loading-spinner");
-  const subtitle = document.getElementById("panel-subtitle");
-
-
-
-  
+const emailTab = document.getElementById('email-tab');
+const telegramTab = document.getElementById('telegram-tab');
+const whatsappTab = document.getElementById('whatsapp-tab');
+const emailForm = document.getElementById('email-form');
+const whatsappForm = document.getElementById('whatsapp-form');
+const telegramForm = document.getElementById('telegram-form');
+const loadingSpinner = document.getElementById("loading-spinner");
+const subtitle = document.getElementById("panel-subtitle");
 
 
 changeCVLang('es');
@@ -248,8 +244,10 @@ document.getElementById('lang-switch-es').onclick = function() {
   minWidth: 200.00,
   scale: 1.30,
   scaleMobile: 1.20,
-  color: 0x9f7a8f,
-  /*color: 0x9f8898,*/
+  // color: 0x9f7a8f,
+  // color: 0x8c6a8c,
+  // color: 0x877087,
+  color: 0x9f8898,
   backgroundColor: 0x18181B
 })
   
