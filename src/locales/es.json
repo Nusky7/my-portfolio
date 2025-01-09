@@ -29,7 +29,8 @@
       "contact": "Contacto"
     },
     "player": {
-      "songs": "Mientras trabajo..."
+      "songs": "Mientras trabajo...",
+      "videos": "Algunos Videos..."
     },
     "form": {
       "name": "🙂 Nombre",
@@ -51,8 +52,27 @@
       "txt": "# Librerías",
       "txt1": "# Herramientas",
       "txt2": "# Documentación",
-      "txt3": "# Recursos Útiles Adicionales",
-      "txt4": "Comenta tus Ideas 😀"
+      "txt3": "# Recursos Adicionales",
+      "txt4": "Comenta tus Ideas 😀",
+      "txt5": "# Dispositivos",
+      "http": "✩ Solicitudes HTTP y API",
+      "effects": "✩ Efectos Interactivos",
+      "development": "✩ Desarrollo",
+      "databases": "✩ Hosting y Bases de Datos",
+      "maps": "✩ Mapeo",
+      "design": "✩ Diseño y Rendimiento",
+      "community": "✩ Comunidad"
+    },
+    "menu": {
+      "about_me": "Sobre mi 👩🏼‍💻",
+      "projects": "Proyectos 💻",
+      "stack": "Stack ⚙️",
+      "audio_player": "Audio Player 🔊",
+      "resources_comments": "Recursos & 📝<br>Comentarios",
+      "download_cv": "Descargar CV 📋",
+      "contact": "Contacto ✉️",
+      "intro_panel": "Intro 🎬 Panel"
     }
+
   }
   

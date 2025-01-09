@@ -15,6 +15,7 @@
     "projects": {
         "title": "Projects",
         "show": "See Code",
+    
         "working": "A project under development.<br><br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
         "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators.<br> Uses the FFmpeg and Fontmin libraries.",
         "project1": "An interactive map to explore the most important places in Valencia. <br>Offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
@@ -31,7 +32,8 @@
       "contact": "Contact"
     },
     "player": {
-      "songs": "While i'm Working..."
+      "songs": "While i'm Working...",
+      "videos": "Some Videos..."
     },
     "form": {
       "name": "🙂 Name",
@@ -51,8 +53,26 @@
       "txt": "# Libraries",
       "txt1": "# Tools",
       "txt2": "# Documentation",
-      "txt3": "# Aditional Useful Resources",
-      "txt4": "Share your ideas 😀"
+      "txt3": "# Aditional Resources",
+      "txt4": "Share your ideas 😀",
+      "txt5": "# Devices",
+      "http": "✩ HTTP Requests & API",
+      "effects": "✩ Interactive Effects",
+      "development": "✩ Development",
+      "databases": "✩ Hosting & DataBases",
+      "maps": "✩ Mapping",
+      "design": "✩ Design & Performance",
+      "community": "✩ Community"
+    },
+    "menu": {
+      "about_me": "About Me 👩🏼‍💻",
+      "projects": "Projects 💻",
+      "stack": "Stack ⚙️",
+      "audio_player": "Audio Player 🔊",
+      "resources_comments": "Comments 📝<br>& Resources",
+      "download_cv": "Download CV 📋",
+      "contact": "Contact ✉️",
+      "intro_panel": "Intro 🎬 Panel"
     }
   }
   

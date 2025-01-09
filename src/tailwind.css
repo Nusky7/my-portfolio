@@ -9,12 +9,8 @@ html, body{
   overflow-x: hidden; 
   height: 100%;
   scrollbar-width: thin; 
-  scrollbar-color: #AAF8D4 #09090B !important;  
-  height: 100%;
+  scrollbar-color: #AAF8D4 #09090B;  
 }
-
-
-
 
 @font-face {
   font-family: 'pix'; 
@@ -44,6 +40,16 @@ html, body{
        url('/fonts/gba.woff') format('woff'),   
        url('/fonts/gba.ttf') format('truetype');
        font-display: swap;
+}
+@font-face {
+  font-family: 'poppins'; 
+  src: url('/fonts/Poppins.woff2') format('woff2');
+  font-display: swap;
+}
+@font-face {
+  font-family: 'orbitron'; 
+  src: url('/fonts/Orbitron.woff2') format('woff2');
+  font-display: swap;
 }
 
 @keyframes typing {
@@ -95,22 +101,6 @@ html, body{
   animation: loader-animation 2s infinite;
 }
 
-
-
-/* HTML: <div class="loader"></div> */
-/* .loader {
-  width: 120px;
-  height: 20px;
-  border-radius: 20px;
-  background:
-   repeating-linear-gradient(135deg,#f03355 0 10px,#ffa516 0 20px) 0/0%   no-repeat,
-   repeating-linear-gradient(135deg,#ddd    0 10px,#eee    0 20px) 0/100%;
-  animation: l3 2s infinite;
-}
-@keyframes l3 {
-    100% {background-size:100%}
-} */
-
 #monitor {
 	background: linear-gradient(180deg, #3b3b3b, #262626);
 	position: relative;
@@ -143,53 +133,50 @@ html, body{
 	width: 98%;
 	border-radius: 12px;
   border: 30px solid transparent;
-	/* border-image-source: url('/tvBorder.png');
-    border-image-slice: 30%;
-  border-image-width: 200px;
-  border-image-repeat: round; */
- border-top: 30px inset #292524;
+  border-top: 30px inset #292524;
 	border-left: 30px inset #44403C; 
 	border-right: 30px inset #44403C; 
 	border-bottom: 30px inset #222;
 	text-shadow: 0 0 2px rgba(176, 242, 212, 0.8), 0 0 5px rgba(176, 242, 212, 0.6);
+  
 }
 
+.yt-img{
+  border-radius: 5px;
+  border-top: 12px inset #292524;
+	border-left: 12px inset #44403C; 
+	border-right: 12px inset #44403C; 
+	border-bottom: 12px inset #222;
+  animation: tvScreenFlicker 6s infinite;
+  animation-timing-function: ease-in-out;
+}
 
-@media all and (min-width: 960px) {
-	/* #monitor {
-		-webkit-animation: tvflicker .2s infinite alternate; 
-		-moz-animation:    tvflicker .5s infinite alternate; 
-		-o-animation:      tvflicker .5s infinite alternate; 
-		animation:         tvflicker .5s infinite alternate; 
-	} */
+@media all and (min-width: 924px) {
   #monitorscreen {
 		animation: tvScreenFlicker 6s infinite, tvflicker 3s infinite;
     animation-timing-function: ease-in-out;
   }
+
 }
 
 .screen-off {
-  background-color: black !important;   /* Fondo negro */
-  color: transparent !important;        /* Texto invisible */
+  background-color: black !important;
+  color: transparent !important;        
   pointer-events: none !important;     
   animation: none !important; 
 }
-
 .screen-off * {
-  animation: none !important;           /* Eliminar animaciones */
+  animation: none !important;      
 }
-
 #offBtn {
     position: relative; 
     padding: 0;
 }
-
 .svg-icon {
     position: relative;
     transform: scale(1.15);
     display: block;
 }
-
 
 @keyframes scanline {
 	0% {
@@ -203,6 +190,14 @@ html, body{
 	}
 }
 
+@keyframes tvflicker2 {
+  0%   { box-shadow: 0 0 40px 0 rgba(173, 216, 230, 0.3); }
+  20%  { box-shadow: 0 0 30px 0 rgba(135, 206, 250, 0.4); } 
+  40%  { box-shadow: 0 0 25px 0 rgba(186, 216, 235, 0.5); } 
+  60%  { box-shadow: 0 0 20px 0 rgba(173, 216, 230, 0.6); } 
+  80%  { box-shadow: 0 0 35px 0 rgba(224, 255, 255, 0.4); }
+  100% { box-shadow: 0 0 45px 0 rgba(240, 248, 255, 0.3); } 
+}
 
 @keyframes tvflicker {
   0%   { box-shadow: 0 0 90px 0 rgba(23, 146, 106, 0.4); }
@@ -247,8 +242,6 @@ html, body{
   max-height: 100%; 
   border: none;
 }
-
-
 
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto;
@@ -259,104 +252,6 @@ html, body{
   scrollbar-color: #AAF8D4 #09090B !important;  
   height: 100%;
 }
-{
-  
-}
-
-#monitorscreen {
-	/* background-color: #0f5c48; */
-	background-color: #0e513f;
-	color: #b0f2d4;
-	font-family: "Courier New", Courier, monospace;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 98%;
-	border-radius: 12px;
-  border: 30px solid transparent;
-	/* border-image-source: url('/tvBorder.png');
-    border-image-slice: 30%;
-  border-image-width: 200px;
-  border-image-repeat: round; */
- border-top: 30px inset #292524;
-	border-left: 30px inset #44403C; 
-	border-right: 30px inset #44403C; 
-	border-bottom: 30px inset #222;
-	text-shadow: 0 0 2px rgba(176, 242, 212, 0.8), 0 0 5px rgba(176, 242, 212, 0.6);
-}
-
-
-@media all and (min-width: 960px) {
-	/* #monitor {
-		-webkit-animation: tvflicker .2s infinite alternate; 
-		-moz-animation:    tvflicker .5s infinite alternate; 
-		-o-animation:      tvflicker .5s infinite alternate; 
-		animation:         tvflicker .5s infinite alternate; 
-	} */
-  #monitorscreen {
-		animation: tvScreenFlicker 6s infinite, tvflicker 3s infinite;
-    animation-timing-function: ease-in-out;
-  }
-}
-
-.screen-off {
-  background-color: black !important;   /* Fondo negro */
-  color: transparent !important;        /* Texto invisible */
-  pointer-events: none !important;     
-  animation: none !important; 
-}
-
-.screen-off * {
-  animation: none !important;           /* Eliminar animaciones */
-}
-
-#offBtn {
-    position: relative; 
-    padding: 0;
-}
-
-.svg-icon {
-    position: relative;
-    transform: scale(1.15);
-    display: block;
-}
-
-
-@keyframes scanline {
-	0% {
-		bottom: 100%;
-	}
-	80% {
-		bottom: 100%;
-	}
-	100% {
-		bottom: -20%;
-	}
-}
-
-
-@keyframes tvflicker {
-  0%   { box-shadow: 0 0 90px 0 rgba(23, 146, 106, 0.4); }
-  20%  { box-shadow: 0 0 70px 0 rgba(23, 146, 106, 0.5); }
-  40%  { box-shadow: 0 0 60px 0 rgba(23, 146, 106, 0.6); }
-  60%  { box-shadow: 0 0 40px 0 rgba(23, 146, 106, 0.7); }
-  80%  { box-shadow: 0 0 80px 0 rgba(23, 146, 106, 0.5); }
-  100% { box-shadow: 0 0 100px 0 rgba(23, 146, 106, 0.4); }
-}
-
-@keyframes tvScreenFlicker {
-  0%   { opacity: 0.7; }
-  10%  { opacity: 0.75; }
-  20%  { opacity: 0.78; }
-  30%  { opacity: 0.82; }
-  40%  { opacity: 0.76; }
-  50%  { opacity: 0.79; }
-  60%  { opacity: 0.85; }
-  70%  { opacity: 0.72; }
-  80%  { opacity: 0.75; }
-  90%  { opacity: 0.78; }
-  100% { opacity: 0.7; }
-}
 
 #prevBtn, 
 #nextBtn {
@@ -378,69 +273,6 @@ html, body{
   max-height: 100%; 
   border: none;
 }
-
-/**
- * Styling for Input type=["range"]
- */
-/* .chrome {
-  input {
-    background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet);
-    border: solid 1px #707070;
-    border-radius: 8px;
-    height: 7px;
-    width: 356px;
-    outline: none;
-    transition: background 450ms ease-in;
-
-    -webkit-appearance: none;
-  }
-
-  input::-webkit-slider-thumb {
-    background-color: white;
-    border: solid 3px #707070;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    -webkit-appearance: none;
-    transition: transform 0.2s ease;
-  }
-
-  input::-webkit-slider-thumb:hover {
-    transform: scale(1.2);
-  }
-
-  input:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
-  }
-
-  input::-moz-range-thumb {
-    background-color: white;
-    border: solid 3px #707070;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: transform 0.2s ease;
-  }
-
-  input::-moz-range-thumb:hover {
-    transform: scale(1.2);
-  }
-
-  input:focus::-moz-range-thumb {
-    box-shadow: 0 0 5px 2px rgba(255, 255, 255, 0.8);
-  }
-
-  input::-ms-thumb {
-    background-color: white;
-    border: solid 3px #707070;
-    height: 18px;
-    width: 18px;
-    border-radius: 50%;
-    cursor: pointer;
-  }
-} */
 
 input[type="range"]::-webkit-slider-thumb {
   background-color: #F43F5E;
@@ -470,8 +302,6 @@ input[type="range"] {
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* El fondo que ya configuraste */
 }
 
-
-
 a, button{
   cursor: url('/img/pointer.png') 16 16, pointer;
 }
@@ -494,10 +324,17 @@ a, button{
   z-index: 100;
   color: white;
 }
-#slider-container2,
-#sliderSkip-container{
+#volumeSlider2,
+#sliderSkip-container {
+  z-index: 200 !important;
+}
+.menu-container,
+#menu-toggle{
   z-index: 1000 !important;
 }
+/* #menu{
+  background: #1A1A1A;
+} */
 
 #volume-slider2{
   width: 18vh;
@@ -507,18 +344,10 @@ a, button{
 #skip-btn{
   border: 6px outset #262626;
 }
-/* #skip-svg{
-  width: 7rem !important;
-  height: 7rem !important;
-} */
-/* #start-btn:hover,
-#skip-btn:hover{
-  border: 6px inset #363636;
-} */
 
 .intro-text {
   font-family: 'Courier New', Courier, monospace;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-align: center;
   white-space: nowrap;
@@ -640,7 +469,6 @@ h1 {
 }
 .stack{
   width: 51px;
-  cursor: url('/img/pointer.png') 16 16, pointer;
 }
 .work{
   width: 60px;
@@ -648,14 +476,9 @@ h1 {
 .icons {
   max-width: 33px;
 }
-/* .start-btn {
-  position: absolute;
-  transition: opacity 0.3s ease-out;
-} */
 
 .song-btn:hover {
-  color: #fff !important;
-  text-shadow: 1px 1px 1px #111 !important;
+  border: 3px groove;
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
@@ -695,11 +518,10 @@ audio::-webkit-media-controls-play-button {
   display: inline-block;
   transform: rotateY(180deg) rotateX(180deg);
 }
-/* @media screen and (max-width: 380px){
-  #header-content{
-    top: -6% !important;
-  }
-} */
+.audio-controls{
+    scrollbar-width: thin !important; 
+    scrollbar-color: #977cef #09090B !important; 
+}
 @media screen and (max-width: 820px) {
   #welcome{
     top: 17%;
@@ -710,10 +532,6 @@ audio::-webkit-media-controls-play-button {
   h1{
     font-size: 1.5em;
     margin-top: -1%;
-  }
-  .stack{
-    width: 50px;
-  
   }
   .lang-btn{
     hover: none !important;
@@ -784,9 +602,11 @@ audio::-webkit-media-controls-play-button {
     border: 3px inset #110;
     border-radius: 10px;
     padding: 2%;
-    /* background-color: #101010; */
   }
 
+  /* #songs-container{
+    
+  } */
  
   .f-tab{
     font-size: 0.9rem;

@@ -23,8 +23,11 @@ module.exports = {
       borderWidth: {
         '3': '3px',
       },
-        borderStyle: {
+      borderStyle: {
         outset: 'outset',
+      },
+      screens: {
+        'xs': '324px', 
       },
       fontFamily: {
         sans: ['Inter', 'sans-serif'], 
