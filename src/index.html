@@ -29,6 +29,7 @@
   <!-- styles -->
   <link rel="stylesheet" href="dist/styles.min.css" as="style" onload="this.rel='stylesheet'">
   <noscript><link href="dist/styles.min.css" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
 
   <audio preload="auto" id="miAudio" hidden>
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
@@ -146,11 +147,6 @@
       </svg>
       </p>
     </button>
-    <!-- <p id="intro-text" class="intro-text "></p>
-    <div id="profile" class="profile-container">
-      <img src="./img/nusky.webp" alt="Anime Profile" class="profile-img anime-img z-50" >
-      <img src="./img/yo2.webp" alt="Real Profile" class="profile-img real-img hidden z-50">
-    </div> -->
     <!-- Nueva Intro con Typewriter -->
     <div id="intro-text" class="intro-text"></div>
       <div id="profile" class="profile-container">
@@ -274,6 +270,7 @@
   </main>
 
   <!-- Modal de opciones de donación -->
+   
         <div id="donationModal" class="fixed flex hidden inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
           <div class="bg-neutral-800 p-7 rounded-lg w-90">
             <div class="w-full flex items-center align-middle justify-between">
@@ -301,11 +298,43 @@
             </div>
           </div>
           </div>
+
+           
         </div>
-  </main>
+    <!-- <div id="toast" 
+      class="hidden font-mono animate-tvflickerRose text-gray-200 fixed bottom-6 right-0 bg-gradient-to-b from-neutral-950 via-neutral-800 to-black w-auto text-center text-xl font-light p-3 py-6 rounded-l-full shadow-lg transition-all duration-300 z-50">     
+    </div> -->
+         
+     <div id="toast"
+  class="hidden font-mono text-gray-200 fixed bottom-1/2 right-0 text-center text-lg font-semibold p-1.5 pr-3 rounded-l-md shadow-lg transition-all duration-300 z-50"
+  style="background: linear-gradient(180deg, #3b3b3b, #262626);">
+  
+  <!-- Contenedor principal -->
+  <div class="flex items-center justify-between w-full">
+    <!-- Leds rojo y amarillo -->
+    <div class="grid p-0 w-1 h-1 mr-2 mb-16 rounded-full space-y-2 items-center">
+    <div class="shadow-[0_0_2px_0.5px_rgb(255,0,0,0.6)] p-1 -ml-0.5 bg-red-500 rounded-full animate-pulse border-2 border-neutral-900 border-opacity-50"></div>
+    <div class="yellow-btn shadow-[0_0_2px_1.5px_rgb(255,356,0,0.4)] p-0.5 w-1 bg-amber-400 rounded-full animate-fastBlink"></div>
+    </div>
+    <!-- Contenedor del mensaje -->
+    <div id="border-msg" class="p-4 bg-gradient-to-b bg-emerald-900 rounded m-0">
+      <div id="toastMsg"></div>
+      <!-- <p class="text-emerald-300">Este es el mensaje que verás querid@... <span class="animate-flashSlow">█</span></p> -->
+    </div>
+     <!-- Botones -->
+    <div class="flex flex-col items-center ml-4 space-y-2">
+    <span class="brand-msg text-slate-300 font-orbi">N7</span>
+      <button title="Off Button" class="rounded-full -mt-2 bg-rose-900 hover:bg-rose-500 relative border border-black shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
+        <svg class="svg-icon" fill="#161616" height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 478.125 478.125" xml:space="preserve" stroke="44403C"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <circle cx="239.904" cy="314.721" r="35.878"></circle> <path d="M256.657,127.525h-31.9c-10.557,0-19.125,8.645-19.125,19.125v101.975c0,10.48,8.645,19.125,19.125,19.125h31.9 c10.48,0,19.125-8.645,19.125-19.125V146.65C275.782,136.17,267.138,127.525,256.657,127.525z"></path> <path d="M239.062,0C106.947,0,0,106.947,0,239.062s106.947,239.062,239.062,239.062c132.115,0,239.062-106.947,239.062-239.062 S371.178,0,239.062,0z M239.292,409.734c-94.171,0-170.595-76.348-170.595-170.596c0-94.248,76.347-170.595,170.595-170.595 s170.595,76.347,170.595,170.595C409.887,333.387,333.464,409.734,239.292,409.734z"></path> </g> </g> </g> </g></svg>
+      </button>
 
 
-  <section id="about" class="bg-neutral-950 p-8 rounded-lg">
+  </div>
+</div>
+</div>
+ 
+
+  <section id="about" class="bg-neutral-950 p-8 rounded-xl">
     <div class="max-w-4xl mx-auto text-center">
       <h2 id="about-heading" class="text-xl font-bold mb-4 text-rose-200 font-gba p-3"><span>Sobre mí</span>
         <i class="fas fa-heart text-rose-300"></i>
@@ -327,63 +356,64 @@
         </section>
 
 
-        <section id="projects" class="p-8 bg-black bg-opacity-20">
-          <div class="max-w-6xl mx-auto">
-            <h2 id="project-title" class="text-xl font-bold mb-8 text-rose-300 text-center font-gba p-3 flex items-center justify-center">
+        <section id="projects" class="p-8 bg-black bg-opacity-25 h-auto">
+            <h2 id="project-title" class="text-xl font-bold text-rose-300 text-center font-gba pt-3 flex items-center justify-center">
               Proyectos 
             </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- Trabajando... -->
-        <div class="bg-neutral-800 rounded-lg shadow-lg p-4 text-center">
-            <img src="./img/ns4.webp" alt="Project 1" width="100%" height="auto" class="rounded-md mb-4">
-          <h3 class=" text-xl font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
-          <div class=" flex space-x-4 mx-0 justify-center">            
-            <img src="img/ico/angular.webp" alt="html" class="icons">
-            <img src="img/ico/css.webp" alt="html" class="icons">
-            <img src="img/ico/node.webp" alt="html" class="icons">
-            <img src="img/ico/mongo.webp" alt="html" class="icons">
-          </div>
-          <p id="working" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Working...</p> 
-            <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
-        </div>
+            <!-- Swiper!! -->
+            <div class="swiper-container">
+             <div class="swiper-wrapper m-0">
+        
+              <!-- Trabajando... -->
+            <div class="swiper-slide bg-neutral-800 rounded-xl shadow-xl p-3 text-center animate-glowRose">
+              
+              <img src="./img/ns4.webp" alt="Project 1" width="100%" height="auto" class="swiper-zoom-container project-img  rounded-md mb-4">
+            <h3 class=" text-2xl p-1 font-bold text-neutral-500 font-sourceCode mb-1">NSystems</h3>
+            <div class="flex space-x-4 mx-0 pt-1 justify-center">            
+              <img src="img/ico/angular.webp" alt="html" class="icons">
+              <img src="img/ico/css.webp" alt="html" class="icons">
+              <img src="img/ico/node.webp" alt="html" class="icons">
+              <img src="img/ico/mongo.webp" alt="html" class="icons">
+            </div>
+            <p id="working" class="text-gray-300 text-md text-left px-5 pb-3  mt-1 mb-2 leading-relaxed">Working...</p> 
+              <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
+            </div>
 
         <!-- Proyecto -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-pink flex flex-col">
-          <img src="./img/n7tools.webp" alt="Portfolio" width="100%" height="auto" class="rounded-md mb-4 ">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">N7Tools</h3>
-            <div class="flex space-x-4 mx-0 justify-center">
+        <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-pink flex flex-col">
+          <div class="swiper-zoom-container">
+          <img src="./img/n7tools.webp" alt="Portfolio" width="100%" height="auto" class="project-img rounded-md mb-4 ">
+          </div>
+          <h3 class="text-2xl p-1 font-bold text-rose-400 font-sourceCode mb-1">N7Tools</h3>
+            <div class="flex space-x-4 mx-0 pt-1 justify-center">
               <img src="img/ico/html.webp" alt="html" class="icons" >
               <img src="img/ico/css.webp" alt="html" class="icons">
               <img src="img/ico/js.webp" alt="html" class="icons">
               <img src="img/ico/tw.webp" alt="html" class="icons">
               <img src="img/ico/node.webp" alt="html" class="icons">
             </div>
-          <p id="project" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">N7Tools ❤
+          <p id="project" class="text-gray-300 text-md text-left px-5 pb-3  mt-1 mb-2 leading-relaxed">N7Tools ❤
           </p> 
           <div class="flex mt-auto">
-          <!-- <button type="button" class="bg-neutral-800 hover:bg-neutral-700 w-full text-white py-2 px-4 border-b-4 border-rose-500 hover:border-rose-400 rounded animate-pulse mt-auto mx-3 mb-3 ">
-            <a href="https://github.com/Nusky7/conversionTool" target="_blank" rel="noopener" 
-            class="show block text-white hover:text-rose-200 hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
-          </button> -->
-           <img src="./img/gearx.png" alt="work" class="work mx-auto drop-shadow-md animate-spin">
+          <button type="button" class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 hover:animate-none w-full text-white py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3 ">
+            <a href="https://github.com/Nusky7/N7Tools" target="_blank" rel="noopener" 
+            class="show block text-white hover:text-rose-200 hover:animate-colorCycle font-gba">Ver proyecto</a>
+          </button>
            
-          <!-- <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
-            <a href="https://www.nusky7studio.es/N7Tools/index.html" target="_blank" rel="noopener" 
+          <button type="button" class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3">
+            <a href="https://www.nusky7studio.es/N7Tools" target="_blank" rel="noopener" 
             class="text-white block text-xl">🌐</a>
-          </button> -->
-          
-          <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white hover:border-rose-400 w-15 py-2 px-2 flex justify-center items-center border-b-4 border-rose-500 rounded animate-pulse mt-auto mx-3 mb-3">
-            <a href="https://www.nusky7studio.es/N7Tools/index.html" target="_blank" rel="noopener" 
-            class="text-white block hover:animate-colorCycle hover:text-lg">Preview 👀</a>
           </button>
           </div>
         </div> 
         
         <!-- Proyecto 1 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-amber flex flex-col">
-          <img src="./img/vplaces.webp" alt="ValenciaPlaces" width="100%" height="auto" class="rounded-md mb-4">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Valencia Places</h3>
-            <div class=" flex space-x-4 mx-0 justify-center">
+        <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-amber flex flex-col">
+          <div class="swiper-zoom-container">
+          <img src="./img/vplaces.webp" alt="ValenciaPlaces" width="100%" height="auto" class="project-img rounded-md mb-4">
+          </div>
+          <h3 class="text-2xl p-1 font-bold text-amber-400 font-sourceCode mb-1">Valencia Places</h3>
+            <div class=" flex space-x-4 mx-0 pt-1.5 justify-center">
               <img src="img/ico/html.webp" alt="html" class="icons">
               <img src="img/ico/css.webp" alt="html" class="icons">
               <img src="img/ico/js.webp" alt="html" class="icons">
@@ -391,14 +421,14 @@
               <img src="img/ico/json.webp" alt="html" class="icons">
 
             </div>
-          <p id="project1" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.</p>
+          <p id="project1" class="text-gray-300 text-md text-left px-5 pb-3 mt-1 mb-2 leading-relaxed">Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.</p>
           
           <div class="flex mt-auto">
-            <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white w-full py-2 px-4 border-b-4 border-amber-400 hover:border-amber-200 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-amber-400 bg-opacity-40 hover:rounded-full hover:bg-zinc-900 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://github.com/Nusky7/vlc-places" target="_blank" rel="noopener" 
-              class="show text-white hover:text-amber-100 block hover:animate-colorCycle hover:text-lg ">Ver proyecto</a>
+              class="show text-white block hover:animate-colorCycle font-gba">Ver proyecto</a>
             </button>
-            <button type="button" class="bg-neutral-900 hover:bg-zinc-800 text-white w-15 py-2 px-2 flex justify-center items-center border-b-4 border-amber-400 hover:border-amber-200 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-amber-400 bg-opacity-50 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://nusky7studio.es/ValenciaPlaces/index.html" target="_blank" rel="noopener" 
               class="text-white hover:text-amber-100 block hover:animate-colorCycle text-xl">🌐</a>
             </button>
@@ -406,23 +436,25 @@
         </div>
 
         <!-- Proyecto 2 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-orange flex flex-col">
-          <img src="./img/transfers.webp" alt="TransfersVIP" width="100%" height="auto" class="rounded-md mb-4">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Deluxe Transfers</h3>
+        <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-orange flex flex-col">
+          <div class="swiper-zoom-container">
+          <img src="./img/transfers.webp" alt="TransfersVIP" width="100%" height="auto" class="project-img rounded-md mb-4">
+          </div>
+          <h3 class="text-2xl font-bold text-orange-400 font-sourceCode mb-1">Deluxe Transfers</h3>
           
-          <div class="flex space-x-4 mx-0 justify-center">            
+          <div class="flex space-x-4 mx-0 pt-1.5 justify-center">            
             <img src="img/ico/angular.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/boots.webp" alt="html" class="icons">
           </div>
           
-          <p id="project2" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. Hecha con Angular17 y Bootstrap (Prototipo FrontEnd)</p>
+          <p id="project2" class="text-gray-300 text-md text-left px-5 pb-3 mt-1 mb-2 leading-relaxed">Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. Hecha con Angular17 y Bootstrap (Prototipo FrontEnd)</p>
           <div class="flex mt-auto">
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-full py-2 px-4 border-b-4 border-orange-500 hover:border-orange-400 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://github.com/Nusky7/DeluxeTransfers" target="_blank" rel="noopener" 
-              class="show text-white hover:text-orange-200 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
+              class="show text-white block hover:animate-colorCycle font-gba">Ver proyecto</a>
             </button>
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-15 py-2 px-2 flex justify-center items-center border-b-4 border-orange-500 hover:border-orange-400 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://nusky7studio.es/DeluxeTransfer" target="_blank" rel="noopener" 
               class="text-white hover:text-orange-200 block hover:animate-colorCycle text-xl">🌐</a>
             </button>
@@ -430,57 +462,66 @@
         </div>
 
         <!-- Proyecto 3 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-purple flex flex-col ">
-          <img src="./img/tattoo.webp" alt="MaMTattoo" width="100%" height="auto" class="rounded-md mb-4">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">MaM Tattoo</h3>
+        <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-purple flex flex-col ">
+          <div class="swiper-zoom-container">
+          <img src="./img/tattoo.webp" alt="MaMTattoo" width="100%" height="auto" class="project-img rounded-md mb-4">
+          </div>
+          <h3 class="text-2xl p-1 font-bold text-violet-400 font-sourceCode mb-1">MaM Tattoo</h3>
       
-          <div class=" flex space-x-4 mx-0 justify-center">            
+          <div class=" flex space-x-4 mx-0 pt-1.5 justify-center">            
             <img src="img/ico/html.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/js.webp" alt="html" class="icons">
           </div>
           
-          <p id="project3" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">M.Anguel Tattoo</p> 
+          <p id="project3" class="text-gray-300 text-md text-left px-5 pb-3 mt-1 mb-2 leading-relaxed">M.Anguel Tattoo</p> 
           <div class="flex mt-auto">
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-full py-2 px-4 border-b-4 border-violet-500 hover:border-violet-400 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://github.com/Nusky7/TattooStudio" target="_blank" rel="noopener" 
-              class="show text-white hover:text-violet-300 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
+              class="show text-white block hover:animate-colorCycle font-gba">Ver proyecto</a>
             </button>
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-15 py-2 px-2 flex justify-center items-center border-b-4 border-violet-500 hover:border-violet-400 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://nusky7studio.es/MaM-Tattoo/index.html" target="_blank" rel="noopener" 
-              class="text-white hover:text-violet-300 block hover:animate-colorCycle text-xl">🌐</a>
+              class="text-white hover:text-violet-300 block text-xl">🌐</a>
             </button>
           </div>
         </div>
         
         <!-- Proyecto 4 -->
-        <div class="bg-zinc-950 rounded-lg shadow-lg p-4 text-center hover:shadow-emerald flex flex-col">
-          <img src="./img/st.webp" alt="SmartTime" width="100%" height="auto" class="rounded-md mb-4">
-          <h3 class="text-xl font-bold text-rose-300 font-sourceCode mb-1">Smart Time</h3>
+        <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-emerald flex flex-col">
+          <div class="swiper-zoom-container">
+          <img src="./img/st.webp" alt="SmartTime" width="100%" height="auto" class="project-img rounded-md mb-4 animate-glowEme">
+          </div>
+          <h3 class="text-2xl p-1 font-bold text-green-300 font-sourceCode mb-1">Smart Time</h3>
       
-          <div class=" flex space-x-4 mx-0 justify-center">            
+          <div class=" flex space-x-4 mx-0 pt-1.5 justify-center">            
             <img src="img/ico/angular.webp" alt="html" class="icons">
             <img src="img/ico/css.webp" alt="html" class="icons">
             <img src="img/ico/php.webp" alt="html" class="icons">
             <img src="img/ico/sql.webp" alt="html" class="icons">
           </div>
-          <p id="project4" class="text-gray-300 text-sm mt-1 mb-2 leading-relaxed">Final project of my CFGS</p> 
+          <p id="project4" class="text-gray-300 text-md text-left px-5 pb-3  mt-1 mb-2 leading-relaxed">Final project of my CFGS</p> 
           <div class="flex mt-auto">
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-full py-2 px-4 border-b-4 border-green-400 hover:border-green-300 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://github.com/Nusky7/SmartTime" target="_blank" rel="noopener" 
-              class="show text-white hover:text-green-200 block hover:animate-colorCycle hover:text-lg">Ver proyecto</a>
+              class="show text-white block hover:animate-colorCycle font-gba">Ver proyecto</a>
             </button>
-            <button type="button" class="bg-neutral-900 hover:bg-neutral-700 text-white w-15 py-2 px-2 flex justify-center items-center border-b-4 border-green-400 hover:border-green-300 rounded animate-pulse mt-auto mx-3 mb-3">
+            <button type="button" class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3">
               <a href="https://nusky7studio.es/smarTime" target="_blank" rel="noopener" 
               class="text-white hover:text-green-200 block hover:animate-colorCycle text-xl">🌐</a>
             </button>
           </div>
         </div>
-        
-        </div>
-        </div>
-      </div>
     </div>
+       <!-- Botones de navegación -->
+      <div class="swiper-button-next animate-glowColorCycle">
+      </div>
+      <div class="swiper-button-prev animate-glowColorCycle"></div>
+      <br>
+     <!-- Paginación -->
+      <div class="swiper-pagination"></div>
+    </div>
+     
   </section>
 
 
@@ -540,9 +581,8 @@
 
 
   <div id="player" class="audio-player w-full py-10 shadow-xl grid bg-black bg-opacity-20">
-    <h2 class=" text-xl p-1 font-bold text-violet-300 text-center font-gba mb-10 flex justify-center items-center"> 
-      <svg width="28px" height="28px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="m 9 1.007812 c 0.296875 -0.003906 0.578125 0.125 0.769531 0.351563 l 3.230469 3.640625 h 1 c 1.09375 0 2 0.84375 2 2 v 2 c 0 1.089844 -0.910156 2 -2 2 h -1 l -3.230469 3.640625 c -0.210937 0.253906 -0.492187 0.363281 -0.769531 0.359375 z m -6.460938 0.960938 c 0.191407 -0.003906 0.386719 0.054688 0.558594 0.167969 c 0.457032 0.3125 0.578125 0.933593 0.269532 1.390625 c -1.824219 2.707031 -1.824219 6.238281 0 8.945312 c 0.308593 0.457032 0.1875 1.078125 -0.269532 1.390625 c -0.457031 0.308594 -1.078125 0.1875 -1.390625 -0.269531 c -1.136719 -1.691406 -1.707031 -3.640625 -1.707031 -5.59375 s 0.570312 -3.902344 1.707031 -5.59375 c 0.195313 -0.285156 0.511719 -0.4375 0.832031 -0.4375 z m 3.421876 2.019531 c 0.222656 -0.007812 0.453124 0.058594 0.644531 0.203125 c 0.261719 0.199219 0.394531 0.5 0.394531 0.804688 v 0.058594 c -0.011719 0.191406 -0.074219 0.375 -0.199219 0.535156 c -1.074219 1.429687 -1.074219 3.390625 0 4.816406 c 0.125 0.164062 0.1875 0.347656 0.199219 0.535156 v 0.0625 c 0 0.304688 -0.132812 0.605469 -0.394531 0.804688 c -0.441407 0.332031 -1.066407 0.242187 -1.398438 -0.199219 c -0.804687 -1.066406 -1.207031 -2.335937 -1.207031 -3.609375 s 0.402344 -2.542969 1.207031 -3.613281 c 0.183594 -0.246094 0.464844 -0.382813 0.753907 -0.398438 z m 0 0" fill="currentColor"></path> </g></svg>
-        <span>  Audio Player  </span>
+    <h2 class=" text-xl p-1 font-bold text-violet-400 shadow-md text-center font-gba mb-10 flex justify-center items-center"> 
+        <span>Audio Player  </span>
       <svg width="28px" height="28px" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="#000000" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="m 9 1.007812 c 0.296875 -0.003906 0.578125 0.125 0.769531 0.351563 l 3.230469 3.640625 h 1 c 1.09375 0 2 0.84375 2 2 v 2 c 0 1.089844 -0.910156 2 -2 2 h -1 l -3.230469 3.640625 c -0.210937 0.253906 -0.492187 0.363281 -0.769531 0.359375 z m -6.460938 0.960938 c 0.191407 -0.003906 0.386719 0.054688 0.558594 0.167969 c 0.457032 0.3125 0.578125 0.933593 0.269532 1.390625 c -1.824219 2.707031 -1.824219 6.238281 0 8.945312 c 0.308593 0.457032 0.1875 1.078125 -0.269532 1.390625 c -0.457031 0.308594 -1.078125 0.1875 -1.390625 -0.269531 c -1.136719 -1.691406 -1.707031 -3.640625 -1.707031 -5.59375 s 0.570312 -3.902344 1.707031 -5.59375 c 0.195313 -0.285156 0.511719 -0.4375 0.832031 -0.4375 z m 3.421876 2.019531 c 0.222656 -0.007812 0.453124 0.058594 0.644531 0.203125 c 0.261719 0.199219 0.394531 0.5 0.394531 0.804688 v 0.058594 c -0.011719 0.191406 -0.074219 0.375 -0.199219 0.535156 c -1.074219 1.429687 -1.074219 3.390625 0 4.816406 c 0.125 0.164062 0.1875 0.347656 0.199219 0.535156 v 0.0625 c 0 0.304688 -0.132812 0.605469 -0.394531 0.804688 c -0.441407 0.332031 -1.066407 0.242187 -1.398438 -0.199219 c -0.804687 -1.066406 -1.207031 -2.335937 -1.207031 -3.609375 s 0.402344 -2.542969 1.207031 -3.613281 c 0.183594 -0.246094 0.464844 -0.382813 0.753907 -0.398438 z m 0 0" fill="currentColor"></path> </g></svg>
     </h2> 
     <div id="audio-player" class="audio-player grid-flow-col w-full px-8 shadow-xl grid gap-4">  
@@ -949,7 +989,9 @@
     </div>
   </section>
 
-  
+  <!-- Swiper -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <!-- TypeWriter -->
   <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js" defer></script>
   <!-- fondo animado -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>

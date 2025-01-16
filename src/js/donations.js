@@ -73,19 +73,39 @@ stripeBtn.addEventListener('click', () => {
     coffee.classList.add('opacity-0');
     coffeeImg.classList.remove('animate-flash');
 });
+    
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
+
+  // Configuramos el mensaje
+  toastMsg.innerHTML = msg;
+
+  // Aseguramos que el toast esté visible para animarse
+  toast.classList.remove('hidden');
+  // toast.classList.add('animate-flyIn');
+
+  // Ocultamos el toast después de 3900ms
+  setTimeout(() => {
+    toast.classList.add('hidden');
+    // toast.classList.remove('animate-flyIn');
+  }, 3900);
+}
 
 /**
  * Copia la dirección de Bitcoin al portapapeles.
  */
-copyBtcBtn.addEventListener("click", () => {
-    navigator.clipboard.writeText(btcAddress) 
-      .then(() => {
-        alert("₿  Dirección de Bitcoin copiada al portapapeles"); 
-      })
-      .catch(err => {
-        console.error("Failed to copy text: ", err); 
-        alert("Fallo al copiar la dirección. Por favor inténtalo de nuevo."); 
-      });
-});
+    copyBtcBtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        let message = `<p class="animate-colorCycle"> ₿ Direccion copiada al portapapeles...<span class="animate-flashSlow">▎</span></p>`;
+        navigator.clipboard.writeText(btcAddress) 
+        .then(() => {
+            showToast(message); 
+        })
+        .catch(err => {
+            console.error("Failed to copy text: ", err); 
+            showToast("Fallo al copiar la dirección. Por favor inténtalo de nuevo."); 
+        });
+    });
 });
 

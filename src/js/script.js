@@ -6,11 +6,91 @@ const emailForm = document.getElementById('email-form');
 const whatsappForm = document.getElementById('whatsapp-form');
 const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
-const subtitle = document.getElementById("panel-subtitle");
+  const subtitle = document.getElementById("panel-subtitle");
+
+
+  new Swiper('.swiper-container', {
+    effect: 'cards',
+    cardsEffect: {
+      rotate: true,
+      slideShadows: true,
+      perSlideOffset: 15,
+      perSlideRotate: 6,
+    },
+    autoHeight: true,
+    centeredSlides: true, 
+    loop: true,
+    slidesPerView: 1,
+    zoom: {
+      limitToOriginalSize: false,
+      minRatio: 0.3,
+      maxRatio: 2,
+      panOnMouseMove: true,
+      toggle: true,
+    },
+    autoplay: {
+      delay: 5100,
+      pauseOnMouseEnter: true
+    },
+    
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1,
+    },
+    768: {
+      slidesPerView: 2,
+    },
+    1500: {
+      slidesPerView: 3,
+    },
+  },
+  });
+  
+ 
 
   changeCVLang('es');
   
+// function showToast(msg) {
+//   const toast = document.getElementById('toast');
+// const toastMsg = document.getElementById('toastMsg');
+//   toastMsg.innerHTML = msg;
+//   toast.classList.replace('hidden','animate-flyIn');
+ 
+//   setTimeout(() => {
+//     toast.classList.replace('animate-flyIn', 'hidden');
+//   }, 3900);
+//   }
+  
+  
+function showToast(msg) {
+  const toast = document.getElementById('toast');
+  const toastMsg = document.getElementById('toastMsg');
 
+  // Configuramos el mensaje
+  toastMsg.innerHTML = msg;
+
+  // Aseguramos que el toast esté visible para animarse
+  toast.classList.remove('hidden');
+  // toast.classList.add('animate-flyIn');
+
+  // Ocultamos el toast después de 3900ms
+  setTimeout(() => {
+    toast.classList.add('hidden');
+    // toast.classList.remove('animate-flyIn');
+  }, 3900);
+}
+
+  
+  
+const message = `<p class="text-emerald-200">Por favor, completa todos los campos antes de enviar el mensaje...<span class="animate-flashSlow">▎</span></p>`;
 
 // Enviar email
 emailForm.addEventListener("submit", async (event) => {
@@ -25,18 +105,30 @@ emailForm.addEventListener("submit", async (event) => {
   };
 
   try {
+    // Validar campos obligatorios
+    if (!formData.from_name || !formData.from_email || !formData.message) {
+      showToast(message);
+      return;
+    }
+
+    // spinner de carga
+    loadingSpinner.classList.remove("hidden");
+
     // Envío con EmailJS
     const serviceID = "nusky_service";
     const templateID = "nusky_template";
+
     await emailjs.send(serviceID, templateID, formData, "39FmjBf7JrQSw9E-2");
     console.log("Enviando datos:", formData);
 
-    alert("¡Mensaje enviado con éxito! 😄");
+    // Mostrar éxito y resetear formulario
+    showToast("¡Mensaje enviado con éxito! 😄");
     emailForm.reset();
   } catch (error) {
     console.error("Error al enviar el mensaje:", error);
-    alert("Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥");
+    showToast("❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥");
   } finally {
+    // Ocultar spinner
     loadingSpinner.classList.add("hidden");
   }
 });
@@ -51,8 +143,8 @@ whatsappForm.addEventListener('submit', function(event) {
   let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   if (!name || !msg) {
-    alert("Por favor, completa ambos campos antes de enviar el mensaje.");
-    return;
+    showToast(message);
+    return;message
   }
   window.open(whatsappURL, '_blank');
 });
@@ -65,7 +157,7 @@ telegramForm.addEventListener('submit', function(event) {
   let telegramURL = `https://t.me/Nusky_7?text=${encodedMessage}`;
 
   if (!username || !msg) {
-    alert("Por favor, completa ambos campos antes de enviar el mensaje.");
+    showToast(message);
     return;
   }
   window.open(telegramURL, '_blank');

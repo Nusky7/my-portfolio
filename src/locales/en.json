@@ -16,7 +16,7 @@
         "title": "Projects",
         "show": "See Code",
     
-        "working": "A project under development.<br><br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+        "working": "<span class='text-lg'><u>Project under development.</u></span><br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
         "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators.<br> Uses the FFmpeg and Fontmin libraries.",
         "project1": "An interactive map to explore the most important places in Valencia. <br>Offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
         "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angualar 17 and Bootstrap",

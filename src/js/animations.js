@@ -291,7 +291,6 @@ startBtn.addEventListener("click", () => {
     })
     .start();
 
-  // El resto de tu código para manejar la animación de la pantalla
   startBtn.classList.add("fadeOutScale");
   setTimeout(() => {
     startBtn.classList.add("hidden");
