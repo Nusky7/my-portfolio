@@ -1,2 +1,5 @@
 node_modules/
 *.log
+src/dist/styles.min.css
+.gitignore
+config.json
