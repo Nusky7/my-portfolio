@@ -8,6 +8,49 @@ const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
   const subtitle = document.getElementById("panel-subtitle");
 
+  $(document).ready(function () {
+    $('#rateit').rateit({
+        max: 5,
+        step: 1,
+        backingfld: '#backing',
+        resetable: false
+    });
+    // Manejar el evento 'rated'
+    $('#rateit').on('rated', function (event, value) {
+      if (value === undefined) {
+        console.error("El valor de la calificación no fue capturado correctamente.");
+      } else {
+        console.log("Calificación seleccionada:", value);
+        fetchRatings();
+        showToast('You rated ' + value + ' ★ to my Website<br> ' + 'Thank You! 💚'); 
+      }
+
+      // Enviar la valoración al servidor
+      $.post('https://nusky7studio.es/php/save_rating.php', { rating: value }, function (response) {
+        const res = JSON.parse(response);
+        if (res.status === 'success') {
+          console.log('Rating saved successfully!');
+          fetchRatings(); // Actualizar total
+        } else {
+          console.log('Error: ' + res.message);
+        }
+      });
+    });
+
+    // Obtener estadísticas de valoraciones
+    function fetchRatings() {
+      $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
+        const res = JSON.parse(response);
+        if (res.status === 'success') {
+          $('#total-votes').text(res.total_votes + ' Votes');
+          $('#average-rating').text('Average ▲ ' + res.average_rating.toFixed(1));
+        }
+      });
+    }
+
+    fetchRatings();
+  });
+
 
   new Swiper('.swiper-container', {
     effect: 'cards',
@@ -54,42 +97,20 @@ const loadingSpinner = document.getElementById("loading-spinner");
   },
   });
   
- 
+changeCVLang('es');
 
-  changeCVLang('es');
-  
-// function showToast(msg) {
-//   const toast = document.getElementById('toast');
-// const toastMsg = document.getElementById('toastMsg');
-//   toastMsg.innerHTML = msg;
-//   toast.classList.replace('hidden','animate-flyIn');
- 
-//   setTimeout(() => {
-//     toast.classList.replace('animate-flyIn', 'hidden');
-//   }, 3900);
-//   }
-  
-  
 function showToast(msg) {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');
 
-  // Configuramos el mensaje
   toastMsg.innerHTML = msg;
-
-  // Aseguramos que el toast esté visible para animarse
   toast.classList.remove('hidden');
-  // toast.classList.add('animate-flyIn');
 
-  // Ocultamos el toast después de 3900ms
   setTimeout(() => {
     toast.classList.add('hidden');
-    // toast.classList.remove('animate-flyIn');
   }, 3900);
 }
 
-  
-  
 const message = `<p class="text-emerald-200">Por favor, completa todos los campos antes de enviar el mensaje...<span class="animate-flashSlow">▎</span></p>`;
 
 // Enviar email

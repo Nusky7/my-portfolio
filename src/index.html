@@ -36,6 +36,11 @@
     Tu navegador no soporta la reproducción de audio.
   </audio>
   <script type="module" src="js/animations.js" defer></script>
+  <link rel="stylesheet" href="node_modules/jquery.rateit/scripts/rateit.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
+
 </head>
 
 <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
@@ -266,7 +271,39 @@
         <img src="img/en.webp" alt="en" class="w-full h-7">
       </button>
     </div>
+
     
+      <!-- <div class="rw-ui-container p-3"></div> -->
+     
+   
+      <!-- Select element as backing field -->
+<select id="backing" class="cursor-pointer">
+  <option value="0">Awful</option>
+  <option value="1">Bad</option>
+  <option value="2">OK</option>
+  <option value="3">OK</option>
+  <option value="4">Great</option>
+  <option value="5">Excellent</option>
+</select>
+
+<!-- RateIt widget -->
+<div id="rateit" 
+     class="rateit pt-3 " 
+     data-rateit-backingfld="#backing" 
+     data-rateit-mode="font" 
+     style="font-size:30px"
+     data-rateit-resetable="false" 
+     data-rateit-min="0" 
+     data-rateit-max="5" 
+     data-rateit-step="1">
+</div>
+
+<!-- Display total votes -->
+<div class="flex justify-center space-x-2 text-sm font-mono text-rose-100">
+  <p id="total-votes">Votes: 0 </p> <p class="text-rose-400"> | </p>
+  <p id="average-rating"> Average Rating: 0.0</p>
+</div>
+
   </main>
 
   <!-- Modal de opciones de donación -->
@@ -297,17 +334,12 @@
               <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
             </div>
           </div>
-          </div>
-
-           
+          </div>           
         </div>
-    <!-- <div id="toast" 
-      class="hidden font-mono animate-tvflickerRose text-gray-200 fixed bottom-6 right-0 bg-gradient-to-b from-neutral-950 via-neutral-800 to-black w-auto text-center text-xl font-light p-3 py-6 rounded-l-full shadow-lg transition-all duration-300 z-50">     
-    </div> -->
          
      <div id="toast"
-  class="hidden font-mono text-gray-200 fixed bottom-1/2 right-0 text-center text-lg font-semibold p-1.5 pr-3 rounded-l-md shadow-lg transition-all duration-300 z-50"
-  style="background: linear-gradient(180deg, #3b3b3b, #262626);">
+      class="hidden font-mono text-emerald-100 fixed bottom-1/2 right-0 text-center text-lg font-semibold p-1.5 pr-3 rounded-l-md shadow-lg transition-all duration-300 z-50"
+      style="background: linear-gradient(180deg, #3b3b3b, #262626);">
   
   <!-- Contenedor principal -->
   <div class="flex items-center justify-between w-full">
@@ -327,8 +359,6 @@
       <button title="Off Button" class="rounded-full -mt-2 bg-rose-900 hover:bg-rose-500 relative border border-black shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
         <svg class="svg-icon" fill="#161616" height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64px" height="64px" viewBox="0 0 478.125 478.125" xml:space="preserve" stroke="44403C"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <g> <circle cx="239.904" cy="314.721" r="35.878"></circle> <path d="M256.657,127.525h-31.9c-10.557,0-19.125,8.645-19.125,19.125v101.975c0,10.48,8.645,19.125,19.125,19.125h31.9 c10.48,0,19.125-8.645,19.125-19.125V146.65C275.782,136.17,267.138,127.525,256.657,127.525z"></path> <path d="M239.062,0C106.947,0,0,106.947,0,239.062s106.947,239.062,239.062,239.062c132.115,0,239.062-106.947,239.062-239.062 S371.178,0,239.062,0z M239.292,409.734c-94.171,0-170.595-76.348-170.595-170.596c0-94.248,76.347-170.595,170.595-170.595 s170.595,76.347,170.595,170.595C409.887,333.387,333.464,409.734,239.292,409.734z"></path> </g> </g> </g> </g></svg>
       </button>
-
-
   </div>
 </div>
 </div>
@@ -353,6 +383,7 @@
         Thanks for reading chat@!
             </p>
           </div>
+           <!-- <div class="sharethis-inline-share-buttons"></div> -->
         </section>
 
 
@@ -986,8 +1017,15 @@
           </form>
         </div>
       </div>
+
+        
     </div>
+
+  
   </section>
+
+
+
 
   <!-- Swiper -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>

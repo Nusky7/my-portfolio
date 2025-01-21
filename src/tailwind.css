@@ -2,6 +2,50 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* 
+.rw-ui-container {
+    display: grid !important;
+    justify-content: center !important;
+    align-items: end !important;
+    margin: 6px;
+}
+
+.rw-ui-info-container{
+ margin: 5px !important;
+} */
+.rw-ui-info-nub, .rw-ui-info-inner-nub {
+  display: none !important;
+}
+
+.rw-ui-container:hover{
+  color: white !important!
+}
+
+.rw-ui-report {
+  background-color: #222 !important;
+  color: white;
+}
+
+.rw-mobile-action-area, .rw-ui-mobile-stars {
+  display: none !important;
+}
+
+.rw-ui-container {
+    display: flex !important;
+    flex-direction: column !important;
+    margin: 6px !important;
+    align-items: center !important; 
+    width: 50%;
+}
+.rw-ui-info-container {
+    margin-top: 7px !important; 
+}
+
+.rw-ui-info:hover,
+.rw-ui-info-inner-container:hover {
+  color: pink !important;
+  background: black !important;
+}
 
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto;
@@ -426,7 +470,7 @@ a, button{
   position: absolute;
   width: 200px;
   height: 200px;
-  top: 100px;
+  top: 120px;
   left: 6%;
   object-fit: cover;
   border-radius: 50%;
@@ -443,7 +487,7 @@ a, button{
   position: absolute;
   display: flex;
   left: 352px;
-  margin-top: 182px;
+  margin-top: 15rem;
   gap: 1rem;
 }
 
@@ -652,7 +696,7 @@ audio::-webkit-media-controls-play-button {
 
   .social {
     width: 75% ;
-    top: 33% !important;
+    top: 5% !important;
     left: 12.5% !important;
     padding-bottom: 6% !important;
     flex-direction: row !important;

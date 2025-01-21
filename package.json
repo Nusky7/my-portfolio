@@ -10,6 +10,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "jquery": "^3.6.0",
+    "jquery.rateit": "^1.1.6",
     "wave-visualizer": "^1.0.6",
     "wavesurfer.js": "^7.8.9"
   },
