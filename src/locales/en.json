@@ -73,6 +73,17 @@
       "download_cv": "Download CV 📋",
       "contact": "Contact ✉️",
       "intro_panel": "Intro 🎬 Panel"
-    }
+    },
+    "toastMsgs": {
+    "toastRated": "You rated {value} ★ to my Website<br> Thank You! 💚",
+    "sendOk": "Message sent successfully! 😄",
+    "sendError": "❌ There was an error sending the message. Please try again. 😥",
+    "sendWarn": "<p class='text-emerald-200'>Please complete all fields before sending the message...<span class='animate-flashSlow'>▎</span></p>",
+    "copyBtc": "<p class='animate-colorCycle'> ₿ Address copied to clipboard...<span class='animate-flashSlow'>▎</span></p>"
+  },
+    "ratingStats": {
+    "votes": "{total} Votes",
+    "average": "Average ▲ {average}"
+  }
   }
   

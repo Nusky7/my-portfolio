@@ -1018,10 +1018,6 @@ video {
   width: 2.25rem;
 }
 
-.w-auto {
-  width: auto;
-}
-
 .w-full {
   width: 100%;
 }
@@ -1621,36 +1617,6 @@ video {
   animation: tada 2.77s ease-in-out infinite;
 }
 
-@keyframes tvflicker-rose {
-  0% {
-    box-shadow: 0 0 40px 0 rgba(249, 168, 212, 0.3);
-  }
-
-  20% {
-    box-shadow: 0 0 30px 0 rgba(244, 114, 182, 0.5);
-  }
-
-  40% {
-    box-shadow: 0 0 25px 0 rgba(196, 35, 113, 0.5);
-  }
-
-  60% {
-    box-shadow: 0 0 20px 0 rgba(244, 114, 182, 0.7);
-  }
-
-  80% {
-    box-shadow: 0 0 35px 0 rgba(249, 168, 212, 0.5);
-  }
-
-  100% {
-    box-shadow: 0 0 45px 0 rgba(244, 114, 182, 0.4);
-  }
-}
-
-.animate-tvflickerRose {
-  animation: tvflicker-rose 3s infinite;
-}
-
 .cursor-pointer {
   cursor: pointer;
 }
@@ -1812,11 +1778,6 @@ video {
 .rounded-b-lg {
   border-bottom-right-radius: 0.5rem;
   border-bottom-left-radius: 0.5rem;
-}
-
-.rounded-l-full {
-  border-top-left-radius: 9999px;
-  border-bottom-left-radius: 9999px;
 }
 
 .rounded-l-md {
@@ -2216,12 +2177,6 @@ video {
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-neutral-950 {
-  --tw-gradient-from: #0a0a0a var(--tw-gradient-from-position);
-  --tw-gradient-to: rgb(10 10 10 / 0) var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
-}
-
 .from-rose-500 {
   --tw-gradient-from: #f43f5e var(--tw-gradient-from-position);
   --tw-gradient-to: rgb(244 63 94 / 0) var(--tw-gradient-to-position);
@@ -2237,15 +2192,6 @@ video {
 .via-emerald-900 {
   --tw-gradient-to: rgb(6 78 59 / 0)  var(--tw-gradient-to-position);
   --tw-gradient-stops: var(--tw-gradient-from), #064e3b var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.via-neutral-800 {
-  --tw-gradient-to: rgb(38 38 38 / 0)  var(--tw-gradient-to-position);
-  --tw-gradient-stops: var(--tw-gradient-from), #262626 var(--tw-gradient-via-position), var(--tw-gradient-to);
-}
-
-.to-black {
-  --tw-gradient-to: #000 var(--tw-gradient-to-position);
 }
 
 .to-emerald-400 {
@@ -2401,11 +2347,6 @@ video {
   padding-bottom: 1.25rem;
 }
 
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-}
-
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -2472,6 +2413,14 @@ video {
 
 .pt-6 {
   padding-top: 1.5rem;
+}
+
+.pt-2 {
+  padding-top: 0.5rem;
+}
+
+.pb-1 {
+  padding-bottom: 0.25rem;
 }
 
 .text-left {
@@ -2555,10 +2504,6 @@ video {
 
 .font-bold {
   font-weight: 700;
-}
-
-.font-light {
-  font-weight: 300;
 }
 
 .font-medium {
@@ -3009,51 +2954,59 @@ video {
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* 
-.rw-ui-container {
-    display: grid !important;
-    justify-content: center !important;
-    align-items: end !important;
-    margin: 6px;
+.rateit .rateit-selected {
+  /* @apply animate-colorCycle !important; */
+  /* color: #f24f6a !important;  */
+  color: #AA1C59 !important;
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
+  filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.9)) !important;
 }
 
-.rw-ui-info-container{
- margin: 5px !important;
-} */
+@keyframes colorCycle {
+  0% {
+    color: #f472b6;
+  }
 
-.rw-ui-info-nub, .rw-ui-info-inner-nub {
-  display: none !important;
+  5% {
+    color: #db85c7;
+  }
+
+  16% {
+    color: #c084fc;
+  }
+
+  33% {
+    color: #22d3ee;
+  }
+
+  50% {
+    color: #14b8a6;
+  }
+
+  66% {
+    color: #19ff4b;
+  }
+
+  83% {
+    color: #facc15;
+  }
+
+  93% {
+    color: #a855f7;
+  }
+
+  100% {
+    color: #f472b6;
+  }
 }
 
-.rw-ui-container:hover{
-  color: white !important!
+.rateit .rateit-hover {
+  animation: colorCycle 2.5s infinite;
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
 
-.rw-ui-report {
-  background-color: #222 !important;
-  color: white;
-}
-
-.rw-mobile-action-area, .rw-ui-mobile-stars {
-  display: none !important;
-}
-
-.rw-ui-container {
-  display: flex !important;
-  flex-direction: column !important;
-  margin: 6px !important;
-  align-items: center !important;
-  width: 50%;
-}
-
-.rw-ui-info-container {
-  margin-top: 7px !important;
-}
-
-.rw-ui-info:hover,
-.rw-ui-info-inner-container:hover {
-  color: pink !important;
-  background: black !important;
+.rateit .rateit-background {
+  color: #444;
 }
 
 html, body{

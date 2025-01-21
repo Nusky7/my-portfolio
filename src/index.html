@@ -36,11 +36,9 @@
     Tu navegador no soporta la reproducción de audio.
   </audio>
   <script type="module" src="js/animations.js" defer></script>
-  <link rel="stylesheet" href="node_modules/jquery.rateit/scripts/rateit.css">
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
-
 </head>
 
 <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
@@ -271,38 +269,34 @@
         <img src="img/en.webp" alt="en" class="w-full h-7">
       </button>
     </div>
-
-    
-      <!-- <div class="rw-ui-container p-3"></div> -->
-     
-   
+        
       <!-- Select element as backing field -->
-<select id="backing" class="cursor-pointer">
-  <option value="0">Awful</option>
-  <option value="1">Bad</option>
-  <option value="2">OK</option>
-  <option value="3">OK</option>
-  <option value="4">Great</option>
-  <option value="5">Excellent</option>
-</select>
+      <select id="backing" >
+        <option value="0">Awful</option>
+        <option value="1">Bad</option>
+        <option value="2">OK</option>
+        <option value="3">OK</option>
+        <option value="4">Great</option>
+        <option value="5">Excellent</option>
+      </select>
 
-<!-- RateIt widget -->
-<div id="rateit" 
-     class="rateit pt-3 " 
-     data-rateit-backingfld="#backing" 
-     data-rateit-mode="font" 
-     style="font-size:30px"
-     data-rateit-resetable="false" 
-     data-rateit-min="0" 
-     data-rateit-max="5" 
-     data-rateit-step="1">
-</div>
+      <!-- RateIt widget -->
+      <div id="rateit" 
+          class="rateit pt-2 " 
+          data-rateit-backingfld="#backing" 
+          data-rateit-mode="font" 
+          style="font-size:30px"
+          data-rateit-resetable="false" 
+          data-rateit-min="0" 
+          data-rateit-max="5" 
+          data-rateit-step="1">
+      </div>
 
-<!-- Display total votes -->
-<div class="flex justify-center space-x-2 text-sm font-mono text-rose-100">
-  <p id="total-votes">Votes: 0 </p> <p class="text-rose-400"> | </p>
-  <p id="average-rating"> Average Rating: 0.0</p>
-</div>
+      <!-- Display total votes -->
+      <div class="flex justify-center pb-1 shadow-lg space-x-2 text-sm font-poppins text-rose-100">
+        <p id="total-votes">Votes: 0 </p> <p class="text-rose-400"> | </p>
+        <p id="average-rating"> Average Rating: 0.0</p>
+      </div>
 
   </main>
 

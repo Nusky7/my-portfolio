@@ -78,17 +78,11 @@ function showToast(msg) {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');
 
-  // Configuramos el mensaje
   toastMsg.innerHTML = msg;
-
-  // Aseguramos que el toast esté visible para animarse
-  toast.classList.remove('hidden');
-  // toast.classList.add('animate-flyIn');
-
-  // Ocultamos el toast después de 3900ms
+    toast.classList.remove('hidden');
+    
   setTimeout(() => {
     toast.classList.add('hidden');
-    // toast.classList.remove('animate-flyIn');
   }, 3900);
 }
 

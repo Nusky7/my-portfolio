@@ -6,50 +6,8 @@ const emailForm = document.getElementById('email-form');
 const whatsappForm = document.getElementById('whatsapp-form');
 const telegramForm = document.getElementById('telegram-form');
 const loadingSpinner = document.getElementById("loading-spinner");
-  const subtitle = document.getElementById("panel-subtitle");
+const subtitle = document.getElementById("panel-subtitle");
 
-  $(document).ready(function () {
-    $('#rateit').rateit({
-        max: 5,
-        step: 1,
-        backingfld: '#backing',
-        resetable: false
-    });
-    // Manejar el evento 'rated'
-    $('#rateit').on('rated', function (event, value) {
-      if (value === undefined) {
-        console.error("El valor de la calificación no fue capturado correctamente.");
-      } else {
-        console.log("Calificación seleccionada:", value);
-        fetchRatings();
-        showToast('You rated ' + value + ' ★ to my Website<br> ' + 'Thank You! 💚'); 
-      }
-
-      // Enviar la valoración al servidor
-      $.post('https://nusky7studio.es/php/save_rating.php', { rating: value }, function (response) {
-        const res = JSON.parse(response);
-        if (res.status === 'success') {
-          console.log('Rating saved successfully!');
-          fetchRatings(); // Actualizar total
-        } else {
-          console.log('Error: ' + res.message);
-        }
-      });
-    });
-
-    // Obtener estadísticas de valoraciones
-    function fetchRatings() {
-      $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
-        const res = JSON.parse(response);
-        if (res.status === 'success') {
-          $('#total-votes').text(res.total_votes + ' Votes');
-          $('#average-rating').text('Average ▲ ' + res.average_rating.toFixed(1));
-        }
-      });
-    }
-
-    fetchRatings();
-  });
 
 
   new Swiper('.swiper-container', {
@@ -111,8 +69,6 @@ function showToast(msg) {
   }, 3900);
 }
 
-const message = `<p class="text-emerald-200">Por favor, completa todos los campos antes de enviar el mensaje...<span class="animate-flashSlow">▎</span></p>`;
-
 // Enviar email
 emailForm.addEventListener("submit", async (event) => {
   event.preventDefault(); 
@@ -128,7 +84,7 @@ emailForm.addEventListener("submit", async (event) => {
   try {
     // Validar campos obligatorios
     if (!formData.from_name || !formData.from_email || !formData.message) {
-      showToast(message);
+      showToast(t('toastMsgs.sendWarn'));
       return;
     }
 
@@ -143,11 +99,11 @@ emailForm.addEventListener("submit", async (event) => {
     console.log("Enviando datos:", formData);
 
     // Mostrar éxito y resetear formulario
-    showToast("¡Mensaje enviado con éxito! 😄");
+    showToast(t('toastMsgs.sendOk'));
     emailForm.reset();
   } catch (error) {
     console.error("Error al enviar el mensaje:", error);
-    showToast("❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥");
+    showToast(t('toastMsgs.sendError'));
   } finally {
     // Ocultar spinner
     loadingSpinner.classList.add("hidden");
@@ -164,8 +120,8 @@ whatsappForm.addEventListener('submit', function(event) {
   let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
 
   if (!name || !msg) {
-    showToast(message);
-    return;message
+    showToast(t('toastMsgs.sendWarn'));
+    return;
   }
   window.open(whatsappURL, '_blank');
 });
@@ -178,7 +134,7 @@ telegramForm.addEventListener('submit', function(event) {
   let telegramURL = `https://t.me/Nusky_7?text=${encodedMessage}`;
 
   if (!username || !msg) {
-    showToast(message);
+    showToast(t('toastMsgs.sendWarn'));
     return;
   }
   window.open(telegramURL, '_blank');
@@ -235,9 +191,10 @@ startAnimation();
 const loadTranslations = async (lang) => {
   try {
     const response = await fetch(`./locales/${lang}.json`);
-    const translations = await response.json();
-    console.log(translations);
-    applyTranslations(translations);
+    translations = await response.json();
+    console.log("Translations loaded:", translations);
+    applyTranslations(translations); 
+    initializeRateIt(); 
   } catch (error) {
     console.error("Error loading translations:", error);
   }
@@ -253,7 +210,6 @@ const loadTranslations = async (lang) => {
   document.querySelector('a[href="#action-panel"]').innerHTML = translations.menu.download_cv;
   document.querySelector('a[href="#contact"]').textContent = translations.menu.contact;
   document.querySelector('a[href="/"]').textContent = translations.menu.intro_panel;
-
   // Principal
   document.getElementById("header-subtitle").innerHTML = translations.header.subtitle;
   document.getElementById("about-heading").innerHTML = translations.about.heading;
@@ -314,6 +270,77 @@ const loadTranslations = async (lang) => {
     });
     
 };
+// Ratings ★ 
+let translations = {};
+// Función para obtener el texto traducido
+function t(key, variables = {}) {
+   if (!translations.toastMsgs && !translations.ratingStats) {
+    console.warn("Translations not loaded yet!");
+    return key;
+  }
+  let text = key.split('.').reduce((o, i) => (o ? o[i] : null), translations) || key;
+  Object.keys(variables).forEach((varKey) => {
+    text = text.replace(`{${varKey}}`, variables[varKey]);
+  });
+  return text;
+}
+
+const initializeRateIt = () => {
+ $(document).ready(function () {
+    $('#rateit').rateit({
+        max: 5,
+        step: 1,
+        backingfld: '#backing',
+        resetable: false
+    });
+
+    // Verificar si el usuario votó
+    if (localStorage.getItem('userVoted')) {
+        $('#rateit').rateit('readonly', true); 
+    }
+
+    // Manejar el evento 'rated'
+   $('#rateit').on('rated', function (event, value) {
+      fetchRatings();
+        if (value === undefined) {
+            console.error("El valor de la calificación no fue capturado correctamente.");
+        } else {
+            
+            console.log("Calificación seleccionada:", value);
+           showToast(t('toastMsgs.toastRated', { value: value }));
+            localStorage.setItem('userVoted', true);
+            $('#rateit').rateit('readonly', true); 
+        }
+
+        // Enviar la valoración al servidor
+        $.post('https://nusky7studio.es/php/save_rating.php', { rating: value }, function (response) {
+            const res = JSON.parse(response);
+            if (res.status === 'success') {
+                console.log('Rating saved successfully!');
+                fetchRatings(); // Actualizar total
+            } else {
+                console.log('Error: ' + res.message);
+            }
+        });
+    });
+
+    // Obtener estadísticas de valoraciones
+    function fetchRatings() {
+        $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
+            const res = JSON.parse(response);
+            if (res.status === 'success') {
+                // $('#total-votes').text(res.total_votes + ' Votes');
+                $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
+                $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
+                // $('#average-rating').text('Average ▲ ' + res.average_rating.toFixed(1));
+                $('#rateit').rateit('value', res.average_rating); // Mostrar promedio como relleno inicial
+            }
+        });
+    }
+    fetchRatings();
+ });
+};
+
 
 const langButtons = document.querySelectorAll('.lang-btn');
 const activeClass = 'animate-pulse';
@@ -333,7 +360,8 @@ document.getElementById("lang-switch-es").addEventListener("click", () => {
 document.getElementById("lang-switch-en").addEventListener("click", () => {
   loadTranslations("en");
 });
-loadTranslations("es");
+  loadTranslations("es");
+  
 
 
 function changeCVLang(language) {

@@ -2,50 +2,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* 
-.rw-ui-container {
-    display: grid !important;
-    justify-content: center !important;
-    align-items: end !important;
-    margin: 6px;
+
+.rateit .rateit-selected {
+  /* @apply animate-colorCycle !important; */
+    /* color: #f24f6a !important;  */
+    color: #AA1C59 !important; 
+    cursor: url('/img/pointer.png') 16 16, pointer !important;
+    filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.9)) !important;
 }
 
-.rw-ui-info-container{
- margin: 5px !important;
-} */
-.rw-ui-info-nub, .rw-ui-info-inner-nub {
-  display: none !important;
+.rateit .rateit-hover {
+     @apply animate-colorCycle;
+    cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
 
-.rw-ui-container:hover{
-  color: white !important!
+.rateit .rateit-background {
+    color: #444;
 }
 
-.rw-ui-report {
-  background-color: #222 !important;
-  color: white;
-}
-
-.rw-mobile-action-area, .rw-ui-mobile-stars {
-  display: none !important;
-}
-
-.rw-ui-container {
-    display: flex !important;
-    flex-direction: column !important;
-    margin: 6px !important;
-    align-items: center !important; 
-    width: 50%;
-}
-.rw-ui-info-container {
-    margin-top: 7px !important; 
-}
-
-.rw-ui-info:hover,
-.rw-ui-info-inner-container:hover {
-  color: pink !important;
-  background: black !important;
-}
 
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto;

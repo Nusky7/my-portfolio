@@ -72,7 +72,19 @@
       "download_cv": "Descargar CV 📋",
       "contact": "Contacto ✉️",
       "intro_panel": "Intro 🎬 Panel"
-    }
+    },
+      "toastMsgs": {
+        "toastRated": "Has puntuado con {value} ★ mi Web<br> ¡Gracias! 💚",
+        "sendError": "❌ Hubo un error al enviar el mensaje. Por favor, inténtalo de nuevo. 😥",
+        "sendOk": "¡Mensaje enviado con éxito! 😄",
+        "sendWarn": "<p class='text-emerald-200'>Por favor, completa todos los campos antes de enviar el mensaje...<span class='animate-flashSlow'>▎</span></p>",
+        "copyBtc":"<p class='animate-colorCycle'> ₿ Direccion copiada al portapapeles...<span class='animate-flashSlow'>▎</span></p>"
+
+  },
+  "ratingStats": {
+    "votes": "{total} Votos",
+    "average": "Promedio ▲ {average}"
+  }
 
   }
   
