@@ -3831,7 +3831,7 @@ audio::-webkit-media-controls-play-button {
   }
 
   .audio-controls{
-    border: 3px inset #110;
+    border: 3px ridge #333;
     border-radius: 10px;
     padding: 2%;
   }
