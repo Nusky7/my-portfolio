@@ -130,10 +130,10 @@ html, body{
 	flex-direction: column;
 }
 
-.monitor-frame{
+/* .monitor-frame{
 	box-shadow: inset 0 0 7px rgba(23, 146, 106, 0.3),
 		0 0 15px rgba(23, 146, 106, 0.4);
-}
+} */
 
 #monitorscreen {
 	/* background-color: #0f5c48; */
