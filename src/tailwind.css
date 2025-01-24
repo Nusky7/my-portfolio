@@ -239,7 +239,8 @@ html, body{
 }
 
 #prevBtn, 
-#nextBtn {
+#nextBtn,
+#channelBtn {
   border: 2.5px outset #161616;
 }
 #offBtn {

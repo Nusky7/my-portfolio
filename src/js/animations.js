@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const tvBrand = document.getElementById('tv-brand');
   const comentsDiv = document.getElementById('comments-section');
   const scrollAmount = 100;
+  const advertisement = document.getElementById('advertisement');
   // Intro - Main
   const startBtn = document.getElementById("start-btn");
   const introScreen = document.getElementById("intro-screen");
@@ -409,8 +410,6 @@ headerImg.addEventListener("click", () => {
         ytVideos.style.gridTemplateColumns = "";
     }
 }
-
-    
     window.addEventListener('resize', function () {
     updateLayout(); updateName(); updateBrand();
 });
@@ -423,14 +422,17 @@ headerImg.addEventListener("click", () => {
 // Función para el on/off de la pantalla y LED
 button.addEventListener('click', function() {
   const isScreenOff = screen.classList.toggle('screen-off');
-  screenList.classList.toggle('hidden', isScreenOff);
+  // screenList.classList.toggle('hidden', isScreenOff);
 
   if (isScreenOff) {
+    advertisement.classList.add('hidden');
+    screenList.classList.add('hidden');
     button.classList.replace('bg-rose-900', 'bg-stone-500');
     led.classList.replace('bg-green-500', 'bg-red-800');
     led.classList.replace('border-green-500', 'border-red-800');
     led.classList.replace('shadow-[0_0_3px_1.5px_rgba(0,255,0,0.6)]', 'shadow-[0_0_3px_1.5px_rgba(255,0,0,0.6)]');
   } else {
+    advertisement.classList.remove('hidden');
     button.classList.replace('bg-stone-500', 'bg-rose-900');
     led.classList.replace('bg-red-800', 'bg-green-500');
     led.classList.replace('border-red-800', 'border-green-500' );
@@ -454,6 +456,19 @@ nextBtn.addEventListener("click", () => {
         left: 0, 
         behavior: "smooth"
     });
+});
+  
+// Agregar el evento al botón de cambiar de canal
+document.getElementById('channelBtn').addEventListener('click', function () {
+  
+  // Alternar entre las vistas
+  if (advertisement.classList.contains('hidden')) {
+    advertisement.classList.remove('hidden');
+    screenList.classList.add('hidden');
+  } else {
+    advertisement.classList.add('hidden');
+    screenList.classList.remove('hidden'); 
+  }
 });
 
 });
