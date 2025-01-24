@@ -15,11 +15,11 @@
         "title": "Proyectos",
         "show": "Ver Codigo",
         "working": "<span class='text-lg'><u>Proyecto en desarrollo.</u></span><br> Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
-        "project": "Herramienta online para convertir formatos de imágenes, fuentes y videos, diseñada para facilitar el trabajo de desarrolladores y creadores.<br> Utiliza las bibliotecas FFmpeg y Fontmin.",
+        "project": "Herramienta online para convertir formatos de imágenes, fuentes y videos, diseñada para facilitar el trabajo de desarrolladores y creadores.",
         "project1": "Un mapa interactivo para explorar los lugares más importantes de Valencia, <br> con opción de tema Claro/Oscuro y soporte multi-idioma.",
          "project2": "Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo frontend con Angular 17 y Bootstap.",
-         "project3": "Web portafolio de tatuajes diseñada para un amigo. Incluye una galería de fotos que muestra sus trabajos, formulario de contacto, un asistente virtual para citas y enlaces a sus redes sociales.",
-         "project4": "Smart Time es una aplicación de gestión de proyectos y tareas, con funcionalidades como notas, calendario y eventos. <br> Es el proyecto final de mi ciclo formativo de CFGS."
+         "project3": "<p class='text-violet-300'>2.0 🡩 Mejorada con Tailwind & Swiper.</p>Portafolio de tatuajes diseñado para un amigo. Incluye una galería de fotos deslizable, formulario de contacto, asistente virtual para citas y enlaces a sus redes sociales.",
+         "project4": "<p class='text-emerald-300'>Proyecto final de mi ciclo formativo de CFGS.</p>Smart Time es una aplicación de gestión de proyectos y tareas, con funcionalidades como notas, calendario y eventos."
     },
     "panel": {
       "buttonText": "Descargar CV",

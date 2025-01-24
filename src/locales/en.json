@@ -17,11 +17,11 @@
         "show": "See Code",
     
         "working": "<span class='text-lg'><u>Project under development.</u></span><br>This system aims to optimize management and administrative processes through modern full-stack architecture.",
-        "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators.<br> Uses the FFmpeg and Fontmin libraries.",
+        "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators",
         "project1": "An interactive map to explore the most important places in Valencia. <br>Offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
-        "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angualar 17 and Bootstrap",
-        "project3": "A tattoo portfolio website designed for a friend. Includes a photo gallery showcasing their work, a contact form, a virtual assistant for appointments, and links to their social media.",
-        "project4": "Smart Time is a project and task management application with features like notes, a calendar, and events. <br> It is the final project of my Higher Vocational Education program (CFGS)."
+        "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angular 17 and Bootstrap",
+        "project3": "<p class='text-violet-300'>2.0 🡩 Improved with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant for appointments and links to his social media.",
+        "project4": "<p class='text-emerald-300'>Final project of my Higher Vocational Education program (CFGS).</p>Smart Time is a project and task management application with features like notes, a calendar, and events."
        
     },
     "panel": {
