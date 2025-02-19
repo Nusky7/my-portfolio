@@ -1,5 +1,4 @@
 const API_KEY = "";
-
 // const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
 const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
 const MAX_RESULTS = 6;
@@ -100,7 +99,7 @@ function displayVideos(videos) {
            <div class="p-2.5 w-full h-auto shadow-md rounded-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" style="background: linear-gradient(180deg, #3b3b3b, #262626);">
                 <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="block">
                     <div class="aspect-w-16 aspect-h-9">
-                        <img src="${thumbnails.high.url}" alt="${title}" class="yt-img w-full h-full object-cover">
+                        <img src="${thumbnails.high.url}" loading="lazy"  alt="${title}" class="yt-img w-full h-full object-cover">
                     </div>
               
                 <div class="px-1 pt-0.5 flex items-center space-x-2">

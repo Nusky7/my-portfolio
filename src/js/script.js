@@ -226,6 +226,7 @@ const loadTranslations = async (lang) => {
   document.getElementById("project2").innerHTML = translations.projects.project2;
   document.getElementById("project3").innerHTML = translations.projects.project3;
   document.getElementById("project4").innerHTML = translations.projects.project4;
+  document.getElementById("project5").innerHTML = translations.projects.project5;
   //Action Panel
   document.getElementById("button-text").innerHTML = translations.panel.buttonText;
   document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;

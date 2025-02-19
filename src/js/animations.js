@@ -425,6 +425,7 @@ button.addEventListener('click', function() {
   // screenList.classList.toggle('hidden', isScreenOff);
 
   if (isScreenOff) {
+    document.getElementById('preview-projects').classList.add('hidden');
     advertisement.classList.add('hidden');
     screenList.classList.add('hidden');
     button.classList.replace('bg-rose-900', 'bg-stone-500');
@@ -459,16 +460,31 @@ nextBtn.addEventListener("click", () => {
 });
   
 // Agregar el evento al botón de cambiar de canal
-document.getElementById('channelBtn').addEventListener('click', function () {
-  
-  // Alternar entre las vistas
-  if (advertisement.classList.contains('hidden')) {
-    advertisement.classList.remove('hidden');
-    screenList.classList.add('hidden');
-  } else {
-    advertisement.classList.add('hidden');
-    screenList.classList.remove('hidden'); 
-  }
-});
+  let currentChannel = 0; 
+  const channelIndicator = document.getElementById('channel-indicator');
 
+document.getElementById('channelBtn').addEventListener('click', function () {
+  const channels = [
+    { id: advertisement, name: 'CH 01' },
+    { id: document.getElementById('preview-projects'), name: 'CH 02' },
+    { id: screenList, name: 'CH 03' },
+  ];
+
+  // Ocultar el canal actual
+  channels[currentChannel].id.classList.add('hidden');
+  // Cambiar al siguiente canal (con bucle)
+  currentChannel = (currentChannel + 1) % channels.length;
+  // Mostrar el nuevo canal
+  channels[currentChannel].id.classList.remove('hidden');
+  // Actualizar y mostrar el indicador de canal
+  channelIndicator.textContent = channels[currentChannel].name;
+  channelIndicator.classList.remove('hidden');
+
+  // Ocultar el indicador después de 2 segundos
+  setTimeout(() => {
+    channelIndicator.classList.add('hidden');
+    }, 3000);
+  });
+
+ 
 });

@@ -15,13 +15,13 @@
     "projects": {
         "title": "Projects",
         "show": "See Code",
-    
-        "working": "<p class='text-rose-300 text-xl text-center'><u>Project under development.</u></p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
-        "project": "Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators",
-        "project1": "An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
-        "project2": "A transfer website in the Valencia area for booking private trips. Frontend prototype with Angular 17 and Bootstrap",
-        "project3": "<p class='text-violet-300'>2.0 🡩 Improved with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant for appointments and links to his social media.",
-        "project4": "<p class='text-emerald-300'>Final project of my Higher Vocational Education program (CFGS).</p>Smart Time is a project and task management application with features like notes, a calendar, and events."
+        "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+        "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators",
+        "project1": "<p class='text-amber-300'>Integrated Maps.</p>An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
+        "project2": "<p class='text-orange-400'>FrontEnd prototype.</p>A transfer website in the Valencia area for booking private trips. <br>Prototype with Angular 17 and Bootstrap<br>",
+        "project3": "<p class='text-violet-300'>2.0 🡩 Updated with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant & links to his SM.",
+        "project4": "<p class='text-emerald-200'>Higher Education program. | Final Project.</p>Smart Time is a project and task management application with features like notes, a calendar, and events.",
+        "project5": "<p class='text-red-600'>Allow sound to hear background music.</p>PHP client that consumes the Pokémon API and displays 20 Pokémon with their images, moves, and sounds."
        
     },
     "panel": {

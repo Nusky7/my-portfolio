@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Cómo mejorar el diseño web para SEO en 2025",
+    "date": "2025-02-18",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si tienes un sitio web, el SEO es clave para aumentar tu visibilidad...",
+    "image": "/img/posts/seo.webp",
+    "url": "blog/seo-web-2025.html",
+    "category": "Desarrollo Web"
+  },
+  {
+    "title": "Diseño y Desarrollo Web en Valencia: Guía Completa",
+    "date": "2025-02-10",
+    "author": "Alba Tolosa Bonora",
+    "content": "El desarrollo web en Valencia está en auge, descubre cómo destacar...",
+    "image": "/img/posts/valencia1.webp",
+    "url": "blog/desarrollo-web-valencia.html",
+    "category": "Desarrollo Web"
+  },
+  {
+    "title": "Guía completa para optimizar la velocidad de tu web con Tailwind CSS",
+    "date": "2025-02-15",
+    "author": "Alba Tolosa Bonora",
+    "content": "Una web rápida no solo mejora la experiencia del usuario, sino que también es crucial para el SEO...",
+    "image": "/img/posts/tailwind.png",
+    "url": "blog/optimizar-web-tailwind.html",
+    "category": "Desarrollo Web"
+  },
+  {
+    "title": "Los mejores smartphones Android de 2025",
+    "date": "2025-02-20",
+    "author": "Alba Tolosa Bonora",
+    "content": "Descubre los dispositivos Android más potentes, con mejor rendimiento y diseño del 2025...",
+    "image": "/img/posts/android2025.webp",
+    "url": "blog/mejores-android-2025.html",
+    "category": "Dispositivos y Android"
+  },
+  {
+    "title": "Cómo optimizar la batería de tu smartphone Android",
+    "date": "2025-02-22",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si la batería de tu móvil no dura lo suficiente, aquí tienes consejos para mejorar su rendimiento...",
+    "image": "/img/posts/bateria.webp",
+    "url": "blog/optimizar-bateria-android.html",
+    "category": "Dispositivos y Android"
+  }
+]

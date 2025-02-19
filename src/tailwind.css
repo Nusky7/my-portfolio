@@ -130,6 +130,21 @@ html, body{
 	flex-direction: column;
 }
 
+
+#channel-indicator {
+  animation: fade 3s step-end forwards;
+  z-index: 10;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 /* .monitor-frame{
 	box-shadow: inset 0 0 7px rgba(23, 146, 106, 0.3),
 		0 0 15px rgba(23, 146, 106, 0.4);
@@ -137,6 +152,7 @@ html, body{
 
 #monitorscreen {
 	/* background-color: #0f5c48; */
+  position: relative;
 	background-color: #0e513f;
 	color: #b0f2d4;
 	font-family: "Courier New", Courier, monospace;
@@ -270,10 +286,6 @@ html, body{
   height: 100%;
 }
 
-#prevBtn, 
-#nextBtn {
-  border: 2.5px outset #161616;
-}
 #offBtn {
   border: 4.5px outset #161616;
 }
@@ -319,8 +331,8 @@ input[type="range"] {
   background: linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet); /* El fondo que ya configuraste */
 }
 
-a, button{
-  cursor: url('/img/pointer.png') 16 16, pointer;
+a, button, summary {
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
 .container{
   
@@ -537,14 +549,15 @@ h1 {
 }
 
 .swiper-slide {
- /* padding: 1rem !important; */
- margin: 0 !important;
- margin-top: 3px !important;
+  height: auto !important;
+  /* height: 39.3rem !important; */
+  margin: 0 !important;
+  margin-top: 3px !important;
 }
 
 .swiper-wrapper{
   width: 100% !important;
-  max-height: 100%;
+  
   scale: 0.78 !important;
 }
 
@@ -619,7 +632,9 @@ audio::-webkit-media-controls-play-button {
     scale: 0.99 !important;
   }
   .swiper-slide{
+    margin-top: 1.5rem !important;
     margin-bottom: 1.5rem !important;
+    /* height: auto !important; */
   }
    .swiper-container{
     padding-bottom: 3rem !important;

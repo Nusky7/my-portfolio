@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es" id="html" class="w-full h-full" >
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Diseño y Desarrollo Web en Valencia</title>
+    <meta name="description" content="Artículos sobre diseño web, desarrollo frontend, backend y SEO en Valencia. Aprende sobre las mejores prácticas y tendencias en desarrollo web.">
+    <meta name="keywords" content="blog diseño web, desarrollo web Valencia, SEO web, frontend">
+    <link rel="stylesheet" href="dist/styles.min.css">
+</head>
+<body id="body" class="bg-slate-200 text-white font-poppins w-full h-full">
+    
+    <!-- Encabezado -->
+    <header id="header" class="relative w-full bg-zinc-900 text-white text-center py-10">
+    <div class="absolute top-2 left-4">
+        <img src="img/blog.gif" width="43%" height="auto" alt="Logo">
+    </div>
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide">
+        Diseño & Desarrollo Web
+    </h1>
+    <p class="text-gray-400 text-lg mt-2">
+        Tendencias, diseño y optimización para proyectos web y dispositivos
+    </p>
+
+    <!-- Bloque de detalles -->
+    <details class="mt-4 mx-auto max-w-2xl bg-zinc-800 p-4 rounded-lg shadow-md cursor-pointer">
+        <summary class="text-teal-300 font-orbi font-semibold hover:underline">Bienvenid@ Technauta !</summary>
+        <p class="mt-2 text-gray-300">
+            Aquí encontrarás artículos sobre diseño web, desarrollo frontend, backend y estrategias SEO para mejorar la visibilidad de tus proyectos.  
+            Cada semana compartiré nuevas técnicas y consejos basados en experiencia real. 🚀
+        </p>
+    </details>
+</header>
+
+
+<!-- TABS -->
+<div class="max-w-4xl mx-auto p-6 text-center">
+    <div class="flex justify-center space-x-4">
+        <button onclick="showCategory('desarrollo-web')" class="tab-btn font-orbi text-lg font-semibold text-white bg-teal-600 px-4 py-2 rounded-lg shadow-md hover:bg-teal-500 transition-all active-tab">
+            💻 Desarrollo Web
+        </button>
+        <button onclick="showCategory('dispositivos-android')" class="tab-btn font-orbi text-lg font-semibold text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
+            📱 Dispositivos y Android
+        </button>
+    </div>
+</div>
+
+<!-- Contenedor de Posts -->
+<main class="max-w-6ººxl mx-auto p-3">
+    <section id="desarrollo-web" class="category-section">
+        <!-- <h2 class="text-3xl font-bold mt-8 mb-4 border-b border-gray-600 pb-2">💻 Desarrollo Web</h2> -->
+        <div id="posts-desarrollo" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+
+    <section id="dispositivos-android" class="category-section hidden">
+        <!-- <h2 class="text-3xl font-bold mt-8 mb-4 border-b border-gray-600 pb-2">📱 Dispositivos y Android</h2> -->
+        <div id="posts-android" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6"></div>
+    </section>
+</main>
+
+    <script src="js/blog.js" defer></script>
+      <!-- fondo animado -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
+  <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js" defer></script>
+
+</body>
+</html>
