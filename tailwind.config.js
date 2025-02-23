@@ -3,6 +3,42 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {
+        typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.teal.200'),
+              '&:hover': {
+                color: theme('colors.teal.300'),
+              },
+            },
+            strong: {
+              color: theme('colors.emerald.100'),
+            },
+            code: {
+              color: theme('colors.teal.400'),
+            },
+          },
+        },
+        invert: {
+          css: {
+            color: theme('colors.gray.300'),
+            a: {
+              color: theme('colors.teal.200'),
+              '&:hover': {
+                color: theme('colors.teal.300'),
+              },
+            },
+          },
+          strong: {
+            color: theme('colors.emerald.100'),
+          },
+          code: {
+            color: theme('colors.teal.400'),
+          },
+        },
+      }),
       colors: {
         background: "#121212",
         text: "#e0e0e0",
@@ -16,6 +52,7 @@ module.exports = {
         emerald: '0 0 3px  rgb(52 211 153)',
         orange: '0 0 3px  rgb(194 65 12)',
         purple: '0 0 3px  rgb(147 51 234)',
+        teal: '0 0 3px rgb(45 212 191)',
       },
        scale: {
         '80': '0.8',
@@ -76,7 +113,7 @@ module.exports = {
         glowAmber: 'glowAmber 0.3s ease-in-out infinite',
         glowOrange: 'glowOrange 1.6s ease-in-out forwards',
         glowRose: 'glowRose 3.3s ease-in infinite',
-        glowEme: 'glowEme 1.6s ease-in-out forwards',
+        glowEme: 'glowEme 1.6s ease-in-out infinite',
         zoomIn: 'zoomin 1s ease-out 0.25s 1',
         zoomOut: 'zoomout 1s ease-out 0.25s 1',
         flipx: 'flipx 1.5s ease-out infinite',
@@ -88,6 +125,7 @@ module.exports = {
         rotateDisk: 'rotateDisk 3s linear infinite',
         glowText: 'glowText 1.5s ease-in-out infinite alternate',
         glowText1: 'glowText1 1.5s ease-in-out infinite alternate',
+        glowText2: 'glowText2 1.5s ease-in-out infinite alternate',
         fadeOutScale: 'fadeOutScale 0.5s ease-out forwards',
         disappear: 'disappear 1.5s ease-out forwards',
         reduceAndFade: 'reduceAndFade 0.1s ease-out forwards',
@@ -252,6 +290,10 @@ module.exports = {
       glowText1: {
         '0%': { textShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #ea3376' },
         '100%': { textShadow: '0 0 10px ##10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+        },
+        glowText2: {
+        '0%': { textShadow: '0 0 1px #00CED1, 0 0 3px rgb(52 211 153), 0 0 6px #00CED1' },
+        '100%': { textShadow: '0 0 10px ##00CED1, 0 0 13px rgb(52 211 153), 0 0 18px #10B981' },
       },
       fadeOutScale: {
         '0%': { opacity: 1, transform: 'scale(1)' },
@@ -449,5 +491,7 @@ module.exports = {
     },
   },
   purge: false,
-  plugins: [],
+  plugins: [
+     require('@tailwindcss/typography')
+  ],
 }

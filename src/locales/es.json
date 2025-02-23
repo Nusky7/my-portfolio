@@ -15,6 +15,7 @@
         "title": "Proyectos",
         "show": "Ver Codigo",
         "working": "<p class='text-rose-400 text-xl text-center'>Proyecto en desarrollo.</p>Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
+        "blog": "<p class='text-teal-300 text-xl'>Blog - Noticias y Tecnología.</p>Plataforma en la que publico artículos sobre tecnología, combinados con las noticias más relevantes extraídas de mi feed de RRSS.",
         "project": "<p class='text-rose-300'>Conversión de Formatos.</p>Herramienta online para convertir formatos de imágenes, fuentes y videos, diseñada para facilitar el trabajo de desarrolladores y creadores.",
         "project1": "<p class='text-amber-400'>Mapas Integrados.</p>Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.",
         "project2": "<p class='text-orange-400'>Prototipo FrontEnd.</p>Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo con Angular 17 y Bootstap.<br>",

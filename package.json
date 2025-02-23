@@ -10,6 +10,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@tailwindcss/typography": "^0.5.16",
     "jquery": "^3.6.0",
     "jquery.rateit": "^1.1.6",
     "wave-visualizer": "^1.0.6",

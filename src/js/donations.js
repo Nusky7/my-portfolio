@@ -1,4 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+    const proxyUrl = "https://api.allorigins.win/raw?url=";
+
+    fetch("https://nusky7studio.es/modal.html")
+        .then(response => response.text())
+        .then(html => {
+            document.body.insertAdjacentHTML("beforeend", html);
+            initializeDonationModal();
+        })
+        .catch(error => console.error("❌ Error al cargar el modal:", error));
+    
+});
+
+function initializeDonationModal() {
 const donateBtn = document.getElementById('donateBtn');
 const donationModal = document.getElementById('donationModal');
 const closeModal = document.getElementById('closeModal');
@@ -12,6 +26,7 @@ const coffee = document.getElementById('coffee');
 const coffeeImg = document.getElementById('coffee-img');
 const name = document.getElementById('name');
 const socialBts = document.getElementById('social-bts');
+ 
 
     
 
@@ -101,5 +116,4 @@ function showToast(msg) {
             showToast("Fallo al copiar la dirección. Por favor inténtalo de nuevo."); 
         });
     });
-});
-
+}

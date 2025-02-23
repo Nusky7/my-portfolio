@@ -1,0 +1,29 @@
+<!-- Modal de opciones de donación -->
+<div id="donationModal" class="fixed flex hidden inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
+    <div class="bg-neutral-800 p-7 rounded-lg w-90">
+        <div class="w-full flex items-center align-middle justify-between">
+            <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-sm animate-glowText1 inline-block font-gba">☕︎ Elige tu opcion</h2>
+            <button id="closeModal" class="w-8 h-8 mb-4 hover:animate-spin hover:bg-transparent rounded-lg bg-rose-500 bg-opacity-20">❌</button>
+        </div>
+
+        <div class="flex items-center justify-between pr-2">
+            <div>
+                <button id="paypalBtn" class="btn-donate-modal w-20 bg-blue-600 hover:bg-blue-500 hover:scale-110 font-semibold text-md">PayPal</button>
+                <button id="stripeBtn" class="btn-donate-modal w-20 bg-purple-600 hover:bg-purple-500 hover:scale-110 font-semibold text-md">Stripe</button>
+                <button id="kofiBtn" class="btn-donate-modal w-20 bg-pink-600 hover:bg-pink-500 hover:scale-110 font-semibold text-md">Ko-fi</button>
+                <button id="copyBtcBtn" class="btn-donate-modal w-20 text-orange-00 bg-gray-700 hover:bg-gray-600 hover:scale-110 font-semibold text-md">
+                    <div class="flex">
+                        <img src="/src/img/ico/bitcoin.webp" alt="btc" width="20px" height="auto" class="mx-auto">
+                    </div>
+                    <span id="btext">Copiar</span> 
+                </button>
+            </div>
+            <!-- Código QR de Bitcoin -->
+            <div id="btcQrCode" class="mt-0 pl-6 mb-4">
+                <h3 class="font-semibold mb-2 text-center font-mono text-sm"><span id="donate-with">Donar con</span> <span class="font-pix text-orange-400">Bitcoin</span></h3>
+                <!-- Generar QR de la dirección BTC -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?data=bitcoin:bc1qzn5dj9vlcwhc0x502yeev5w4uuml34rqc6y6u9&size=200x200" alt="Código QR Bitcoin" class="rounded-lg" />         
+            </div>
+        </div>
+    </div>           
+</div>

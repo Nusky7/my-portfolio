@@ -9,7 +9,6 @@ const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 
 
-
   new Swiper('.swiper-container', {
     effect: 'cards',
     cardsEffect: {
@@ -221,6 +220,7 @@ const loadTranslations = async (lang) => {
     });
   document.getElementById("project-title").textContent = translations.projects.title;
   document.getElementById("working").innerHTML = translations.projects.working;
+  document.getElementById("blog").innerHTML = translations.projects.blog;
   document.getElementById("project").innerHTML = translations.projects.project;
   document.getElementById("project1").innerHTML = translations.projects.project1;
   document.getElementById("project2").innerHTML = translations.projects.project2;

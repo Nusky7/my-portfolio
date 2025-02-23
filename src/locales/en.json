@@ -16,6 +16,7 @@
         "title": "Projects",
         "show": "See Code",
         "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+       "blog": "<p class='text-teal-400 text-xl text-center'>Blog - News and Technology.</p>Platform where I publish articles on technology, combined with the most relevant news extracted from my social media feed.",
         "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Practical online tool to convert images, fonts, and videos between formats, designed to facilitate the work of developers and creators",
         "project1": "<p class='text-amber-300'>Integrated Maps.</p>An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
         "project2": "<p class='text-orange-400'>FrontEnd prototype.</p>A transfer website in the Valencia area for booking private trips. <br>Prototype with Angular 17 and Bootstrap<br>",

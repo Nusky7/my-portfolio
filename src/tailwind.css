@@ -17,13 +17,18 @@
 }
 
 html, body{
-  cursor: url('/img/cursor.png') 16 16, auto !important;
+  cursor: url('/img/cursor.png') 16 16, cursor !important;
   margin: 0;
   overflow-x: hidden; 
   height: 100%;
   scrollbar-width: thin; 
   scrollbar-color: #AAF8D4 #09090B;  
 }
+
+body, p, li, h1, h2, h3, h4, h5, h6, a {
+  cursor: url('/img/cursor.png') 16 16, cursor !important;
+}
+
 
 @font-face {
   font-family: 'pix'; 
@@ -516,8 +521,8 @@ a, button, summary {
 
 h1 {
   font-size: 3rem;
-  cursor: url('/img/pointer.png') 16 16, pointer !important;
-  text-shadow: 0 0 5px rgb(192 132 252);
+  /* cursor: url('/img/pointer.png') 16 16, pointer !important; */
+  /* text-shadow: 0 0 5px rgb(192 132 252); */
 }
 .stack{
   width: 51px;
@@ -568,9 +573,6 @@ h1 {
   opacity: 0.7;
   cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
-/* .swiper-pagination{
-  bottom: 0 !important;
-} */
 /* Cambiar el color de los puntos */
 .swiper-pagination-bullet {
   opacity: 0.3 !important;
@@ -582,15 +584,8 @@ h1 {
 }
 
 .project-img{
-  /* box-shadow: inset 0 0 10px 3px #000000, 
-              inset 0 0 5px 2px #1a1a1a,
-              0 0 15px 3px #000000 !important;  */
-  /* animation: tvScreenFlicker 6s infinite, tvflicker2 3s infinite; */
   animation-timing-function: ease-in-out;
 }
-/* #projects {
-  max-height: 100vh;
-} */
 
 /* #waveform ::part(cursor):before {
   content: '💜';
@@ -627,6 +622,23 @@ audio::-webkit-media-controls-play-button {
     scrollbar-width: thin !important; 
     scrollbar-color: #977cef #09090B !important; 
 }
+
+.custom-list {
+  list-style: none;
+}
+
+.custom-list li::before {
+  content: "➤"; /* Puedes reemplazar "➤" por el símbolo que prefieras o incluso usar una imagen */
+  color: #38b2ac; /* Color teal, por ejemplo */
+  font-weight: bold;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
+  margin-right: 0.5em;
+}
+
+
+
 @media screen and (max-width: 712px) {
   .swiper-wrapper{
     scale: 0.99 !important;

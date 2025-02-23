@@ -1,29 +1,39 @@
 [
   {
-    "title": "Cómo mejorar el diseño web para SEO en 2025",
-    "date": "2025-02-18",
+  "title": "Los mejores PC y portátiles para desarrollo web en 2025",
+  "date": "2025-02-23",
+  "author": "Alba Tolosa Bonora",
+  "content": "Elegir el equipo adecuado para desarrollo web en 2025 es clave para la productividad. En esta guía analizamos los mejores portátiles y PC para programadores, con opciones para frontend, backend y fullstack. Descubre cuál es el mejor ordenador para programar en 2025 según rendimiento, portabilidad y relación calidad-precio.",
+  "image": "https://i.rtings.com/assets/pages/6S2WXjTl/best-laptop-medium.jpg",
+  "url": "/blog/posts/mejores-pc-desarrollo-web-2025.html",
+  "category": "Desarrollo Web",
+  "keywords": [
+    "mejores portátiles para programadores 2025",
+    "PC para desarrollo web",
+    "portátil para desarrollo frontend",
+    "ordenador para programar en 2025",
+    "mejor laptop para programar",
+    "PC potente para programadores",
+    "laptop recomendada para desarrolladores",
+    "rendimiento en desarrollo web"
+  ]
+},
+  {
+    "title": "Etiquetas HTML: Las más comunes y las 'secretas'",
+    "date": "2025-02-20",
     "author": "Alba Tolosa Bonora",
-    "content": "Si tienes un sitio web, el SEO es clave para aumentar tu visibilidad...",
-    "image": "/img/posts/seo.webp",
-    "url": "blog/seo-web-2025.html",
+    "content": "Las etiquetas HTML son la columna vertebral de cualquier sitio web, definiendo la estructura y la semántica del contenido. La mayoría de los desarrolladores conocen etiquetas estándar como <header>, <nav>, <main>, <section>, <article> y <footer>, que organizan la información de forma clara y accesible. Sin embargo, existen etiquetas menos conocidas o 'secretas' que pueden aportar un valor adicional a tus proyectos. Por ejemplo, etiquetas como <details> y <summary> facilitan la creación de secciones desplegables, mientras que <mark> resalta fragmentos de texto y <time> optimiza la presentación de fechas y horas para motores de búsqueda y accesibilidad. En este artículo, exploraremos en detalle tanto las etiquetas más comunes como estas joyas escondidas, explicando sus usos y beneficios para mejorar la semántica, la accesibilidad y el SEO de tus páginas web.",
+    "image": "https://www.simplilearn.com/ice9/free_resources_article_thumb/header-tag.PNG",
+    "url": "/blog/posts/etiquetas-html-secretas.html",
     "category": "Desarrollo Web"
   },
   {
-    "title": "Diseño y Desarrollo Web en Valencia: Guía Completa",
+    "title": "Diseño y Desarrollo Web en Valencia: Tendencias",
     "date": "2025-02-10",
     "author": "Alba Tolosa Bonora",
     "content": "El desarrollo web en Valencia está en auge, descubre cómo destacar...",
-    "image": "/img/posts/valencia1.webp",
-    "url": "blog/desarrollo-web-valencia.html",
-    "category": "Desarrollo Web"
-  },
-  {
-    "title": "Guía completa para optimizar la velocidad de tu web con Tailwind CSS",
-    "date": "2025-02-15",
-    "author": "Alba Tolosa Bonora",
-    "content": "Una web rápida no solo mejora la experiencia del usuario, sino que también es crucial para el SEO...",
-    "image": "/img/posts/tailwind.png",
-    "url": "blog/optimizar-web-tailwind.html",
+    "image": "https://picfiles.alphacoders.com/283/283350.jpg",
+    "url": "/blog/posts/desarrollo-web-valencia.html",
     "category": "Desarrollo Web"
   },
   {
@@ -31,8 +41,8 @@
     "date": "2025-02-20",
     "author": "Alba Tolosa Bonora",
     "content": "Descubre los dispositivos Android más potentes, con mejor rendimiento y diseño del 2025...",
-    "image": "/img/posts/android2025.webp",
-    "url": "blog/mejores-android-2025.html",
+    "image": "https://fscl01.fonpit.de/userfiles/7695213/image/Smartphones-unter-200-Euro.jpg",
+    "url": "/blog/posts/mejores-android-2025.html",
     "category": "Dispositivos y Android"
   },
   {
@@ -40,8 +50,17 @@
     "date": "2025-02-22",
     "author": "Alba Tolosa Bonora",
     "content": "Si la batería de tu móvil no dura lo suficiente, aquí tienes consejos para mejorar su rendimiento...",
-    "image": "/img/posts/bateria.webp",
-    "url": "blog/optimizar-bateria-android.html",
+    "image": "https://img.global.news.samsung.com/pe/wp-content/uploads/2020/01/Smartphone-Bateria.jpg",
+    "url": "/blog/posts/optimizar-bateria-android.html",
+    "category": "Dispositivos y Android"
+  },
+  {
+    "title": "LineageOS: La mejor alternativa a Android Stock",
+    "date": "2025-02-25",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si buscas una experiencia más limpia y optimizada en tu dispositivo Android, LineageOS es una de las mejores opciones. Este sistema operativo de código abierto ofrece una alternativa libre de bloatware y con un mejor control de privacidad, además de soporte extendido para dispositivos que han dejado de recibir actualizaciones oficiales. Descubre cómo instalarlo, sus ventajas y qué móviles son compatibles en esta guía completa.",
+    "image": "https://mi.fiime.cn/static/upload/2022/11/26/202211266123.jpg",
+    "url": "/blog/posts/lineageos-alternativa-android.html",
     "category": "Dispositivos y Android"
   }
 ]
