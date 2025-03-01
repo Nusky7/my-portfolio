@@ -1,5 +1,6 @@
 [
-  {
+
+{
   "title": "Los mejores PC y portátiles para desarrollo web en 2025",
   "date": "2025-02-23",
   "author": "Alba Tolosa Bonora",
@@ -28,6 +29,25 @@
     "category": "Desarrollo Web"
   },
   {
+  "title": "Los 6 mejores gadgets para programadores en 2025",
+  "date": "2025-02-25",
+  "author": "Alba Tolosa Bonora",
+  "content": "Descubre los 6 gadgets esenciales para programadores en 2025 que mejorarán tu productividad y comodidad. Desde teclados mecánicos hasta monitores ultrawide, conoce las mejores herramientas tecnológicas que todo desarrollador necesita.",
+  "image": "https://i.ytimg.com/vi/BIgrHsmT1JU/maxresdefault.jpg",
+  "url": "/blog/posts/mejores-gadgets-programadores.html",
+  "category": "Desarrollo Web",
+  "keywords": [
+    "gadgets para programadores",
+    "herramientas para desarrolladores",
+    "accesorios para programar",
+    "mejor teclado mecánico programador",
+    "monitores para programadores",
+    "silla ergonómica para programar",
+    "ratón ergonómico desarrolladores",
+    "mejores gadgets para programadores 2025"
+  ]
+},
+  {
     "title": "Diseño y Desarrollo Web en Valencia: Tendencias",
     "date": "2025-02-10",
     "author": "Alba Tolosa Bonora",
@@ -36,6 +56,26 @@
     "url": "/blog/posts/desarrollo-web-valencia.html",
     "category": "Desarrollo Web"
   },
+  
+    {
+    "title": "Tailwind CSS 4: Novedades y cómo aprovecharlas",
+    "date": "2025-02-23",
+    "author": "Alba Tolosa Bonora",
+    "content": "Tailwind CSS 4 ha llegado con mejoras significativas en rendimiento, nuevas utilidades y mejor compatibilidad con frameworks modernos. Descubre qué hay de nuevo y cómo puedes aprovecharlo en tus proyectos.",
+    "image": "https://tailwindcss.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fcard.22502194.jpg&w=3840&q=75",
+    "url": "/blog/posts/tailwind-css4-novedades.html",
+    "category": "Desarrollo Web",
+    "keywords": [
+      "Tailwind CSS 4",
+      "novedades Tailwind CSS",
+      "mejoras en Tailwind 2025",
+      "CSS moderno",
+      "utilidades Tailwind CSS"
+    ]
+  },
+
+
+
   {
     "title": "Los mejores smartphones Android de 2025",
     "date": "2025-02-20",
@@ -56,11 +96,63 @@
   },
   {
     "title": "LineageOS: La mejor alternativa a Android Stock",
-    "date": "2025-02-25",
+    "date": "2025-02-23",
     "author": "Alba Tolosa Bonora",
     "content": "Si buscas una experiencia más limpia y optimizada en tu dispositivo Android, LineageOS es una de las mejores opciones. Este sistema operativo de código abierto ofrece una alternativa libre de bloatware y con un mejor control de privacidad, además de soporte extendido para dispositivos que han dejado de recibir actualizaciones oficiales. Descubre cómo instalarlo, sus ventajas y qué móviles son compatibles en esta guía completa.",
     "image": "https://mi.fiime.cn/static/upload/2022/11/26/202211266123.jpg",
     "url": "/blog/posts/lineageos-alternativa-android.html",
     "category": "Dispositivos y Android"
+  },
+  {
+    "title": "Anillos inteligentes:<br> ¿El futuro de los wearables?",
+    "date": "2025-02-24",
+    "author": "Alba Tolosa Bonora",
+    "content": "Los anillos inteligentes están ganando popularidad como una alternativa discreta y funcional a los smartwatches. En este artículo exploramos sus funcionalidades, las mejores opciones disponibles en 2025 y si realmente valen la pena para el día a día.",
+    "image": "https://i.ytimg.com/vi/VDMldAKWXlA/maxresdefault.jpg",
+    "url": "/blog/posts/anillos-inteligentes-2025.html",
+    "category": "Dispositivos y Android",
+    "keywords": [
+      "anillos inteligentes",
+      "wearables",
+      "mejores anillos inteligentes 2025",
+      "comparativa anillos inteligentes",
+      "fitness y salud con anillos inteligentes"
+    ]
+  },
+  {
+    "title": "Los mejores smartwatches de 2025",
+    "date": "2025-02-24",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si estás buscando un smartwatch en 2025, te enseño los modelos con mejor relación calidad-precio, duración de batería, funcionalidades avanzadas y compatibilidad con Android e iOS.",
+    "image": "https://i.ytimg.com/vi/iuZ2BHT0PHY/maxresdefault.jpg",
+    "url": "/blog/posts/mejores-smartwatches-2025.html",
+    "category": "Dispositivos y Android",
+    "keywords": [
+      "mejores smartwatches 2025",
+      "comparativa smartwatches",
+      "Apple Watch vs Samsung Galaxy Watch",
+      "smartwatch para deporte",
+      "relojes inteligentes recomendados"
+    ]
+  },
+
+
+
+  {
+    "title": "6 emuladores para jugar en PC y Android en 2025",
+    "date": "2025-02-28",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si quieres jugar a tus títulos retro o correr juegos de consola en tu PC o móvil Android, estos 6 emuladores son los mejores en 2025. Desde clásicos de Nintendo hasta PlayStation, descubre cuál es el ideal para ti.",
+    "image": "https://example.com/emuladores-pc-android.jpg",
+    "url": "/blog/posts/mejores-emuladores-pc-android.html",
+    "category": "Gaming",
+    "keywords": [
+      "mejores emuladores 2025",
+      "juegos retro en PC",
+      "emuladores para Android",
+      "cómo jugar juegos de consola en móvil",
+      "PlayStation, Nintendo, Sega emuladores"
+    ]
   }
 ]
+

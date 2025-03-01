@@ -30,7 +30,8 @@ const subtitle = document.getElementById("panel-subtitle");
     },
     autoplay: {
       delay: 5100,
-      pauseOnMouseEnter: true
+      pauseOnMouseEnter: true,
+      disableOnInteraction: true 
     },
     
   navigation: {
@@ -229,6 +230,7 @@ const loadTranslations = async (lang) => {
   document.getElementById("project5").innerHTML = translations.projects.project5;
   //Action Panel
   document.getElementById("button-text").innerHTML = translations.panel.buttonText;
+  document.getElementById("button-text1").innerHTML = translations.panel.buttonText1;
   document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
   document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
   document.getElementById("panel-text").innerHTML = translations.panel.panelText;

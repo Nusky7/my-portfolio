@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     <a href="${post.url}" class="block ">
                         <img src="${post.image}" alt="${post.title}" class="w-full h-auto object-cover rounded-t-lg mb-4">
                         <h2 class="text-xl font-semibold px-3">${post.title}</h2>
-                        <p class="text-gray-400 font-orbi text-sm px-3">${post.date} - ${post.author}</p>
+                        <p class="text-gray-400 font-orbi text-sm px-3">${post.date}</p>
                         <p class="mt-2 px-3">${post.content.substring(0, 100)}...</p>
                         <span class="text-emerald-300 font-orbi mt-2 block px-3">Leer más →</span>
                     </a>
@@ -71,7 +71,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set the default active tab
-    showCategory("desarrollo-web");
+    showCategory("dispositivos-android");
 
     // Attach event listeners to tabs
     tabs.forEach(tab => {

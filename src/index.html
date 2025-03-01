@@ -39,6 +39,7 @@
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
+  <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>
 </head>
 
 <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
@@ -361,7 +362,7 @@
           <div class="swiper-zoom-container">
           <img src="https://nusky7studio.es/img/n7blog.gif" alt="Portfolio" width="100%" height="auto" class="project-img rounded-md mb-4 ">
           </div>
-          <h3 class="text-3xl p-1 font-bold text-teal-400 font-sourceCode mb-1">N7Blog</h3>
+          <h3 class="text-3xl p-1 font-bold text-teal-500 font-sourceCode mb-1">N7Blog</h3>
             <div class="flex space-x-4 mx-0 p-1.5 justify-center">
               <img src="img/ico/html.webp" alt="html" class="icons" >
               <img src="img/ico/css.webp" alt="html" class="icons">
@@ -693,16 +694,23 @@
   </div>
   
   <!-- Action Panel - CV -->
-  <div id="action-panel" class="action-panel bg-neutral-950 text-white p-8 rounded-lg shadow-lg text-center">
-    <h3 id="panel-title" class="text-2xl font-pix mb-3 text-rose-400 animate-colorSlow">¿Te gusta mi trabajo?</h3>
-    <p id="panel-subtitle" class="text-fuchsia-300 text-sm mb-2 font-gba">¿Necesitas tu propia Web?</p>
-    <p id="panel-text" class="mb-8">Descarga mi CV para más detalles o contáctame directamente.</p>
-    <button id="download-cv"
-      class="btn-download px-4 py-2 text-white bg-fuchsia-800 rounded-lg hover:animate-tadaTwo hover:scale-110 hover:bg-fuchsia-600 inline-flex items-center">
-      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/></svg> 
-      <span id="button-text">Descargar CV</span>
-    </button>
+<div id="action-panel" class="action-panel bg-neutral-950 text-white p-8 rounded-lg shadow-lg text-center">
+  <h3 id="panel-title" class="text-2xl font-pix mb-3 text-rose-400 animate-colorSlow">¿Te gusta mi trabajo?</h3>
+  <p id="panel-subtitle" class="text-fuchsia-300 text-sm mb-2 font-gba">¿Necesitas tu propia Web?</p>
+  <p id="panel-text" class="mb-8">Descarga mi CV para más detalles o contáctame directamente.</p>
+  <div class="flex justify-center gap-4">
+    <a id="download-cv" href="ruta-a-tu-cv.pdf" class="btn-download px-4 py-2 text-white bg-fuchsia-800 rounded-lg hover:scale-110 hover:bg-fuchsia-600 inline-flex items-center">
+      <svg class="fill-current w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
+        <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z"/>
+      </svg>
+      <span id="button-text" class="drop-shadow-lg">Descargar CV</span>
+    </a>
+    <a id="button-text1" href="blog" target="_blank" class="btn-visit px-4 py-2 text-white hover:text-black hover:font-bold bg-teal-700 rounded-lg hover:animate-bgColorCycle hover:scale-110 hover:bg-teal-500 inline-flex items-center">
+      <span id="button-text1" class="drop-shadow-lg">📰 Visita mi Blog</span>
+    </a>
   </div>
+</div>
+
 
   <!-- Seccion comentarios y recursosTV -->
   <div id="comments-section" class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 py-12 shadow-xl bg-black bg-opacity-20">

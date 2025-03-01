@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const proxyUrl = "https://api.allorigins.win/raw?url=";
 
-    fetch("https://nusky7studio.es/modal.html")
+    fetch("/modal.html")
         .then(response => response.text())
         .then(html => {
             document.body.insertAdjacentHTML("beforeend", html);

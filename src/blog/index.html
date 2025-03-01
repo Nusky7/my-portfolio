@@ -11,7 +11,7 @@
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Blog | Diseño y Desarrollo Web en Valencia">
     <meta property="og:description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
-    <meta property="og:image" content="https://nusky7studio.es/img/og.webp">
+    <meta property="og:image" content="https://nusky7studio.es/img/og.jpeg">
     <meta property="og:url" content="https://nusky7studio.es//blog">
     <meta property="og:type" content="website">
 
@@ -19,7 +19,10 @@
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog | Diseño y Desarrollo Web en Valencia">
     <meta name="twitter:description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
-    <meta name="twitter:image" content="https://nusky7studio.es/img/og.webp">
+    <meta name="twitter:image" content="https://nusky7studio.es/img/og.jpeg">
+
+     <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>
+
 
 </head>
 <body id="body" class="bg-slate-200 text-white font-poppins w-full h-full">
@@ -88,38 +91,36 @@
                 </span>
           </div>
     </div>
-<nav class="absolute bottom-0 left-0 w-full bg-zinc-950 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
-    <div class="max-w-3xl mx-auto flex space-x-4 px-2">
-        <button data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
-            onclick="showCategory('noticias-rrss')">
-            <svg width="20px" height="20px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="#FF9A00">
-                <path d="M0 37.7143C0 34.243 2.8144 31.4286 6.28571 31.4286C9.75702 31.4286 12.5714 34.243 12.5714 37.7143C12.5714 41.1856 9.75702 44 6.28571 44C2.8144 44 0 41.1856 0 37.7143ZM44 44H35.619C35.619 24.3587 19.641 8.3804 0 8.3804V0C24.261 0 44 19.7387 44 44ZM29.3333 44H20.9524C20.9524 32.4469 11.5524 23.0481 0 23.0481V14.6661C16.1746 14.6661 29.3333 27.8253 29.3333 44Z"/>
-            </svg>
-            <span>Noticias RRSS</span>
-        </button>
-        <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
-            onclick="showCategory('desarrollo-web')">
-            💻 Desarrollo Web
-        </button>
-        <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
-            onclick="showCategory('dispositivos-android')">
-            📱 Dispositivos y Android
-        </button>
-    </div>
-</nav>
-
-
+    <nav class="absolute bottom-0 left-0 w-full bg-zinc-950 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+        <div class="max-w-3xl mx-auto flex space-x-4 px-2">
+            <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+                onclick="showCategory('dispositivos-android')">
+                📱 Dispositivos y Android
+            </button>
+            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+                onclick="showCategory('desarrollo-web')">
+                💻 Desarrollo Web
+            </button>
+            <button data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
+                onclick="showCategory('noticias-rrss')">
+                <svg width="20px" height="20px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="#FF9A00">
+                    <path d="M0 37.7143C0 34.243 2.8144 31.4286 6.28571 31.4286C9.75702 31.4286 12.5714 34.243 12.5714 37.7143C12.5714 41.1856 9.75702 44 6.28571 44C2.8144 44 0 41.1856 0 37.7143ZM44 44H35.619C35.619 24.3587 19.641 8.3804 0 8.3804V0C24.261 0 44 19.7387 44 44ZM29.3333 44H20.9524C20.9524 32.4469 11.5524 23.0481 0 23.0481V14.6661C16.1746 14.6661 29.3333 27.8253 29.3333 44Z"/>
+                </svg>
+                <span>Noticias RRSS</span>
+            </button>           
+        </div>
+    </nav>
   </header>
 
   <!-- Contenedor de Posts -->
   <main class="max-w-6xl mx-auto p-3">
-    <section id="desarrollo-web" class="category-section">
+    <section id="desarrollo-web" class="category-section hidden">
       <div id="posts-desarrollo" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Desarrollo Web -->
       </div>
     </section>
 
-    <section id="dispositivos-android" class="category-section hidden">
+    <section id="dispositivos-android" class="category-section ">
       <div id="posts-android" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Dispositivos y Android -->
       </div>
@@ -130,13 +131,13 @@
     <div class="max-w-4xl mx-auto py-0.5 text-center overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
         <div class="flex justify-start space-x-3 px-2">
             <button onclick="loadRSS(0)" id="btn-xataka" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-teal-700 px-4 py-2 rounded-lg shadow-md hover:bg-teal-500 transition-all active-tab">
-                ⚡ XDA Feed
+                ⚡ XDA Devs
             </button>
             <button onclick="loadRSS(1)" id="btn-xda" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
-                ⚡ Xataka Feed
+                ⚡ Xataka
             </button>
             <button onclick="loadRSS(2)" id="btn-gadgets" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
-                ⚡ Gadgets Feed
+                ⚡ Hipertextual
             </button>
             <button onclick="loadRSS(3)" id="btn-varios" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
                 ⚡ Curiosidades
