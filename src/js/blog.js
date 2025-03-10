@@ -15,12 +15,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             posts.forEach(post => {
                 let postElement = document.createElement("article");
-                postElement.classList.add("bg-zinc-950", "md:opacity-95","hover:border","border-emerald-200", "hover:opacity-100", "hover:scale-105", "pb-2", "rounded-lg", "shadow-lg", "hover:shadow-xl", "transition-all");
+                postElement.classList.add("bg-zinc-950", "md:opacity-95", "hover:shadow-emerald", "hover:opacity-100", "hover:scale-105", "pb-2", "rounded-lg", "shadow-xl", "transition-all");
 
                 postElement.innerHTML = `
                     <a href="${post.url}" class="block ">
                         <img src="${post.image}" alt="${post.title}" class="w-full h-auto object-cover rounded-t-lg mb-4">
-                        <h2 class="text-xl font-semibold px-3">${post.title}</h2>
+                        <h2 class="text-xl text-emerald-200 font-semibold px-3">${post.title}</h2>
                         <p class="text-gray-400 font-orbi text-sm px-3">${post.date}</p>
                         <p class="mt-2 px-3">${post.content.substring(0, 100)}...</p>
                         <span class="text-emerald-300 font-orbi mt-2 block px-3">Leer más →</span>
@@ -47,9 +47,10 @@ document.addEventListener("DOMContentLoaded", function () {
             minWidth: 200.00,
             scale: 1.00,
             scaleMobile: 1.00,
-            backgroundColor: 0x18181B,
+            backgroundColor: 0x151516,
             // backgroundColor: 0x1f1f1f,
-            color: 0x8ad8cf,
+            color: 0x658e89,
+            // color: 0x8ad8cf,
             //   color: 0x3ffff1,
             points: 18.00,
             maxDistance: 18.00,
@@ -71,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set the default active tab
-    showCategory("dispositivos-android");
+    showCategory("desarrollo-web");
 
     // Attach event listeners to tabs
     tabs.forEach(tab => {

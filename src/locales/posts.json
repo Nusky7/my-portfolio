@@ -1,5 +1,32 @@
 [
-
+ {
+  "title": "N7 Services",
+  "date": "2025-03-10",
+  "author": "Alba Tolosa Bonora",
+  "content": "Descubre cómo puedo ayudarte a crecer digitalmente con servicios de diseño y desarrollo web, SEO y marketing digital. Ofrezco soluciones personalizadas para empresas y profesionales que buscan destacar en Internet. ¡Contáctame para más información!",
+  "image": "https://nusky7studio.es/img/TuLanding.gif",
+  "url": "https://services.nusky7studio.es/es" ,
+  "category": "Desarrollo Web"
+}, 
+{
+  "title": "Probando Sitejet en Plesk: Ventajas y Juegos con Tailwind",
+  "date": "2025-03-09",
+  "author": "Alba Tolosa Bonora",
+  "content": "Descubre cómo Sitejet en Plesk facilita la creación de sitios web y cómo he jugado con el diseño utilizando el CDN de Tailwind CSS. Analizamos sus ventajas, limitaciones y si realmente es la mejor opción para proyectos rápidos.",
+  "image": "https://nusky7studio.es/img/posts/sitejetBlog.png",
+  "url": "/blog/posts/sitejet-plesk-tailwind.html",
+  "category": "Desarrollo Web",
+  "keywords": [
+    "Sitejet en Plesk",
+    "Sitejet vs WordPress",
+    "cómo usar Sitejet",
+    "ventajas de Sitejet en hosting",
+    "diseño con Tailwind en Sitejet",
+    "Plesk y Sitejet",
+    "mejor CMS para freelancers",
+    "optimización web con Tailwind"
+  ]
+},
 {
   "title": "Los mejores PC y portátiles para desarrollo web en 2025",
   "date": "2025-02-23",
@@ -73,6 +100,7 @@
       "utilidades Tailwind CSS"
     ]
   },
+ 
 
 
 
@@ -136,14 +164,12 @@
     ]
   },
 
-
-
   {
     "title": "6 emuladores para jugar en PC y Android en 2025",
     "date": "2025-02-28",
     "author": "Alba Tolosa Bonora",
     "content": "Si quieres jugar a tus títulos retro o correr juegos de consola en tu PC o móvil Android, estos 6 emuladores son los mejores en 2025. Desde clásicos de Nintendo hasta PlayStation, descubre cuál es el ideal para ti.",
-    "image": "https://example.com/emuladores-pc-android.jpg",
+    "image": "https://www.lavanguardia.com/andro4all/hero/2019/01/Uno-de-los-mejores-emuladores-de-Android-para-PC.jpg?width=1200&aspect_ratio=16:9",
     "url": "/blog/posts/mejores-emuladores-pc-android.html",
     "category": "Gaming",
     "keywords": [

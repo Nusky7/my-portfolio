@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es" id="html" class="w-full h-full" >
+  
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +26,8 @@
 
 
 </head>
-<body id="body" class="bg-slate-200 text-white font-poppins w-full h-full">
+<body id="body" class=" text-white font-poppins w-full h-full">
+<!-- <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 pointer-events-none z-10"></div>  -->
     
 <!-- Encabezado -->
 <header id="header" class="relative w-full bg-zinc-950 text-white text-center py-16">
@@ -114,13 +116,13 @@
 
   <!-- Contenedor de Posts -->
   <main class="max-w-6xl mx-auto p-3">
-    <section id="desarrollo-web" class="category-section hidden">
+    <section id="desarrollo-web" class="category-section ">
       <div id="posts-desarrollo" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Desarrollo Web -->
       </div>
     </section>
 
-    <section id="dispositivos-android" class="category-section ">
+    <section id="dispositivos-android" class="category-section hidden">
       <div id="posts-android" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Dispositivos y Android -->
       </div>
@@ -128,18 +130,22 @@
 
     <section id="noticias-rrss" class="category-section hidden">
     <!-- TABS para cambiar de RSS -->
-    <div class="max-w-4xl mx-auto py-0.5 text-center overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+    <div class="max-w-5xl mx-auto py-0.5 text-center overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
         <div class="flex justify-start space-x-3 px-2">
-            <button onclick="loadRSS(0)" id="btn-xataka" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-teal-700 px-4 py-2 rounded-lg shadow-md hover:bg-teal-500 transition-all active-tab">
-                ⚡ XDA Devs
-            </button>
-            <button onclick="loadRSS(1)" id="btn-xda" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
-                ⚡ Xataka
-            </button>
-            <button onclick="loadRSS(2)" id="btn-gadgets" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
+          
+          <button onclick="loadRSS(0)" id="btn-wired" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white  bg-teal-700 px-4 py-2 rounded-lg shadow-md hover:bg-teal-500transition-all active-tab">
+              ⚡ Gadgets
+          </button>
+          <button onclick="loadRSS(1)" id="btn-xda" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white px-4 py-2 rounded-lg shadow-md bg-gray-600 hover:bg-gray-500 transition-all">
+            ⚡ XDA Devs
+          </button>
+            <button onclick="loadRSS(2)" id="btn-textual" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
                 ⚡ Hipertextual
             </button>
-            <button onclick="loadRSS(3)" id="btn-varios" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
+              <button onclick="loadRSS(3)" title="Carga Lento... Pero cuando quiere, carga." id="btn-xataka" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
+                ⚡ Xataka
+            </button>
+            <button onclick="loadRSS(4)" id="btn-varios" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white bg-gray-600 px-4 py-2 rounded-lg shadow-md hover:bg-gray-500 transition-all">
                 ⚡ Curiosidades
             </button>
         </div>

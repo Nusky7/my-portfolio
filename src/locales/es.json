@@ -25,7 +25,7 @@
     },
     "panel": {
       "buttonText": "Descargar CV",
-      "buttonText1": "📰 Visita mi Blog",
+      "buttonText1": "🌏 Ver mis Servicios",
       "panelTitle": " <span class='ask'>?</span>Te gusta mi trabajo?",
       "panelSubitle": "<span class='ask mr-1'>?</span>Necesitas tu propia Web?",
       "panelText": "¡Hagamos realidad tus metas y creemos algo increíble!<br>Descarga mi CV para más detalles o contáctame directamente.",
@@ -74,7 +74,7 @@
       "resources_comments": "Recursos & 📝<br>Comentarios",
       "download_cv": "Descargar CV 📋",
       "contact": "Contacto ✉️",
-      "intro_panel": "Intro 🎬 Panel"
+      "intro_panel": "Mis 🛠️ Servicios"
     },
       "toastMsgs": {
         "toastRated": "Has puntuado con {value} ★ mi Web<br> ¡Gracias! 💚",

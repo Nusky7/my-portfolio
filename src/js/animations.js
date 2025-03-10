@@ -425,7 +425,7 @@ button.addEventListener('click', function() {
   // screenList.classList.toggle('hidden', isScreenOff);
 
   if (isScreenOff) {
-    document.getElementById('preview-projects').classList.add('hidden');
+    // document.getElementById('preview-projects').classList.add('hidden');
     advertisement.classList.add('hidden');
     screenList.classList.add('hidden');
     button.classList.replace('bg-rose-900', 'bg-stone-500');
@@ -466,8 +466,8 @@ nextBtn.addEventListener("click", () => {
 document.getElementById('channelBtn').addEventListener('click', function () {
   const channels = [
     { id: advertisement, name: 'CH 01' },
-    { id: document.getElementById('preview-projects'), name: 'CH 02' },
-    { id: screenList, name: 'CH 03' },
+    // { id: document.getElementById('preview-projects'), name: 'CH 02' },
+    { id: screenList, name: 'CH 02' },
   ];
 
   // Ocultar el canal actual

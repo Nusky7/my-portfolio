@@ -13,6 +13,9 @@ module.exports = {
                 color: theme('colors.teal.300'),
               },
             },
+            h2: {
+                color: theme('colors.emerald.100'),
+              },
             strong: {
               color: theme('colors.emerald.100'),
             },
@@ -30,12 +33,15 @@ module.exports = {
                 color: theme('colors.teal.300'),
               },
             },
-          },
-          strong: {
-            color: theme('colors.emerald.100'),
-          },
-          code: {
-            color: theme('colors.teal.400'),
+             h2: {
+                color: theme('colors.emerald.100'),
+              },
+            strong: {
+              color: theme('colors.emerald.100'),
+            },
+            code: {
+              color: theme('colors.teal.400'),
+            },
           },
         },
       }),

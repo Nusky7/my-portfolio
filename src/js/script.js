@@ -209,7 +209,7 @@ const loadTranslations = async (lang) => {
   document.querySelector('a[href="#comments-section"]').innerHTML = translations.menu.resources_comments;
   document.querySelector('a[href="#action-panel"]').innerHTML = translations.menu.download_cv;
   document.querySelector('a[href="#contact"]').textContent = translations.menu.contact;
-  document.querySelector('a[href="/"]').textContent = translations.menu.intro_panel;
+  document.querySelector('a[href="https://services.nusky7studio.es"]').textContent = translations.menu.intro_panel;
   // Principal
   document.getElementById("header-subtitle").innerHTML = translations.header.subtitle;
   document.getElementById("about-heading").innerHTML = translations.about.heading;
@@ -272,7 +272,9 @@ const loadTranslations = async (lang) => {
       }
     });
     
-};
+  };
+  
+
 // Ratings ★ 
 let translations = {};
 // Función para obtener el texto traducido
@@ -289,60 +291,65 @@ function t(key, variables = {}) {
 }
 
 const initializeRateIt = () => {
- $(document).ready(function () {
-    $('#rateit').rateit({
-        max: 5,
-        step: 1,
-        backingfld: '#backing',
-        resetable: false
-    });
-
-    // Verificar si el usuario votó
-    if (localStorage.getItem('userVoted')) {
-        $('#rateit').rateit('readonly', true); 
+    if (typeof $.fn.rateit === 'undefined') {
+        console.error("RateIt.js no se ha cargado correctamente. Esperando...");
+        setTimeout(initializeRateIt, 500); // Reintentar después de 500ms
+        return;
     }
 
-    // Manejar el evento 'rated'
-   $('#rateit').on('rated', function (event, value) {
-      fetchRatings();
-        if (value === undefined) {
-            console.error("El valor de la calificación no fue capturado correctamente.");
-        } else {
-            
-            console.log("Calificación seleccionada:", value);
-           showToast(t('toastMsgs.toastRated', { value: value }));
-            localStorage.setItem('userVoted', true);
-            $('#rateit').rateit('readonly', true); 
+    $(document).ready(function () {
+        console.log("Inicializando RateIt...");
+        $('.rateit').rateit({
+            max: 5,
+            step: 1,
+            backingfld: '#backing',
+            resetable: false
+        });
+
+        // Verificar si el usuario votó
+        if (localStorage.getItem('userVoted')) {
+            $('.rateit').rateit('readonly', true);
         }
 
-        // Enviar la valoración al servidor
-        $.post('https://nusky7studio.es/php/save_rating.php', { rating: value }, function (response) {
-            const res = JSON.parse(response);
-            if (res.status === 'success') {
-                console.log('Rating saved successfully!');
-                fetchRatings(); // Actualizar total
+        // Manejar el evento 'rated'
+        $('.rateit').on('rated', function (event, value) {
+            if (value === undefined) {
+                console.error("El valor de la calificación no fue capturado correctamente.");
             } else {
-                console.log('Error: ' + res.message);
+                console.log("Calificación seleccionada:", value);
+                showToast(t('toastMsgs.toastRated', { value: value }));
+                localStorage.setItem('userVoted', true);
+                $('.rateit').rateit('readonly', true);
             }
-        });
-    });
 
-    // Obtener estadísticas de valoraciones
-    function fetchRatings() {
-        $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
-            const res = JSON.parse(response);
-            if (res.status === 'success') {
-                // $('#total-votes').text(res.total_votes + ' Votes');
-                $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
-                $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
-                // $('#average-rating').text('Average ▲ ' + res.average_rating.toFixed(1));
-                $('#rateit').rateit('value', res.average_rating); // Mostrar promedio como relleno inicial
-            }
+            // Enviar la valoración al servidor
+            $.post('https://nusky7studio.es/php/save_rating.php', { rating: value }, function (response) {
+                const res = JSON.parse(response);
+                if (res.status === 'success') {
+                    console.log('Rating guardado con éxito.');
+                    fetchRatings(); // Actualizar total
+                } else {
+                    console.log('Error al guardar rating: ' + res.message);
+                }
+            });
         });
-    }
-    fetchRatings();
- });
+
+        // Obtener estadísticas de valoraciones
+        function fetchRatings() {
+            $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
+                const res = JSON.parse(response);
+                if (res.status === 'success') {
+                    $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
+                    $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
+                    $('.rateit').rateit('value', res.average_rating); // Mostrar promedio
+                }
+            });
+        }
+
+        fetchRatings();
+    });
 };
+
 
 
 const langButtons = document.querySelectorAll('.lang-btn');

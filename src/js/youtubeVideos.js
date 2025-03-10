@@ -1,99 +1,51 @@
-const API_KEY = "";
+const API_KEY = "AIzaSyDaoYxLsDuRL_Ur2WlAv_tHcpOPx6zFoLo";
 // const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
 const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
-const MAX_RESULTS = 6;
+const MAX_RESULTS = 5; 
+const VIDEO_ID_DESTACADO = "ID_DEL_VIDEO_DESTACADO";
 
-//   async function loadConfig() {
-//     try {
-//         const response = await fetch('./config.json');
-//         const config = await response.json();
-//         const API_KEY = config.YOUTUBE_API_KEY;
-
-//         // Ahora puedes usar API_KEY
-//         console.log("API Key cargada:", API_KEY);
-//         fetchYouTubeVideos(API_KEY); 
-//     } catch (error) {
-//         console.error("Error al cargar la configuración:", error);
-//     }
-// }
-
-// loadConfig();
-
-// Elemento donde mostrar los videos
 const videoContainer = document.getElementById('youtube-videos');
 const videoMsg = document.getElementById('video-message');
 
-// Función para obtener los videos
 async function fetchYouTubeVideos() {
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SEARCH_QUERY)}&maxResults=${MAX_RESULTS}&order=date&type=video&key=${API_KEY}`;
-    try {
-        const response = await fetch(url);
-        const data = await response.json();
+    const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${"X_uG-RKarYk"}&key=${API_KEY}`;
+    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SEARCH_QUERY)}&maxResults=${MAX_RESULTS}&order=date&type=video&key=${API_KEY}`;
 
-        // Manejo de errores de la API
-        if (data.error) {
-            console.error("Error de la API:", data.error.message);
-            videoMsg.innerHTML = `
-                <p class="text-center text-emerald-100">
-                    Límite de la API de YouTube superado.
-                </p>
-                <div class="inline-flex items-center justify-center w-full">
-                    <hr class="w-72 py-0.5 my-3 bg-emerald-300 bg-opacity-60 border-0 rounded">
-                    <div class="absolute px-3 -translate-x-1/2 bg-neutral-950 rounded-full left-1/2">
-                        ❌
-                    </div>
-                </div>
-                <p class="text-center text-emerald-100">
-                    ${data.error.message}
-                </p>`;
+    try {
+        // Hacemos ambas peticiones a la vez
+        const [videoResponse, searchResponse] = await Promise.all([
+            fetch(videoUrl),
+            fetch(searchUrl)
+        ]);        
+
+        const videoData = await videoResponse.json();
+        const searchData = await searchResponse.json();
+
+        if (videoData.error || searchData.error) {
+            console.error("Error de la API:", videoData.error || searchData.error);
+            videoMsg.innerHTML = `<p class="text-center text-emerald-100">Error al cargar videos.</p>`;
             return;
         }
+        // Extraer mi video
+        let featuredVideo = videoData.items.length > 0 ? videoData.items[0] : null;
+        // Extraer los otros videos
+        let otherVideos = searchData.items || [];
+        // Unimor el video destacado
+        let finalVideos = [...otherVideos];
+            finalVideos.splice(2, 0, featuredVideo); // Meto mi video en el 3 porque me gusta para verse bonito
+        displayVideos(finalVideos);
 
-        // Verifica si hay videos
-        if (data.items && data.items.length > 0) {
-            videoMsg.innerHTML = ""; // 
-            displayVideos(data.items);
-        } else {
-            videoMsg.innerHTML = `
-            <p class="text-center text-emerald-100">
-                    No se encontraron videos. Intenta de nuevo más tarde.
-                </p>
-                <div class="inline-flex items-center justify-center w-full">
-                   <hr class="w-72 py-0.5 my-3 bg-emerald-300 bg-opacity-60 border-0 rounded">
-                    <div class="absolute px-3 -translate-x-1/2 bg-neutral-950 rounded-full left-1/2">
-                        ❌
-                    </div>
-                </div>
-                <p class="text-center text-emerald-100">
-                    No videos found. Try again later.
-                </p>`;
-        }
-
-// Captura de errores en el bloque try-catch
-} catch (error) {
-    console.error("Error al recuperar los videos:", error);
-    videoMsg.innerHTML = `
-        <p class="text-center text-emerald-100">
-            Hubo un error al cargar los videos. Por favor, verifica tu conexión.
-        </p>
-        <div class="inline-flex items-center justify-center w-full">
-             <hr class="w-72 py-0.5 my-3 bg-emerald-300 bg-opacity-60 border-0 rounded">
-             <div class="absolute px-3 -translate-x-1/2 bg-neutral-950 rounded-full left-1/2">
-                ❌
-            </div>
-        </div>
-        <p class="text-center text-emerald-100">
-            An error occurred while loading videos. Please check your connection.
-        </p>`;
+    } catch (error) {
+        console.error("Error al recuperar los videos:", error);
+        videoMsg.innerHTML = `<p class="text-center text-emerald-100">Error al cargar los videos.</p>`;
+    }
 }
 
-}
-
-// Mostrar los videos en el contenedor
+// Función para mostrar los videos
 function displayVideos(videos) {
     videoContainer.innerHTML = videos.map(video => {
         const { title, thumbnails } = video.snippet;
-        const videoId = video.id.videoId;
+        const videoId = video.id.videoId || video.id; 
 
         return `
            <div class="p-2.5 w-full h-auto shadow-md rounded-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" style="background: linear-gradient(180deg, #3b3b3b, #262626);">

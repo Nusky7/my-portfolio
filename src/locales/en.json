@@ -27,7 +27,7 @@
     },
     "panel": {
       "buttonText": "Download CV",
-      "buttonText1": "📰 Visit my Blog",
+      "buttonText1": "🌏 See my Services",
       "panelTitle": "Do you like my work?",
       "panelSubitle": "Need your own Website?",
       "panelText": " Let's bring your goals to life and create something amazing!<br>Download my CV for more details or contact me directly",
@@ -74,7 +74,7 @@
       "resources_comments": "Comments 📝<br>& Resources",
       "download_cv": "Download CV 📋",
       "contact": "Contact ✉️",
-      "intro_panel": "Intro 🎬 Panel"
+      "intro_panel": "My 🛠️ Services"
     },
     "toastMsgs": {
     "toastRated": "You rated {value} ★ to my Website<br> Thank You! 💚",

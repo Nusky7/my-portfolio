@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alba Tolosa Bonora ⚙️ Diseño y Desarrollo Web en Valencia</title>
+  <meta name="google-site-verification" content="ELEIkjVYEK0Dijl0eYfzOgD8BujtquxxIVEsmwi-UzY" />
   <meta name="description" content="Alba Tolosa Bonora - Fullstack Developer especializada en diseño web, desarrollo frontend y backend. Crea soluciones personalizadas y efectivas con interfaces modernas e intuitivas.">
   <meta name="keywords" content="diseño web, desarrollo web, Fullstack Developer, diseño frontend, desarrollo backend, web development, creación de páginas web, soluciones web, interfaces intuitivas, portfolio web, diseño web Valencia, desarrollo web Valencia, páginas web Valencia, diseñadora web, desarrolladora web, SEO Valencia, Alba Tolosa Bonora, N7Studio">
   <meta name="author" content="Alba Tolosa Bonora - @Nusky7">
@@ -35,7 +36,7 @@
     <source src="/mp3/lowx.mp3" type="audio/mpeg">
     Tu navegador no soporta la reproducción de audio.
   </audio>
-  <script type="module" src="js/animations.js" defer></script>
+  <script type="module" src="js/animations.js" async></script>
   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
@@ -114,6 +115,8 @@
   <svg width="18px" height="18px" viewBox="0 -1.5 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>volume-full</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-258.000000, -571.000000)" fill="#ffffff"> <path d="M277,571.015 L277,573.068 C282.872,574.199 287,578.988 287,585 C287,590.978 283,595.609 277,596.932 L277,598.986 C283.776,597.994 289,592.143 289,585 C289,577.857 283.776,572.006 277,571.015 L277,571.015 Z M272,573 L265,577.667 L265,592.333 L272,597 C273.104,597 274,596.104 274,595 L274,575 C274,573.896 273.104,573 272,573 L272,573 Z M283,585 C283,581.477 280.388,578.59 277,578.101 L277,580.101 C279.282,580.564 281,582.581 281,585 C281,587.419 279.282,589.436 277,589.899 L277,591.899 C280.388,591.41 283,588.523 283,585 L283,585 Z M258,581 L258,589 C258,590.104 258.896,591 260,591 L263,591 L263,579 L260,579 C258.896,579 258,579.896 258,581 L258,581 Z" id="volume-full" sketch:type="MSShapeGroup"> </path> </g> </g> </g></svg>
   </div>
   <input 
+    title="Volume slider"
+    placeholder=""
     id="volume-slider" 
     type="range" 
     min="0" 
@@ -157,6 +160,8 @@
     <!-- Slider -->
     <div id="slider-container2" class="flex flex-col items-center justify-end space-y-2 mt-auto">
       <input 
+        title="Volume slider 2"
+        placeholder=""
         id="volume-slider2" 
         type="range" 
         min="0" 
@@ -205,9 +210,9 @@
       <li><a href="#videos" class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110">Videos 🎞️</a></li>
       <li><a href="#contact" class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110">Contacto</a></li>
       <hr class="border-rose-300 border-dashed ">
-      <li><a href="blog" target="_blank" rel="noopener" class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110  text-center ">N7📰 Blog </a></li>
+      <li><a href="/blog" target="_blank" rel="noopener" class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110  text-center ">N7📰 Blog </a></li>
       <hr class="border-rose-300 border-dashed ">
-      <li><a href="/" class="block hover:animate-glowText1 text-center font-gba transition duration-200 transform hover:scale-110">Intro Panel</a></li>
+      <li><a href="https://services.nusky7studio.es" target="_blank" rel="noopener" class="block hover:animate-glowText1 text-center font-gba transition duration-200 transform hover:scale-110">Intro Panel</a></li>
       <hr class="border-rose-300">
      
       <li><a href="https://xdaforums.com/m/nusky7.6349830/" target="_blank" rel="noopener" class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110 text-left">🔗 XDA Profile</a></li>
@@ -264,7 +269,7 @@
     </div>
         
       <!-- Select element as backing field -->
-      <select id="backing" >
+      <select id="backing" title="Rating">
         <option value="0">Awful</option>
         <option value="1">Bad</option>
         <option value="2">OK</option>
@@ -360,7 +365,7 @@
         <div class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-teal flex flex-col justify-between">
           <div class="h-auto">
           <div class="swiper-zoom-container">
-          <img src="https://nusky7studio.es/img/n7blog.gif" alt="Portfolio" width="100%" height="auto" class="project-img rounded-md mb-4 ">
+          <img src="https://nusky7studio.es/img/n7blog.webp" alt="Portfolio" width="100%" height="auto" class="project-img rounded-md mb-4 ">
           </div>
           <h3 class="text-3xl p-1 font-bold text-teal-500 font-sourceCode mb-1">N7Blog</h3>
             <div class="flex space-x-4 mx-0 p-1.5 justify-center">
@@ -705,12 +710,11 @@
       </svg>
       <span id="button-text" class="drop-shadow-lg">Descargar CV</span>
     </a>
-    <a id="button-text1" href="blog" target="_blank" class="btn-visit px-4 py-2 text-white hover:text-black hover:font-bold bg-teal-700 rounded-lg hover:animate-bgColorCycle hover:scale-110 hover:bg-teal-500 inline-flex items-center">
-      <span id="button-text1" class="drop-shadow-lg">📰 Visita mi Blog</span>
+    <a id="button-text1" href="https://services.nusky7studio.es" target="_blank" rel="noopener" class="btn-visit px-4 py-2 text-white hover:text-black hover:font-bold bg-teal-700 rounded-lg hover:animate-bgColorCycle hover:scale-110 hover:bg-teal-500 inline-flex items-center">
+      <span id="button-text1" class="drop-shadow-lg">🌏  Ver mis Servicios</span>
     </a>
   </div>
 </div>
-
 
   <!-- Seccion comentarios y recursosTV -->
   <div id="comments-section" class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 py-12 shadow-xl bg-black bg-opacity-20">
@@ -722,12 +726,12 @@
       </div>
       <!-- Canal 1: GIF promocional -->
       <div id="advertisement" class="monitor-frame relative w-full h-full flex items-center justify-center bg-black bg-opacity-95">
-        <img src="https://nusky7studio.es/img/portfolioScreenshots/N7Promo.gif" loading="lazy" alt="Promotional GIF" class="max-w-full max-h-full md:scale-105 md:scale-y-110 sm:scale-125 object-cover">
+        <img preload src="https://nusky7studio.es/img/portfolioScreenshots/N7PromoLast.gif" loading="lazy" alt="Promotional GIF" class="max-w-full max-h-full md:scale-105 md:scale-y-110 sm:scale-125 object-cover">
       </div>
-      <!-- Canal 2: GIF de proyectos -->
-    <div id="preview-projects" class="monitor-frame relative w-full h-full flex items-center justify-center bg-black bg-opacity-95 hidden">
-      <img src="https://nusky7studio.es/img/portfolioScreenshots/N7Projects.gif" loading="lazy" alt="Projects Preview" class="max-w-full max-h-full md:scale-105 md:scale-y-110 sm:scale-125 object-cover">
-    </div>
+      <!-- Canal 2: GIF de proyectos - blog -->
+    <!-- <div id="preview-projects" class="monitor-frame relative w-full h-full flex items-center justify-center bg-black bg-opacity-95 hidden">
+      <img preload src="https://nusky7studio.es/img/n7blogmin.gif" loading="lazy" alt="Projects Preview" class="max-w-full max-h-full object-cover">
+    </div> -->
      <!-- Canal 3: Lista de Recursos -->
       <div id="screen-list" class="monitor-frame relative w-full h-full overflow-y-auto scrollbar-hide hidden">
         <h2 class="text-base font-semibold mb-2 text-emerald-300">
@@ -975,22 +979,16 @@
   </div>
 </div>
 
-
 <div id="videos" class="w-full h-auto p-10 py-14 bg-neutral-950 bg-opacity-80 rounded-lg overflow-x-auto">
    <h2 id="videos-title" class="text-xl font-bold text-emerald-600 text-center font-gba mb-8 justify-center items-center"> 
-        <span>  Some Videos  </span>
-   </h2> 
-   <!-- Contenedor para mensajes de error -->
-   <div id="video-message" class="text-center mb-8 text-gray-200"></div>
-   <!-- Contenedor para los videos -->
-   <div id="youtube-videos" class="flex w-full h-auto gap-8">
-    <!-- Los videos aparecerán aquí -->
-</div>
+        <span>  Some Videos  </span></h2> 
+      <!-- Contenedor para mensajes de error -->
+      <div id="video-message" class="text-center mb-8 text-gray-200"></div>
+      <!-- Contenedor para los videos -->
+      <div id="youtube-videos" class="flex w-full h-auto gap-8">
+    </div>
+  </div>
 
-</div>
-
-<!-- seccion comentarios y TV -->
-  
   <section id="contact" class="bg-black bg-opacity-30 p-3">
     <div class="max-w-4xl mx-auto text-center">
       <h2 id="contact-title" class="text-2xl font-gba mb-3 text-emerald-700 p-6">Contacto</h2>
@@ -1070,7 +1068,7 @@
 
 
   <!-- Swiper -->
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" preload></script>
   <!-- TypeWriter -->
   <script src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js" defer></script>
   <!-- fondo animado -->

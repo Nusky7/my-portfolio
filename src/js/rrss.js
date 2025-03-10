@@ -1,13 +1,15 @@
 const RSS_FEEDS = [
-  'https://www.xda-developers.com/feed/news/',
-  'https://www.xataka.com/feedburner.xml',
-  // 'https://es.wired.com/feed/gadgets/rss',
-  'https://hipertextual.com/feed',
-  'https://es.gizmodo.com/feed',
+    'https://es.wired.com/feed/gadgets/rss',
+    'https://www.xda-developers.com/feed/news/',
+    'https://hipertextual.com/feed',
+    'https://www.xataka.com/feedburner.xml',
+    'https://es.gizmodo.com/feed',
+    
+        
   // 'https://elchapuzasinformatico.com/informatica/feed/',
   // 'https://www.cronista.com/files/rss/it.xml',
   // 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/portada',
-  // 'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada',
+//   'https://feeds.elpais.com/mrss-s/pages/ep/site/elpais.com/section/tecnologia/portada',
   // 'https://es.wired.com/feed/rss',
   // 'https://www.htcmania.com/external.php?type=RSS2',
 
@@ -76,14 +78,13 @@ function loadRSS(feedIndex = 0) {
                             imageUrl = match[1];
                         }
                     }
-
-                    // Si aún no hay imagen, usa una imagen de respaldo
+                    // Imagen de respaldo
                     if (!imageUrl) {
-                        imageUrl = "https://via.placeholder.com/300x200?text=No+Image";
+                        imageUrl = "https://st4.depositphotos.com/14953852/24787/v/450/depositphotos_247872612-stock-illustration-no-image-available-icon-vector.jpg";
                     }
 
                     html += `
-                        <article class="mb-4 pb-2 bg-zinc-950 opacity-95 hover:border border-emerald-200 hover:opacity-100 rounded-lg hover:scale-105">
+                        <article class="mb-4 pb-2 bg-zinc-950 opacity-95 hover:shadow-emerald hover:opacity-100 rounded-lg hover:scale-105">
                             ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="w-full h-45 rounded-t-lg mb-2">` : ''}
                             <h3 class="text-lg mx-4 line-clamp-3 hover:scale-105">
                                 <a href="${link}" target="_blank" rel="noopener noreferrer" class="hover:text-teal-200 drop-shadow-lg hover:animate-glowText2 text-emerald-200">${title}</a>
@@ -103,7 +104,7 @@ function loadRSS(feedIndex = 0) {
             });
 
             // Seleccionar el botón activo y cambiar su color
-            const btnIds = ["btn-xataka", "btn-xda", "btn-gadgets", "btn-varios"];
+            const btnIds = ["btn-wired", "btn-xda", "btn-textual", "btn-xataka", "btn-varios"];
             document.getElementById(btnIds[feedIndex]).classList.remove("bg-gray-600");
             document.getElementById(btnIds[feedIndex]).classList.add("bg-teal-700");
 
