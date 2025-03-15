@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // IntroScreen - cPanel - Volume
   audio.load();
   // Inicializar los sliders
-  volumeSlider.value = 50;
+  volumeSlider.value = 60;
   toggleMusic.checked = true;
   
   // Al cargar la pagina
@@ -118,7 +118,7 @@ toggleMusic.addEventListener('change', () => {
 isMusicOn = toggleMusic.checked;
 if (isMusicOn) {
     // Volver al volumen seleccionado por el slider (escalado al 60%)
-    audio.volume = (volumeSlider.value / 100) * 0.7;
+    audio.volume = (volumeSlider.value / 100);
     ledOn.classList.remove('hidden');
     ledOnTxt.classList.remove('hidden');
     ledOffTxt.classList.add('hidden');
@@ -149,9 +149,8 @@ slider.addEventListener('input', (e) => {
 });
 
 volumeSlider.addEventListener('input', () => {
-    const volume = (volumeSlider.value / 100) * 0.7;
+    const volume = (volumeSlider.value / 100);
     volumeSlider2.value = volumeSlider.value;
-    // const value = (volumeSlider.value - volumeSlider.min) / (volumeSlider.max - volumeSlider.min) * 100;
     if (isMusicOn) {
         audio.volume = volume;
     }
@@ -159,7 +158,7 @@ volumeSlider.addEventListener('input', () => {
 });
 
 volumeSlider2.addEventListener('input', () => {
-    let volume = (volumeSlider2.value / 100) * 0.7;
+    let volume = (volumeSlider2.value / 100);
     let value = (volumeSlider2.value - volumeSlider2.min) / (volumeSlider2.max - volumeSlider2.min) * 100;
     // fill.style.width = `${value}%`;
     if (isMusicOn) {
@@ -169,11 +168,11 @@ volumeSlider2.addEventListener('input', () => {
 });
 
 function updateSliderBackground(slider) {
-  var value = volumeSlider.value;
-  var value2 = volumeSlider2.value;
+let value = volumeSlider.value;
+let value2 = volumeSlider2.value;
 
 // Gardiente arcoiris
-var gradient = `linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)`;
+let gradient = `linear-gradient(to right, red, orange, yellow, green, blue, indigo, violet)`;
 
 // Ajustar el progreso visible según el valor del slider
 volumeSlider.style.background = `
@@ -199,7 +198,7 @@ if (isFF) {
 
 // Función para saltar la introducción
 function skipIntro() {
-let startFromSecond = 127.8;
+let startFromSecond = 132;
 introScreen.classList.add("hidden");
 introContent.classList.add("hidden");
 skipBtn2.classList.add("hidden");
@@ -210,7 +209,7 @@ audio.currentTime = startFromSecond;
 
 if (isMusicOn) {
     audio.play();
-    audio.volume = (volumeSlider2.value / 100) * 0.7;
+    audio.volume = (volumeSlider2.value / 100);
     sliderSkip.classList.remove("hidden");
     volumeBkg.classList.add("bg-black");
     updateSliderBackground(volumeSlider2);
@@ -227,7 +226,7 @@ skipBtn2.addEventListener("click", skipIntro);
 // Función para manejar el botón de inicio
 startBtn.addEventListener("click", () => {
   audio.currentTime = startFromSecond;
-  audio.volume = (volumeSlider2.value / 100) * 0.7;
+  audio.volume = (volumeSlider2.value / 100);
   updateSliderBackground(volumeSlider2);
   audio.play();
   skipBtn2.classList.remove("hidden");
@@ -238,7 +237,6 @@ startBtn.addEventListener("click", () => {
     sliderSkip.classList.remove("hidden");
   } else {
     audio.pause();
-    // sliderSkip.classList.add("hidden");
   }
 
   // Nueva implementación con TypewriterJS
@@ -363,7 +361,8 @@ headerImg.addEventListener("click", () => {
         coffeeImg.classList.add('mt-3');
         socialBts.classList.remove('ml-7');
                 
-    } if (window.innerWidth <= 924) {
+    } 
+    if (window.innerWidth <= 924) {
       ytVideos.classList.remove('flex'); 
       ytVideos.style.gridTemplateColumns = "repeat(2, minmax(0, 1fr))"; 
        ytVideos.classList.add('grid', 'grid-cols-2');

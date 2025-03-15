@@ -1,13 +1,5 @@
 [
- {
-  "title": "N7 Services",
-  "date": "2025-03-10",
-  "author": "Alba Tolosa Bonora",
-  "content": "Descubre cómo puedo ayudarte a crecer digitalmente con servicios de diseño y desarrollo web, SEO y marketing digital. Ofrezco soluciones personalizadas para empresas y profesionales que buscan destacar en Internet. ¡Contáctame para más información!",
-  "image": "https://nusky7studio.es/img/TuLanding.gif",
-  "url": "https://services.nusky7studio.es/es" ,
-  "category": "Desarrollo Web"
-}, 
+
 {
   "title": "Probando Sitejet en Plesk: Ventajas y Juegos con Tailwind",
   "date": "2025-03-09",
@@ -27,6 +19,15 @@
     "optimización web con Tailwind"
   ]
 },
+ {
+  "title": "N7 Services",
+  "date": "2025-03-10",
+  "author": "Alba Tolosa Bonora",
+  "content": "Descubre cómo puedo ayudarte a crecer digitalmente con servicios de diseño y desarrollo web, SEO y marketing digital. Ofrezco soluciones personalizadas para empresas y profesionales que buscan destacar en Internet. ¡Contáctame para más información!",
+  "image": "https://nusky7studio.es/img/TuLanding.gif",
+  "url": "https://services.nusky7studio.es/es" ,
+  "category": "Desarrollo Web"
+}, 
 {
   "title": "Los mejores PC y portátiles para desarrollo web en 2025",
   "date": "2025-02-23",

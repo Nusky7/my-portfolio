@@ -1,4 +1,4 @@
-const API_KEY = "AIzaSyDaoYxLsDuRL_Ur2WlAv_tHcpOPx6zFoLo";
+const API_KEY = "";
 // const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
 const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
 const MAX_RESULTS = 5; 

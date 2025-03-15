@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
   let title = document.getElementById('song-title');
 
   const playlist = [
+    { file: "zenithGlow.mp3" } ,
     { file: "lowx.mp3" },
     { file: "c152.mp3" },
     { file: "amiga.mp3" },
@@ -20,11 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { file: "egerie.mp3" },
     { file: "euphorie.mp3" },
     { file: "memoryReboot.mp3" },
-    { file: "fearless.mp3" },
-   
-    { file: "prag.mp3" },
-    { file: "eyeShut.mp3" },
-    { file: "urban.mp3" }
+    { file: "fearless.mp3" },   
    
   ];
 
