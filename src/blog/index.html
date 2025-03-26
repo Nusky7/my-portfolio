@@ -54,7 +54,7 @@
     </details>
 
     <!-- Contenedor de Botones -->
-    <div class="absolute top-9 p-1.5 left-1/2 transform -translate-x-1/2 flex flex-row gap-4 
+    <div class="absolute top-9 p-1 left-1/2 transform -translate-x-1/2 flex flex-row gap-4 
             min-[840px]:left-auto min-[840px]:right-5 min-[840px]:transform-none min-[840px]:flex-col min-[840px]:gap-y-6 max-[840px]:top-0">
         <!-- Botón Donaciones -->
         <button id="donateBtn" class="group w-12 h-12 flex items-center justify-center bg-amber-800 rounded-full transition hover:scale-110">
@@ -84,12 +84,12 @@
           </div>
           <!-- Botón LinkedIn -->
           <div class="relative group flex">
-            <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" rel="noopener noreferrer" title="" target="_blank"
-              class="header-btn w-12 h-12 flex items-center justify-center bg-teal-400 rounded-full hover:bg-teal-300 hover:scale-110 transition">
-              <svg fill="#000000" width="43px" height="43px" xmlns="http://www.w3.org/2000/svg" viewBox="-143 145 512 512"><path d="M113,145c-141.4,0-256,114.6-256,256s114.6,256,256,256s256-114.6,256-256S254.4,145,113,145z M272.8,560.7c-20.8,20.8-44.9,37.1-71.8,48.4c-27.8,11.8-57.4,17.7-88,17.7c-30.5,0-60.1-6-88-17.7c-26.9-11.4-51.1-27.7-71.8-48.4c-20.8-20.8-37.1-44.9-48.4-71.8C-107,461.1-113,431.5-113,401s6-60.1,17.7-88c11.4-26.9,27.7-51.1,48.4-71.8c20.9-20.8,45-37.1,71.9-48.5C52.9,181,82.5,175,113,175s60.1,6,88,17.7c26.9,11.4,51.1,27.7,71.8,48.4c20.8,20.8,37.1,44.9,48.4,71.8c11.8,27.8,17.7,57.4,17.7,88c0,30.5-6,60.1-17.7,88C309.8,515.8,293.5,540,272.8,560.7z"></path><rect x="-8.5" y="348.4" width="49.9" height="159.7"></rect><path d="M15.4,273c-18.4,0-30.5,11.9-30.5,27.7c0,15.5,11.7,27.7,29.8,27.7h0.4c18.8,0,30.5-12.3,30.4-27.7C45.1,284.9,33.8,273,15.4,273z"></path><path d="M177.7,346.9c-28.6,0-46.5,15.6-49.8,26.6v-25.1H71.8c0.7,13.3,0,159.7,0,159.7h56.1v-86.3c0-4.9-0.2-9.7,1.2-13.1c3.8-9.6,12.1-19.6,27-19.6c19.5,0,28.3,14.8,28.3,36.4v82.6H241v-88.8C241,369.9,213.2,346.9,177.7,346.9z"></path></svg>
+            <a href="https://services.nusky7studio.es" rel="noopener noreferrer" title="N7Studio Services" target="_blank"
+              class="header-btn w-12 h-12 flex items-center justify-center bg-amber-600 rounded-full hover:bg-amber-500 hover:scale-110 transition">
+              <img src="/img/n7Studio.png" alt="n7studio"  width="42px"  height="42px"  class="pointer-events-none rounded-full">
             </a>
-                <span class="header-btn hidden md:block absolute animate-glowText2 font-orbi top-1/2 right-full transform -translate-y-1/2 mr-2 text-teal-400 text-md px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                LinkedIn
+                <span class="header-btn hidden md:block absolute animate-glowText1 font-orbi top-1/2 right-full transform -translate-y-1/2 mr-2 text-amber-500 text-md px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                Mis Servicios
                 </span>
           </div>
     </div>
@@ -97,7 +97,7 @@
         <div class="max-w-3xl mx-auto flex space-x-4 px-2">
             <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('dispositivos-android')">
-                📱 Dispositivos y Android
+                📟 Tecnología
             </button>
             <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('desarrollo-web')">
@@ -116,13 +116,13 @@
 
   <!-- Contenedor de Posts -->
   <main class="max-w-6xl mx-auto p-3">
-    <section id="desarrollo-web" class="category-section ">
+    <section id="desarrollo-web" class="category-section hidden">
       <div id="posts-desarrollo" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Desarrollo Web -->
       </div>
     </section>
 
-    <section id="dispositivos-android" class="category-section hidden">
+    <section id="dispositivos-android" class="category-section ">
       <div id="posts-android" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Dispositivos y Android -->
       </div>
@@ -161,6 +161,78 @@
       </div>
     </section>
   </main>
+
+  <footer class="bg-neutral-950 text-zinc-300 text-sm mt-12">
+    <div class="max-w-6xl mx-auto px-4 py-10">
+      <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+        
+        <!-- Branding -->
+        <div>
+          <h2 class="text-lg font-semibold font-gba"><span class="text-teal-200">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-orange-200">Bonora</span>  </h2>
+          <img src="https://nusky7studio.es/img/logos/nLogo.png" alt="Logo de N7Studio" class="w-32 h-auto" />
+          <p class="mt-2 max-w-xs">
+            Diseño web, desarrollo y creatividad digital. Portfolio y Blog personal.
+          </p>
+        </div>
+        <!-- Enlaces legales -->
+        <div>
+          <h3 class="text-rose-300 font-medium mb-3 font-gba">Legal</h3>
+          <ul class="space-y-2">
+            <li><a href="/privacidad.html" target="_blank" class="hover:text-white transition">Política de Privacidad</a></li>
+            <li><a href="/aviso-legal.html" target="_blank" class="hover:text-white transition">Aviso Legal</a></li>
+            <li><a href="/cookies.html" target="_blank" class="hover:text-white transition">Política de Cookies</a></li>
+            <li><a href="/#contact" class="hover:text-white transition">Contacto</a></li>
+          </ul>
+        </div>
+        <!-- Redes sociales y enlaces -->
+        <div>
+          <h3 class="text-rose-300 font-medium mb-3 font-gba">Redes y Sitios</h3>
+          <div class="flex flex-col gap-4">
+
+            <!-- Redes -->
+            <div class="flex gap-4">
+              <a href="https://github.com/Nusky7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="GitHub">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>GitHub
+              </a>
+              <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="LinkedIn">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>LinkedIn
+              </a>
+              <a href="https://t.me/Nusky_7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="Telegram">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>Telegram
+              </a>
+            </div>
+
+            <!-- Sitios propios -->
+            <ul class="text-sm space-y-1">
+              <li>
+                <a href="https://services.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                  🌐 Servicios Web
+                </a>
+              </li>
+              <li>
+                <a href="https://nusky7studio.es/" target="_blank" class="hover:text-white transition">
+                  🎨 Mi Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                  🪴 Tienda Natural / Aloe Vera
+                </a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+
+  
+      </div>
+  
+      <!-- Copyright -->
+      <div class="mt-10 border-t border-zinc-700 pt-4 text-center text-xs text-zinc-500">
+        &copy; 2025 Alba Tolosa Bonora ⚙️ N7Studio. Todos los derechos reservados.
+      </div>
+    </div>
+  </footer>    
 
     <script src="../js/blog.js" defer></script>
     <script src="../js/donations.js" defer></script>

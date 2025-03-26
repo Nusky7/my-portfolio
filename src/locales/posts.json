@@ -1,6 +1,42 @@
 [
 
 {
+  "title": "Comparativa de planes de hosting: ¿Cuál nos ofrece más por menos?",
+  "date": "2025-03-18",
+  "author": "Alba Tolosa Bonora",
+  "content": "Comparamos 3 tipos diferentes de planes básicos de hosting disponibles en el mercado y cómo elegir el más adecuado para tu proyecto.",
+  "image": "https://nusky7studio.es/img/posts/hostings.png",
+  "url": "/blog/posts/planes-hosting-baratos.html",
+  "category": "Desarrollo Web",
+  "keywords": [
+    "planes de hosting",
+    "mejor hosting 2025",
+    "comparativa de hosting",
+    "hosting para principiantes",
+    "hosting para empresas",
+    "tipos de hosting",
+    "elegir hosting"
+  ]
+},
+{
+  "title": "Las landing pages que convierten: qué son y por qué necesitas una",
+  "date": "2025-03-16",
+  "author": "Alba Tolosa Bonora",
+  "content": "Las landing pages son páginas web diseñadas específicamente para convertir visitantes en clientes o leads. En este artículo, exploraremos qué son las landing pages, por qué son efectivas y cómo pueden ayudar a tu negocio a conseguir más conversiones y leads cualificados. Aprenderás sobre su estructura, ejemplos de uso y las razones por las que funcionan tan bien en el marketing digital.",
+  "image": "https://i.ytimg.com/vi/nQ2f79bi_QE/maxresdefault.jpg",
+  "url": "/blog/posts/crear-landing-page-efectiva.html",
+  "category": "Desarrollo Web",
+  "keywords": [
+    "landing pages efectivas",
+    "qué es una landing page",
+    "conversión de leads",
+    "marketing digital",
+    "diseño de landing pages",
+    "ejemplos de landing pages",
+    "estrategias de conversión"
+  ]
+},
+{
   "title": "Probando Sitejet en Plesk: Ventajas y Juegos con Tailwind",
   "date": "2025-03-09",
   "author": "Alba Tolosa Bonora",
@@ -19,15 +55,6 @@
     "optimización web con Tailwind"
   ]
 },
- {
-  "title": "N7 Services",
-  "date": "2025-03-10",
-  "author": "Alba Tolosa Bonora",
-  "content": "Descubre cómo puedo ayudarte a crecer digitalmente con servicios de diseño y desarrollo web, SEO y marketing digital. Ofrezco soluciones personalizadas para empresas y profesionales que buscan destacar en Internet. ¡Contáctame para más información!",
-  "image": "https://nusky7studio.es/img/TuLanding.gif",
-  "url": "https://services.nusky7studio.es/es" ,
-  "category": "Desarrollo Web"
-}, 
 {
   "title": "Los mejores PC y portátiles para desarrollo web en 2025",
   "date": "2025-02-23",
@@ -104,7 +131,25 @@
  
 
 
-
+  {
+    "title": "HP Victus 15: La Mejor Opción Gaming por 729€",
+    "date": "2024-03-16",
+    "author": "Alba Tolosa Bonora",
+    "content": "Este portátil HP es ideal para creadores y gamers con presupuesto ajustado. Equipado con un procesador Intel Core i5 y una Nvidia RTX 3050, este portátil es capaz de manejar juegos, edición de video y tareas exigentes sin problema, todo ello por solo 729€.",
+    "image": "https://i.ytimg.com/vi/xKgUbZifOfs/maxresdefault.jpg",
+    "url": "/blog/posts/hp-victus-15.html",
+    "category": "Dispositivos y Android",
+    "keywords": [
+      "HP Victus 15",
+      "portátil gaming barato",
+      "RTX 3050 laptop",
+      "Intel Core i5 gaming",
+      "mejores portátiles gaming 2024",
+      "gaming laptop ofertas",
+      "portátil para juegos económico",
+      "HP gaming laptop"
+    ]
+  },
   {
     "title": "Los mejores smartphones Android de 2025",
     "date": "2025-02-20",
@@ -112,15 +157,6 @@
     "content": "Descubre los dispositivos Android más potentes, con mejor rendimiento y diseño del 2025...",
     "image": "https://fscl01.fonpit.de/userfiles/7695213/image/Smartphones-unter-200-Euro.jpg",
     "url": "/blog/posts/mejores-android-2025.html",
-    "category": "Dispositivos y Android"
-  },
-  {
-    "title": "Cómo optimizar la batería de tu smartphone Android",
-    "date": "2025-02-22",
-    "author": "Alba Tolosa Bonora",
-    "content": "Si la batería de tu móvil no dura lo suficiente, aquí tienes consejos para mejorar su rendimiento...",
-    "image": "https://img.global.news.samsung.com/pe/wp-content/uploads/2020/01/Smartphone-Bateria.jpg",
-    "url": "/blog/posts/optimizar-bateria-android.html",
     "category": "Dispositivos y Android"
   },
   {
@@ -164,6 +200,17 @@
       "relojes inteligentes recomendados"
     ]
   },
+  {
+    "title": "Cómo optimizar la batería de tu smartphone Android",
+    "date": "2025-02-22",
+    "author": "Alba Tolosa Bonora",
+    "content": "Si la batería de tu móvil no dura lo suficiente, aquí tienes consejos para mejorar su rendimiento...",
+    "image": "https://img.global.news.samsung.com/pe/wp-content/uploads/2020/01/Smartphone-Bateria.jpg",
+    "url": "/blog/posts/optimizar-bateria-android.html",
+    "category": "Dispositivos y Android"
+  },
+
+
 
   {
     "title": "6 emuladores para jugar en PC y Android en 2025",

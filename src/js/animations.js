@@ -334,11 +334,11 @@ stopBtn.addEventListener("click", () => {
 
 
   function rotateImage() {
-  headerAnimeImg.style.animation = "rotateImage 0.5s ease-in-out forwards";
+  headerAnimeImg.style.animation = "0.5s ease-in-out forwards";
   headerRealImg.style.animation = "rotateImage 0.5s ease-in-out forwards";
   // Cambiar la foto de perfil
   if (headerAnimeImg.classList.contains("hidden")) {
-    headerAnimeImg.classList.remove("hidden");
+    headerAnimeImg.classList.replace("hidden", "rotate-360");
     headerRealImg.classList.add("hidden");
   } else {
     headerAnimeImg.classList.add("hidden");

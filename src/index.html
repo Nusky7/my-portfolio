@@ -28,7 +28,7 @@
     />
     <meta
       property="og:image"
-      content="https://nusky7studio.es/img/nusky.webp"
+      content="https://nusky7studio.es/img/nLogo.png"
     />
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -99,7 +99,7 @@
             class="w-full h-full rounded-lg bg-neutral-800 flex flex-col items-center justify-between p-7 shadow-lg"
           >
             <h2
-              class="font-pix text-4xl pt-1 pb-6 text-rose-200 animate-colorSlow"
+              class="font-gba font-bold text-4xl pt-1 pb-6 text-rose-200 animate-colorSlow"
             >
               N7STUDIO
             </h2>
@@ -322,7 +322,7 @@
         <div id="intro-text" class="intro-text"></div>
         <div id="profile" class="profile-container">
           <img
-            src="./img/nusky.webp"
+            src="https://nusky7studio.es/img/logos/n7Logo.png"
             alt="Anime Profile"
             class="profile-img anime-img z-50"
           />
@@ -462,7 +462,7 @@
       >
         <p
           id="menu-txt"
-          class="text-white text-left fixed top-4 right-42 font-pix text-2xl animate-colorSlow ml-1 flex justify-between space-x-2"
+          class="text-white text-left fixed top-4 right-42 font-gba font-bold text-2xl animate-colorSlow ml-1 flex justify-between space-x-2"
         >
           <svg
             fill="currentColor"
@@ -603,16 +603,16 @@
       <div id="header-wrapper" class="header-wrapper relative">
         <div id="header-img" class="header-container bg-zinc-950">
           <img
-            src="./img/nusky.webp"
+            src="https://nusky7studio.es/img/logos/n7Logo.png"
             alt="Anime Profile"
             id="perf"
-            class="head-img header-anime-img border-b-4 border-r-3 border-rose-300 cursor-pointer hover:scale-110 transition-transform ease-in-out"
+            class="head-img header-anime-img drop-shadow-md cursor-pointer hover:scale-110 transition-transform ease-in-out"
           />
           <img
             src="./img/yo2.webp"
             alt="Real Profile"
             id="perf1"
-            class="head-img header-real-img border-b-4 border-r-3 border-rose-400 hidden cursor-pointer hover:scale-110 transition-transform ease-in-out"
+            class="head-img header-real-img border-b-3 drop-shadow-md border-rose-400 hidden cursor-pointer hover:scale-110 transition-transform ease-in-out"
           />
         </div>
 
@@ -646,9 +646,9 @@
       <div id="header-content" class="flex justify-center z-50">
         <h1
           id="name"
-          class="font-bold inline-block text-rose-200 font-pix animate-glowText hover:animate-colorSlow mr-3"
+          class="font-bold inline-block text-5xl text-rose-200 font-gba animate-glowText hover:animate-colorSlow mr-3"
         >
-          Alba Tolosa Bonora
+          <button onclick="window.location.reload()" class="hover:text-rose-200">Alba Tolosa Bonora</button>
         </h1>
         <button id="donateBtn" class="relative group hover:scale-110">
           <img
@@ -842,26 +842,31 @@
           <!-- Trabajando... -->
 
           <div
-            class="swiper-slide bg-neutral-800 rounded-xl shadow-xl p-3 text-center animate-glowRose flex flex-col"
+            class="swiper-slide bg-neutral-800 rounded-xl shadow-xl pb-3 text-center animate-glowRose flex flex-col"
           >
             <div class="h-auto">
-              <img
-                src="./img/ns4.webp"
-                alt="Project 1"
-                width="100%"
-                height="auto"
-                class="swiper-zoom-container project-img rounded-md mb-4"
-              />
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/NSystemsMobile.png"
+                  alt="NSystems"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/ns4.webp"
+                  alt="NSystems"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                />
+              </div>
               <h3
                 class="text-3xl p-1 font-bold text-neutral-500 font-sourceCode mb-1"
               >
                 NSystems
               </h3>
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/angular.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/node.webp" alt="html" class="icons" />
-                <img src="img/ico/mongo.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/angular.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/node.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/mongo.webp" alt="html" class="icons" />
               </div>
               <p
                 id="working"
@@ -879,16 +884,19 @@
 
           <!-- Blog -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-teal flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-teal flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/N7Tools/n7blogMobile.png"
+                  alt="N7Blog"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
                   src="https://nusky7studio.es/img/n7blog.webp"
-                  alt="Portfolio"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
+                  alt="N7Blog"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
@@ -912,7 +920,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-teal-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 hover:animate-none w-full text-white py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-teal-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 hover:animate-none w-full text-white py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/my-portfolio"
@@ -925,7 +933,7 @@
 
                 <button
                   type="button"
-                  class="bg-teal-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-teal-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://www.nusky7studio.es/blog"
@@ -941,29 +949,32 @@
 
           <!-- Proyecto -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-pink flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-pink flex flex-col justify-between"
           >
-            <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="./img/n7tools.webp"
-                  alt="Portfolio"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
-                />
-              </div>
+              <div class="h-auto">
+                <div class="relative group w-full h-auto">
+                  <img loading="lazy"
+                    src="https://nusky7studio.es/img/N7Tools/n7toolsMobile.png"
+                    alt="N7Tools"
+                    class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                  <img loading="lazy"
+                    src="./img/n7tools.webp"
+                    alt="N7Tools"
+                    class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
               <h3
                 class="text-3xl p-1 font-bold text-rose-400 font-sourceCode mb-1"
               >
                 N7Tools
               </h3>
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/html.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/js.webp" alt="html" class="icons" />
-                <img src="img/ico/tw.webp" alt="html" class="icons" />
-                <img src="img/ico/node.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/html.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/js.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/tw.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/node.webp" alt="html" class="icons" />
               </div>
               <p
                 id="project"
@@ -974,7 +985,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 hover:animate-none w-full text-white py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 hover:animate-none w-full text-white py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/N7Tools"
@@ -987,7 +998,7 @@
 
                 <button
                   type="button"
-                  class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-rose-400 bg-opacity-30 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://www.nusky7studio.es/N7Tools"
@@ -1003,29 +1014,32 @@
 
           <!-- Proyecto 1 -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-amber flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-amber flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="img/vplaces.webp"
-                  alt="ValenciaPlaces"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
-                />
-              </div>
+                <div class="relative group w-full h-auto">
+                  <img loading="lazy"
+                    src="https://nusky7studio.es/img/vPlacesMobile.png"
+                    alt="ValenciaPlaces"
+                    class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  />
+                  <img loading="lazy"
+                    src="https://nusky7studio.es/img/vlPlaces.png"
+                    alt="ValenciaPlaces"
+                    class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  />
+                </div>
               <h3
                 class="text-3xl p-1 font-bold text-amber-400 font-sourceCode mb-1"
               >
                 Valencia Places
               </h3>
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/html.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/js.webp" alt="html" class="icons" />
-                <img src="img/ico/boots.webp" alt="html" class="icons" />
-                <img src="img/ico/json.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/html.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/js.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/boots.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/json.webp" alt="html" class="icons" />
               </div>
               <p
                 id="project1"
@@ -1039,7 +1053,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-amber-400 bg-opacity-40 hover:rounded-full hover:bg-zinc-900 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-amber-400 bg-opacity-40 hover:rounded-full hover:bg-zinc-900 text-white w-full py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/vlc-places"
@@ -1051,7 +1065,7 @@
                 </button>
                 <button
                   type="button"
-                  class="bg-amber-400 bg-opacity-50 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-amber-400 bg-opacity-50 hover:rounded-full hover:bg-zinc-900 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://nusky7studio.es/ValenciaPlaces/index.html"
@@ -1067,16 +1081,19 @@
 
           <!-- Proyecto 2 -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-orange flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-orange flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="img/transfers.webp"
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/transfersMobile.png"
                   alt="TransfersVIP"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/transfers.webp"
+                  alt="TransfersVIP"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
@@ -1102,7 +1119,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mx-3 mb-3"
+                  class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-full py-3.5 px-4 rounded-xl mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/DeluxeTransfers"
@@ -1114,7 +1131,7 @@
                 </button>
                 <button
                   type="button"
-                  class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-orange-500 bg-opacity-30 hover:bg-zinc-700 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://nusky7studio.es/DeluxeTransfer"
@@ -1130,16 +1147,19 @@
 
           <!-- Proyecto 3 -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-purple flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-purple flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="./img/tattoo.webp"
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/tattooMobile.png"
                   alt="MaMTattoo"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/tattoo.webp"
+                  alt="MaMTattoo"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
@@ -1149,10 +1169,10 @@
               </h3>
 
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/html.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/tw.webp" alt="html" class="icons" />
-                <img src="img/ico/js.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/html.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/tw.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/js.webp" alt="html" class="icons" />
               </div>
 
               <p
@@ -1164,7 +1184,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/TattooStudio"
@@ -1176,7 +1196,7 @@
                 </button>
                 <button
                   type="button"
-                  class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-violet-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://nusky7studio.es/mamTattoo/index.html"
@@ -1192,16 +1212,19 @@
 
           <!-- Proyecto 4 -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-emerald flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-emerald flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="./img/st.webp"
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/sTimeMobile.png"
                   alt="SmartTime"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/st.webp"
+                  alt="SmartTime"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
@@ -1211,10 +1234,10 @@
               </h3>
 
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/angular.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/php.webp" alt="html" class="icons" />
-                <img src="img/ico/sql.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/angular.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/php.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/sql.webp" alt="html" class="icons" />
               </div>
               <p
                 id="project4"
@@ -1225,7 +1248,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/SmartTime"
@@ -1237,7 +1260,7 @@
                 </button>
                 <button
                   type="button"
-                  class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-emerald-400 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://nusky7studio.es/smarTime"
@@ -1253,16 +1276,19 @@
 
           <!-- Proyecto 5 -->
           <div
-            class="swiper-slide bg-zinc-950 rounded-xl p-3 text-center shadow-rose flex flex-col justify-between"
+            class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-rose flex flex-col justify-between"
           >
             <div class="h-auto">
-              <div class="swiper-zoom-container">
-                <img
-                  src="./img/poke.webp"
-                  alt="SmartTime"
-                  width="100%"
-                  height="auto"
-                  class="project-img rounded-md mb-4"
+              <div class="relative group w-full h-auto">
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/pokeMobile.png"
+                  alt="Pokedex"
+                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                />
+                <img loading="lazy"
+                  src="https://nusky7studio.es/img/poke.webp"
+                  alt="Pokedex"
+                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
@@ -1272,9 +1298,9 @@
               </h3>
 
               <div class="flex space-x-4 mx-0 p-1.5 justify-center">
-                <img src="img/ico/html.webp" alt="html" class="icons" />
-                <img src="img/ico/css.webp" alt="html" class="icons" />
-                <img src="img/ico/php.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/html.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/css.webp" alt="html" class="icons" />
+                <img loading="lazy" src="img/ico/php.webp" alt="html" class="icons" />
               </div>
               <p
                 id="project5"
@@ -1285,7 +1311,7 @@
               <div class="flex mt-auto">
                 <button
                   type="button"
-                  class="bg-red-500 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-red-500 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-full py-3.5 px-4 rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://github.com/Nusky7/Pokedex-v1"
@@ -1297,7 +1323,7 @@
                 </button>
                 <button
                   type="button"
-                  class="bg-red-500 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl animate-pulse mt-auto mx-3 mb-3"
+                  class="bg-red-500 bg-opacity-30 hover:rounded-full hover:bg-neutral-700 text-white w-15 p-3 flex justify-center items-center rounded-xl mt-auto mx-3 mb-3"
                 >
                   <a
                     href="https://nusky7studio.es/PokedexV1/cliente.php"
@@ -1456,7 +1482,7 @@
       class="audio-player w-full py-10 shadow-xl grid bg-black bg-opacity-20"
     >
       <h2
-        class="text-xl p-1 font-bold text-violet-400 shadow-md text-center font-gba mb-10 flex justify-center items-center"
+        class="text-xl p-1 font-bold text-violet-400 text-center font-gba mb-10 flex justify-center items-center"
       >
         <span>Audio Player </span>
         <svg
@@ -1649,7 +1675,7 @@
     >
       <h3
         id="panel-title"
-        class="text-2xl font-pix mb-3 text-rose-400 animate-colorSlow"
+        class="text-2xl font-gba mb-3 text-rose-400 animate-colorSlow"
       >
         ¿Te gusta mi trabajo?
       </h3>
@@ -2531,7 +2557,7 @@
       <div id="youtube-videos" class="flex w-full h-auto gap-8"></div>
     </div>
 
-    <section id="contact" class="bg-black bg-opacity-30 p-3">
+    <section id="contact" class="p-3">
       <div class="max-w-4xl mx-auto text-center">
         <h2
           id="contact-title"
@@ -2544,7 +2570,7 @@
           <div class="flex">
             <div
               id="loading-spinner"
-              class="hidden m-3 rounded-md animate-colorFast text-lg font-pix"
+              class="hidden m-3 rounded-md animate-colorFast text-lg font-gba"
             >
               Enviando...
             </div>
@@ -2728,6 +2754,7 @@
                   rows="6"
                   class="w-full p-2 rounded bg-zinc-900 text-gray-300 focus:ring-2 focus:ring-rose-300 outline-none"
                 ></textarea>
+                <p class="mt-0 text-left text-black font-medium"><span class="drop-shadow-lg">✔️</span> Enviando este formulario aceptas la <a href="/privacidad.html" target="_blank" class="underline hover:text-purple-300">Política de Privacidad.</a></p>
               </div>
               <button
                 type="submit"
@@ -2736,10 +2763,84 @@
                 Enviar
               </button>
             </form>
+          </div>       
+        </div>        
+      </div>    
+    </section>
+
+    <footer class="bg-neutral-950 text-zinc-300 text-sm mt-12">
+      <div class="max-w-6xl mx-auto px-4 py-10">
+        <div class="flex flex-col md:flex-row justify-between items-start gap-8">
+          
+          <!-- Branding -->
+          <div>
+            <h2 class="text-lg font-semibold font-gba"><span class="text-teal-200">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-orange-200">Bonora</span>  </h2>
+            <img src="https://nusky7studio.es/img/logos/nLogo.png" alt="Logo de N7Studio" class="w-32 h-auto" />
+            <p class="mt-2 max-w-xs">
+              Diseño web, desarrollo y creatividad digital. Portfolio y Blog personal.
+            </p>
           </div>
+          <!-- Enlaces legales -->
+          <div>
+            <h3 class="text-rose-300 font-medium mb-3 font-gba">Legal</h3>
+            <ul class="space-y-2">
+              <li><a href="/privacidad.html" target="_blank" class="hover:text-white transition">Política de Privacidad</a></li>
+              <li><a href="/aviso-legal.html" target="_blank" class="hover:text-white transition">Aviso Legal</a></li>
+              <li><a href="/cookies.html" target="_blank" class="hover:text-white transition">Política de Cookies</a></li>
+              <li><a href="#contact" class="hover:text-white transition">Contacto</a></li>
+            </ul>
+          </div>
+          <!-- Redes sociales y enlaces -->
+          <div>
+            <h3 class="text-rose-300 font-medium mb-3 font-gba">Redes y Sitios</h3>
+            <div class="flex flex-col gap-4">
+
+              <!-- Redes -->
+              <div class="flex gap-4">
+                <a href="https://github.com/Nusky7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="GitHub">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>GitHub
+                </a>
+                <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="LinkedIn">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>LinkedIn
+                </a>
+                <a href="https://t.me/Nusky_7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="Telegram">
+                  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>Telegram
+                </a>
+              </div>
+
+              <!-- Sitios propios -->
+              <ul class="text-sm space-y-1">
+                <li>
+                  <a href="https://services.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                    🌐 Servicios Web
+                  </a>
+                </li>
+                <li>
+                  <a href="https://nusky7studio.es/blog" target="_blank" class="hover:text-white transition">
+                    📰 N7Blog: Noticias y Tecnología
+                  </a>
+                </li>
+                <li>
+                  <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                    🪴 Tienda Natural / Aloe Vera
+                  </a>
+                </li>
+              </ul>
+
+            </div>
+          </div>
+
+    
+        </div>
+    
+        <!-- Copyright -->
+        <div class="mt-10 border-t border-zinc-700 pt-4 text-center text-xs text-zinc-500">
+          &copy; 2025 Alba Tolosa Bonora ⚙️ N7Studio. Todos los derechos reservados.
         </div>
       </div>
-    </section>
+    </footer>    
+
+
 
     <!-- Swiper -->
     <script
@@ -2773,12 +2874,6 @@
     <script defer>
       emailjs.init("39FmjBf7JrQSw9E-2");
     </script>
-    <!-- waveSurfer -->
-    <script src="https://unpkg.com/wavesurfer.js@7" defer></script>
-    <script
-      src="https://unpkg.com/wavesurfer.js@7/dist/plugins/regions.min.js"
-      defer
-    ></script>
     <!-- Scripts -->
     <script type="module" src="js/donations.js" defer></script>
     <script type="module" src="js/youtubeVideos.js" defer></script>

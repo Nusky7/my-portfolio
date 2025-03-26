@@ -28,7 +28,9 @@ html, body{
 body, p, li, h1, h2, h3, h4, h5, h6, a {
   cursor: url('/img/cursor.png') 16 16, cursor !important;
 }
-
+#name{
+  cursor: url('/img/pointer.png') 16 16, pointer !important;
+}
 
 @font-face {
   font-family: 'pix'; 

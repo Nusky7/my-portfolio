@@ -99,7 +99,7 @@ module.exports = {
         zoomout: 'zoom-out 1s ease-in-out 0.25s 1',
         tada: 'tada 1s ease-in-out infinite',
         tadaTwo: 'tada 2.77s ease-in-out infinite',
-        tadaOne: 'tada 1s ease-in-out 0.25 forwards',
+        tadaOne: 'tada 1s ease-in-out 0.25 infinite',
         spinnergrow: 'spinner-grow 1s ease-in-out 0.25s 1',
         placeholderwave: 'placeholder-wave 1s ease-in-out 0.25s 1',
         showUpClock: 'showUpClock 1s ease-in-out 0.25s 1',
@@ -116,10 +116,10 @@ module.exports = {
         glowTeal: 'glowTeal 1.6s ease-in-out forwards',
         glowPink: 'glowPink 3s ease-in-out forwards',
         glowPurple: 'glowPurple 1.6s ease-in-out forwards',
-        glowAmber: 'glowAmber 0.3s ease-in-out infinite',
-        glowOrange: 'glowOrange 1.6s ease-in-out forwards',
+        glowAmber: 'glowAmber 2.1s ease-in-out infinite',
+        glowOrange: 'glowOrange 2s ease-in-out forwards',
         glowRose: 'glowRose 3.3s ease-in infinite',
-        glowEme: 'glowEme 1.6s ease-in-out infinite',
+        glowEme: 'glowEme 2.1s ease-in-out infinite',
         zoomIn: 'zoomin 1s ease-out 0.25s 1',
         zoomOut: 'zoomout 1s ease-out 0.25s 1',
         flipx: 'flipx 1.5s ease-out infinite',
@@ -132,6 +132,8 @@ module.exports = {
         glowText: 'glowText 1.5s ease-in-out infinite alternate',
         glowText1: 'glowText1 1.5s ease-in-out infinite alternate',
         glowText2: 'glowText2 1.5s ease-in-out infinite alternate',
+        glowText3: 'glowText3 1.5s ease-in-out infinite alternate',
+        glowText4: 'glowText4 1.5s ease-in-out infinite alternate',
         fadeOutScale: 'fadeOutScale 0.5s ease-out forwards',
         disappear: 'disappear 1.5s ease-out forwards',
         reduceAndFade: 'reduceAndFade 0.1s ease-out forwards',
@@ -146,8 +148,10 @@ module.exports = {
         glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
         borderGlow: 'borderGlow 1.5s ease-in-out infinite alternate',
         borderGlow1: 'borderGlow1 1.5s ease-in-out infinite alternate',
-        glowBoxCycle: 'glowBoxCycle 0.5s ease-in-out infinite',
+        glowBoxCycle: 'glowBoxCycle 6s ease-in-out infinite',
         tvflickerRose: 'tvflicker-rose 3s infinite',
+        tvflickerRoseTeal: 'tvflicker-rose-teal 5s infinite',
+        tvflickerTeal: 'tvflicker-teal 6s infinite',
         tvflickerMixed: 'tvflicker-mixed 3s infinite',
         fastBlink: 'fastBlink 0.35s infinite',
       },
@@ -302,6 +306,14 @@ module.exports = {
         '0%': { textShadow: '0 0 1px #00CED1, 0 0 3px rgb(52 211 153), 0 0 6px #00CED1' },
         '100%': { textShadow: '0 0 10px ##00CED1, 0 0 13px rgb(52 211 153), 0 0 18px #10B981' },
       },
+      glowText3: {
+        '0%': { textShadow: '0 0 1px #000, 0 0 3px rgb(52 211 153), 0 0 6px #30cc98' },
+        '100%': { textShadow: '0 0 10px ##10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+        },
+        glowText4: {
+        '0%': { textShadow: '0 0 1px #000, 0 0 3px rgb(255, 165, 0), 0 0 4px #ea3376' },
+        '100%': { textShadow: '0 0 2px #ff8c00, 0 0 8px #4B0082, 0 0 3px #ae60e1' },
+        },
       fadeOutScale: {
         '0%': { opacity: 1, transform: 'scale(1)' },
         '100%': { opacity: 0, transform: 'scale(0.9)' },
@@ -485,6 +497,23 @@ module.exports = {
             '60%': { boxShadow: '0 0 20px 0 rgba(244, 114, 182, 0.7)' }, 
             '80%': { boxShadow: '0 0 35px 0 rgba(249, 168, 212, 0.5)' },
             '100%': { boxShadow: '0 0 45px 0 rgba(244, 114, 182, 0.4)' },
+        },
+        'tvflicker-rose-teal': {
+              '0%': { boxShadow: '0 0 40px 0 rgba(20, 184, 166, 0.3)' }, // teal
+            '20%': { boxShadow: '0 0 35px 0 rgba(16, 185, 129, 0.4)' }, // emerald
+            '40%': { boxShadow: '0 0 30px 0 rgba(13, 148, 136, 0.5)' }, // teal
+            '60%': { boxShadow: '0 0 25px 0 rgba(5, 150, 105, 0.6)' }, // emerald
+            '80%': { boxShadow: '0 0 35px 0 rgba(15, 118, 110, 0.5)' }, // teal
+            '100%': { boxShadow: '0 0 45px 0 rgba(4, 120, 87, 0.7)' }, // emerald
+        },
+        'tvflicker-teal': {
+              '0%': { boxShadow: '0 0 40px 0 rgba(20, 184, 166, 0.4)' }, // teal
+            '16.6%': { boxShadow: '0 0 35px 0 rgba(124, 58, 237, 0.5)' }, // violet
+            '33.3%': { boxShadow: '0 0 30px 0 rgba(244, 114, 182, 0.6)' }, // rose
+            '50%': { boxShadow: '0 0 40px 0 rgba(251, 146, 60, 0.7)' }, // orange
+            '66.6%': { boxShadow: '0 0 35px 0 rgba(245, 158, 11, 0.6)' }, // amber
+            '83.3%': { boxShadow: '0 0 30px 0 rgba(244, 114, 182, 0.5)' }, // rose
+            '100%': { boxShadow: '0 0 40px 0 rgba(20, 184, 166, 0.4)' }, // teal
         },
          'tvflicker-mixed': {
           '0%': { boxShadow: '0 0 90px 0 rgba(23, 146, 106, 0.4)' },

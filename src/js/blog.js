@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Set the default active tab
-    showCategory("desarrollo-web");
+    showCategory("dispositivos-android");
 
     // Attach event listeners to tabs
     tabs.forEach(tab => {
