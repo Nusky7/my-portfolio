@@ -6,6 +6,7 @@
   <title>Las landing pages que convierten: qué son y por qué necesitas una</title>
   <meta name="description" content="Descubre qué es una landing page, por qué son efectivas y cómo pueden ayudar a tu negocio a conseguir más conversiones y leads cualificados.">
   <link rel="stylesheet" href="../../dist/styles.min.css">
+  <link rel="canonical" href="https://nusky7studio.es/blog/posts/crear-landing-page-efectiva.html"/>
 
   <!-- Open Graph / Facebook -->
   <meta property="og:type" content="article">
@@ -237,6 +238,8 @@
         </div>
       </section>
     </article>
+    <a href="javascript:void(0)" onclick="mostrarPopup()" class="ml-4 underline text-blue-400">Suscribirme</a>
+
   </main>
 
   <!-- Botones de Navegación -->
@@ -254,5 +257,39 @@
       &copy; 2025 Alba Tolosa Bonora. Todos los derechos reservados.
     </p>
   </footer>
+
+
+
+<script>
+  function mostrarPopup() {
+    document.getElementById("miPopup").classList.remove("hidden");
+  }
+
+  function cerrarPopup() {
+    document.getElementById("miPopup").classList.add("hidden");
+  }
+
+  async function suscribirUsuario() {
+    const email = document.getElementById("emailInput").value;
+
+    const response = await fetch("backend/subscribe.php", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email })
+    });
+
+    if (response.ok) {
+      alert("¡Gracias por suscribirte!");
+      cerrarPopup();
+    } else {
+      const res = await response.json();
+      alert("Error: " + (res.error || "No se pudo completar la suscripción."));
+    }
+  }
+</script>
+
+
 </body>
 </html>

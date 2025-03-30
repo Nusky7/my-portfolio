@@ -213,11 +213,14 @@ if (isMusicOn) {
     sliderSkip.classList.remove("hidden");
     volumeBkg.classList.add("bg-black");
     updateSliderBackground(volumeSlider2);
+ 
 } else {
     audio.pause();
     stopBtn.classList.add("hidden");
     sliderSkip.classList.add("hidden");
-    rotateImage();
+        setTimeout(() => {
+            rotateImage();
+        }, 1800);
 }
 }
 skipBtn.addEventListener("click", skipIntro);

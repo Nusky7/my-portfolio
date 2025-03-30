@@ -2,3 +2,4 @@
 node_modules/
 *.log
 img/
+/php/suscribe.php

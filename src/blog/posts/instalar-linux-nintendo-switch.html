@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🎮 Cómo instalar Hekate + Ubuntu en tu Nintendo Switch: Guía paso a paso</title>
+  <meta name="description" content="Aprende a instalar Hekate + Ubuntu Jammy 22.04 en Nintendo Switch con esta guía detallada paso a paso. Requisitos, preparación y configuración completa.">
+  <meta name="keywords" content="Nintendo Switch, Ubuntu, Linux, Switchroot, guía, tutorial, instalación">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="../../dist/styles.min.css">
+  <link rel="canonical" href="https://nusky7studio.es/blog/posts/instalar-linux-nintendo-switch.html"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="🎮 Cómo instalar Hekate + Ubuntu en Nintendo Switch: Guía paso a paso">
+  <meta property="og:description" content="Aprende a instalar Hekate + Ubuntu Jammy 22.04 en tu Nintendo Switch con esta guía detallada paso a paso. Requisitos, preparación y configuración inicial.">
+  <meta property="og:url" content="https://nusky7studio.es/blog/posts/instalar-linux-nintendo-switch.html">
+  <meta property="og:image" content="https://nusky7studio.es/img/posts/hekateCtcaer.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="🎮 Cómo instalar Hekate + Ubuntu en Nintendo Switch: Guía paso a paso">
+  <meta name="twitter:description" content="Aprende a instalar Hekate + Ubuntu Jammy 22.04 en tu Nintendo Switch con esta guía detallada paso a paso. Requisitos, preparación y configuración inicial.">
+  <meta name="twitter:image" content="https://nusky7studio.es/img/posts/hekateCtcaer.png">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "🛠 Cómo instalar Hekate + Ubuntu en Nintendo Switch: Guía paso a paso",
+    "description": "Aprende a instalar Hekate + Ubuntu Jammy 22.04 en tu Nintendo Switch con esta guía detallada paso a paso. Requisitos, preparación y configuración inicial.",
+    "author": {
+      "@type": "Person",
+      "name": "Alba Tolosa Bonora"
+    },
+    "datePublished": "2025-03-09",
+    "image": "https://nusky7studio.es/img/posts/hekateCtcaer.png",
+    "publisher": {
+      "@type": "Organization",
+      "name": "N7Studio",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://nusky7studio.es/img/blog.gif"
+      }
+    }
+  }
+  </script>
+</head>
+
+<div id="miPopup" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
+  <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop4.jpg');">
+    <div class="bg-black/80 px-9 pt-9 rounded-3xl text-black dark:text-white">
+      <div class="text-center">
+        <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
+        <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
+      </div>
+
+      <p id="popup-description" class="text-center text-sm py-3 mb-3 px-0">
+        Recibe Noticias sobre Tecnología y Recomendaciones personalizadas cada mes.
+      </p>
+
+      <input id="emailInput" type="email" placeholder="➜ Tu E-mail "
+             class="font-semibold w-full text-center border focus:animate-glowText1 border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black">
+
+      <button onclick="suscribirUsuario()" id="suscribe-btn"
+              class="mb-12 bg-gradient-to-r from-rose-600 via-purple-700 to-emerald-600 hover:via-rose-500 hover:from-amber-600 hover:to-purple-700 text-white shadow-lg shadow-black text-lg px-4 py-2 rounded-xl w-full font-orbi transform transition-transform duration-300 hover:rounded-3xl hover:scale-105"
+              style="text-shadow: 0px 0px 5px rgba(0,0,0,0.9);">
+        ⭐ Conectarse ⭐
+      </button>
+
+      <div id="popup-links" class="hidden mt-3 flex flex-row gap-3 items-center justify-center">
+        <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="drop-shadow-md shadow-black text-white bg-blue-600 hover:bg-pink-500 p-1.5 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
+          <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
+        </a>
+        <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center drop-shadow-md transition duration-300 hover:scale-110">
+          <img src="https://nusky7studio.es/img/logos/nSteel.png" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
+        </a>
+        <a href="https://t.me/@_Nusky7" target="_blank" class="drop-shadow-md shadow-black text-transparent bg-blue-600 hover:bg-violet-500 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
+          <svg width="30px" height="30px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="currentColor"> </path> <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"> </path> <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"> </path> <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"> </path> </g> </g></svg>
+        </a>
+      </div>
+     
+
+      <a id="aloeLink" href="https://exialoe.nusky7studio.es" target="_blank" class="hidden flex items-center justify-center w-8 h-8 mb-7 mt-1 transition-all rounded-full bg-green-200/20 hover:bg-green-100/10 m-auto text-lg block shadow-md shadow-black hover:shadow-none hover:text-lg transition duration-300 hover:scale-110">
+        <svg height="27px" width="27px" version="1.1" class="drop-shadow-md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path style="fill:#287731;" d="M256,4.267c-9.97,55.101-55.226,176.557-82.942,280.574v184.681L256,507.258l82.942-37.736V284.841 C311.226,180.823,265.97,59.367,256,4.267z"></path> <g> <path style="fill:#76987a;" d="M151.241,59.93c21.848,46.417,2.71,69.064-18.861,184.68c-7.621,40.847-7.133,77.791-0.594,110.345 L256,507.247c0-107.676-57.513-164.879-68.692-265.213C174.286,125.145,185.729,97.91,151.241,59.93z"></path> <path style="fill:#76987a;" d="M379.619,244.609c-21.57-115.615-40.708-138.263-18.861-184.68 c-34.486,37.98-23.044,65.215-36.066,182.102C313.514,342.366,256,399.568,256,507.245l124.214-152.292 C386.751,322.399,387.24,285.456,379.619,244.609z"></path> </g> <g> <path style="fill:#287731;" d="M0,172.266c43.181,18.801,43.866,45.911,98.81,138.856 c47.165,79.782,152.541,133.041,157.44,196.137c-78.883,6.123-171.672-46.694-202.45-173.283 C28.292,229.062,35.78,202.89,0,172.266"></path> <path style="fill:#287731;" d="M512,172.266c-43.181,18.801-43.866,45.911-98.812,138.856 c-47.165,79.782-152.541,133.041-157.44,196.137c78.883,6.123,171.673-46.694,202.45-173.283 C483.708,229.062,476.22,202.89,512,172.266"></path> </g> </g></svg>
+      </a>
+
+      <button onclick="cerrarPopup()"  class="bg-gray-900/70 hover:bg-gray-800/80 transition-all w-12 hover:h-12 h-9 rounded-t-full text-white font-bold justify-center flex rounded duration-300 mt-3 pb-1.2 m-auto hover:scale-105">
+        <span class="text-sm mt-3 hover:mt-2 hover:animate-flashSlow hover:text-lg h-full text-center">❌</span>
+      </button>
+  
+  </div>
+  </div>
+</div>
+<!-- Fin del PopUp para la Newsletter -->
+
+<body class="bg-zinc-900 text-white font-poppins">
+  <!-- Encabezado -->
+  <header id="header" class="max-w-4xl mx-auto p-6">
+    <h1 class="text-4xl md:text-5xl font-extrabold tracking-wide mb-2">
+      🎮 Cómo instalar Hekate + Ubuntu en Nintendo Switch:<br> Guía simplificada
+    </h1>
+    <p class="text-gray-400 text-lg mb-4">
+      2025-03-27 - Alba Tolosa Bonora
+    </p>
+  </header>
+
+  <!-- Navegación -->
+  <nav class="mb-8 text-center">
+    <ul class="flex flex-wrap justify-center gap-4 list-none">
+      <li><a href="#requisitos" class="hover:underline text-teal-400">Requisitos</a></li>
+      <li><a href="#instalar-hekate" class="hover:underline text-teal-400">Instalación de Hekate</a></li>
+      <li><a href="#modo-rcm" class="hover:underline text-teal-400">Modo RCM</a></li>
+      <li><a href="#pasos" class="hover:underline text-teal-400">Instalación de Ubuntu</a></li>
+      <li><a href="#configuracion" class="hover:underline text-teal-400">Configuración</a></li>
+      <li><a href="#tips" class="hover:underline text-teal-400">Tips</a></li>
+      <li><a href="#creditos" class="hover:underline text-teal-400">Créditos</a></li>
+  
+    </ul>
+  </nav>
+
+  <!-- Imagen Destacada -->
+  <figure class="max-w-4xl mx-auto px-6 mb-6">
+    <img src="https://nusky7studio.es/img/ogImages/OgSwitch.png" alt="Ubuntu en Nintendo Switch" class="w-full h-auto rounded-lg shadow-lg">
+    <figcaption>Ubuntu corriendo desde mi Switch.</figcaption>
+  </figure>
+
+  <!-- Contenido -->
+  <main class="max-w-3xl mx-auto p-6">
+    <article class="prose prose-invert">
+      <p class="text-lg mb-6">
+        <strong>Nota:</strong> Esta guía está basada en Ubuntu Jammy 22.04 + Switchroot. Asegúrate de seguir los pasos y siempre hacer doble-check.<br>
+      </p>
+      <p> Aquí encontrarás los enlaces a todos los recursos que necesitas para el proceso. <br> 
+        <span class="animate-glowText4">⚠️ Caution</span>: No muevo tus manos ni soy responsable de tus Bricks. </p>
+
+      <h2 id="requisitos">Requisitos</h2>
+      <ul>
+        <li>Nintendo Switch compatible → <a href="https://damota.me/ssnc/checker/" target="_blank" rel="noopener noreferrer">Comprueba tu SN aquí</a></li>
+        <li>Tarjeta SD (mínimo 16GB, recomendado 64GB/128GB U3/A2)</li>
+        <li>Hekate 6.0.6+ instalado</li>
+        <li>PC para preparar la SD y los archivos</li>
+        <li>Conexión a internet, paciencia y mucha suerte... 🙃<br>Jejej va...  <span class="italic">no tanta.</span> </li>
+      </ul>
+
+      <h2 id="instalar-hekate" class="animate-glowText3">⚙️ Instalación de Hekate</h2>
+      <p class="text-lg mb-6 animate-glowText3">
+        Si es la primera vez que instalas Hekate, sigue estos pasos:
+      </p>
+      <ul>
+        <ol>
+          <li>Descarga la última versión de <strong>Hekate</strong> desde su <a href="https://github.com/CTCaer/hekate/releases" target="_blank" rel="noopener noreferrer">página de GitHub</a>.</li> 
+          <li>Descarga la última versión de <strong>TegraRcmGUI</strong> desde su <a href="https://github.com/eliboa/TegraRcmGUI/releases" target="_blank" rel="noopener noreferrer">página de GitHub</a>. <span class="italic">Necesario para inyectar los payloads y encender la Switch.</span></li>
+          <li><strong class="underline">Obligatorio sólo si instalas CFW.</strong> Si no, puedes pasar:</li>
+          <ul>
+            <li>Enciende la consola como siempre.</li>
+            <li>Accede a los ajustes de internet y <strong>borra todas las redes wifi recordadas.</strong> (Evita descuidos = baneos)</li>
+          </ul>
+          
+          <li>Apagar completamente la consola.</li>
+          <li>Extrae la SD y conéctala al PC.</li>
+          <li>Extrae el contenido del ZIP de Hekate en la raíz de la SD.</li>
+          <li>Pon la Switch en <a href="#modo-rcm">modo RCM</a>, conéctala al pc e inyecta el Payload de Hekate desde TegraRCM.</li>
+          <li>Curiosea Hekate.</li>
+        </ol>
+      </ul>
+
+      <figure class="mb-6">
+        <img src="https://nusky7studio.es/img/posts/hekateCtcaer.png" alt="Switch con Hekate" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg rounded-3xl animate-tvflickerRose">
+        <figcaption>Mi switch en la pantalla de detalles de Hekate.</figcaption>
+      </figure>
+
+      <h2 id="modo-rcm" class="animate-glowText4 text-violet-100">⚡ ¿Cómo iniciar Hekate desde el modo RCM?</h2>
+      <p>
+        Para poder arrancar Linux o cualquier otro sistema alternativo como Android, necesitas entrar en modo RCM y lanzar el bootloader Hekate desde tu PC o teléfono.
+      </p>
+      <h3 class="text-slate-300">Pasos para entrar en modo RCM y cargar Hekate:</h3>
+      <ol>
+        <li>
+          <strong>Prepara tu PC o móvil con el payload sender</strong><br>
+          Un payload actúa como la "llave" que te permite acceder a la puerta de entrada del sistema.
+          Necesitarás un programa para enviar el archivo .bin de Hekate a tu consola:
+          <ul class="list-none">
+            <li><strong>Windows</strong>: El más conocido → <a href="https://github.com/eliboa/TegraRcmGUI/releases" target="_blank" rel="noopener noreferrer">TegraRcmGUI</a></li>
+            <li><strong>Linux/macOS</strong>: <a href="https://github.com/DefenderOfHyrule/fusee-nano/releases" target="_blank" rel="noopener noreferrer">fusee-nano</a> (Linux) o <a href="https://github.com/prayerie/CrystalRCM/releases" target="_blank" rel="noopener noreferrer">CrystalRCM</a> (Mac) </li>
+            <li><strong>Android</strong>: apps como <a href="https://play.google.com/store/apps/details?id=com.leon.sxtools&hl=es_419&pli=1" target="_blank" rel="noopener noreferrer">NX Loader</a><br> <span class="italic">Inyecta el payload sin necesidad de abrir la app (requiere cable OTG)</span></li>
+          </ul>
+        </li>
+        <li><strong>Conecta tu Switch al PC por USB-C</strong></li>
+        <li>
+          <strong>Pon la Switch en modo RCM</strong><br>
+          <ul>
+            <li> Apaga la Switch completamente <br>(mantén el botón de encendido y selecciona Apagar)</li>
+            <li> Utiliza un Jig para simular la pulsación de los botones requeridos.</li>
+          </ul>
+          <p>Pasos:</p>
+          <ol>
+            <li>Inserta el jig en el rail derecho de los Joy-Con</li>
+            <li>Mantén presionados los botones Volumen + y Power</li>
+            <li>La pantalla se quedará en negro pero encendida (esto a veces puede causar confusión...), significa que está en modo RCM</li>
+          </ol>
+          
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <img src="https://nusky7studio.es/img/posts/jig.jpg" alt="Jig para RCM" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg rounded-lg">
+            <figcaption>Jig casero:<br> Impreso en 3D + 1 paper-clip.</figcaption>
+          </div>
+          <div>
+            <img src="https://nusky7studio.es/img/posts/jigUsando.jpg" alt="Jig en uso" class="w-full h-auto rounded-lg">
+            <figcaption>Uso del jig en la consola.</figcaption>
+          </div>
+        </div>
+
+        </li>
+        <li>
+          <strong>Lanza el payload de Hekate</strong><br>
+          Con la Switch conectada y en modo RCM, abre el programa TegraRcmGUI <br>(o el que uses) y:
+          <ul>
+            <li>Verás un mensaje como: RCM detected</li>
+            <li>Carga el payload hekate_ctcaer_(x.x.x).bin</li>
+            <li>Haz clic en "Inject payload"</li>
+            <li>La Switch arrancará en Hekate y tu serás feliz 😁</li>
+          </ul>
+        </li>
+      </ol>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div>
+          <img src="https://nusky7studio.es/img/posts/tegra.png" alt="Jig para RCM" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-125 hover:shadow-lg rounded-lg">
+          <figcaption>TegraRCM y Switch Ready.</figcaption>
+        </div>
+        <div>
+          <img src="https://nusky7studio.es/img/posts/tegraOn.png" alt="Tegra en uso" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-125 hover:shadow-lg rounded-lg">
+          <figcaption>Tegra inyectando Payload...</figcaption>
+        </div>
+        <div>
+          <img src="https://nusky7studio.es/img/posts/tegraOk.png" alt="Jig en uso" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-125 hover:shadow-lg rounded-lg">
+          <figcaption>Inyectado = Hekate Boot OK.</figcaption>
+        </div>
+      </div>
+
+      <h3>⭐ Desde Hekate puedes:</h3>
+      <ul class="list-none">
+        <li>✔️ Crear particiones en la SD</li>
+        <li>✔️ Hacer Backups  (eMMC / EmuMMC)</li>
+        <li>✔️ Instalar → Ubuntu / Android / CFW</li>
+        <li>✔️ Activar el modo RCM Auto (Para no tener que usar el Jig al encender)</li>
+        <li>✔️ Elegir el sistema a utilizar → (Nintendo - Linux - Android - Lakka - CFW)</li>
+        <li>✔️ Cargar otros payloads</li>
+      </ul>
+
+      <figure class="mb-6 ">
+        <img src="https://nusky7studio.es/img/posts/switch.png" alt="Switch con Hekate" class="w-full h-auto transition-transform duration-300 ease-in-out hover:scale-110 hover:shadow-lg rounded-3xl animate-tvflickerRose">
+        <figcaption>Pantalla principal de Hekate.</figcaption>
+      </figure>
+       
+      <p class="text-lg mb-6">
+        Asegúrate de seguir cada paso cuidadosamente para evitar problemas durante la instalación.
+      </p>
+
+            <!-- Salto del PopUp -->
+            <div id="popupTrigger" class="h-1 w-full"></div>
+
+      <h2 id="pasos" class="text-slate-200">🎮 Pasos de Instalación</h2>
+
+      <h3>1. Descargar imagen de Ubuntu Jammy</h3>
+      <ul>
+        <li>Desde la Switchroot Wiki</li>
+        <li>Usa torrent o descarga directa desde <a href="https://download.switchroot.org/ubuntu-jammy/" rel="noopener" target="_blank">Aquí</a></li>
+        <li>Extrae el .7z a la raíz de la partición FAT32 de la SD (usa 7-Zip, no el descompresor de Windows 11)</li>
+      </ul>
+
+      <h3>2. Backup y particionado</h3>
+      <div class="bg-red-900/30 p-4 rounded-lg mb-4  animate-glowText1">
+        <p class="font-bold">⚠️ ¡Este paso borra todo el contenido de la SD!</p>
+      </div>
+        <ul>
+          <li><strong>Si ya tienes un CFW instalado con emuMMC en RAW</strong>, entra en Hekate y ve a: <strong>Tools → Backup eMMC</strong>. Luego, selecciona <em>SD emuMMC RAW Partition</em> y haz una copia de seguridad (emuMMC BOOT0/1 y emuMMC Raw GPP). <span class="italic animate-glowText3"><br>⚠️ Si no usas emuMMC, puedes saltarte este paso.</span></li>
+          <li>Luego: <strong>Tools → Seleccionar Partition SD Card</strong> dejando al menos 6 GB para el HOS en FAT32</li>
+        </ul>
+      
+        <div>
+          <figure>
+            <img src="https://nusky7studio.es/img/posts/switch/1.webp" alt="Particionado de la SD" class="w-full h-auto rounded-lg shadow-lg">
+            <figcaption>Tools → Seleccionar Partition SD Card.</figcaption>
+          </figure>
+          <figure>
+            <img src="https://nusky7studio.es/img/posts/switch/4.webp" alt="Otra" class="w-full h-auto rounded-lg shadow-lg">
+            <figcaption>Mínimo 6GB en FAT32.</figcaption>
+          </figure>
+        </div>
+       
+
+      <h3>3. Flashear Linux</h3>
+      <ol>
+        <li>Tras realizar la partición conecta la switch al PC, usa <strong>UMS</strong> (USB Tools)</li>
+        <li>Copia el contenido de la carpeta ubuntu-jammy a la raíz SD</li>
+        <li>Desconecta de forma segura desde el PC</li>
+        <li>Selecciona Flash Linux</li>
+      </ol>
+
+      <div class="grid grid-cols-1 md:grid-cols-2">
+        <figure>
+          <img src="https://nusky7studio.es/img/posts/switch/5.webp" alt="Particionado de la SD" class="w-full h-auto rounded-lg shadow-lg">
+          <figcaption>Conectar por UMS.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://nusky7studio.es/img/posts/switch/6.webp" alt="Otra" class="w-full h-auto rounded-lg shadow-lg">
+          <figcaption>Flashear Linux.</figcaption>
+        </figure>
+      </div>
+
+      <h3>4. Dump de Joy-Cons</h3>
+      <ul>
+        <li>En Hekate: Nyx Options → Dump Joy-Con BT</li>
+        <li>Esto es obligatorio incluso con Switch Lite (guarda calibración)</li>
+      </ul>
+
+      <figure>
+        <img src="https://nusky7studio.es/img/posts/switch/8.webp" alt="Dump de Joy-Cons" class="w-full h-auto rounded-lg shadow-lg">
+        <figcaption>Importante → Dump de Joy-Cons en Hekate.</figcaption>
+      </figure>
+
+
+      <h3>5. Primer arranque de Ubuntu</h3>
+      <ul>
+        <li>Desde la pantalla inicial de Hekate ve a More Configs → Ubuntu Jammy</li>
+        <li>El sistema se cargará desde la SD</li>
+        <li>¡Ya estás dentro!</li>
+      </ul>
+
+      <div class="grid grid-cols-2 gap-4">
+        <figure>
+          <img src="https://nusky7studio.es/img/posts/switch/7.webp" alt="Acceso a More Configs" class="w-full h-auto rounded-lg shadow-lg">
+          <figcaption>Acceder a More Configs.</figcaption>
+        </figure>
+        <figure>
+          <img src="https://nusky7studio.es/img/posts/switch/9.webp" alt="Arranque de ubuntu" class="w-full h-auto rounded-lg shadow-lg">
+          <figcaption>Arrancar Ubuntu.</figcaption>
+        </figure>
+      </div>
+
+      <figure>
+        <img src="https://nusky7studio.es/img/posts/switch/s3.jpeg" alt="Teclado físico" class="w-full h-auto rounded-lg shadow-lg">
+        <figcaption>Escritorio de Ubuntu.</figcaption>
+      </figure>
+
+      <h2 id="configuracion">🛠️ Configuración</h2>
+      <ul>
+        <li><strong>En el primer arranque puede que necesites un teclado físico</strong> (USB conectado al Dock o mediante adaptador OTG) para completar la configuración inicial de Ubuntu. Esto sólo si falla el Onboard / Accesibilidad.</li>
+        <li>Una vez dentro, abre el menú de aplicaciones y ejecuta el <strong>LT-4 Megascript</strong> que estará esperandote para instalar utilidades y controladores esenciales (incluyendo soporte mejorado para JoyCons, teclado virtual, etc.).</li>
+        <li>Si no salta automáticamente la accesibilidad, activa el teclado en pantalla desde <code>Configuración → Accesibilidad → Teclado en pantalla</code> o buscándolo como <em>“Onboard”</em>. Aunque tras ejecutar el script debería mostrarse si no lo hacía antes.</li>
+        <li>Instala <strong>VS Code</strong> y otras apps útiles a través de <strong>Flatpak</strong> (ya viene configurado por defecto en Ubuntu Jammy para Switch).</li>
+        <li>Ajusta la resolución de pantalla o configura <strong>gestos táctiles</strong> desde la configuración de GNOME.</li>
+      </ul>
+
+      <figure>
+        <img src="https://nusky7studio.es/img/posts/switch/sKeyboard.png" alt="Configuración de Ubuntu" class="w-full h-auto rounded-lg shadow-lg">
+        <figcaption>Configuración inicial de Ubuntu en la Nintendo Switch con teclado físico.</figcaption>
+      </figure>
+      
+      <h2 id="tips">Es bueno saber que...</h2>
+      <ul>
+        <li>Después del primer arranque y ejecución del Megascript, los <strong>JoyCons pueden funcionar como ratón/teclado</strong> (según el nivel de configuración aplicado).</li>
+        <li>Puedes conectar la Switch a un monitor externo usando <strong>el Dock original o un adaptador USB-C a HDMI</strong>, y usarla como mini PC de escritorio.</li>
+        <li>Los <strong>periféricos 2.4GHz</strong> como teclados o ratones con dongle USB funcionan perfectamente cuando se conectan al Dock o mediante un hub USB.</li>
+        <li>Si el <strong>teclado virtual</strong> se cierra solo, puede deberse a <strong>drift en los JoyCons</strong>. Intenta calibrarlos o usar otros Joy-Con.</li>
+        <li><strong>Debido a que la Switch tiene una arquitectura ARM64</strong> (no x86 como la mayoría de PCs), puede haber incompatibilidades o limitaciones con ciertas aplicaciones o servicios. Yo tuve problemas intentando levantar MongoDB, ya que no hay soporte oficial para ARM en algunas versiones.</li>
+      </ul>
+
+      <p>Si te ha gustado este post... <strong class="italic"> <a class="ml-onclick-form" href="javascript:void(0)" onclick="ml('show', '8TIRwL', true)">¡Suscríbete a mi Newsletter!</a> </strong> pronto haré la guía para instalar Android y así poder utilizar la Nintendo Switch como TV Box.</p>
+
+
+      <section class="max-w-5xl mx-auto px-4 py-8">
+        <h2 class="text-2xl font-bold mb-6 text-center">Nintendo Switch con Ubuntu y VS Code</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
+          <!-- Imagen 1 -->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/ubuntuBoot.jpg" alt="Menú de Hekate" class="w-full h-auto object-cover ">
+          </div>
+          <!-- Imagen 2 -->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/ubuntuKeys.jpg" alt="Inicio de Ubuntu" class="w-full h-auto object-cover ">
+          </div>
+          <!-- Imagen 3 -->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/s3.jpeg" alt="Escritorio de Ubuntu" class="w-full h-auto object-cover">
+          </div>
+          <!-- Imagen 4 -->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/s1.jpeg" alt="Terminal en Ubuntu" class="w-full h-auto object-cover">
+          </div>
+          <!-- Imagen 5-->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/s2.jpeg" alt="VSCode en Ubuntu" class="w-full h-auto object-cover">
+          </div> 
+          <!-- Imagen 6 -->
+          <div class="overflow-hidden rounded-2xl hover:scale-105 transition-transform duration-300">
+            <img src="https://nusky7studio.es/img/posts/switch/s5.jpeg" alt="Navegador - Onboard Keyboard" class="w-full h-auto object-cover">
+          </div>
+        </div>
+      </section>
+     
+
+      <h2 id="creditos">Créditos y fuente</h2>
+
+      <p>
+        Todo esto es posible gracias al equipo de <a href="https://switchroot.org/" target="_blank" rel="noopener noreferrer">SwitchRoot</a>, especialmente a <a href="https://github.com/sponsors/theofficialgman" target="_blank" rel="noopener noreferrer">theofficialgman</a>, <a href="https://www.patreon.com/ctcaer" target="_blank" rel="noopener noreferrer">Ctcaer</a> y sus geniales colaboradores.
+      </p>
+
+      <figure>
+        <img src="https://nusky7studio.es/img/posts/switch/10.webp" alt="Menú de Hekate" class="w-full h-auto rounded-lg shadow-lg">
+        <figcaption>Gracias por todo lo que hacéis posible.</figcaption>
+      </figure>
+
+    </article>
+
+    
+
+  </main>
+
+  <footer class="max-w-4xl mx-auto p-6 text-center">
+    <p class="text-sm text-gray-500 pb-10">
+      &copy; 2025 Alba Tolosa Bonora. Todos los derechos reservados.
+    </p>
+  </footer>
+
+  <!-- Botones de Navegación -->
+  <a href="../../blog/index.html" title="Ir al Blog" class="fixed font-orbi font-semibold bottom-4 left-4 bg-teal-700 hover:scale-110 text-white p-1.5 rounded-xl shadow-lg hover:bg-teal-800 transition">
+    <svg version="1.1" id="_x32_" width="36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#ffffff;} </style> <g> <rect x="293.186" y="307.184" class="st0" width="131.572" height="112.986"></rect> <rect x="87.243" y="308.893" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="401.298" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="355.1" class="st0" width="154.448" height="17.162"></rect> <path class="st0" d="M416.428,0.004H95.58C42.787,0.013,0.016,42.792,0,95.577v303.685 c0.025,62.262,50.463,112.717,112.742,112.734h286.524c62.27-0.017,112.717-50.464,112.734-112.734V95.577 C511.992,42.792,469.212,0.013,416.428,0.004z M464.805,399.262c-0.008,18.15-7.308,34.424-19.198,46.34 c-11.916,11.891-28.19,19.19-46.34,19.198H112.742c-18.15-0.009-34.433-7.308-46.348-19.198 c-11.892-11.916-19.182-28.19-19.198-46.34V118.696h417.61V399.262z"></path> <path class="st0" d="M88.96,267.908h34.583c19.71,0,31.642-8.581,31.642-26.548c0-10.852-6.167-18.368-12.2-20.648v-0.268 c6.034-3.352,10.592-9.519,10.592-19.432c0-14.489-9.251-24.268-29.086-24.268H88.96c-0.796,0-1.332,0.536-1.332,1.34v88.475 C87.628,267.371,88.164,267.908,88.96,267.908z M107.338,193.495c0-0.528,0.251-0.804,0.804-0.804h13.944 c7.5,0,11.925,3.888,11.925,10.584c0,6.712-4.425,10.734-11.925,10.734h-13.944c-0.553,0-0.804-0.268-0.804-0.804V193.495z M107.338,229.955c0-0.528,0.251-0.795,0.804-0.795h15c8.061,0,12.343,4.424,12.343,11.405c0,7.097-4.282,11.396-12.343,11.396h-15 c-0.553,0-0.804-0.276-0.804-0.812V229.955z"></path> <path class="st0" d="M181.516,267.908h59.404c0.796,0,1.332-0.536,1.332-1.349v-14.874c0-0.813-0.536-1.341-1.332-1.341h-40.224 c-0.544,0-0.804-0.268-0.804-0.812v-71.447c0-0.804-0.528-1.34-1.341-1.34h-17.036c-0.805,0-1.332,0.536-1.332,1.34v88.475 C180.183,267.371,180.711,267.908,181.516,267.908z"></path> <path class="st0" d="M292.708,269.374c15.963,0,28.558-7.366,33.251-22.115c2.011-6.301,2.539-11.396,2.539-24.938 c0-13.542-0.528-18.637-2.539-24.939c-4.693-14.739-17.288-22.114-33.251-22.114c-15.956,0-28.558,7.375-33.243,22.114 c-2.02,6.302-2.556,11.397-2.556,24.939c0,13.542,0.536,18.637,2.556,24.938C264.149,262.009,276.752,269.374,292.708,269.374z M278.361,202.746c2.011-6.301,6.847-10.055,14.346-10.055c7.508,0,12.335,3.754,14.346,10.055 c1.073,3.226,1.474,7.634,1.474,19.576c0,11.924-0.402,16.357-1.474,19.567c-2.011,6.31-6.838,10.072-14.346,10.072 c-7.5,0-12.335-3.763-14.346-10.072c-1.064-3.21-1.475-7.643-1.475-19.567C276.886,210.38,277.297,205.972,278.361,202.746z"></path> <path class="st0" d="M387.961,269.374c16.081,0,28.685-8.171,33.251-22.794c1.6-4.952,2.263-12.46,2.263-20.505v-7.517 c0-0.788-0.536-1.333-1.332-1.333h-31.366c-0.813,0-1.349,0.545-1.349,1.333v12.888c0,0.796,0.536,1.332,1.349,1.332h12.326 c0.536,0,0.805,0.277,0.805,0.805c0,3.879-0.403,6.703-1.073,8.991c-1.878,6.026-7.777,9.386-14.614,9.386 c-7.91,0-12.88-3.763-14.891-10.072c-1.064-3.21-1.466-7.643-1.466-19.567c0-11.941,0.402-16.223,1.466-19.441 c2.011-6.302,6.847-10.19,14.631-10.19c7.5,0,12.05,3.218,15.678,9.385c0.269,0.67,0.939,0.939,1.886,0.67l14.338-6.033 c0.796-0.402,0.947-1.206,0.536-2.019c-4.299-10.995-15.419-19.425-32.439-19.425c-16.232,0-28.835,7.375-33.527,22.114 c-2.012,6.302-2.556,11.397-2.556,24.939c0,13.542,0.545,18.637,2.556,24.938C359.126,262.009,371.73,269.374,387.961,269.374z"></path> </g> </g></svg>
+  </a>
+  <a href="#header" title="Subir" class="fixed inline-block bottom-4 right-4 bg-teal-600 hover:bg-teal-700 transition p-2 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-7 h-7">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+    </svg>
+  </a>
+</body>
+</html>

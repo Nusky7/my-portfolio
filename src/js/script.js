@@ -57,6 +57,8 @@ const subtitle = document.getElementById("panel-subtitle");
   
 changeCVLang('es');
 
+
+
 function showToast(msg) {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');

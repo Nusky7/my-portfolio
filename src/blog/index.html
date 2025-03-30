@@ -8,43 +8,44 @@
     <meta name="description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
     <meta name="keywords" content="blog diseño web, desarrollo web Valencia, SEO web, frontend">
     <link rel="stylesheet" href="../dist/styles.min.css">
+    <link rel="canonical" href="https://nusky7studio.es/blog/index.html"/>
+
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Blog | Diseño y Desarrollo Web en Valencia">
     <meta property="og:description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
-    <meta property="og:image" content="https://nusky7studio.es/img/og.jpeg">
-    <meta property="og:url" content="https://nusky7studio.es//blog">
+    <meta property="og:image" content="https://nusky7studio.es/img/ogImages/OgBlog.png">
+    <meta property="og:url" content="https://nusky7studio.es/blog/index.html">
     <meta property="og:type" content="website">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Blog | Diseño y Desarrollo Web en Valencia">
     <meta name="twitter:description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
-    <meta name="twitter:image" content="https://nusky7studio.es/img/og.jpeg">
+    <meta name="twitter:image" content="https://nusky7studio.es/img/ogImages/OgBlog.png">
 
-     <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>
-
-
+     <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>  
 </head>
+
 <body id="body" class=" text-white font-poppins w-full h-full">
-<!-- <div class="absolute top-0 left-0 w-full h-full bg-black bg-opacity-30 pointer-events-none z-10"></div>  -->
     
 <!-- Encabezado -->
 <header id="header" class="relative w-full bg-zinc-950 text-white text-center py-16">
     <div class="absolute top-6 left-4">
-        <img src="../img/blog.gif" width="43%" height="auto" alt="Logo" class="hidden lg:block">
+        <img src="https://nusky7studio.es/img/logos/nLogo.png" width="36%" height="auto" alt="Logo" class="hidden lg:block mt-7">
 
     </div>
-    <h1 class="text-3xl md:text-5xl font-semibold font-orbi tracking-wide animate-glowText2">
-        Diseño & Desarrollo Web
+    <h1 class="text-3xl md:text-5xl font-bold font-orbi tracking-wide animate-glowText4">
+      Noticias & Tecnología
     </h1>
+    <h2 class="text-xl mt-1 font-orbi font-semibold animate-glowText3">Diseño & Desarrollo Web 🌍 Valencia, España</h2>
     <p class="text-gray-400 text-lg mt-2">
         Tendencias, Diseño Web | Optimización para Proyectos & Dispositivos
     </p>
 
     <!-- Bloque de detalles -->
     <details class="mt-4 mx-auto max-w-2xl bg-zinc-900 p-4 mb-1 rounded-lg shadow-md cursor-pointer">
-        <summary class="text-emerald-200 no-underline font-semibold hover:animate-glowText2"> N7Blog 📰 Noticias y Tecnología </summary>
+        <summary class="text-emerald-100 no-underline font-semibold hover:animate-glowText2"> N7Blog 📰 Noticias y Tecnología </summary>
         <article class="prose prose-invert">
             <p class="mt-2 text-gray-300">
              Bienvenid@ a mi Blog dedicado a la tecnología, descubre aquí <strong>artículos y noticias</strong> actualizadas sobre <strong>Desarrollo Web</strong>, Diseño Frontend y Backend, así como análisis y reseñas de los últimos <strong>smartphones, dispositivos y tendencias tecnológicas.</strong></p>
@@ -114,6 +115,55 @@
     </nav>
   </header>
 
+  <div id="miPopup" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+    <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop8.png');">
+      <div class="bg-black/65 px-9 pt-9 rounded-3xl text-black dark:text-white">
+        <div class="text-center">
+          <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
+          <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
+        </div>
+  
+        <p id="popup-description" class="text-center text-white text-sm py-3 mb-3 px-0">
+          Recibe Noticias sobre Tecnología y Recomendaciones personalizadas. <span class="animate-colorSlow italic"><br>¡Sincronízate!</span>
+        </p>
+  
+        <input id="emailInput" type="email" placeholder="➜ Tu E-mail Favorito"
+               class="font-semibold w-full border focus:animate-glowText1 border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black">
+  
+        <button onclick="suscribirUsuario()" id="suscribe-btn"
+                class="mb-12 bg-gradient-to-r from-rose-600 via-purple-700 to-emerald-600 hover:via-rose-500 hover:from-amber-600 hover:to-purple-700 text-white shadow-lg shadow-black text-xl px-4 pt-1 rounded-xl w-full font-orbi transform transition-transform duration-300 hover:rounded-3xl"
+                style="text-shadow: 0px 0px 5px rgba(0,0,0,0.9);">
+          <span >⭐ Conectar</span> &nbsp;<img src="https://nusky7studio.es/img/etConnect.png" alt="Icono Conectar" class="inline-block mb-0 pb-0 drop-shadow-md shadow-black" width="27px" height="27px" >
+        </button>
+
+        <div id="popup-links" class="hidden mt-3 flex flex-row gap-3 items-center justify-center">
+          <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="drop-shadow-md shadow-black text-white bg-blue-600 hover:bg-pink-500 p-1.5 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
+            <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
+          </a>
+          <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center drop-shadow-md transition duration-300 hover:scale-110">
+            <img src="https://nusky7studio.es/img/logos/nSteel.png" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
+          </a>
+          <a href="https://t.me/@_Nusky7" target="_blank" class="drop-shadow-md shadow-black text-transparent bg-blue-600 hover:bg-violet-500 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
+            <svg width="30px" height="30px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="currentColor"> </path> <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"> </path> <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"> </path> <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"> </path> </g> </g></svg>
+          </a>
+        </div>
+       
+  
+        <a id="aloeLink" href="https://exialoe.nusky7studio.es" target="_blank" class="hidden flex items-center justify-center w-8 h-8 mb-7 mt-1 transition-all rounded-full bg-green-200/20 hover:bg-green-100/10 m-auto text-lg block shadow-md shadow-black hover:shadow-none hover:text-lg transition duration-300 hover:scale-110">
+          <svg height="27px" width="27px" version="1.1" class="drop-shadow-md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path style="fill:#287731;" d="M256,4.267c-9.97,55.101-55.226,176.557-82.942,280.574v184.681L256,507.258l82.942-37.736V284.841 C311.226,180.823,265.97,59.367,256,4.267z"></path> <g> <path style="fill:#76987a;" d="M151.241,59.93c21.848,46.417,2.71,69.064-18.861,184.68c-7.621,40.847-7.133,77.791-0.594,110.345 L256,507.247c0-107.676-57.513-164.879-68.692-265.213C174.286,125.145,185.729,97.91,151.241,59.93z"></path> <path style="fill:#76987a;" d="M379.619,244.609c-21.57-115.615-40.708-138.263-18.861-184.68 c-34.486,37.98-23.044,65.215-36.066,182.102C313.514,342.366,256,399.568,256,507.245l124.214-152.292 C386.751,322.399,387.24,285.456,379.619,244.609z"></path> </g> <g> <path style="fill:#287731;" d="M0,172.266c43.181,18.801,43.866,45.911,98.81,138.856 c47.165,79.782,152.541,133.041,157.44,196.137c-78.883,6.123-171.672-46.694-202.45-173.283 C28.292,229.062,35.78,202.89,0,172.266"></path> <path style="fill:#287731;" d="M512,172.266c-43.181,18.801-43.866,45.911-98.812,138.856 c-47.165,79.782-152.541,133.041-157.44,196.137c78.883,6.123,171.673-46.694,202.45-173.283 C483.708,229.062,476.22,202.89,512,172.266"></path> </g> </g></svg>
+        </a>
+        <button onclick="cerrarPopup()" class="bg-gray-900/70 hover:bg-gray-800/80 transition-all w-12 hover:h-12 h-9 rounded-t-full text-white font-bold justify-center flex rounded duration-300 mt-3 m-auto hover:translate-y-[-0.5px]">
+          <span class="text-sm mt-3 hover:mt-2 hover:animate-flashSlow hover:text-lg h-full text-center">❌</span>
+        </button>
+    
+    </div>
+    </div>
+  </div>
+  <!-- Fin del PopUp para la Newsletter -->
+
+   <!-- div toastMsg -->
+  <div id="toast"></div>
+
   <!-- Contenedor de Posts -->
   <main class="max-w-6xl mx-auto p-3">
     <section id="desarrollo-web" class="category-section hidden">
@@ -153,7 +203,7 @@
 
         <h2 class="text-2xl w-full font-orbi font-semibold bg-zinc-950 bg-opacity-85 mt-4 mb-1 p-3 rounded-lg border-gray-300 pb-2 flex justify-between items-center">
           <span>📰 Noticias</span>
-          <span class="animate-glowText2 text-emerald-100">Tecnología 📡</span>
+          <span class="animate-glowText2 text-emerald-100">Tecnología</span>
         </h2>
       
       <div id="rss-container" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -161,14 +211,15 @@
       </div>
     </section>
   </main>
-
+<!-- PopUp -->
+<div id="popupTrigger" class="h-1 w-full" style="animation-delay: 9s;"></div>
   <footer class="bg-neutral-950 text-zinc-300 text-sm mt-12">
     <div class="max-w-6xl mx-auto px-4 py-10">
       <div class="flex flex-col md:flex-row justify-between items-start gap-8">
         
         <!-- Branding -->
         <div>
-          <h2 class="text-lg font-semibold font-gba"><span class="text-teal-200">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-orange-200">Bonora</span>  </h2>
+          <h2 class="text-lg font-semibold font-gba"><span class="text-emerald-300">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-yellow-100">Bonora</span>  </h2>
           <img src="https://nusky7studio.es/img/logos/nLogo.png" alt="Logo de N7Studio" class="w-32 h-auto" />
           <p class="mt-2 max-w-xs">
             Diseño web, desarrollo y creatividad digital. Portfolio y Blog personal.
@@ -176,46 +227,46 @@
         </div>
         <!-- Enlaces legales -->
         <div>
-          <h3 class="text-rose-300 font-medium mb-3 font-gba">Legal</h3>
+          <h3 class="text-emerald-300 font-medium mb-3 font-gba">Legal</h3>
           <ul class="space-y-2">
-            <li><a href="/privacidad.html" target="_blank" class="hover:text-white transition">Política de Privacidad</a></li>
-            <li><a href="/aviso-legal.html" target="_blank" class="hover:text-white transition">Aviso Legal</a></li>
-            <li><a href="/cookies.html" target="_blank" class="hover:text-white transition">Política de Cookies</a></li>
-            <li><a href="/#contact" class="hover:text-white transition">Contacto</a></li>
+            <li><a href="/privacidad.html" target="_blank" class="hover:text-teal-200 transition">Política de Privacidad</a></li>
+            <li><a href="/aviso-legal.html" target="_blank" class="hover:text-teal-200 transition">Aviso Legal</a></li>
+            <li><a href="/cookies.html" target="_blank" class="hover:text-teal-200 transition">Política de Cookies</a></li>
+            <li><a href="/#contact" class="hover:text-teal-200 transition">Contacto</a></li>
           </ul>
         </div>
         <!-- Redes sociales y enlaces -->
         <div>
-          <h3 class="text-rose-300 font-medium mb-3 font-gba">Redes y Sitios</h3>
+          <h3 class="text-emerald-300 font-medium mb-3 font-gba">Redes y Sitios</h3>
           <div class="flex flex-col gap-4">
 
             <!-- Redes -->
             <div class="flex gap-4">
-              <a href="https://github.com/Nusky7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="GitHub">
+              <a href="https://github.com/Nusky7" target="_blank" class="hover:text-teal-200 transition flex items-center gap-1" aria-label="GitHub">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>GitHub
               </a>
-              <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="LinkedIn">
+              <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="hover:text-teal-200 transition flex items-center gap-1" aria-label="LinkedIn">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>LinkedIn
               </a>
-              <a href="https://t.me/Nusky_7" target="_blank" class="hover:text-white transition flex items-center gap-1" aria-label="Telegram">
+              <a href="https://t.me/Nusky_7" target="_blank" class="hover:text-teal-200 transition flex items-center gap-1" aria-label="Telegram">
                 <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="..."/></svg>Telegram
               </a>
-            </div>
-
+            </div>                      
+     
             <!-- Sitios propios -->
             <ul class="text-sm space-y-1">
               <li>
-                <a href="https://services.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                <a href="https://services.nusky7studio.es" target="_blank" class="hover:text-teal-200 transition">
                   🌐 Servicios Web
                 </a>
               </li>
               <li>
-                <a href="https://nusky7studio.es/" target="_blank" class="hover:text-white transition">
+                <a href="https://nusky7studio.es/" target="_blank" class="hover:text-teal-200 transition">
                   🎨 Mi Portfolio
                 </a>
               </li>
               <li>
-                <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-white transition">
+                <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-teal-200 transition">
                   🪴 Tienda Natural / Aloe Vera
                 </a>
               </li>
@@ -234,9 +285,10 @@
     </div>
   </footer>    
 
-    <script src="../js/blog.js" defer></script>
-    <script src="../js/donations.js" defer></script>
-    <script src="../js/rrss.js" defer></script>
+    <script type="module" src="../js/blog.js" defer></script>
+    <script type="module" src="../js/donations.js" defer></script>
+    <script type="module" src="../js/rrss.js" defer></script>
+    <script type="module" src="../js/popup.js" defer></script>
       <!-- fondo animado -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
   <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js" defer></script>

@@ -148,6 +148,7 @@ module.exports = {
         glowGreenShadowCycle: 'glowGreenShadowCycle 5s infinite',
         borderGlow: 'borderGlow 1.5s ease-in-out infinite alternate',
         borderGlow1: 'borderGlow1 1.5s ease-in-out infinite alternate',
+        borderGlow2: 'borderGlow2 2.1s ease-in-out infinite alternate',
         glowBoxCycle: 'glowBoxCycle 6s ease-in-out infinite',
         tvflickerRose: 'tvflicker-rose 3s infinite',
         tvflickerRoseTeal: 'tvflicker-rose-teal 5s infinite',
@@ -296,6 +297,10 @@ module.exports = {
         },
       borderGlow1: {
         '0%': { boxShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #ea3376' },
+        '100%': { boxShadow: '0 0 10px #10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+        },   
+        borderGlow2: {
+        '0%': { boxShadow: '0 0 1px #000000, 0 0 3px #000, 0 0 6px #222' },
         '100%': { boxShadow: '0 0 10px #10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
         },
       glowText1: {

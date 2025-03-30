@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             posts.forEach(post => {
                 let postElement = document.createElement("article");
-                postElement.classList.add("bg-zinc-950", "md:opacity-95", "hover:shadow-emerald", "hover:opacity-100", "hover:scale-105", "pb-2", "rounded-lg", "shadow-xl", "transition-all");
+                postElement.classList.add("bg-zinc-950", "hover:shadow-emerald", "hover:scale-105", "pb-2", "rounded-lg", "shadow-xl", "transition-all");
 
                 postElement.innerHTML = `
                     <a href="${post.url}" class="block ">

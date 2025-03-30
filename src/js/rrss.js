@@ -84,7 +84,7 @@ function loadRSS(feedIndex = 0) {
                     }
 
                     html += `
-                        <article class="mb-4 pb-2 bg-zinc-950 opacity-95 hover:shadow-emerald hover:opacity-100 rounded-lg hover:scale-105">
+                        <article class="mb-4 pb-2 bg-zinc-950 hover:shadow-emerald rounded-lg hover:scale-105">
                             ${imageUrl ? `<img src="${imageUrl}" alt="${title}" class="w-full h-45 rounded-t-lg mb-2">` : ''}
                             <h3 class="text-lg mx-4 line-clamp-3 hover:scale-105">
                                 <a href="${link}" target="_blank" rel="noopener noreferrer" class="hover:text-teal-200 drop-shadow-lg hover:animate-glowText2 text-emerald-200">${title}</a>
