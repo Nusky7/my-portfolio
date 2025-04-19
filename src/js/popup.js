@@ -3,6 +3,39 @@ window.cerrarPopup = function () {
   popup?.classList.add('hidden', 'animate-reduceAndFade');
 };
 
+// Ocultar el popup siempre al cargar la página
+window.addEventListener("pageshow", () => {
+  const popup = document.getElementById("miPopup");
+  if (popup) popup.classList.add("hidden");
+});
+
+function mostrarPopup() {
+  const popup = document.getElementById("miPopup");
+  if (popup) popup.classList.remove("hidden");
+}
+
+function yaSeMostroPopupHoy() {
+  const ultimaFecha = localStorage.getItem("popupFechaMostrado");
+  const hoy = new Date().toISOString().slice(0, 10);
+  return ultimaFecha === hoy;
+}
+
+function marcarPopupComoMostradoHoy() {
+  const hoy = new Date().toISOString().slice(0, 10);
+  localStorage.setItem("popupFechaMostrado", hoy);
+}
+
+// Mostrar el popup si no se ha mostrado hoy
+window.addEventListener("DOMContentLoaded", () => {
+  if (!yaSeMostroPopupHoy()) {
+    setTimeout(() => {
+      mostrarPopup();
+      marcarPopupComoMostradoHoy();
+    }, 4000);
+  }
+});
+
+
 window.suscribirUsuario = function () {
   const email = document.getElementById('emailInput')?.value;
 
@@ -30,7 +63,7 @@ window.suscribirUsuario = function () {
         let popTitle2 = document.getElementById('popup-title2');
         let popDesc = document.getElementById('popup-description');
         popTitle2.classList.add("hidden");
-        popTitle.innerHTML = '<span class="animate-blinkAndBounce1 mb-12 text-4xl">🇫🇷🇪🇨🇺🇪🇳🇨🇮🇦🇸⚡<br>𝙎𝙞𝙣𝙘𝙧𝙤𝙣𝙞𝙯𝙖𝙙𝙖𝙨</span>';
+        popTitle.innerHTML = '<span class="animate-blinkAndBounce1 mb-12 text-4xl font-orbi">Frecuencias⚡<br>𝙎𝙞𝙣𝙘𝙧𝙤𝙣𝙞𝙯𝙖𝙙𝙖𝙨</span>';
         popDesc.innerHTML =
           '<span class="animate-glowText1 text-5xl mb-6">💌</span><br><span class="animate-glowText1">¡Te has unido a mi Club Privado!</span><br> No soy muy pesada, pero te contaré cosas interesantes...';
         popDesc.classList.replace("text-sm", "text-lg");

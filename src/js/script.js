@@ -223,6 +223,7 @@ const loadTranslations = async (lang) => {
     });
   document.getElementById("project-title").textContent = translations.projects.title;
   document.getElementById("working").innerHTML = translations.projects.working;
+  document.getElementById("landingInmo").innerHTML = translations.projects.landingInmo;
   document.getElementById("blog").innerHTML = translations.projects.blog;
   document.getElementById("project").innerHTML = translations.projects.project;
   document.getElementById("project1").innerHTML = translations.projects.project1;

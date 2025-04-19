@@ -59,6 +59,7 @@ module.exports = {
         orange: '0 0 3px  rgb(194 65 12)',
         purple: '0 0 3px  rgb(147 51 234)',
         teal: '0 0 3px rgb(45 212 191)',
+      fuchsia: '0 0 3px rgb(255, 102, 255)',
       },
        scale: {
         '80': '0.8',
@@ -153,7 +154,8 @@ module.exports = {
         tvflickerRose: 'tvflicker-rose 3s infinite',
         tvflickerRoseTeal: 'tvflicker-rose-teal 5s infinite',
         tvflickerTeal: 'tvflicker-teal 6s infinite',
-        tvflickerMixed: 'tvflicker-mixed 3s infinite',
+        tvflickerMixed: 'tvflicker-mixed 20s infinite',
+        glowTextMixed: 'glowTextMixed 20s ease-in-out infinite alternate',
         fastBlink: 'fastBlink 0.35s infinite',
       },
       keyframes: {
@@ -319,6 +321,19 @@ module.exports = {
         '0%': { textShadow: '0 0 1px #000, 0 0 3px rgb(255, 165, 0), 0 0 4px #ea3376' },
         '100%': { textShadow: '0 0 2px #ff8c00, 0 0 8px #4B0082, 0 0 3px #ae60e1' },
         },
+      glowTextMixed: {
+          '0%': { textShadow: '0 0 90px 0 rgba(23, 146, 106, 0.4)' },
+          '10%': { textShadow: '0 0 70px 0 rgba(249, 168, 212, 0.3)' },
+          '20%': { textShadow: '0 0 70px 0 rgba(23, 146, 106, 0.5)' },
+          '30%': { textShadow: '0 0 50px 0 rgba(244, 114, 182, 0.5)' },
+          '40%': { textShadow: '0 0 60px 0 rgba(23, 146, 106, 0.6)' },
+          '50%': { textShadow: '0 0 40px 0 rgba(196, 35, 113, 0.5)' },
+          '60%': { textShadow: '0 0 40px 0 rgba(23, 146, 106, 0.7)' },
+          '70%': { textShadow: '0 0 20px 0 rgba(244, 114, 182, 0.7)' },
+          '80%': { textShadow: '0 0 80px 0 rgba(23, 146, 106, 0.5)' },
+          '90%': { textShadow: '0 0 60px 0 rgba(249, 168, 212, 0.5)' },
+          '100%': { textShadow: '0 0 100px 0 rgba(244, 114, 182, 0.4)' },
+      },
       fadeOutScale: {
         '0%': { opacity: 1, transform: 'scale(1)' },
         '100%': { opacity: 0, transform: 'scale(0.9)' },

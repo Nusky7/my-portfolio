@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es" id="html" class="w-full h-full" >
+<html lang="es" >
   
 <head>
     <meta charset="UTF-8">
@@ -8,8 +8,7 @@
     <meta name="description" content="Artículos sobre diseño web, desarrollo frontend, backend... Tips y Análisis de dispositivos. Aprende sobre las últimas tendencias en tecnología.">
     <meta name="keywords" content="blog diseño web, desarrollo web Valencia, SEO web, frontend">
     <link rel="stylesheet" href="../dist/styles.min.css">
-    <link rel="canonical" href="https://nusky7studio.es/blog/index.html"/>
-
+    <link rel="canonical" href="https://nusky7studio.es/blog/"/>
 
     <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
     <meta property="og:title" content="Blog | Diseño y Desarrollo Web en Valencia">
@@ -25,11 +24,43 @@
     <meta name="twitter:image" content="https://nusky7studio.es/img/ogImages/OgBlog.png">
 
      <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>  
+     <style>
+      body {
+        background-image: url('https://nusky7studio.es/img/wall5.png');
+        background-size: cover;
+        background-position: top;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+      }
+    
+      @media (max-width: 640px) {
+        body {
+          background-image: url('https://nusky7studio.es/img/blogMobile1.png');
+          background-attachment: scroll; 
+        }
+      }
+      .overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.6);
+        z-index: 0;
+        pointer-events: none;
+      }
+      main, header, footer {
+        position: relative;
+        z-index: 10;
+      }
+    </style>
 </head>
 
-<body id="body" class=" text-white font-poppins w-full h-full">
+<body id="body" class="text-white font-poppins w-full h-full">
+    <div class="overlay z-10"></div> 
     
 <!-- Encabezado -->
+<div>
 <header id="header" class="relative w-full bg-zinc-950 text-white text-center py-16">
     <div class="absolute top-6 left-4">
         <img src="https://nusky7studio.es/img/logos/nLogo.png" width="36%" height="auto" alt="Logo" class="hidden lg:block mt-7">
@@ -43,17 +74,27 @@
         Tendencias, Diseño Web | Optimización para Proyectos & Dispositivos
     </p>
 
-    <!-- Bloque de detalles -->
-    <details class="mt-4 mx-auto max-w-2xl bg-zinc-900 p-4 mb-1 rounded-lg shadow-md cursor-pointer">
-        <summary class="text-emerald-100 no-underline font-semibold hover:animate-glowText2"> N7Blog 📰 Noticias y Tecnología </summary>
-        <article class="prose prose-invert">
-            <p class="mt-2 text-gray-300">
-             Bienvenid@ a mi Blog dedicado a la tecnología, descubre aquí <strong>artículos y noticias</strong> actualizadas sobre <strong>Desarrollo Web</strong>, Diseño Frontend y Backend, así como análisis y reseñas de los últimos <strong>smartphones, dispositivos y tendencias tecnológicas.</strong></p>
-            <p>Con secciones dedicadas a <strong>Noticias RSS</strong> para mantenerte al tanto de lo más relevante en <strong>tecnología</strong>, <strong>proyectos</strong> y <strong>curiosidades</strong>, y las últimas <strong>novedades en dispositivos Android</strong>, aquí encontrarás un "todo en uno" contenido relevante, <strong>consejos prácticos</strong> y <strong>comparaciones de dispositivos</strong>.</p>
-        </article>
-       
-    </details>
+  
 
+    <nav class="absolute bottom-0 left-0 w-full bg-zinc-950 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+        <div class="max-w-3xl mx-auto flex space-x-4 px-2">
+            <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+                onclick="showCategory('dispositivos-android')">
+                📟 Tecnología
+            </button>
+            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+                onclick="showCategory('desarrollo-web')">
+                💻 Desarrollo Web
+            </button>
+            <button data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
+                onclick="showCategory('noticias-rrss')">
+                <svg width="20px" height="20px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="#FF9A00">
+                    <path d="M0 37.7143C0 34.243 2.8144 31.4286 6.28571 31.4286C9.75702 31.4286 12.5714 34.243 12.5714 37.7143C12.5714 41.1856 9.75702 44 6.28571 44C2.8144 44 0 41.1856 0 37.7143ZM44 44H35.619C35.619 24.3587 19.641 8.3804 0 8.3804V0C24.261 0 44 19.7387 44 44ZM29.3333 44H20.9524C20.9524 32.4469 11.5524 23.0481 0 23.0481V14.6661C16.1746 14.6661 29.3333 27.8253 29.3333 44Z"/>
+                </svg>
+                <span>Noticias RSS</span>
+            </button>           
+        </div>
+    </nav>      
     <!-- Contenedor de Botones -->
     <div class="absolute top-9 p-1 left-1/2 transform -translate-x-1/2 flex flex-row gap-4 
             min-[840px]:left-auto min-[840px]:right-5 min-[840px]:transform-none min-[840px]:flex-col min-[840px]:gap-y-6 max-[840px]:top-0">
@@ -94,28 +135,120 @@
                 </span>
           </div>
     </div>
-    <nav class="absolute bottom-0 left-0 w-full bg-zinc-950 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
-        <div class="max-w-3xl mx-auto flex space-x-4 px-2">
-            <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
-                onclick="showCategory('dispositivos-android')">
-                📟 Tecnología
-            </button>
-            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
-                onclick="showCategory('desarrollo-web')">
-                💻 Desarrollo Web
-            </button>
-            <button data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
-                onclick="showCategory('noticias-rrss')">
-                <svg width="20px" height="20px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="#FF9A00">
-                    <path d="M0 37.7143C0 34.243 2.8144 31.4286 6.28571 31.4286C9.75702 31.4286 12.5714 34.243 12.5714 37.7143C12.5714 41.1856 9.75702 44 6.28571 44C2.8144 44 0 41.1856 0 37.7143ZM44 44H35.619C35.619 24.3587 19.641 8.3804 0 8.3804V0C24.261 0 44 19.7387 44 44ZM29.3333 44H20.9524C20.9524 32.4469 11.5524 23.0481 0 23.0481V14.6661C16.1746 14.6661 29.3333 27.8253 29.3333 44Z"/>
-                </svg>
-                <span>Noticias RSS</span>
-            </button>           
-        </div>
-    </nav>
   </header>
 
-  <div id="miPopup" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+  <div id="blurOverlay" class="absolute top-16 inset-0 bg-black/40 backdrop-blur-sm z-40 hidden transition-opacity duration-500" ></div>
+  <!-- Detalles -->
+  <div class="absolute w-full flex justify-center px-4">
+   
+
+    <details id="blogDetails" class="z-50 text-white md:w-1/2 w-full rounded-3xl shadow-xl transition-opacity duration-600">
+      <summary
+        style="text-shadow: 0px -3px 6px rgba(0, 0, 0, 0.7);"
+        class="list-none cursor-pointer bg-gradient-to-r from-emerald-700 to-purple-800/80 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
+        📰 N7Blog: Noticias y Tecnología
+      </summary>  
+      <!-- Contenido del details -->
+      <article class="bg-gradient-to-t from-slate-950  to-neutral-950/95 px-16 py-6 mt-1.5 rounded-3xl space-y-4" itemscope itemtype="https://schema.org/Blog">
+        <!-- Botones Tabs -->
+        <div class="flex justify-center">
+          <button
+            onclick="switchTabDetails('tab1-details', this)"
+            data-tab="tab1-details"
+            class="tab-details p-1 text-md font-semibold rounded-l-2xl shadow-md text-white transition-all
+                  bg-gradient-to-r from-teal-600 via-amber-600 to-purple-800 hover:brightness-110">
+            <div class="btn-overlay bg-zinc-900 hover:bg-transparent p-3 rounded-l-2xl">
+              Qué Hay Aquí
+            </div>
+          </button>
+          <span class="text-gray-400 font-bold px-2 select-none">
+            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="64px" height="64px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#7D25BD;} </style> <g> <rect x="293.186" y="307.184" class="st0" width="131.572" height="112.986"></rect> <rect x="87.243" y="308.893" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="401.298" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="355.1" class="st0" width="154.448" height="17.162"></rect> <path class="st0" d="M416.428,0.004H95.58C42.787,0.013,0.016,42.792,0,95.577v303.685 c0.025,62.262,50.463,112.717,112.742,112.734h286.524c62.27-0.017,112.717-50.464,112.734-112.734V95.577 C511.992,42.792,469.212,0.013,416.428,0.004z M464.805,399.262c-0.008,18.15-7.308,34.424-19.198,46.34 c-11.916,11.891-28.19,19.19-46.34,19.198H112.742c-18.15-0.009-34.433-7.308-46.348-19.198 c-11.892-11.916-19.182-28.19-19.198-46.34V118.696h417.61V399.262z"></path> <path class="st0" d="M88.96,267.908h34.583c19.71,0,31.642-8.581,31.642-26.548c0-10.852-6.167-18.368-12.2-20.648v-0.268 c6.034-3.352,10.592-9.519,10.592-19.432c0-14.489-9.251-24.268-29.086-24.268H88.96c-0.796,0-1.332,0.536-1.332,1.34v88.475 C87.628,267.371,88.164,267.908,88.96,267.908z M107.338,193.495c0-0.528,0.251-0.804,0.804-0.804h13.944 c7.5,0,11.925,3.888,11.925,10.584c0,6.712-4.425,10.734-11.925,10.734h-13.944c-0.553,0-0.804-0.268-0.804-0.804V193.495z M107.338,229.955c0-0.528,0.251-0.795,0.804-0.795h15c8.061,0,12.343,4.424,12.343,11.405c0,7.097-4.282,11.396-12.343,11.396h-15 c-0.553,0-0.804-0.276-0.804-0.812V229.955z"></path> <path class="st0" d="M181.516,267.908h59.404c0.796,0,1.332-0.536,1.332-1.349v-14.874c0-0.813-0.536-1.341-1.332-1.341h-40.224 c-0.544,0-0.804-0.268-0.804-0.812v-71.447c0-0.804-0.528-1.34-1.341-1.34h-17.036c-0.805,0-1.332,0.536-1.332,1.34v88.475 C180.183,267.371,180.711,267.908,181.516,267.908z"></path> <path class="st0" d="M292.708,269.374c15.963,0,28.558-7.366,33.251-22.115c2.011-6.301,2.539-11.396,2.539-24.938 c0-13.542-0.528-18.637-2.539-24.939c-4.693-14.739-17.288-22.114-33.251-22.114c-15.956,0-28.558,7.375-33.243,22.114 c-2.02,6.302-2.556,11.397-2.556,24.939c0,13.542,0.536,18.637,2.556,24.938C264.149,262.009,276.752,269.374,292.708,269.374z M278.361,202.746c2.011-6.301,6.847-10.055,14.346-10.055c7.508,0,12.335,3.754,14.346,10.055 c1.073,3.226,1.474,7.634,1.474,19.576c0,11.924-0.402,16.357-1.474,19.567c-2.011,6.31-6.838,10.072-14.346,10.072 c-7.5,0-12.335-3.763-14.346-10.072c-1.064-3.21-1.475-7.643-1.475-19.567C276.886,210.38,277.297,205.972,278.361,202.746z"></path> <path class="st0" d="M387.961,269.374c16.081,0,28.685-8.171,33.251-22.794c1.6-4.952,2.263-12.46,2.263-20.505v-7.517 c0-0.788-0.536-1.333-1.332-1.333h-31.366c-0.813,0-1.349,0.545-1.349,1.333v12.888c0,0.796,0.536,1.332,1.349,1.332h12.326 c0.536,0,0.805,0.277,0.805,0.805c0,3.879-0.403,6.703-1.073,8.991c-1.878,6.026-7.777,9.386-14.614,9.386 c-7.91,0-12.88-3.763-14.891-10.072c-1.064-3.21-1.466-7.643-1.466-19.567c0-11.941,0.402-16.223,1.466-19.441 c2.011-6.302,6.847-10.19,14.631-10.19c7.5,0,12.05,3.218,15.678,9.385c0.269,0.67,0.939,0.939,1.886,0.67l14.338-6.033 c0.796-0.402,0.947-1.206,0.536-2.019c-4.299-10.995-15.419-19.425-32.439-19.425c-16.232,0-28.835,7.375-33.527,22.114 c-2.012,6.302-2.556,11.397-2.556,24.939c0,13.542,0.545,18.637,2.556,24.938C359.126,262.009,371.73,269.374,387.961,269.374z"></path> </g> </g></svg>
+          </span>
+          <button
+            onclick="switchTabDetails('tab2-details', this)"
+            data-tab="tab2-details"
+            class="tab-details p-1 text-sm font-semibold rounded-r-2xl shadow-md text-white transition-all
+                  bg-gradient-to-r from-purple-800 via-sky-600 to-emerald-600 hover:brightness-110">
+            <div class="bg-black/90 hover:bg-transparent focus:bg-transparent p-3 rounded-r-2xl">
+              Sobre N7Studio
+            </div>
+          </button>
+        </div>
+        
+        <!-- Contenido Tabs -->
+        <section id="tab1-details" class="content-details block space-y-3 text-lg leading-relaxed text-gray-300" itemprop="description">
+          <p>Bienvenid@ a mi blog sobre tecnología, donde encontrarás <strong>artículos sobre desarrollo web</strong> (frontend y backend), <strong>diseño UI/UX</strong>, análisis de <strong>dispositivos Android</strong> y gadgets tech.</p>
+          <p>También comparto <strong>curiosidades, recursos, herramientas</strong> y comparativas útiles para desarrolladores, emprendedores digitales o simplemente mentes inquietas con ganas de aprender y estar al día.</p>
+          <p>No publico en un calendario fijo, pero sí con contenido cuidado, visual y actualizado.</p>
+        </section>
+      
+        <section id="tab2-details" class="content-details hidden space-y-3 text-lg leading-relaxed text-gray-300">
+          <p>Este blog lo mantengo desde mi estudio creativo <strong itemprop="author">N7Studio</strong>, con base en <strong itemprop="locationCreated">Valencia, España</strong>, pero también <strong>colaboro en proyectos internacionales</strong> de forma remota.</p>
+          <p>Además de desarrollar webs a medida, me apasiona el diseño visual, los efectos interactivos y la experiencia de usuario. A través del blog intento aportar <strong>valor real</strong> y consejos prácticos que te sirvan tanto si estás empezando como si ya estás metido/a en el mundo tech.</p>
+          <p>Gracias por pasarte por aquí. ¡Explora y si algo te inspira, conéctate! 🌐</p>
+        </section>
+      </article>      
+    </details>
+  </div>
+  
+  <script>
+    const details = document.getElementById('blogDetails');
+    const overlay = document.getElementById('blurOverlay');
+  
+    details.addEventListener('toggle', () => {
+      if (details.open) {
+        overlay.classList.remove('hidden');
+      } else {
+        overlay.classList.add('hidden');
+      }
+    });
+    function switchTabDetails(tabId, btnClicked) {
+      const wrapper = btnClicked.closest('details');
+      if (!wrapper) return;  
+      // Oculta todos los contenidos 
+      wrapper.querySelectorAll('.content-details').forEach(el => el.classList.add('hidden'));
+      wrapper.querySelector(`#${tabId}`).classList.remove('hidden');  
+   
+      // Aplica estilo al botón activo
+      btnClicked.classList.add(
+        tabId === 'tab1-details' ? 'bg-transparent' : 'bg-black/90',
+        'text-black'
+      );
+    }
+  </script>
+   
+  
+    
+<!-- 
+    <div class="absolute w-full flex justify-end px-4">
+      <details class="z-50 text-white md:w-72 w-full rounded-3xl shadow-xl transition-opacity duration-600">
+      <summary style="text-shadow: 0px -3px 6px rgba(0, 0, 0, 0.7);"
+        class="list-none cursor-pointer bg-gradient-to-r from-emerald-700 to-purple-800/50 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
+        N7·Blog - N7·Studio
+      </summary>      
+      <div class="bg-gradient-to-t from-teal-950/90 via-slate-950/95 to-neutral-950/95 p-6 mt-1.5 rounded-3xl z-50">
+            <p class="mt-4 text-gray-300 text-base leading-relaxed">
+              Este blog nace desde mi pasión por la tecnología y el desarrollo web. Aquí comparto contenidos variados sobre <strong>frontend y backend</strong>, diseño UX/UI, gadgets, <strong>modding</strong> y análisis de dispositivos. Es un espacio para aprender, explorar nuevas herramientas y encontrar inspiración para tus proyectos digitales.  
+              Si buscas información útil sobre <strong>diseño y desarrollo web en Valencia</strong> o necesitas soluciones personalizadas para tu web, este rincón puede ayudarte.  
+              Aunque vivo en España, también colaboro en <strong>proyectos internacionales</strong> de forma remota. Mi objetivo es aportar valor real, ya seas desarrollador, emprendedor o simplemente una mente curiosa.
+            </p>
+          </div>
+    </details>
+</div>
+</div>
+
+<details class="mt-4 mx-auto max-w-2xl bg-zinc-900 p-4 mb-1 rounded-lg shadow-md cursor-pointer">
+  <summary class="text-emerald-100 no-underline font-semibold hover:animate-glowText2 list-none">📰 N7Blog: Noticias y Tecnología </summary>
+  <article class="prose prose-invert">
+      <p class="mt-2 text-gray-300">
+       Bienvenid@ a mi Blog dedicado a la tecnología, descubre aquí <strong>artículos y noticias</strong> actualizadas sobre <strong>Desarrollo Web</strong>, Diseño Frontend y Backend, así como análisis y reseñas de los últimos <strong>smartphones, dispositivos y tendencias tecnológicas.</strong></p>
+      <p>Con secciones dedicadas a <strong>Noticias RSS</strong> para mantenerte al tanto de lo más relevante en <strong>tecnología</strong>, <strong>proyectos</strong> y <strong>curiosidades</strong>, y las últimas <strong>novedades en dispositivos Android</strong>, aquí encontrarás un "todo en uno" contenido relevante, <strong>consejos prácticos</strong> y <strong>comparaciones de dispositivos</strong>.</p>
+  </article>
+</details>
+
+     -->
+
+  <div id="miPopup" class="hidden fixed inset-0 z-20 flex items-center justify-center">
     <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop8.png');">
       <div class="bg-black/65 px-9 pt-9 rounded-3xl text-black dark:text-white">
         <div class="text-center">
@@ -123,12 +256,14 @@
           <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
         </div>
   
-        <p id="popup-description" class="text-center text-white text-sm py-3 mb-3 px-0">
-          Recibe Noticias sobre Tecnología y Recomendaciones personalizadas. <span class="animate-colorSlow italic"><br>¡Sincronízate!</span>
+        <p id="popup-description" class="text-center text-white text-lg py-3 mb-3 px-0 drop-shadow-lg" style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);">
+          Únete a mi rincón digital y recibe noticias tech, recursos útiles y una pizca de inspiración creativa.<br>
+          <small class="animate-glowText1">Suscríbete al club de las mentes inquietas 🧠</small>
+          <span class="animate-glowText4 italic font-orbi drop-shadow-md"><br>¡Sincronízate!</span>
         </p>
   
         <input id="emailInput" type="email" placeholder="➜ Tu E-mail Favorito"
-               class="font-semibold w-full border focus:animate-glowText1 border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black">
+        class="font-semibold w-full border focus:animate-glowText1 focus:shadow-rose border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black" style="outline: none;">
   
         <button onclick="suscribirUsuario()" id="suscribe-btn"
                 class="mb-12 bg-gradient-to-r from-rose-600 via-purple-700 to-emerald-600 hover:via-rose-500 hover:from-amber-600 hover:to-purple-700 text-white shadow-lg shadow-black text-xl px-4 pt-1 rounded-xl w-full font-orbi transform transition-transform duration-300 hover:rounded-3xl"
@@ -165,7 +300,7 @@
   <div id="toast"></div>
 
   <!-- Contenedor de Posts -->
-  <main class="max-w-6xl mx-auto p-3">
+  <main class="max-w-6xl mx-auto p-3 mt-12">
     <section id="desarrollo-web" class="category-section hidden">
       <div id="posts-desarrollo" class="max-w-6xl mx-auto p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
         <!-- Aquí se cargarán los posts de Desarrollo Web -->
@@ -180,7 +315,7 @@
 
     <section id="noticias-rrss" class="category-section hidden">
     <!-- TABS para cambiar de RSS -->
-    <div class="max-w-5xl mx-auto py-0.5 text-center overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+    <div class="max-w-5xl mx-auto py-0.5 pt-3 text-center overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
         <div class="flex justify-start space-x-3 px-2">
           
           <button onclick="loadRSS(0)" id="btn-wired" class="rss-btn flex-shrink-0 text-lg drop-shadow-xl text-white  bg-teal-700 px-4 py-2 rounded-lg shadow-md hover:bg-teal-500transition-all active-tab">
@@ -201,7 +336,7 @@
         </div>
     </div>
 
-        <h2 class="text-2xl w-full font-orbi font-semibold bg-zinc-950 bg-opacity-85 mt-4 mb-1 p-3 rounded-lg border-gray-300 pb-2 flex justify-between items-center">
+        <h2 class="text-2xl w-full font-orbi font-semibold bg-gray-800 mt-4 mb-1 p-3 rounded-lg border-gray-300 pb-2 flex justify-between items-center">
           <span>📰 Noticias</span>
           <span class="animate-glowText2 text-emerald-100">Tecnología</span>
         </h2>
@@ -211,8 +346,10 @@
       </div>
     </section>
   </main>
-<!-- PopUp -->
-<div id="popupTrigger" class="h-1 w-full" style="animation-delay: 9s;"></div>
+  
+      <!-- Salto PopUp -->
+      <div id="popupTrigger" class="h-1 w-full" style="animation-delay: 9s;"></div>
+
   <footer class="bg-neutral-950 text-zinc-300 text-sm mt-12">
     <div class="max-w-6xl mx-auto px-4 py-10">
       <div class="flex flex-col md:flex-row justify-between items-start gap-8">
@@ -271,28 +408,20 @@
                 </a>
               </li>
             </ul>
-
           </div>
-        </div>
-
-  
-      </div>
-  
+        </div>  
+      </div>  
       <!-- Copyright -->
       <div class="mt-10 border-t border-zinc-700 pt-4 text-center text-xs text-zinc-500">
         &copy; 2025 Alba Tolosa Bonora ⚙️ N7Studio. Todos los derechos reservados.
       </div>
     </div>
   </footer>    
-
-    <script type="module" src="../js/blog.js" defer></script>
+    
     <script type="module" src="../js/donations.js" defer></script>
-    <script type="module" src="../js/rrss.js" defer></script>
+    <script  src="../js/rrss.js"></script>
     <script type="module" src="../js/popup.js" defer></script>
-      <!-- fondo animado -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js" defer></script>
-  <script rel="preload" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r123/three.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js" defer></script>
+    <script type="module" src="../js/blog.js" defer></script>
 <script>
 
 </script>

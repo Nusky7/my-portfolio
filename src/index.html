@@ -646,18 +646,20 @@
         <!-- PopUp Newsletter -->
         <div id="miPopup" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
           <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop8.png');">
-              <div class="bg-black/75 px-9 pt-9 rounded-3xl text-black dark:text-white">
+              <div class="bg-black/65 px-9 pt-9 rounded-3xl text-black dark:text-white">
               <div class="text-center">
                 <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
                 <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
               </div>
         
-              <p id="popup-description" class="text-center text-sm py-3 mb-3 px-0">
-                Recibe Noticias sobre Tecnología y Recomendaciones personalizadas cada mes.
+              <p id="popup-description" class="text-center text-white text-lg py-3 mb-3 px-0 drop-shadow-lg" style="text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.9);">
+                Únete a mi rincón digital y recibe noticias tech, recursos útiles y una pizca de inspiración creativa.<br>
+                <small class="animate-glowText1">Suscríbete al club de las mentes inquietas 🧠</small>
+                <span class="animate-glowText4 italic font-orbi drop-shadow-md"><br>¡Sincronízate!</span>
               </p>
         
-              <input id="emailInput" type="email" placeholder="➜ Tu E-mail "
-                     class="font-semibold w-full text-center border focus:animate-borderGlow2 border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black">
+              <input id="emailInput" type="email" placeholder="➜ Tu E-mail Favorito"
+              class="font-semibold w-full border focus:animate-glowText1 focus:shadow-rose border-purple-300/60 font-orbi p-2 rounded-xl mb-4 bg-black" style="outline: none;">
         
               <button onclick="suscribirUsuario()" id="suscribe-btn"
                 class="mb-12 bg-gradient-to-r from-rose-600 via-purple-700 to-emerald-600 hover:via-rose-500 hover:from-amber-600 hover:to-purple-700 text-white shadow-lg shadow-black text-xl px-4 pt-1 rounded-xl w-full font-orbi transform transition-transform duration-300 hover:rounded-3xl hover:scale-105"
@@ -780,7 +782,7 @@
     </main>
 
     <!-- Modal de opciones de donación -> Movido a componente para reutilizar en Blog | 21/02/25-->
-
+    <!-- Toast Message -->
     <div
       id="toast"
       class="hidden font-mono text-emerald-100 fixed bottom-1/2 right-0 text-center text-lg font-semibold p-1.5 pr-3 rounded-l-md shadow-lg transition-all duration-300 z-50"
@@ -851,8 +853,6 @@
         </div>
       </div>
     </div>
-
-
 
     <section id="about" class="bg-neutral-950 p-8 rounded-xl">
       <div class="max-w-4xl mx-auto text-center">
@@ -936,6 +936,57 @@
             </div>
           </div>
 
+          <!-- Landing Inmobiliaria  -->
+          <div
+          class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-fuchsia flex flex-col justify-between"
+          >
+          <div class="h-auto">
+            <div class="relative group w-full h-auto">
+              <img loading="lazy"
+                src="https://nusky7studio.es/img/gieMobile.png"
+                alt="Landing Inmobiliaria"
+                class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+              />
+              <img loading="lazy"
+                src="https://nusky7studio.es/img/LandingPisos/gie.png"
+                alt="Landing Inmobiliaria"
+                class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+              />
+            </div>
+            <h3
+              class="text-3xl p-1 font-bold text-fuchsia-300 font-sourceCode mb-1"
+            >
+              Landing Inmobiliaria
+            </h3>
+            <div class="flex space-x-4 mx-0 p-1.5 justify-center">
+              <img src="img/ico/wp.webp" alt="wordpress" class="icons" />
+              <img src="img/ico/css.webp" alt="css" class="icons" />
+              <img src="img/ico/tw.webp" alt="tailwind" class="icons" />
+            </div>
+            <p id="landingInmo"
+              class="text-gray-300 text-lg text-left px-5 pb-3 mt-1 mb-2 leading-relaxed"
+            >
+              Plataforma web moderna desarrollada para un cliente del sector inmobiliario.
+            </p>
+            <div class="flex mt-auto justify-center">
+              <button
+                type="button"
+                class="bg-fuchsia-400 bg-opacity-30 rounded-full hover:bg-zinc-900 hover:animate-none text-white w-15 hover:px-3 px-6 p-3 flex justify-center items-center mt-auto mx-3 mb-3"
+              >
+                <a
+                  href="https://giegestion.com/tasacion-vivienda-2025/"
+                  target="_blank"
+                  rel="noopener"
+                  class="text-white block text-2xl"
+                  >🌐</a
+                >
+              </button>
+            </div>
+          </div>
+          </div>
+
+           
+
           <!-- Blog -->
           <div
             class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-teal flex flex-col justify-between"
@@ -1001,7 +1052,7 @@
             </div>
           </div>
 
-          <!-- Proyecto -->
+          <!-- N7Tools -->
           <div
             class="swiper-slide bg-zinc-950 rounded-xl pb-3 text-center shadow-pink flex flex-col justify-between"
           >
