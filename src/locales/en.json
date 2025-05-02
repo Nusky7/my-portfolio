@@ -16,9 +16,9 @@
         "title": "Projects",
         "show": "See Code",
         "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
-        "landingInmo": "<p class='text-fuchsia-300'>Client Project. | WordPress + Tailwind</p>Real estate landing page built with WordPress CMS and styled using CSS and Tailwind CSS. Features a custom multistep form (no Elementor Pro) optimized for lead generation and campaign flexibility.",
+        "landingInmo": "<p class='text-fuchsia-300'>Client Project.</p>Real estate landing page built with WP CMS and styled using CSS and Tailwind CSS. Custom multistep form (no Elementor Pro) optimized for lead generation.",
         "blog": "<p class='text-teal-400 text-xl text-center'>Blog - News and Technology.</p>Portfolio extension where I publish articles on technology, combined with the most relevant news extracted from my social media feed.",
-        "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Online tool to convert images, fonts, and videos. Images are converted on the frontend.<br> The backend can be downloaded from GitHub for local use and is required for video, mp3, and font conversions.",
+        "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Online tool to convert images, fonts, and videos. Images are converted on the frontend.<br> The backend can be used locally and is required for video, mp3, and font conversions.",
         "project1": "<p class='text-amber-300'>Integrated Maps.</p>An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
         "project2": "<p class='text-orange-400'>FrontEnd prototype.</p>A transfer website in the Valencia area for booking private trips. <br>Prototype with Angular 17 and Bootstrap<br>",
         "project3": "<p class='text-violet-300'>2.0 🡩 Updated with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant & links to his SM.",
@@ -31,7 +31,7 @@
       "buttonText1": "🌏 See my Services",
       "panelTitle": "Do you like my work?",
       "panelSubitle": "Need your own Website?",
-      "panelText": " Let's bring your goals to life and create something amazing!<br>Download my CV for more details or contact me directly",
+      "panelText": " Let's talk about your next project!<br>Download my CV for more details or contact me directly",
       "contact": "Contact"
     },
     "player": {
@@ -41,9 +41,23 @@
     "form": {
       "name": "🙂 Name",
       "email": "📧 Email",
-      "user": "👤 User or Name",
-      "message": "💌 Message",
-      "submit": "Send 📩"
+      "user": "👤 Name or Username",
+      "phone": "Your phone",
+      "web": "🌐 Do you have a current website?",
+      "message": "💌 Tell me more about your project or needs...",
+      "submit": "Send 📩",
+      "interest": "I'm interested in...",
+      "express": "I want a Landing Page",
+      "seo": "I need to improve SEO",
+      "branding": "Domain + Professional Email",
+      "call": "📞 I'd rather call",
+      "🔵 Web Básica": "🔵 Basic Website",
+      "🟣 Web Personalizada": "🟣 Custom Website",
+      "🟠 Administración y Hosting": "🟠 Admin & Hosting Services",
+      "🟡 Servicios y Backend": "🟡 Backend Services (APIs, DB...)",
+      "👥 Colaboración": "👥 Professional Collaboration",
+      "📑 Contratos": "📑 Offer You a Position or Contract",
+      "privacy": "By sending this form you accept the <a href='/politica-privacidad' class='underline text-rose-950 hover:text-rose-300'>Privacy Policy</a>."
     },
     "donations": {
       "title": "☕︎ Pick your method",

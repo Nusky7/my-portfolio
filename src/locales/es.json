@@ -15,9 +15,9 @@
         "title": "Proyectos",
         "show": "Ver Codigo",
         "working": "<p class='text-rose-400 text-xl text-center'>Proyecto en desarrollo.</p>Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
-        "landingInmo": "<p class='text-fuchsia-300'>Proyecto Cliente. | WordPress + Tailwind</p>Landing inmobiliaria desarrollada con CMS WordPress + CSS y TailwindCSS personalizado. Incluye formulario multistep sin Elementor Pro, optimizado para captar leads y adaptarse a futuras campañas.",
+        "landingInmo": "<p class='text-fuchsia-300'>Proyecto Cliente.</p>Landing inmobiliaria desarrollada con CMS WP + CSS y TailwindCSS personalizado. + Formulario multistep sin Elementor Pro, optimizado para leads.",
         "blog": "<p class='text-teal-400 text-xl'>Blog - Noticias y Tecnología.</p>Extensión del Portfolio en la que publico artículos sobre tecnología, combinados con las noticias más relevantes extraídas de mi feed de RRSS.",
-        "project": "<p class='text-rose-300'>Conversión de Formatos.</p>Herramienta online para convertir imágenes, fuentes y videos. Las imágenes se convierten en el frontend.<br> El backend puede descargarse desde GitHub para uso local; es necesario para convertir videos, archivos mp3 y fuentes.",
+        "project": "<p class='text-rose-300'>Conversión de Formatos.</p>Herramienta online para convertir imágenes, fuentes y videos. Las imágenes se convierten en el frontend.<br> El backend puede usarse en local; necesario para convertir videos, archivos mp3 y fuentes.",
         "project1": "<p class='text-amber-400'>Mapas Integrados.</p>Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.",
         "project2": "<p class='text-orange-400'>Prototipo FrontEnd.</p>Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo con Angular 17 y Bootstap.<br>",
         "project3": "<p class='text-violet-300'>2.0 🡩 Mejorada con Tailwind & Swiper.</p>Portafolio de tatuajes.<br>+ Galería de fotos deslizable, formulario de contacto, asistente virtual y enlaces a sus RRSS.",
@@ -29,7 +29,7 @@
       "buttonText1": "🌏 Ver mis Servicios",
       "panelTitle": " <span class='ask'>?</span>Te gusta mi trabajo?",
       "panelSubitle": "<span class='ask mr-1'>?</span>Necesitas tu propia Web?",
-      "panelText": "¡Hagamos realidad tus metas y creemos algo increíble!<br>Descarga mi CV para más detalles o contáctame directamente.",
+      "panelText": "¡Hablemos sobre tu próximo proyecto!<br>Descarga mi CV para más detalles o contáctame directamente.",
       "contact": "Contacto"
     },
     "player": {
@@ -40,8 +40,22 @@
       "name": "🙂 Nombre",
       "email": "📧 Correo",
       "user": "👤 Nombre o Usuario",
-      "message": "💌 Mensaje",
-      "submit": "Enviar 📩"
+      "phone": "Tu número",
+      "web": "🌐 ¿Tienes una web actual?",
+      "message": "💌 Cuéntame más sobre tu proyecto o necesidades...",
+      "submit": "Enviar 📩",
+      "interest": "Me interesa...",
+      "express": "Quiero una Landing Page",
+      "seo": "Necesito mejorar el SEO",
+      "branding": "Dominio + Correo profesional",
+      "call": "📞 Prefiero Llamar",
+      "🔵 Web Básica": "🔵 Web Básica",
+      "🟣 Web Personalizada": "🟣 Web Personalizada",
+      "🟠 Administración y Hosting": "🟠 Administración y Hosting",
+      "🟡 Servicios y Backend": "🟡 Servicios y Backend",
+      "👥 Colaboración": "👥 Colaboración Profesional",
+      "📑 Contratos": "📑 Ofrecerte un Puesto o Contrato",
+      "privacy": "Al enviar el formulario aceptas nuestra <a href='/politica-privacidad' class='underline text-rose-950 hover:text-rose-300'>Política de Privacidad</a>."
 
     },
     

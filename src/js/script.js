@@ -9,7 +9,7 @@ const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 
 
-  new Swiper('.swiper-container', {
+  const swiper = new Swiper('.swiper-container', {
     effect: 'cards',
     cardsEffect: {
       rotate: true,
@@ -57,8 +57,6 @@ const subtitle = document.getElementById("panel-subtitle");
   
 changeCVLang('es');
 
-
-
 function showToast(msg) {
   const toast = document.getElementById('toast');
   const toastMsg = document.getElementById('toastMsg');
@@ -71,120 +69,12 @@ function showToast(msg) {
   }, 3900);
 }
 
-// Enviar email
-emailForm.addEventListener("submit", async (event) => {
-  event.preventDefault(); 
-  emailjs.init("39FmjBf7JrQSw9E-2");
-  loadingSpinner.classList.remove("hidden");
-
-  const formData = {
-    from_name: emailForm.elements["name"].value,
-    from_email: emailForm.elements["email"].value,
-    message: emailForm.elements["message"].value,
-  };
-
-  try {
-    // Validar campos obligatorios
-    if (!formData.from_name || !formData.from_email || !formData.message) {
-      showToast(t('toastMsgs.sendWarn'));
-      return;
-    }
-
-    // spinner de carga
-    loadingSpinner.classList.remove("hidden");
-
-    // Envío con EmailJS
-    const serviceID = "nusky_service";
-    const templateID = "nusky_template";
-
-    await emailjs.send(serviceID, templateID, formData, "39FmjBf7JrQSw9E-2");
-    console.log("Enviando datos:", formData);
-
-    // Mostrar éxito y resetear formulario
-    showToast(t('toastMsgs.sendOk'));
-    emailForm.reset();
-  } catch (error) {
-    console.error("Error al enviar el mensaje:", error);
-    showToast(t('toastMsgs.sendError'));
-  } finally {
-    // Ocultar spinner
-    loadingSpinner.classList.add("hidden");
-  }
-});
-// Enviar Whatsapp
-whatsappForm.addEventListener('submit', function(event) {
-  event.preventDefault(); 
-  
-  let name = document.getElementById('wName').value.trim();
-  let msg = document.getElementById('wMessage').value.trim();
-  let encodedMessage = encodeURIComponent(`Nombre: ${name}\nMensaje: ${msg}`);
-  let phoneNumber = '+34675260296';
-  let whatsappURL = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-
-  if (!name || !msg) {
-    showToast(t('toastMsgs.sendWarn'));
-    return;
-  }
-  window.open(whatsappURL, '_blank');
-});
-// Enviar Telegram
-telegramForm.addEventListener('submit', function(event) {
-  event.preventDefault();
-  let username = document.getElementById('telegram-username').value.trim();
-  let msg = document.getElementById('telegram-message').value.trim();
-  let encodedMessage = encodeURIComponent(`Usuario: ${username}\nMensaje: ${msg}`);
-  let telegramURL = `https://t.me/Nusky_7?text=${encodedMessage}`;
-
-  if (!username || !msg) {
-    showToast(t('toastMsgs.sendWarn'));
-    return;
-  }
-  window.open(telegramURL, '_blank');
-});
-// Cambios estilo carpetita contacto
-emailTab.addEventListener('click', () => {
-  emailForm.classList.remove('hidden');
-  whatsappForm.classList.add('hidden');
-  telegramForm.classList.add('hidden');
-  emailTab.classList.remove('bg-black', 'border-l-2');
-  emailTab.classList.add('bg-stone-600', 'animate-colorSlow');
-  whatsappTab.classList.remove('bg-stone-600', 'animate-colorSlow');
-  telegramTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-l-2');
-  telegramTab.classList.add('border-r-2');
-  whatsappTab.classList.add('bg-black');
-});
-
-whatsappTab.addEventListener('click', () => {
-  whatsappForm.classList.remove('hidden');
-  emailForm.classList.add('hidden');
-  telegramForm.classList.add('hidden');
-  whatsappTab.classList.remove('bg-stone-600', 'border-l-2');
-  whatsappTab.classList.add('bg-stone-600', 'animate-colorSlow');
-  emailTab.classList.remove('bg-stone-600', 'animate-colorSlow');
-  telegramTab.classList.add('border-l-2');
-  telegramTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-r-2');
-  emailTab.classList.add('bg-black','border-l-2');
-});
-
-telegramTab.addEventListener('click', () => {
-  telegramForm.classList.remove('hidden');
-  whatsappForm.classList.add('hidden');
-  emailForm.classList.add('hidden');
-  telegramTab.classList.remove('bg-black', 'border-l-2');
-  telegramTab.classList.add('bg-stone-600', 'animate-colorSlow');
-  whatsappTab.classList.remove('bg-stone-600', 'animate-colorSlow', 'border-l-2');
-  emailTab.classList.remove('bg-stone-600', 'animate-colorSlow');
-  emailTab.classList.add('bg-black', 'border-l-2');
-  
-});
 // Animación CV - Contrata mis servicios hoy misme
 function startAnimation() {
   subtitle.classList.add("animate-blinkAndBounce");
-  // donationTitle.classList.add("animate-blinkAndBounce");
 
   setTimeout(() => {
     subtitle.classList.remove("animate-blinkAndBounce");
-    // donationTitle.classList.remove("animate-blinkAndBounce");
   }, 4000);
   setTimeout(startAnimation, 9999);
 }
@@ -242,12 +132,70 @@ const loadTranslations = async (lang) => {
   document.getElementById("song-title").innerHTML = translations.player.songs;
   document.getElementById("videos-title").innerHTML = translations.player.videos;
   // Forms
-  document.querySelectorAll("form").forEach(form => {
-    form.querySelectorAll("input, textarea").forEach(input => {
-      const name = input.getAttribute("name");
-      if (translations.form[name]) {
-        input.placeholder = translations.form[name]; 
+  // document.querySelectorAll("form").forEach(form => {
+  //   form.querySelectorAll("input, textarea").forEach(input => {
+  //     const name = input.getAttribute("name");
+  //     if (translations.form[name]) {
+  //       input.placeholder = translations.form[name]; 
+  //     }
+
+      
+  //   });
+    // Forms
+    document.querySelectorAll("form").forEach(form => {
+      // Inputs y textareas
+      form.querySelectorAll("input, textarea").forEach(input => {
+        const name = input.getAttribute("name");
+        if (translations.form[name]) {
+          input.placeholder = translations.form[name];
+        }
+  
+        // Checkbox → traducir label
+        if (input.type === "checkbox" && translations.form[name]) {
+          const label = input.closest("label");
+          if (label) {
+            // Limpia el label y vuelve a insertar el input y el texto traducido
+            label.innerHTML = '';
+            label.appendChild(input);
+            label.append(" " + translations.form[name]);
+          }
+        }        
+      });
+  
+      // Selects: solo si el placeholder del primer <option> coincide
+      form.querySelectorAll("select").forEach(select => {
+        select.querySelectorAll("option").forEach(option => {
+          const value = option.value;
+          if (translations.form[value]) {
+            option.textContent = translations.form[value];
+          } else if (value === "" && translations.form.interest) {
+            option.textContent = translations.form.interest;
+          }
+        });
+      });
+
+      document.querySelectorAll(".privacy-text").forEach(el => {
+        if (translations.form.privacy) {
+          el.innerHTML = `
+            <input type="checkbox" checked readonly class="accent-rose-500 mr-2 pointer-events-none select-none" />
+            ${translations.form.privacy}
+          `;
+        }
+      });
+     
+      // Botón submit
+      const submitButton = form.querySelector("button[type='submit']");
+      if (submitButton && translations.form.submit) {
+        submitButton.textContent = translations.form.submit;
       }
+  
+      // Botón de llamada
+      const callButton = form.querySelector('button[onclick*="tel:"]');
+      if (callButton && translations.form.call) {
+        callButton.textContent = translations.form.call;
+      }
+    });
+  
   // Donations 
   document.getElementById('donation-title').innerHTML = translations.donations.title;
   document.getElementById('donate-with').innerHTML = translations.donations.text;
@@ -268,15 +216,9 @@ const loadTranslations = async (lang) => {
   document.getElementById("maps").innerHTML = translations.terminal.maps;
   document.getElementById("design").innerHTML = translations.terminal.design;
   document.getElementById("community").innerHTML = translations.terminal.community;
-});
-    const submitButton = form.querySelector("button[type='submit']");
-      if (submitButton) {
-        submitButton.textContent = translations.form.submit;
-      }
-    });
-    
-  };
-  
+
+    };
+     
 
 // Ratings ★ 
 let translations = {};
@@ -407,20 +349,5 @@ document.getElementById('lang-switch-en').onclick = function() {
 document.getElementById('lang-switch-es').onclick = function() {
   changeCVLang('es');
   };
-  
-  VANTA.TOPOLOGY({
-    el: "#html",
-    mouseControls: true,
-    touchControls: true,
-    gyroControls: false,
-    minHeight: 200.00,
-    minWidth: 200.00,
-    scale: 1.30,
-    scaleMobile: 1.20,
-    // color: 0x9b8b96,
-    // color: 0x7c7679,
-    // color: 0x9ca3af,
-    color: 0x9f8898,
-    backgroundColor: 0x18181B
-  })
+
 });

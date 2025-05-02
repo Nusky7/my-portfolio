@@ -487,6 +487,5 @@ document.getElementById('channelBtn').addEventListener('click', function () {
     channelIndicator.classList.add('hidden');
     }, 3000);
   });
-
  
 });

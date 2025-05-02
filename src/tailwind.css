@@ -3,8 +3,33 @@
 @tailwind components;
 @tailwind utilities;
 
+.iti__country-list {
+  background-color: #09090B  !important;
+  color: white;
+  border-radius: 6px;
+  border: none !important;
+  max-width: 17rem;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus,
+#phone:-webkit-autofill,
+#phone:-webkit-autofill:hover,
+#phone:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #392b32dc inset !important; /* bg-zinc-900 */
+  -webkit-text-fill-color: #d1d5db !important; /* text-gray-300 */
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+
 .rateit .rateit-selected {
-    color: #AA1C59 !important; 
+    /* color: #AA1C59 !important;  */
+    color: #F7931A !important; 
+    /* @apply animate-borderGlow1; */
     cursor: url('/img/pointer.png') 16 16, pointer !important;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.9)) !important;
 }
@@ -583,7 +608,6 @@ h1 {
 
 .swiper-slide {
   height: auto !important;
-  /* height: 39.3rem !important; */
   margin: 0 !important;
   margin-top: 3px !important;
 }
@@ -597,7 +621,6 @@ h1 {
 /* Cambiar color de fondo y el icono de los botones */
 .swiper-button-next,
 .swiper-button-prev {
-  /* color: #f43f5e !important;  */
   opacity: 0.7;
   cursor: url('/img/pointer.png') 16 16, pointer !important;
 }
@@ -766,7 +789,7 @@ audio::-webkit-media-controls-play-button {
     flex-direction: column !important;
   }
   .audio-controls{
-    border: 3px ridge #333;
+    /* border: 3px ridge #333; */
     border-radius: 10px;
     padding: 2%;
   }
@@ -777,7 +800,6 @@ audio::-webkit-media-controls-play-button {
   #whatsapp-tab p,
   #email-tab p,
   #telegram-tab p{
-    display: !important;
     flex-direction: column-reverse;
     align-items: center;
   }

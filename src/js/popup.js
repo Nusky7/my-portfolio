@@ -14,27 +14,26 @@ function mostrarPopup() {
   if (popup) popup.classList.remove("hidden");
 }
 
-function yaSeMostroPopupHoy() {
-  const ultimaFecha = localStorage.getItem("popupFechaMostrado");
-  const hoy = new Date().toISOString().slice(0, 10);
-  return ultimaFecha === hoy;
-}
+// function yaSeMostroPopupHoy() {
+//   const ultimaFecha = localStorage.getItem("popupFechaMostrado");
+//   const hoy = new Date().toISOString().slice(0, 10);
+//   return ultimaFecha === hoy;
+// }
 
-function marcarPopupComoMostradoHoy() {
-  const hoy = new Date().toISOString().slice(0, 10);
-  localStorage.setItem("popupFechaMostrado", hoy);
-}
+// function marcarPopupComoMostradoHoy() {
+//   const hoy = new Date().toISOString().slice(0, 10);
+//   localStorage.setItem("popupFechaMostrado", hoy);
+// }
 
 // Mostrar el popup si no se ha mostrado hoy
-window.addEventListener("DOMContentLoaded", () => {
-  if (!yaSeMostroPopupHoy()) {
-    setTimeout(() => {
-      mostrarPopup();
-      marcarPopupComoMostradoHoy();
-    }, 4000);
-  }
-});
-
+// window.addEventListener("DOMContentLoaded", () => {
+//   if (!yaSeMostroPopupHoy()) {
+//     setTimeout(() => {
+//       mostrarPopup();
+//       marcarPopupComoMostradoHoy();
+//     }, 4000);
+//   }
+// });
 
 window.suscribirUsuario = function () {
   const email = document.getElementById('emailInput')?.value;
@@ -80,6 +79,10 @@ window.suscribirUsuario = function () {
 document.addEventListener("DOMContentLoaded", () => {
   const trigger = document.getElementById("popupTrigger");
   const popup = document.getElementById("miPopup");
+  const subscribeButton = document.getElementById('subscribe-button');
+    if (subscribeButton) {
+      subscribeButton.addEventListener('click', mostrarPopup);
+    }
 
   if (!trigger || !popup) return;
 
