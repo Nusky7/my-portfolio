@@ -1,13 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-const emailTab = document.getElementById('email-tab');
-const telegramTab = document.getElementById('telegram-tab');
-const whatsappTab = document.getElementById('whatsapp-tab');
-const emailForm = document.getElementById('email-form');
-const whatsappForm = document.getElementById('whatsapp-form');
-const telegramForm = document.getElementById('telegram-form');
-const loadingSpinner = document.getElementById("loading-spinner");
 const subtitle = document.getElementById("panel-subtitle");
 
+function toggleAboutText() {
+  const desc = document.getElementById("about-description");
+  const btn = document.getElementById("toggle-about");
+  desc.classList.toggle("max-h-[8.5rem]");
+  if (btn.innerText === "Leer más") {
+    btn.innerText = "Cerrar";
+  } else {
+    btn.innerText = "Leer más";
+  }
+}
+
+document.getElementById("toggle-about").addEventListener("click", toggleAboutText);
 
   const swiper = new Swiper('.swiper-container', {
     effect: 'cards',

@@ -49,14 +49,28 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
-
 </head>
 
-<body class="bg-black text-white" style="background: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.png') no-repeat center center fixed; background-size: cover;">
+<body class="bg-black text-white" style="background: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.webp') no-repeat center center fixed; background-size: cover;">
 
+    <!-- SVG fondo -->
+    <svg class="absolute top-0 left-0 w-full h-full animate-pulse opacity-40 pointer-events-none z-0" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <lineargradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stop-color="#a78cfa" />
+          <stop offset="100%" stop-color="#5CE1E6" />
+        </lineargradient>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#strokeGradient)" stroke-width="0.7"/>
+        </pattern>
+      </defs>
+      <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/20 pointer-events-none z-10 will-change-transform">
+    </div>  
 
   <section class="w-full shadow-lg z-50 ">
-    <div class="flex items-center justify-between rounded-b-lg w-full px-4 sm:px-6 py-0 text-emerald-100 font-mono text-base sm:text-lg font-semibold"
+    <div class="flex items-center justify-between rounded-b-lg w-full px-4 sm:px-6 py-0 text-emerald-100 font-mono text-base sm:text-lg font-semibold z-50"
          style="background: linear-gradient(180deg, #3b3b3b, #666666)">
       
       <!-- LEDs -->
@@ -67,22 +81,22 @@
   
       <!-- Mi pantalleeta -->
       <div id="h1Box"
-           class="flex-1 px-4 py-7 mx-2 border-x-2 border-neutral-600 bg-black/60 rounded text-center transition-all duration-500 ease-in-out font-orbi max-w-full max-h-full animate-tvflickerMixed marquee-container overflow-hidden whitespace-nowrap w-full">
-           <h1 id="marqueeText" class="text-sm md:text-3xl font-orbi text-violet-200 font-bold uppercase drop-shadow inline-block animate-colorSlow"
+           class="flex-1 z-50 px-4 py-7 mx-2 border-x-2 border-neutral-600 bg-gray-900/80 rounded text-center transition-all duration-500 ease-in-out font-orbi max-w-full max-h-full shadow-md shadow-black marquee-container overflow-hidden whitespace-nowrap w-full">
+           <h1 id="marqueeText" class="text-sm md:text-3xl font-orbi text-fuchsia-200 font-bold uppercase drop-shadow inline-block animate-colorSlow"
            style="animation: marquee 12s linear infinite, ShadowSlow 6s infinite;">
            🛰️ LANZADERA N7S 
          </h1>
       </div>
       <!-- Branding N7 -->
-      <div class="flex flex-col items-center ml-4 space-y-1">
+      <div class="flex flex-col items-center ml-4 space-y-1 z-50">
         <img src="https://nusky7studio.es/img/logos/n7Logo.png" style="opacity: 0.7;" alt="Logo N7" class="w-10 h-10 drop-shadow-md" />
         <span class="text-gray-200 font-orbi text-xs drop-shadow-sm" style="text-shadow: 1.5px 0.5px 1px rgba(0, 0, 0, 0.7);">STUDIO</span>
       </div>
     </div>
   </section>
-<br><br><br>
   
-<section class="max-w-6xl mx-auto px-4 py-3 relative z-10">
+<!-- Enlaces a Sitios -->
+<section class="max-w-6xl mt-3 mx-auto px-4 py-3 relative z-10">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             <!-- Servicios -->
       <a href="https://services.nusky7studio.es" target="_blank" class="group block overflow-hidden rounded-lg shadow-lg bg-zinc-800 hover:shadow-xl transition relative">
@@ -128,7 +142,6 @@
         <img src="https://nusky7studio.es/img/logos/nSteel.png" alt="Bienvenido a la Nave N7" class="w-full h-72 object-cover  hover:drop-shadow-md shadow-black">
       </div>
       
-
       <!-- CV -->
       <a href="https://nusky7studio.es/cv/es/" target="_blank" class="group block overflow-hidden rounded-lg shadow-lg bg-zinc-800 hover:shadow-xl transition relative">
         <div class="absolute inset-0 bg-[url('https://nusky7studio.es/img/backgrounds/starsBkg.png')] bg-cover bg-center opacity-30"></div>
@@ -141,7 +154,6 @@
   
     </div>
   </section>
-
   
 
   <h2 id="contact-title"
@@ -154,7 +166,7 @@
     <div class="bg-black/70 rounded-xl shadow-lg p-0 border-2 border-neutral-700 animate-borderGlow1 backdrop-blur-md">
       <div class="relative w-full h-full sm:h-full flex items-center justify-center rounded-lg overflow-hidden">
         <video autoplay muted loop playsinline class=" w-full h-full object-fit opacity-80 z-0 rounded-lg">
-          <source src="https://nusky7studio.es/media/N7S.mp4" type="video/mp4"/>
+          <source src="https://nusky7studio.es/media/N7S.webm" type="video/webm"/>
         </video>
       </div>
     </div>
@@ -569,7 +581,6 @@
     &copy; 2025 N7Studio · Todos los derechos reservados
   </div>
 </footer>
-
   
 
 <!-- <script type="module" src="./js/popup.js" defer></script> -->

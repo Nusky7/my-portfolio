@@ -28,7 +28,7 @@
     />
     <meta
       property="og:image"
-      content="https://nusky7studio.es/img/logos/n7LogoB.png"
+      content="https://nusky7studio.es/img/ogImages/ogPortfolio.png"
     />
     <!-- Twitter Meta Tags -->
     <meta name="twitter:card" content="summary_large_image" />
@@ -41,7 +41,7 @@
     />
     <meta
       name="twitter:image"
-      content="https://nusky7studio.es/img/logos/n7LogoB.png"
+      content="https://nusky7studio.es/img/ogImages/ogPortfolio.png"
     />
     <!-- favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -73,10 +73,10 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
-    <script
+    <!-- <script
       src="https://kit.fontawesome.com/a67d5af2d9.js"
       crossorigin="anonymous"
-    ></script>
+    ></script> -->
     <!-- adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5659298995663685"
     crossorigin="anonymous"></script>
@@ -85,7 +85,7 @@
   </head>
 
     <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
-
+      <!-- Fondo molón y chachi -->
       <div class="fixed inset-0 -z-10">
         <svg class="w-full h-full animate-pulse opacity-70" xmlns="http://www.w3.org/2000/svg">
           <defs>
@@ -640,6 +640,7 @@
             src="./img/yo2.webp"
             alt="Real Profile"
             id="perf1"
+            loading="lazy"
             class="head-img header-real-img border-b-3 drop-shadow-md border-rose-400 hidden cursor-pointer transition-transform ease-in-out"
           />
         </div>
@@ -878,18 +879,16 @@
       </div>
     </div>
 
-    <section id="about" class="bg-gray-700/50 p-8 pb-12 rounded-full">
+    <section id="about" class="bg-gray-700/50 p-8 pb-12 rounded-3xl md:rounded-full">
       <div class="max-w-4xl mx-auto text-center">
-        <h2
-          id="about-heading"
-          class="text-xl font-bold mb-4 text-rose-200 font-gba p-3"
-        >
+        <h2 id="about-heading" class="text-xl font-bold mb-4 text-rose-200 font-gba p-3">
           <span>Sobre mí</span>
           <i class="fas fa-heart text-rose-300"></i>
         </h2>
+    
         <p
           id="about-description"
-          class="text-lg leading-7 text-gray-200 font-mono"
+          class="text-lg leading-7 text-gray-200 font-mono max-h-[8.5rem] overflow-hidden transition-all duration-500 md:max-h-none"
         >
           Soy una desarrolladora FullStack apasionada por la tecnología con una
           gran motivación por el diseño y desarrollo frontend. Mi especialidad
@@ -904,8 +903,18 @@
           funcionalidad y sensibilidad estética para entregar resultados que
           superen expectativas.
         </p>
+    
+        <!-- Botón para expandir -->
+        <button
+          id="toggle-about"
+          class="mt-4 text-sm text-rose-300 underline md:hidden font-orbi"
+          onclick="toggleAboutText()"
+        >
+          Leer más
+        </button>
       </div>
     </section>
+
 
     <section id="projects" class="p-8 bg-black/10 h-auto">
       <h2
@@ -1473,7 +1482,7 @@
       </div>
     </section>
 
-    <section id="skills" class="bg-gray-700/50 py-10 rounded-full px-0 md:px-3">
+    <section id="skills" class="bg-gray-700/50 py-10 rounded-full px-2 md:px-3">
       <div class="max-w-6xl mx-auto">
         <h2 class="text-xl font-bold text-rose-400 text-center font-gba mb-8">
           Stack

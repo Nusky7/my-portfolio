@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presupuesto Web | Calculadora Online de Desarrollo Web y SaaS</title>
+
+  <!-- Meta SEO -->
+  <meta name="description" content="Calcula tu presupuesto para páginas web, tiendas online, plataformas SaaS o sistemas con backend. Rápido, claro y sin compromiso. Ideal para particulares, negocios y emprendedores.">
+  <meta name="keywords" content="presupuesto web, presupuesto página web, presupuesto tienda online, calcular precio web, presupuesto desarrollo web, sistema con backend, SaaS, plataforma web, precio web profesional, cotización página web">
+  <meta name="author" content="N7Studio">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://nusky7studio.es/calculadora-presupuestos.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="Calculadora de Presupuestos Web | N7Studio">
+  <meta property="og:description" content="Calcula fácilmente el coste de tu web, sistema personalizado o SaaS. Rápido, visual y sin compromiso.">
+  <meta property="og:image" content="https://nusky7studio.es/img/ogImages/ogPresupuesto.webp">
+  <meta property="og:url" content="https://nusky7studio.es/calculadora-presupuestos.html">
+  <meta property="og:type" content="website">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Presupuesto Web a Medida | Calculadora Online">
+  <meta name="twitter:description" content="Calculadora online para presupuestos de webs, tiendas y sistemas personalizados. Rápido y claro.">
+  <meta name="twitter:image" content="https://nusky7studio.es/img/ogImages/ogPresupuesto.webp">
+
+  <!-- Styles -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <link
+    rel="stylesheet"
+    href="../dist/styles.min.css"
+    as="style"
+    onload="this.rel='stylesheet'"
+  />
+  <noscript><link href="../dist/styles.min.css" rel="stylesheet" /></noscript>
+
+  <!-- Estilos específicos -->
+  <style>
+    html, body {
+      scroll-behavior: smooth;
+      overflow-y: auto;
+    }
+    option {
+      background-color: #18181b;
+      color: white;
+    }
+    hr {
+      color: white !important;
+    }
+    strong {
+      color: #77e3cad2; 
+    }
+    code {
+      color: #5CE1E6 !important; /* azul cian vibrante */
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 0 0.2em;
+      border-radius: 0.25rem;
+      font-weight: 500;
+    }
+    .sending {
+      cursor: wait;
+      opacity: 0.7;
+    }   
+    
+  </style>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+</head>
+
+<body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center p-6 font-poppins">
+<!-- Fondo Bkg -->
+<div class="fixed inset-0 -z-10">
+    <svg class="w-full h-full animate-pulse opacity-70" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+        <!-- Gradiente lineal -->
+        <lineargradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a78cfa" />
+            <stop offset="100%" stop-color="#5CE1E6" />
+        </lineargradient>
+    
+        <!-- Patrón que usa ese gradiente -->
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+            <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#strokeGradient)" stroke-width="0.7"/>
+        </pattern>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#grid)" />
+    </svg>
+    
+    <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
+    </div>
+  <div class="w-full max-w-3xl rounded-2xl shadow-xl md:p-9 min-h-screen">
+    <div class="flex justify-center items-center gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <a href="https://nusky7studio.es" target="_blank" class="w-9 h-9 rounded-full bg-violet-500/60 hover:bg-violet-600 transition-colors flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+        </svg>
+      </a>
+      <a href="https://nusky7studio.es/newsletter.html" target="_blank" class="w-9 h-9 rounded-full bg-rose-400/60 hover:bg-rose-500 transition-colors flex items-center justify-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+        </svg>
+      </a>
+      </div>
+      <!-- Logo -> Lanzadera N7S -->
+      <a href="https://nusky7studio.es/sites" target="_blank">
+        <img src="https://nusky7studio.es/img/logos/nSteel.png" width="150" height="150" alt="nSteel Logo" class=" p-1">
+      </a>     
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <a href="https://nusky7studio.es/sites" target="_blank" class="w-9 h-9 rounded-full bg-cyan-500/60 hover:bg-cyan-600 transition-colors flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </a>
+        <a href="https://nusky7studio.es/blog" target="_blank" class="w-9 h-9 rounded-full bg-emerald-500/60 hover:bg-emerald-600 transition-colors flex items-center justify-center">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+    <h1 class="text-xl md:text-3xl font-medium border-b-2 border-b-emerald-200 font-orbi mt-1 mb-6 text-center animate-glowText2">Calculadora de Presupuesto Web</h1>
+    <form id="quoteForm" class="space-y-4">
+
+      <!-- Tipo de web -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+        <label for="webType" class="block mb-2 font-medium font-orbi text-purple-200">Tipo de web:</label>
+        <select id="webType" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">            
+          <optgroup label="Nuevas webs" class="bg-teal-700">
+            <option value="500">Web CMS (WordPress, Sitejet...): desde 500 €</option>
+            <option value="650" selected>Web básica (HTML · CSS · JS): desde 650 €</option>
+            <option value="800">Web personalizada (Bootstrap · Tailwind): desde 800 €</option>
+            <option value="1200">Web con backend (PHP, DB): desde 1200 €</option>
+            <option value="3500">Plataforma completa: desde 3500 €</option>
+          </optgroup>
+          <optgroup label="Otros servicios" class="bg-emerald-700">
+            <option value="250">Modificación web existente: desde 250 €</option>
+          </optgroup>
+        </select>    
+        </div>
+        <!-- Plazo de entrega --> 
+         <div>
+        <label for="urgency" class="block mb-2 font-medium font-orbi text-purple-200">Plazo de entrega:</label>
+        <select id="urgency" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
+            <option value="1">Flexible</option>
+            <option value="1.1">Normal (3-5 semanas): +10%</option>
+            <option value="1.3">Urgente (1-2 semanas): +30%</option>
+        </select>
+        </div>
+    </div>
+
+    <!-- Nº de páginas -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <div>
+            <label for="pages" class="block font-medium mb-2 font-orbi text-purple-200">Número de secciones:</label>
+            <select id="pages" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
+                <option value="1">1 página</option>
+                <option value="2">2 páginas</option>
+                <option value="3">3 páginas</option>
+                <option value="4">4 páginas</option>
+                <option value="5">5 páginas</option>
+                <option value="6">6 páginas</option>
+                <option value="7">7 páginas</option>
+                <option value="8">8 páginas</option>
+                <option value="9">9 o más páginas</option>
+            </select>
+        </div>  
+        <!-- Soporte en festivos  -->
+        <div >
+            <label for="supportLevel" class="block font-medium mb-2 font-orbi text-purple-200">Atención fin de semana:</label>
+            <select id="supportLevel" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
+                <option value="0" selected>No</option>
+                <option value="90">Atención puntual durante el proyecto (único) – +90 €</option>
+                <option value="0">Por intervención (30 €/hora o tarifa mensual a definir)</option>
+            </select>
+        </div>      
+    </div>   
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        <!-- Hosting? -->
+        <div>
+          <label for="hostingOption" class="block font-medium mb-2 text-purple-200 font-orbi">Hosting:</label>
+          <select id="hostingOption" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">         
+            <option value="9.95">1 Dominio: 9,95 €</option>
+            <option value="80" selected>Hosting: 80 € / 1 año</option>
+            <option value="89.95" selected>Hosting + Dominio: 89,95 € / 1 año</option>
+            <option value="50">Instalación en hosting cliente: 50 €</option>
+            <optgroup label="Sin Hosting ni dominio" class="text-center bg-gray-700"></optgroup>
+            <option value="0">A decidir más adelante: 0 €</option>
+          </select>
+      </div>
+      <!-- Dominios Extra -->
+      <div>
+        <label for="extraDomains" class="block font-medium mb-2 text-purple-200 font-orbi">Dominios extra:</label>
+        <select id="extraDomains" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
+          <optgroup label="Dominios adicionales" class="bg-orange-600">
+            <option value="0" selected>Ninguno</option>
+            <option value="9.95">1 dominio adicional – 9,95 €</option>
+            <option value="19.90">2 dominios adicionales – 19,90 €</option>
+            <option value="29.85">3 dominios adicionales – 29,85 €</option>
+          </optgroup>
+          <optgroup label="Subdominios personalizados" class="bg-amber-600">
+            <option value="20">Hasta 3 subdominios – 20 €</option>
+            <option value="40">Hasta 6 subdominios – 40 €</option>
+          </optgroup>
+        </select>
+      </div>      
+    </div>
+
+    <!-- Funcionalidades -->
+    <div>
+    <label class="block mb-2 font-medium font-orbi text-center text-lg text-purple-300">Funcionalidades</label>
+        <div class="space-y-2 grid grid-cols-1 md:grid-cols-2 bg-gray-700/80 rounded-3xl p-6 shadow-lg shadow-gray-950">
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-cyan-500" value="75"> Formulario de contacto <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+75 </span></label>
+            
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-pink-500" value="150"> Blog autogestionable <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+150 </span></label>
+            <div>
+            <label for="formCount" class="block font-medium mb-2">
+                <input type="checkbox" id="customForm" class="mr-2 w-4 h-4 align-middle accent-emerald-400" onchange="toggleFormOptions()" />
+                ¿Formularios adicionales?
+            </label>
+            <div id="formOptions" class="hidden mt-2">
+                <select id="formCount" class="w-2/3 p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
+                <option value="1" class="bg-gray-900">1 formulario (+50 €)</option>
+                <option value="2" class="bg-gray-900">2 formularios (+100 €)</option>
+                <option value="3" class="bg-gray-900">3 o más (+150 €)</option>
+                </select>
+            </div>
+            </div> 
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-sky-500" value="100"> Multilenguaje 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+100 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-yellow-400" value="210"> Pasarela de pago 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+210 </span></label>                  
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-amber-500" value="40"> Integración con redes sociales 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+40 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-teal-500" value="60"> Carga inicial de contenido 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+60 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-lime-500" value="120"> Optimización SEO básica 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+120 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-red-500" value="70"> Versión exportable a PDF 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+70 </span></label>
+            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-purple-500" value="50"> Instalación en hosting cliente 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>     -->
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-fuchsia-500" value="50"> Animaciones 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>
+            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-rose-500" value="80"> Hosting 1 año 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+80 </span></label> -->
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-orange-500" value="50"> Mantenimiento  
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 €/mes</span></label>  
+            <label class="block"><input type="checkbox" id="includeIVA" class="mr-2 w-4 h-4 text-rose-400 accent-green-600"> Incluir IVA  
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">21%</span>
+            </label>
+        </div>
+    </div>
+    
+    <!-- Codigo promocional -->
+    <div class="py-3">
+      <div class="flex ">
+        <input type="text" id="promoCode" class="shadow-md shadow-gray-950 w-full p-2 rounded-l-full bg-gray-700/80 text-white focus:outline-none focus:ring-1 focus:ring-purple-200 focus:ring-offset-2 focus:ring-offset-gray-900" placeholder="⭐ Código promocional ..." />
+        <button type="button" onclick="applyPromo()" class="shadow-md shadow-gray-950 bg-pink-600/80 text-fuchsia-300 px-4 py-2 rounded-r-full hover:bg-fuchsia-400 hover:text-black font-orbi font-medium">Aplicar</button>
+      </div>
+      <p id="promoFeedback" class="mt-1 text-sm text-emerald-400 hidden font-orbi drop-shadow-lg">Descuento aplicado ✅</p>
+    </div>  
+
+    <!-- Resultado Estimado -->
+    <div>
+    <div class="pt-3 flex justify-center items-center relative">
+        <div class="flex flex-col items-center justify-center bg-gradient-to-br from-fuchsia-400/30 via-purple-500/20 to-emerald-300/30 py-3 rounded-t-3xl w-full backdrop-blur-sm mb-0">
+            <svg viewBox="0 0 200 200" class="absolute w-full h-full top-0 left-0 -z-10" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="30" cy="150" r="4" fill="#5CE1E6">
+                    <animate attributeName="cy" values="150;0" dur="6s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="6s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="100" cy="170" r="3" fill="#FF66C4">
+                    <animate attributeName="cy" values="170;0" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="8s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="60" cy="180" r="5" fill="#FFDE59">
+                    <animate attributeName="cy" values="180;0" dur="7s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="7s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="140" cy="160" r="6" fill="#ff7c89">
+                    <animate attributeName="cy" values="160;0" dur="5.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="5.5s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="180" cy="190" r="4" fill="#FF914D">
+                    <animate attributeName="cy" values="190;0" dur="9s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="9s" repeatCount="indefinite"/>
+                </circle>
+                <circle cx="20" cy="160" r="3.5" fill="#FF3131">
+                    <animate attributeName="cy" values="160;0" dur="6.5s" repeatCount="indefinite"/>
+                    <animate attributeName="opacity" values="1;0" dur="6.5s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+                     
+            <p class="text-xl text-center animate-glowText2 font-orbi"> Presupuesto Estimado </p> 
+            <p id="total" class="text-emerald-300 bg-gray-900/70 p-2 px-4 text-xl rounded-3xl mt-1">0 €</p> 
+            <div class="mt-2 text-sm text-zinc-300 text-center hidden" id="ivaInfo">
+                Incluye IVA: <span id="ivaAmount"></span> €
+            </div>  
+            <div class="flex gap-4 mt-4">
+              <button type="button" onclick="resetForm()" class="bg-gray-500/60 shadow-md hover:shadow-lg text-rose-500 text-lg drop-shadow-md hover:text-black hover:bg-rose-500 p-3 px-3.5 rounded-full font-orbi font-medium">
+                  <svg  class="w-6 h-6 fill-current" viewBox="0 0 36 36" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" preserveAspectRatio="xMidYMid meet" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path fill="currentColor" d="M21.533 18.002L33.768 5.768a2.5 2.5 0 0 0-3.535-3.535L17.998 14.467L5.764 2.233a2.498 2.498 0 0 0-3.535 0a2.498 2.498 0 0 0 0 3.535l12.234 12.234L2.201 30.265a2.498 2.498 0 0 0 1.768 4.267c.64 0 1.28-.244 1.768-.732l12.262-12.263l12.234 12.234a2.493 2.493 0 0 0 1.768.732a2.5 2.5 0 0 0 1.768-4.267L21.533 18.002z"></path></g></svg>
+              </button>
+          
+              <button type="button" onclick="calculateQuote()" class="bg-gray-500/60 shadow-md hover:shadow-lg text-emerald-500 text-lg drop-shadow-md hover:text-black hover:bg-emerald-500 p-3 rounded-full font-orbi font-medium">
+                  <!-- Icono de 'Calcular' (ej: calculadora) -->
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 fill-current" viewBox="0 0 24 24">
+                      <path d="M6 2h12a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm0 2v4h12V4H6zm0 6v10h12V10H6zm2 2h2v2H8v-2zm4 0h2v2h-2v-2zm4 0h2v2h-2v-2zm-8 4h2v2H8v-2zm4 0h2v2h-2v-2z"/>
+                  </svg>
+              </button>
+          </div>          
+        </div>
+    </div>    
+    <!-- Datos cliente -->
+      <div class="w-fullplaceholder">
+        <div class="space-y-4 bg-black/40 p-6 rounded-b-2xl mt-0">
+          <h3 class="text-lg font-medium text-purple-200 font-orbi mb-2 text-center">Datos del Cliente</h3>
+        
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <input type="text" id="clientName" required placeholder="Nombre o Empresa" class="w-full p-2 rounded-3xl bg-gray-700/80 text-white focus:ring-2 focus:ring-purple-200">
+            
+            <input type="email" id="clientEmail" required placeholder="Correo electrónico" class="w-full p-2 rounded-3xl bg-gray-700/80 text-white focus:ring-2 focus:ring-purple-200">
+            
+            <input type="tel" id="clientPhone" name="phone" placeholder=" Teléfono" required
+            class="w-full p-2 rounded-3xl bg-gray-700/80 text-white focus:ring-2 focus:ring-purple-200">
+          </div>     
+
+     <div class="grid grid-cols-2 gap-4 pt-5 pb-6 flex-wrap justify-center"> 
+        <button type="button" onclick="downloadPDF()" class="bg-purple-800/75 shadow-lg shadow-gray-950 text-gray-200 font-medium text-lg drop-shadow-lg hover:text-violet-300 px-4 py-2 rounded-2xl font-orbi hover:bg-black hover:rounded-full line-clamp-1">📑 Descargar PDF</button>        
+        <button type="button" onclick="sendQuoteByEmail()" class="bg-amber-500/75 shadow-lg shadow-gray-950 text-gray-200  font-medium text-lg drop-shadow-lg hover:text-amber-500 px-4 py-2 rounded-2xl font-orbi hover:bg-black hover:rounded-full line-clamp-1">✉️ Enviar propuesta</button>
+    </div>
+    </div>        
+  </div>
+</div>
+</form>
+
+<hr class="my-12 border-t-3 border-dashed border-emerald-400 w-11/12 mx-auto rounded-full">
+
+<section class="mt-12 max-w-6xl mx-auto px-6 text-md text-gray-300 leading-relaxed bg-black/40 rounded-3xl p-9">
+  <h2 class="text-xl font-medium text-center mb-4 font-orbi text-teal-300">¿Cuánto cuesta una página web profesional?</h2>
+  
+  <p class="mb-4">
+    La calculadora online de presupuestos web de N7Studio que te permitirá estimar el coste real de desarrollar una web profesional a medida según tus objetivos y necesidades. Desde una <strong >web básica o landing page</strong> hasta <strong >tiendas online</strong>, <strong >portales web con backend</strong> o <strong >plataformas completas tipo SaaS</strong>.
+  </p>
+
+  <p class="mb-4">
+    Elige tus opciones y funcionalidades como: <code class="text-cyan-400">Nº de secciones</code>, <code class="text-cyan-400">urgencia del proyecto</code>, <code class="text-cyan-400">dominios y subdominios</code>, <code class="text-cyan-400">animaciones</code>, <code class="text-cyan-400">formularios personalizados</code>, <code class="text-cyan-400">soporte técnico</code> o <code class="text-cyan-400">optimización SEO</code>. Todo adaptado a proyectos personales, empresas locales o negocios online que buscan visibilidad y escalabilidad.
+  </p>
+
+  <p class="mb-4">
+    Desarrollamos soluciones modernas utilizando tecnologías como <code class="text-cyan-400">HTML</code>, <code class="text-cyan-400">CSS</code>, <code class="text-cyan-400">JavaScript</code>, <code class="text-cyan-400">Tailwind</code>, <code class="text-cyan-400">Bootstrap</code>, y frameworks como <code class="text-cyan-400">PHP</code>, <code class="text-cyan-400">Node.js</code>, <code class="text-amber-400">Express</code> o <code class="text-cyan-400">Angular</code> para sistemas más complejos.
+  </p>
+
+  <p class="mt-4 mb-4">
+    ¿Quieres afinar aún más tu presupuesto? La calculadora también permite <strong class="text-emerald-300">incluir automáticamente el IVA</strong> y <strong class="text-emerald-300">aplicar códigos de descuento promocionales</strong>. 
+    Puedes conseguir estos códigos <a href="https://nusky7studio.es/newsletter.html" class="text-amber-400 underline hover:text-amber-300">suscribiéndote a la newsletter</a> o siguiéndome en mis <a href="https://www.linkedin.com/in/nusky7" target="_blank" class="text-amber-400 underline hover:text-cyan-300"> redes sociales</a>. 
+  </p>  
+
+  <p class="mb-4">
+    Calcula el <span class="text-emerald-300 font-medium text-lg">- presupuesto online de tu web -</span> en segundos y descarga un PDF con todos los detalles. ¡Sin compromiso!
+  </p>
+
+  <p>
+    ¿Tienes dudas? Explora los distintos sitios desde la <a href="https://nusky7studio.es/sites" class="text-amber-400 underline hover:text-amber-300">Lanzadera N7S</a> o visita el <a href="https://nusky7studio.es/blog" class="text-amber-400 underline hover:text-amber-300">N7Blog</a> para aprender sobre diseño, UX y desarrollo web profesional.
+  </p>
+
+
+  <hr class="my-8 border-t-2 border-teal-500 rounded-full">
+
+<div class="mt-8 bg-black p-6 rounded-2xl text-sm text-slate-300 space-y-4 leading-relaxed">
+  <h3 class="text-xl font-medium text-slate-100 font-orbi text-center">Información importante y condiciones del servicio</h3>
+
+  <p>
+    El presupuesto calculado mediante esta herramienta es <i class="text-green-300 font-medium">una estimación orientativa</i>. Cada proyecto web puede variar en función de la complejidad técnica, número de funcionalidades necesarias, integración con servicios externos (como pasarelas de pago, sistemas de login, backoffice, etc.) y necesidades específicas del cliente.
+  </p>
+
+  <p>
+    En el caso de desarrollos avanzados como <code class="text-cyan-400">plataformas SaaS</code>, <code class="text-cyan-400">portales con backend</code> o <code class="text-cyan-400">tiendas con gestión de pedidos</code>, será necesario realizar una reunión previa para analizar los requisitos funcionales y técnicos antes de emitir una propuesta definitiva.
+  </p>
+
+  <p>
+    Si decides contratar <i class="text-green-300 font-medium">hosting y dominio</i> a través de N7Studio, la gestión se realizará directamente con proveedores de confianza. Las tarifas ofrecidas reflejan precios estándar de mercado o planes personalizados tipo reseller, y pueden incluir asistencia técnica básica o ampliada según el servicio contratado.
+  </p>
+
+  <p>
+    Puedes seleccionar también <i class="text-green-300 font-medium">instalación en tu propio hosting</i>. En ese caso, será necesario que el proveedor permita acceso mediante FTP, panel de control o similar, y que cumpla con los requisitos técnicos mínimos según la tecnología a utilizar (por ejemplo: soporte para PHP, bases de datos MySQL, certificados SSL, etc.).
+  </p>
+
+  <p class="text-zinc-400 italic text-xs text-center">
+    * Este simulador es más preciso para presupuestos de páginas informativas o de servicios, portfolios, blogs personales, landings o webs corporativas.<br><br>Si tienes un proyecto más complejo, estaremos encantados de valorarlo contigo. 
+  </p>
+ 
+</div>
+
+</section>
+
+
+<footer class="mt-20 bg-zinc-950/70 w-full text-sm text-zinc-400 text-center py-5 px-4 border-t border-zinc-800 rounded-t-3xl">
+  <img src="https://nusky7studio.es/img/logos/nSteel.png" width="50" height="50" alt="Footer Logo" class="mx-auto mb-3">
+  <p class="mb-2">
+    © <span id="year">año actual</span> <a href="https://nusky7studio.es" target="_blank" class="text-fuchsia-400 hover:text-fuchsia-300">N7Studio</a> — Todos los derechos reservados.
+  </p>
+  <p>
+    <a href="./" class="hover:text-teal-300">Inicio</a> &nbsp; · &nbsp;
+    <a href="https://nusky7studio.es/blog" target="_blank" class="hover:text-teal-300">Blog</a> &nbsp; · &nbsp;
+    <a href="https://nusky7studio.es/sites" target="_blank" class="hover:text-teal-300">Contacto</a>
+  </p>
+  <p class="mt-2 text-xs text-zinc-500">
+    <a href="https://nusky7studio.es/aviso-legal.html" target="_blank" class="hover:text-teal-300">Aviso Legal</a> · 
+    <a href="https://nusky7studio.es/politica-privacidad.html" target="_blank" class="hover:text-teal-300">Política de Privacidad</a>
+  </p>  
+</footer>
+
+<!-- Toast Message -->
+<div
+id="toast"
+class="hidden font-mono text-emerald-100 fixed bottom-1/2 right-0 text-center text-lg font-semibold p-1.5 pr-3 rounded-l-md shadow-lg transition-all duration-300 z-50"
+style="background: linear-gradient(180deg, #3b3b3b, #262626)"
+>
+<!-- Contenedor principal -->
+<div class="flex items-center justify-between w-full">
+  <!-- Leds rojo y amarillo -->
+  <div
+    class="grid p-0 w-1 h-1 mr-2 mb-16 rounded-full space-y-2 items-center"
+  >
+    <div
+      class="shadow-[0_0_2px_0.5px_rgb(255,0,0,0.6)] p-1 -ml-0.5 bg-red-500 rounded-full animate-pulse border-2 border-neutral-900 border-opacity-50"
+    ></div>
+    <div
+      class="yellow-btn shadow-[0_0_2px_1.5px_rgb(255,356,0,0.4)] p-0.5 w-1 bg-amber-400 rounded-full animate-fastBlink"
+    ></div>
+  </div>
+  <!-- Contenedor del mensaje -->
+  <div
+    id="border-msg"
+    class="p-4 bg-gradient-to-b bg-emerald-900 rounded m-0"
+  >
+    <div id="toastMsg"></div>
+  </div>
+
+</div>
+<script src="../js/presupuesto.js"></script>
+<script>
+  document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>
+</body>
+</html>
