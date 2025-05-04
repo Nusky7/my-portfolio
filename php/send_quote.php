@@ -1,14 +1,8 @@
 <?php
-// CORS: permitir origen desde web y local
 $allowedOrigins = [
   "https://nusky7studio.es",
   "http://127.0.0.1:5501"
 ];
-
-$clientName = $_POST['clientName'] ?? 'No proporcionado';
-$clientEmail = $_POST['clientEmail'] ?? 'No proporcionado';
-$clientPhone = $_POST['clientPhone'] ?? 'No proporcionado';
-
 
 $origin = $_SERVER['HTTP_ORIGIN'] ?? '';
 if (in_array($origin, $allowedOrigins)) {
@@ -17,71 +11,88 @@ if (in_array($origin, $allowedOrigins)) {
   header("Access-Control-Allow-Headers: Content-Type");
 }
 
-// Si no hay archivo PDF, abortar
+// Validar archivo PDF
 if (!isset($_FILES['pdf']) || $_FILES['pdf']['error'] !== UPLOAD_ERR_OK) {
   http_response_code(400);
   echo "Archivo PDF no recibido correctamente.";
   exit;
 }
 
-$to = 'tu-email@n7studio.es'; // tu email
+// Datos del cliente
+$clientName = $_POST['clientName'] ?? 'No proporcionado';
+$clientEmail = $_POST['clientEmail'] ?? 'No proporcionado';
+$clientPhone = $_POST['clientPhone'] ?? 'No proporcionado';
+
+// Email destinatario principal
+$to = "info@nusky7studio.es"; // Asegúrate de que este es el tuyo real
 $subject = "Nuevo presupuesto desde N7Studio";
-$headers = "MIME-Version: 1.0" . "\r\n";
-$headers .= "Content-type: text/html; charset=UTF-8" . "\r\n";
-$headers .= "From: N7Studio <no-reply@nusky7studio.es>" . "\r\n";
-$headers .= "Cc: {$clientEmail}" . "\r\n"; // Copia para el cliente
+
+// Construir mensaje en HTML
+$htmlMessage = '
+<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; color: #111;">
+  <h2 style="color: #A259FF;">Nuevo presupuesto web desde N7Studio</h2>
+  <p>Hola ' . htmlspecialchars($clientName) . ', has recibido el presupuesto para tu proyecto generado desde la calculadora web.</p>
+
+  <h4 style="text-align:center;">Datos del Cliente</h4>
+  <div style="border:1px solid #444; border-radius:8px; overflow:hidden;">
+    <div style="background-color:rgba(162,89,255,0.15); color:#A259FF; padding:12px; border-bottom:1px solid #444;">
+      👤 Nombre
+    </div>
+    <div style="padding:10px; border-bottom:1px solid #333;">' . htmlspecialchars($clientName) . '</div>
+
+    <div style="background-color:rgba(162,89,255,0.15); color:#A259FF; padding:12px; border-bottom:1px solid #444;">
+      📧 Email
+    </div>
+    <div style="padding:10px; border-bottom:1px solid #333; word-break:break-all;">' . htmlspecialchars($clientEmail) . '</div>
+
+    <div style="background-color:rgba(162,89,255,0.15); color:#A259FF; padding:12px; border-bottom:1px solid #444;">
+      📱 Teléfono
+    </div>
+    <div style="padding:10px; border-bottom:1px solid #333;">' . htmlspecialchars($clientPhone) . '</div>
+
+  </div>
+
+  <p style="margin-top:1em;">📎 Se adjunta el archivo PDF con los detalles estimados.</p>
+  <p style="font-size: 0.9em; color:#888;">* Recuerda: los presupuestos online son orientativos. Para un presupuesto cerrado, agenda una reunión.</p>
+
+<p style="margin-top:2em; text-align:center; font-size:0.8em; color:#555;">
+  N7Studio · Diseño & Desarrollo Web<br>
+  <a href="https://nusky7studio.es/sites" style="color:#A259FF; text-decoration:none;" target="_blank">www.nusky7studio.es</a>
+</p>
 
 
-// Cuerpo del mensaje del correo
-$message = <<<EOD
-Hola 👋,
+</div>
+';
 
-Has recibido un nuevo presupuesto generado desde la calculadora web de N7Studio.
-
-Se adjunta el archivo PDF con los detalles del presupuesto.
-
-Se recuerda que los presupuestos online son aproximados y hay que valorar las necesidades del cliente en una reunión o meeting.
-
-—
-N7Studio - Desarrollo web personalizado
-EOD;
 
 // Preparar el archivo
 $file = $_FILES['pdf']['tmp_name'];
 $filename = basename($_FILES['pdf']['name']);
-$fileContents = file_get_contents($file);
-$content = chunk_split(base64_encode($fileContents));
+$fileContents = chunk_split(base64_encode(file_get_contents($file)));
 $uid = md5(uniqid(time()));
 $boundary = "==Multipart_Boundary_x{$uid}x";
 
-// Encabezados
+// Headers
 $headers = "From: N7Studio <info@nusky7studio.es>\r\n";
 $headers .= "Reply-To: info@nusky7studio.es\r\n";
+$headers .= "Cc: {$clientEmail}\r\n"; // copia para cliente
 $headers .= "MIME-Version: 1.0\r\n";
 $headers .= "Content-Type: multipart/mixed; boundary=\"{$boundary}\"\r\n";
 
-// Cuerpo del correo
+// Cuerpo completo con adjunto
 $body = "--{$boundary}\r\n";
-$body .= "Content-Type: text/plain; charset=\"utf-8\"\r\n";
+$body .= "Content-Type: text/html; charset=\"UTF-8\"\r\n";
 $body .= "Content-Transfer-Encoding: 7bit\r\n\r\n";
-$body .= $message = "
-<h3>Datos del Cliente</h3>
-<ul>
-  <li><strong>Nombre:</strong> {$clientName}</li>
-  <li><strong>Email:</strong> {$clientEmail}</li>
-  <li><strong>Teléfono:</strong> {$clientPhone}</li>
-</ul>
-<p>Se adjunta el presupuesto en PDF generado desde la calculadora de N7Studio.</p>
-";
+$body .= $htmlMessage . "\r\n";
 
 $body .= "--{$boundary}\r\n";
 $body .= "Content-Type: application/pdf; name=\"{$filename}\"\r\n";
 $body .= "Content-Transfer-Encoding: base64\r\n";
 $body .= "Content-Disposition: attachment; filename=\"{$filename}\"\r\n\r\n";
-$body .= $content . "\r\n";
+$body .= $fileContents . "\r\n";
 $body .= "--{$boundary}--";
 
-// Enviar
+// Enviar correo
 if (mail($to, $subject, $body, $headers)) {
   echo "Enviado";
 } else {

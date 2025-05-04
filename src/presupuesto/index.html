@@ -69,7 +69,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
 </head>
 
-<body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center p-6 font-poppins">
+<body class="bg-zinc-900 text-white min-h-screen flex flex-col items-center justify-center p-3 md:p-6 font-poppins">
 <!-- Fondo Bkg -->
 <div class="fixed inset-0 -z-10">
     <svg class="w-full h-full animate-pulse opacity-70" xmlns="http://www.w3.org/2000/svg">
@@ -90,7 +90,7 @@
     
     <div class="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent"></div>
     </div>
-  <div class="w-full max-w-3xl rounded-2xl shadow-xl md:p-9 min-h-screen">
+  <div class="w-full md:max-w-4xl rounded-2xl shadow-xl md:p-9 min-h-screen">
     <div class="flex justify-center items-center gap-4">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
       <a href="https://nusky7studio.es" target="_blank" class="w-9 h-9 rounded-full bg-violet-500/60 hover:bg-violet-600 transition-colors flex items-center justify-center">
@@ -131,16 +131,24 @@
         <label for="webType" class="block mb-2 font-medium font-orbi text-purple-200">Tipo de web:</label>
         <select id="webType" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">            
           <optgroup label="Nuevas webs" class="bg-teal-700">
+            <option value="160">Landing page CMS (WordPress, Sitejet...): desde 160 €</option>
+            <option value="250">Landing page básica (HTML· CSS · JS): desde 250 €</option>
             <option value="500">Web CMS (WordPress, Sitejet...): desde 500 €</option>
             <option value="650" selected>Web básica (HTML · CSS · JS): desde 650 €</option>
             <option value="800">Web personalizada (Bootstrap · Tailwind): desde 800 €</option>
             <option value="1200">Web con backend (PHP, DB): desde 1200 €</option>
             <option value="3500">Plataforma completa: desde 3500 €</option>
           </optgroup>
-          <optgroup label="Otros servicios" class="bg-emerald-700">
+          <optgroup label="🛠️ Otros servicios" class="bg-emerald-700">
             <option value="250">Modificación web existente: desde 250 €</option>
+            <option value="180">Optimización SEO on-page única: desde 180 €</option>
+            <option value="150">Optimización de velocidad (PageSpeed): desde 150 €</option>
+            <option value="200">Rediseño visual parcial (sección o landing): desde 200 €</option>
+            <option value="100">Auditoría UX + sugerencias de mejora: desde 100 €</option>
+            <!-- <option value="160">Chat o widget de atención al cliente: desde 160 €</option>
+            <option value="100">Integración con newsletter (MailerLite, Mailchimp...): desde 100 €</option> -->
           </optgroup>
-        </select>    
+        </select>  
         </div>
         <!-- Plazo de entrega --> 
          <div>
@@ -345,7 +353,7 @@
   <h2 class="text-xl font-medium text-center mb-4 font-orbi text-teal-300">¿Cuánto cuesta una página web profesional?</h2>
   
   <p class="mb-4">
-    La calculadora online de presupuestos web de N7Studio que te permitirá estimar el coste real de desarrollar una web profesional a medida según tus objetivos y necesidades. Desde una <strong >web básica o landing page</strong> hasta <strong >tiendas online</strong>, <strong >portales web con backend</strong> o <strong >plataformas completas tipo SaaS</strong>.
+    La calculadora online de presupuestos web de N7Studio te permitirá estimar el coste real de desarrollar una web profesional a medida según tus objetivos y necesidades. Desde una <strong >web básica o landing page</strong> hasta <strong >tiendas online</strong>, <strong >portales web con backend</strong> o <strong >plataformas completas tipo SaaS</strong>.
   </p>
 
   <p class="mb-4">
@@ -358,7 +366,7 @@
 
   <p class="mt-4 mb-4">
     ¿Quieres afinar aún más tu presupuesto? La calculadora también permite <strong class="text-emerald-300">incluir automáticamente el IVA</strong> y <strong class="text-emerald-300">aplicar códigos de descuento promocionales</strong>. 
-    Puedes conseguir estos códigos <a href="https://nusky7studio.es/newsletter.html" class="text-amber-400 underline hover:text-amber-300">suscribiéndote a la newsletter</a> o siguiéndome en mis <a href="https://www.linkedin.com/in/nusky7" target="_blank" class="text-amber-400 underline hover:text-cyan-300"> redes sociales</a>. 
+    Puedes conseguir estos códigos <a href="https://nusky7studio.es/newsletter.html" class="text-amber-400 underline hover:text-amber-300">suscribiéndote a la newsletter</a> o siguiéndome en mis <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="text-amber-400 underline hover:text-cyan-300"> redes sociales</a>. 
   </p>  
 
   <p class="mb-4">
@@ -368,11 +376,10 @@
   <p>
     ¿Tienes dudas? Explora los distintos sitios desde la <a href="https://nusky7studio.es/sites" class="text-amber-400 underline hover:text-amber-300">Lanzadera N7S</a> o visita el <a href="https://nusky7studio.es/blog" class="text-amber-400 underline hover:text-amber-300">N7Blog</a> para aprender sobre diseño, UX y desarrollo web profesional.
   </p>
-
-
-  <hr class="my-8 border-t-2 border-teal-500 rounded-full">
-
-<div class="mt-8 bg-black p-6 rounded-2xl text-sm text-slate-300 space-y-4 leading-relaxed">
+</section>
+<hr class="my-8 border-t-2 border-teal-500 rounded-full">
+<section class="mx-0 px-0">
+<div class="mt-8 bg-black/70 p-3 rounded-2xl text-sm text-slate-300 space-y-4 leading-relaxed">
   <h3 class="text-xl font-medium text-slate-100 font-orbi text-center">Información importante y condiciones del servicio</h3>
 
   <p>
@@ -396,7 +403,6 @@
   </p>
  
 </div>
-
 </section>
 
 
