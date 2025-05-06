@@ -3,10 +3,10 @@ function showCategory(category) {
 
     tabs.forEach(tab => {
         if (tab.dataset.category === category) {
-            tab.classList.add("text-emerald-100", "bg-zinc-900", "animate-glowText2");
+            tab.classList.add("text-emerald-100", "bg-gray-700", "animate-glowText2");
             tab.classList.remove("text-white");
         } else {
-            tab.classList.remove("text-emerald-100", "bg-zinc-900", "animate-glowText2");
+            tab.classList.remove("text-emerald-100", "bg-gray-700", "animate-glowText2");
             tab.classList.add("text-white");
         }
     });

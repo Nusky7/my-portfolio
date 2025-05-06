@@ -1,4 +1,6 @@
+ 
 document.addEventListener("DOMContentLoaded", () => {
+
 const subtitle = document.getElementById("panel-subtitle");
 
 function toggleAboutText() {
@@ -14,7 +16,7 @@ function toggleAboutText() {
 
 document.getElementById("toggle-about").addEventListener("click", toggleAboutText);
 
-  const swiper = new Swiper('.swiper-container', {
+  new Swiper('.swiper-container', {
     effect: 'cards',
     cardsEffect: {
       rotate: true,
@@ -103,7 +105,7 @@ const loadTranslations = async (lang) => {
   document.querySelector('a[href="#projects"]').textContent = translations.menu.projects;
   document.querySelector('a[href="#skills"]').textContent = translations.menu.stack;
   document.querySelector('a[href="#player"]').textContent = translations.menu.audio_player;
-  document.querySelector('a[href="#comments-section"]').innerHTML = translations.menu.resources_comments;
+  // document.querySelector('a[href="#comments-section"]').innerHTML = translations.menu.resources_comments;
   document.querySelector('a[href="#action-panel"]').innerHTML = translations.menu.download_cv;
   document.querySelector('a[href="#contact"]').textContent = translations.menu.contact;
   document.querySelector('a[href="https://services.nusky7studio.es"]').textContent = translations.menu.intro_panel;
@@ -118,6 +120,9 @@ const loadTranslations = async (lang) => {
     });
   document.getElementById("project-title").textContent = translations.projects.title;
   document.getElementById("working").innerHTML = translations.projects.working;
+  document.getElementById("pWeb-title").innerHTML = translations.projects.pWebTitle;
+  document.getElementById("presupuestoWeb").innerHTML = translations.projects.presupuestoWeb;
+  document.getElementById("galaVlc").innerHTML = translations.projects.galaValencia;
   document.getElementById("landingInmo").innerHTML = translations.projects.landingInmo;
   document.getElementById("blog").innerHTML = translations.projects.blog;
   document.getElementById("project").innerHTML = translations.projects.project;
@@ -136,16 +141,6 @@ const loadTranslations = async (lang) => {
   // Player
   document.getElementById("song-title").innerHTML = translations.player.songs;
   document.getElementById("videos-title").innerHTML = translations.player.videos;
-  // Forms
-  // document.querySelectorAll("form").forEach(form => {
-  //   form.querySelectorAll("input, textarea").forEach(input => {
-  //     const name = input.getAttribute("name");
-  //     if (translations.form[name]) {
-  //       input.placeholder = translations.form[name]; 
-  //     }
-
-      
-  //   });
     // Forms
     document.querySelectorAll("form").forEach(form => {
       // Inputs y textareas
@@ -202,17 +197,17 @@ const loadTranslations = async (lang) => {
     });
   
   // Donations 
-  document.getElementById('donation-title').innerHTML = translations.donations.title;
-  document.getElementById('donate-with').innerHTML = translations.donations.text;
-  document.getElementById('coffee').innerHTML = translations.donations.button;
-  document.getElementById('btext').innerHTML = translations.donations.btext;
+  // document.getElementById('donation-title').innerHTML = translations.donations.title;
+  // document.getElementById('donate-with').innerHTML = translations.donations.text;
+  // document.getElementById('coffee').innerHTML = translations.donations.button;
+  // document.getElementById('btext').innerHTML = translations.donations.btext;
   // Terminal
   document.getElementById('t-text').innerHTML = translations.terminal.title;
   document.getElementById('t-text1').innerHTML = translations.terminal.txt;
   document.getElementById('t-text2').innerHTML = translations.terminal.txt1;
   document.getElementById('t-text3').innerHTML = translations.terminal.txt2;
   document.getElementById('t-text4').innerHTML = translations.terminal.txt3;
-  document.getElementById('comments-title').innerHTML = translations.terminal.txt4;
+  // document.getElementById('comments-title').innerHTML = translations.terminal.txt4;
   document.getElementById("t-text5").innerHTML = translations.terminal.txt5;
   document.getElementById("http").innerHTML = translations.terminal.http;
   document.getElementById("effects").innerHTML = translations.terminal.effects;
@@ -220,7 +215,7 @@ const loadTranslations = async (lang) => {
   document.getElementById("databases").innerHTML = translations.terminal.databases;
   document.getElementById("maps").innerHTML = translations.terminal.maps;
   document.getElementById("design").innerHTML = translations.terminal.design;
-  document.getElementById("community").innerHTML = translations.terminal.community;
+  document.getElementById("community").innerHTML = translations.terminal.community;  
 
     };
      
@@ -239,6 +234,34 @@ function t(key, variables = {}) {
   });
   return text;
 }
+
+  // Obtener estadísticas de valoraciones
+  // function fetchRatings() {
+  //   $.get('https://nusky7studio.es/php/get_ratings.php', function (res) {
+  //       if (res.status === 'success') {
+  //           $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
+  //           $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
+  //           $('.rateit').rateit('value', res.average_rating); // Mostrar promedio
+  //       }
+  //   });
+  // }
+
+  function fetchRatings() {
+    console.log("Llamando a fetchRatings...");
+    $.get('https://nusky7studio.es/php/get_ratings.php', function (res) {
+        console.log("Respuesta de ratings:", res);
+        if (res.status === 'success') {
+            $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
+            $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
+            $('.rateit').rateit('value', res.average_rating);
+        } else {
+            console.warn("Respuesta no fue success:", res);
+        }
+    }).fail(function(err) {
+        console.error("Error en fetchRatings:", err);
+    });
+  }
+
 
 const initializeRateIt = () => {
     if (typeof $.fn.rateit === 'undefined') {
@@ -284,22 +307,9 @@ const initializeRateIt = () => {
             });
         });
 
-        // Obtener estadísticas de valoraciones
-        function fetchRatings() {
-            $.get('https://nusky7studio.es/php/get_ratings.php', function (response) {
-                const res = JSON.parse(response);
-                if (res.status === 'success') {
-                    $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
-                    $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
-                    $('.rateit').rateit('value', res.average_rating); // Mostrar promedio
-                }
-            });
-        }
-
         fetchRatings();
     });
 };
-
 
 
 const langButtons = document.querySelectorAll('.lang-btn');
@@ -320,8 +330,7 @@ document.getElementById("lang-switch-es").addEventListener("click", () => {
 document.getElementById("lang-switch-en").addEventListener("click", () => {
   loadTranslations("en");
 });
-  loadTranslations("es");
-  
+
 
 
 function changeCVLang(language) {
@@ -354,5 +363,7 @@ document.getElementById('lang-switch-en').onclick = function() {
 document.getElementById('lang-switch-es').onclick = function() {
   changeCVLang('es');
   };
+
+  loadTranslations("es"); 
 
 });

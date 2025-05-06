@@ -6,12 +6,12 @@ window.cerrarPopup = function () {
 // Ocultar el popup siempre al cargar la página
 window.addEventListener("pageshow", () => {
   const popup = document.getElementById("miPopup");
-  if (popup) popup.classList.add("hidden");
+  popup?.classList.add("hidden");
 });
 
 function mostrarPopup() {
   const popup = document.getElementById("miPopup");
-  if (popup) popup.classList.remove("hidden");
+  popup?.classList.remove('hidden', 'animate-reduceAndFade');
 }
 
 // function yaSeMostroPopupHoy() {
@@ -25,7 +25,7 @@ function mostrarPopup() {
 //   localStorage.setItem("popupFechaMostrado", hoy);
 // }
 
-// Mostrar el popup si no se ha mostrado hoy
+// // Mostrar el popup si no se ha mostrado hoy
 // window.addEventListener("DOMContentLoaded", () => {
 //   if (!yaSeMostroPopupHoy()) {
 //     setTimeout(() => {

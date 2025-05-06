@@ -41,6 +41,15 @@ select:-webkit-autofill:focus,
     color: #444;
 }
 
+#miPopup svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
 html, body{
   cursor: url('/img/cursor.png') 16 16, cursor !important;
   margin: 0;
@@ -317,9 +326,6 @@ body, p, li, h1, h2, h3, h4, h5, h6, a {
 #channelBtn {
   border: 2.5px outset #161616;
 }
-#offBtn {
-  border: 4.5px outset #161616;
-}
 
 .giscus {
   max-height: 540px;
@@ -334,17 +340,9 @@ body, p, li, h1, h2, h3, h4, h5, h6, a {
   border: none;
 }
 
-html, body{
-  cursor: url('/img/cursor.png') 16 16, auto;
-  margin: 0;
-  overflow-x: hidden; 
-  height: 100%;
-  scrollbar-width: thin; 
-  scrollbar-color: #AAF8D4 #09090B !important;  
-  height: 100%;
-}
 
-#offBtn {
+
+/* #offBtn {
   border: 4.5px outset #161616;
 }
 
@@ -359,7 +357,7 @@ html, body{
 .giscus-frame {
   max-height: 100%; 
   border: none;
-}
+} */
 
 input[type="range"]::-webkit-slider-thumb {
   background-color: #F43F5E;
@@ -526,9 +524,9 @@ a, button, summary {
 .social {
   position: absolute;
   display: flex;
-  left: 352px;
-  margin-top: 15rem;
-  gap: 1rem;
+  left: 20%;
+  margin-top: 14rem;
+  gap: 0.6rem;
 }
 
 .social-img {
@@ -587,9 +585,13 @@ h1 {
   max-width: 40px;
 }
 
-.song-btn:hover {
-  border: 3px groove;
+.song-btn {
+  transition: transform 0.3s ease; 
 }
+.song-btn:hover {
+  transform: scale(1.2);
+}
+
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
 }
@@ -603,7 +605,7 @@ h1 {
 .swiper {
   width: 100% !important;
   height: auto;
-  margin: 0 auto;
+  margin: 0 ;
 }
 
 .swiper-slide {
@@ -627,6 +629,7 @@ h1 {
 /* Cambiar el color de los puntos */
 .swiper-pagination-bullet {
   opacity: 0.3 !important;
+  background-color: #ffffff !important;
 }
 /* Cambiar el color del punto activo */
 .swiper-pagination-bullet-active {
@@ -651,17 +654,17 @@ h1 {
 
 audio::-webkit-media-controls-panel {
 
-  background-color: #a78cfa;
+  background-color: #c3c1ff;
   color: #a78cfa;
 
 }
 audio::-webkit-media-controls{
-  background-color: #a78cfa;
+  background-color: #c3c1ff;
  
 }
 
 audio::-webkit-media-controls-play-button {
-  /* background-color: #663399 ; */
+  /* background-color: #a78cfa ; */
   border-radius: 50%; 
 
 }
@@ -817,8 +820,8 @@ audio::-webkit-media-controls-play-button {
 
   }
   .social{
-    left: 22%;
-    top: 22%;
+    left: 21%;
+    top: 25%;
   }
   .social-img-i, .social-img-g{
     width: 66px;
@@ -827,10 +830,6 @@ audio::-webkit-media-controls-play-button {
   }
   .lang {
     width: 90px;
-  }
-  #projects{
-    padding-left: 2%;
-    padding-right: 2%;
   }
 }
 

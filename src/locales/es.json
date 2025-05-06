@@ -8,13 +8,16 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "<span class='ask mr-1'>!</span>Hola Mundo!",
-      "description": "Soy una desarrolladora FullStack apasionada por la tecnología con una gran motivación por el diseño y desarrollo frontend. Mi especialidad radica en crear interfaces modernas e intuitivas que conecten a las personas con la tecnología de forma fluida y atractiva.<br> Aunque trabajo tanto el desarrollo backend como la gestión de bases de datos, encuentro mi mayor pasión en dar vida al frontend, donde el diseño y la experiencia del usuario se unen. <br><br> Siempre busco innovar y explorar nuevas herramientas, tecnologías y métodos para construir soluciones web impactantes y efectivas. Me gusta trabajar con un enfoque práctico y creativo, combinando funcionalidad y sensibilidad estética para entregar resultados que superen expectativas."
+      "heading": "¡HOLA MUNDO!",
+      "description": "Soy desarrolladora <strong>Frontend</strong> resolutiva, apasionada por crear interfaces atractivas, funcionales y centradas en la experiencia de usuario. Disfruto especialmente diseñando con <code>Tailwind CSS</code> y dando vida a ideas con <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code> y frameworks como <code>Angular</code>.<br><br>Me gusta cuidar los detalles visuales, pero también sé construir mis propios <strong>backends</strong> cuando hace falta, integrando APIs, bases de datos o soluciones personalizadas con <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code> o <code>Firebase</code>.<br><br>Trabajo de forma práctica, creativa y autónoma, con el objetivo de desarrollar webs modernas, responsivas y bien optimizadas para buscadores. Siempre estoy aprendiendo y explorando nuevas herramientas que me permitan entregar resultados que realmente conecten."
     },
     "projects": {
-        "title": "Proyectos",
+        "title": "P R O Y E C T O S",
         "show": "Ver Codigo",
         "working": "<p class='text-rose-400 text-xl text-center'>Proyecto en desarrollo.</p>Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
+        "pWebTitle": "Calculadora de Presupuestos",
+        "presupuestoWeb": "<p class='text-fuchsia-300'>Herramienta de N7Studio.</p>Calculadora de presupuestos web online. Estima precios para proyectos web según las opciones seleccionadas, con generación de PDF y envío por email integrado con JS + PHP.",
+        "galaValencia": "<p class='text-rose-200'>Proyecto Cliente.</p>Diseño completo desde cero. Web profesional para eventos, fiestas y alquiler de locales en Valencia. Incluye 3 secciones personalizadas, galería de imágenes, y formularios conectados con PHP + JS.",
         "landingInmo": "<p class='text-fuchsia-300'>Proyecto Cliente.</p>Landing inmobiliaria desarrollada con CMS WP + CSS y TailwindCSS personalizado. + Formulario multistep sin Elementor Pro, optimizado para leads.",
         "blog": "<p class='text-teal-400 text-xl'>Blog - Noticias y Tecnología.</p>Extensión del Portfolio en la que publico artículos sobre tecnología, combinados con las noticias más relevantes extraídas de mi feed de RRSS.",
         "project": "<p class='text-rose-300'>Conversión de Formatos.</p>Herramienta online para convertir imágenes, fuentes y videos. Las imágenes se convierten en el frontend.<br> El backend puede usarse en local; necesario para convertir videos, archivos mp3 y fuentes.",
@@ -27,10 +30,10 @@
     "panel": {
       "buttonText": "Descargar CV",
       "buttonText1": "🧮 Calcular Presupuesto",
-      "panelTitle": " <span class='ask'>?</span>Te gusta mi trabajo?",
+      "panelTitle": " <span class='ask'>?</span>TE GUSTA MI TRABAJO?",
       "panelSubitle": "<span class='ask mr-1'>?</span>Necesitas tu propia Web?",
       "panelText": "¡Hablemos sobre tu próximo proyecto!<br>Descarga mi CV para más detalles o contáctame directamente.",
-      "contact": "Contacto"
+      "contact": "CONTACTO"
     },
     "player": {
       "songs": "Mientras trabajo...",
@@ -82,14 +85,13 @@
       "community": "✩ Comunidad"
     },
     "menu": {
-      "about_me": "Sobre mi 👩🏼‍💻",
-      "projects": "Proyectos 💻",
-      "stack": "Stack ⚙️",
-      "audio_player": "Audio Player 🔊",
-      "resources_comments": "Recursos & 📝<br>Comentarios",
-      "download_cv": "Descargar CV 📋",
-      "contact": "Contacto ✉️",
-      "intro_panel": "Mis 🛠️ Servicios"
+      "about_me": "SOBRE MI 👩🏼‍💻",
+      "projects": "PROYECTOS 💻",
+      "stack": "STACK ⚙️",
+      "audio_player": "AUDIO PLAYER 🔊",
+      "download_cv": "DESCARGAR CV 📋",
+      "contact": "CONTACTO ✉️",
+      "intro_panel": "SERVICIOS 🛠️ WEB"
     },
       "toastMsgs": {
         "toastRated": "Has puntuado con {value} ★ mi Web<br> ¡Gracias! 💚",

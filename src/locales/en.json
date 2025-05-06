@@ -8,14 +8,17 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "Hello World!",
-    "description": "I am a FullStack developer passionate about technology, with a strong motivation for design and frontend development. My expertise lies in creating modern and intuitive interfaces that seamlessly connect people with technology.<br> While I also work on backend development and database management, I find my greatest passion in bringing the frontend to life, where design and user experience come together <br><br> I am always looking to innovate and explore new tools, technologies, and methods to build personalized and effective web solutions. I enjoy working with a practical and creative approach, combining functionality and aesthetic sensibility to deliver results that exceed expectations."
+      "heading": "HELLO WORLD!",
+    "description": "I’m a resolute <strong>Frontend</strong> developer, passionate about creating attractive, functional interfaces focused on user experience. I especially enjoy designing with <code>Tailwind CSS</code> and bringing ideas to life using <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code>, and frameworks like <code>Angular</code>.<br><br>I care about visual details, but I also know how to build my own <strong>backends</strong> when needed, integrating APIs, databases, or custom solutions using <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code>, or <code>Firebase</code>.<br><br>I work in a practical, creative, and autonomous way, aiming to develop modern, responsive websites that are well optimized for search engines. I’m always learning and exploring new tools that help me deliver results that truly connect."
 
     },
     "projects": {
         "title": "Projects",
         "show": "See Code",
         "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+        "pWebTitle": "Online Qote Calculator",
+        "presupuestoWeb": "<p class='text-fuchsia-300'>Proprietary tool by N7Studio.</p>Online web quote calculator. Estimates web projects prices based on selected options, with integrated PDF generation and email sending with JS + PHP.",
+        "galaValencia": "<p class='text-pink-300'>Client Project.</p>Custom design from scratch. Professional website for events, parties, and venue rentals in Valencia. Includes 3 service sections, image gallery, and contact forms built with PHP + JS.",
         "landingInmo": "<p class='text-fuchsia-300'>Client Project.</p>Real estate landing page built with WP CMS and styled using CSS and Tailwind CSS. Custom multistep form (no Elementor Pro) optimized for lead generation.",
         "blog": "<p class='text-teal-400 text-xl text-center'>Blog - News and Technology.</p>Portfolio extension where I publish articles on technology, combined with the most relevant news extracted from my social media feed.",
         "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Online tool to convert images, fonts, and videos. Images are converted on the frontend.<br> The backend can be used locally and is required for video, mp3, and font conversions.",
@@ -29,10 +32,10 @@
     "panel": {
       "buttonText": "Download CV",
       "buttonText1": "🧮 Calculate Quote",
-      "panelTitle": "Do you like my work?",
+      "panelTitle": "DO YOU LIKE MY WORK?",
       "panelSubitle": "Need your own Website?",
       "panelText": " Let's talk about your next project!<br>Download my CV for more details or contact me directly",
-      "contact": "Contact"
+      "contact": "CONTACT"
     },
     "player": {
       "songs": "While i'm Working...",
@@ -82,14 +85,13 @@
       "community": "✩ Community"
     },
     "menu": {
-      "about_me": "About Me 👩🏼‍💻",
-      "projects": "Projects 💻",
-      "stack": "Stack ⚙️",
+      "about_me": "ABOUT MW 👩🏼‍💻",
+      "projects": "PROJECTS 💻",
+      "stack": "STACK ⚙️",
       "audio_player": "Audio Player 🔊",
-      "resources_comments": "Comments 📝<br>& Resources",
-      "download_cv": "Download CV 📋",
-      "contact": "Contact ✉️",
-      "intro_panel": "My 🛠️ Services"
+      "download_cv": "DOWNLOAD CV 📋",
+      "contact": "CONTACT ✉️",
+      "intro_panel": "WEB 🛠️ SERVICES"
     },
     "toastMsgs": {
     "toastRated": "You rated {value} ★ to my Website<br> Thank You! 💚",

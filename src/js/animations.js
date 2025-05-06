@@ -48,14 +48,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuBkg = document.getElementById('menu-bkg');
   // Variables e Inicializadores
   // MusicOn - Delay
-  let isMusicOn = true;
-  const startFromSecond = 116.5;
+  let isMusicOn = false;
+  const startFromSecond = 120;
   let isFF = true;
   // IntroScreen - cPanel - Volume
   audio.load();
   // Inicializar los sliders
   volumeSlider.value = 60;
-  toggleMusic.checked = true;
+  toggleMusic.checked = false;
   
   // Al cargar la pagina
   window.addEventListener('load', () => {
@@ -159,7 +159,7 @@ volumeSlider.addEventListener('input', () => {
 
 volumeSlider2.addEventListener('input', () => {
     let volume = (volumeSlider2.value / 100);
-    let value = (volumeSlider2.value - volumeSlider2.min) / (volumeSlider2.max - volumeSlider2.min) * 100;
+    // let value = (volumeSlider2.value - volumeSlider2.min) / (volumeSlider2.max - volumeSlider2.min) * 100;
     // fill.style.width = `${value}%`;
     if (isMusicOn) {
         audio.volume = volume;
@@ -220,7 +220,7 @@ if (isMusicOn) {
     sliderSkip.classList.add("hidden");
         setTimeout(() => {
             rotateImage();
-        }, 1800);
+        }, 900);
 }
 }
 skipBtn.addEventListener("click", skipIntro);
@@ -386,7 +386,7 @@ headerImg.addEventListener("click", () => {
   function updateName() {
     const menuTxt = document.getElementById('menu-txt');
     if (window.innerWidth <= 680) {
-      name.textContent = 'Alba t⋆b';
+      name.innerHTML = 'A L B A<br>🌍<br>T &nbsp; B';
       comentsDiv.classList.remove('p-6');
       comentsDiv.classList.add('p-1');
       menu.classList.replace('w-80', 'w-screen'); 
@@ -427,7 +427,7 @@ button.addEventListener('click', function() {
   // screenList.classList.toggle('hidden', isScreenOff);
 
   if (isScreenOff) {
-    // document.getElementById('preview-projects').classList.add('hidden');
+    channelIndicator.classList.add('hidden');
     advertisement.classList.add('hidden');
     screenList.classList.add('hidden');
     button.classList.replace('bg-rose-900', 'bg-stone-500');

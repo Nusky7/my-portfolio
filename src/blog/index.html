@@ -25,27 +25,13 @@
 
      <script src="https://kit.fontawesome.com/a67d5af2d9.js" crossorigin="anonymous"></script>  
      <style>
-      body {
-        background-image: url('https://nusky7studio.es/img/wall5.png');
-        background-size: cover;
-        background-position: top;
-        background-attachment: fixed;
-        background-repeat: no-repeat;
-      }
-    
-      @media (max-width: 640px) {
-        body {
-          background-image: url('https://nusky7studio.es/img/blogMobile1.png');
-          background-attachment: scroll; 
-        }
-      }
       .overlay {
         position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.6);
+        background-color: rgba(0, 0, 0, 0.7);
         z-index: 0;
         pointer-events: none;
       }
@@ -53,17 +39,45 @@
         position: relative;
         z-index: 10;
       }
+      #miPopup svg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+
     </style>
 </head>
 
-<body id="body" class="text-white font-poppins w-full h-full">
-    <div class="overlay z-10"></div> 
+<body id="body" class="text-white font-poppins w-full h-full bg-[#040405]" style="background-image: url('https://nusky7studio.es/img/backgrounds/wolrd.webp');">
+  
+    <!-- SVG fondo -->
+    <!-- <div class="fixed inset-0 pointer-events-none">
+      <svg class="w-full h-full opacity-20 animate-pulse" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="squareGrid" width="50" height="50" patternUnits="userSpaceOnUse">
+            <rect x="5" y="5" width="77" height="77" rx="4" ry="4" fill="none" stroke="url(#squareGradient)" stroke-width="1.2"/>
+          </pattern>
+          <lineargradient id="squareGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#a78cfa"/>
+            <stop offset="100%" stop-color="#5CE1E6"/>
+          </lineargradient>
+        </defs>
+        <rect width="100%" height="100%" fill="url(#squareGrid)" />
+      </svg>
+    
+    </div> -->
+    <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 pointer-events-none z-10 will-change-transform"></div>
+  <div id="blurOverlay" class="absolute top-16 inset-0 bg-black/40 z-40 hidden transition-opacity duration-500" ></div>
+
     
 <!-- Encabezado -->
-<div>
-<header id="header" class="relative w-full bg-zinc-950 text-white text-center py-16">
-    <div class="absolute top-6 left-4">
-        <img src="https://nusky7studio.es/img/logos/nLogo.png" width="36%" height="auto" alt="Logo" class="hidden lg:block mt-7">
+<div class="z-50">
+<header id="header" class="relative w-full bg-gradient-to-r from-gray-700/50 via-transparent to-gray-700/50 text-white text-center py-16">
+    <div class="absolute top-7 left-7">
+        <img src="https://nusky7studio.es/img/logos/nSteel.webp" width="36%" height="auto" alt="Logo" class="hidden lg:block">
 
     </div>
     <h1 class="text-3xl md:text-5xl font-bold font-orbi tracking-wide animate-glowText4">
@@ -72,17 +86,15 @@
     <h2 class="text-xl mt-1 font-orbi font-semibold animate-glowText3">Diseño & Desarrollo Web 🌍 Valencia, España</h2>
     <p class="text-gray-400 text-lg mt-2">
         Tendencias, Diseño Web | Optimización para Proyectos & Dispositivos
-    </p>
+    </p>  
 
-  
-
-    <nav class="absolute bottom-0 left-0 w-full bg-zinc-950 overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
+    <nav class="absolute bottom-0 left-0 w-full bggradient-to-b from-zinc-900 to-black overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
         <div class="max-w-3xl mx-auto flex space-x-4 px-2">
             <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('dispositivos-android')">
                 📟 Tecnología
             </button>
-            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-zinc-900 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-gray-700 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('desarrollo-web')">
                 💻 Desarrollo Web
             </button>
@@ -124,52 +136,52 @@
                     N7Studio
                 </span>
           </div>
-          <!-- Botón LinkedIn -->
+          <!-- Botón Sitios -->
           <div class="relative group flex">
-            <a href="https://services.nusky7studio.es" rel="noopener noreferrer" title="N7Studio Services" target="_blank"
-              class="header-btn w-12 h-12 flex items-center justify-center bg-amber-600 rounded-full hover:bg-amber-500 hover:scale-110 transition">
-              <img src="/img/n7Studio.png" alt="n7studio"  width="42px"  height="42px"  class="pointer-events-none rounded-full">
-            </a>
-                <span class="header-btn hidden md:block absolute animate-glowText1 font-orbi top-1/2 right-full transform -translate-y-1/2 mr-2 text-amber-500 text-md px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
-                Mis Servicios
+            <button
+              id="subscribe-button"
+              class="header-btn w-12 h-12 flex items-center justify-center bg-fuchsia-950/80 rounded-full hover:bg-fuchsia-900 hover:scale-110 transition"
+            >
+            <img src="https://nusky7studio.es/img/logos/nSteel.webp" alt="n7studio"  width="100px"  height="100px"  class="pointer-events-none rounded-full drop-shadow-lg">
+            </button>
+                <span class="header-btn hidden md:block absolute animate-glowText1 font-orbi top-1/2 right-full transform -translate-y-1/2 mr-2 text-fuchsia-600 text-md px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity">
+                Newsletter
                 </span>
           </div>
     </div>
   </header>
 
-  <div id="blurOverlay" class="absolute top-16 inset-0 bg-black/40 backdrop-blur-sm z-40 hidden transition-opacity duration-500" ></div>
   <!-- Detalles -->
-  <div class="absolute w-full flex justify-center px-4">
-   
-
-    <details id="blogDetails" class="z-50 text-white md:w-1/2 w-full rounded-3xl shadow-xl transition-opacity duration-600">
+  <div class="w-full flex justify-center px-4">
+    <details id="blogDetails" class="z-40 text-white md:w-2/5 w-full rounded-3xl shadow-xl transition-all duration-500">
+  
       <summary
         style="text-shadow: 0px -3px 6px rgba(0, 0, 0, 0.7);"
-        class="list-none cursor-pointer bg-gradient-to-r from-emerald-700 to-purple-800/80 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
+        class="list-none cursor-pointer bg-gradient-to-r from-pink-600/70 via-purple-900/80 to-emerald-500/90 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
         📰 N7Blog: Noticias y Tecnología
       </summary>  
       <!-- Contenido del details -->
       <article class="bg-gradient-to-t from-slate-950  to-neutral-950/95 px-16 py-6 mt-1.5 rounded-3xl space-y-4" itemscope itemtype="https://schema.org/Blog">
         <!-- Botones Tabs -->
-        <div class="flex justify-center">
+        <div class="flex gap-3 justify-center">
           <button
             onclick="switchTabDetails('tab1-details', this)"
             data-tab="tab1-details"
-            class="tab-details p-1 text-md font-semibold rounded-l-2xl shadow-md text-white transition-all
+            class="tab-details text-sm font-semibold rounded-2xl shadow-md text-white transition-all
                   bg-gradient-to-r from-teal-600 via-amber-600 to-purple-800 hover:brightness-110">
-            <div class="btn-overlay bg-zinc-900 hover:bg-transparent p-3 rounded-l-2xl">
+            <div class="btn-overlay bg-zinc-900 hover:bg-transparent p-5 rounded-2xl">
               Qué Hay Aquí
             </div>
           </button>
           <span class="text-gray-400 font-bold px-2 select-none">
-            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="64px" height="64px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#7D25BD;} </style> <g> <rect x="293.186" y="307.184" class="st0" width="131.572" height="112.986"></rect> <rect x="87.243" y="308.893" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="401.298" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="355.1" class="st0" width="154.448" height="17.162"></rect> <path class="st0" d="M416.428,0.004H95.58C42.787,0.013,0.016,42.792,0,95.577v303.685 c0.025,62.262,50.463,112.717,112.742,112.734h286.524c62.27-0.017,112.717-50.464,112.734-112.734V95.577 C511.992,42.792,469.212,0.013,416.428,0.004z M464.805,399.262c-0.008,18.15-7.308,34.424-19.198,46.34 c-11.916,11.891-28.19,19.19-46.34,19.198H112.742c-18.15-0.009-34.433-7.308-46.348-19.198 c-11.892-11.916-19.182-28.19-19.198-46.34V118.696h417.61V399.262z"></path> <path class="st0" d="M88.96,267.908h34.583c19.71,0,31.642-8.581,31.642-26.548c0-10.852-6.167-18.368-12.2-20.648v-0.268 c6.034-3.352,10.592-9.519,10.592-19.432c0-14.489-9.251-24.268-29.086-24.268H88.96c-0.796,0-1.332,0.536-1.332,1.34v88.475 C87.628,267.371,88.164,267.908,88.96,267.908z M107.338,193.495c0-0.528,0.251-0.804,0.804-0.804h13.944 c7.5,0,11.925,3.888,11.925,10.584c0,6.712-4.425,10.734-11.925,10.734h-13.944c-0.553,0-0.804-0.268-0.804-0.804V193.495z M107.338,229.955c0-0.528,0.251-0.795,0.804-0.795h15c8.061,0,12.343,4.424,12.343,11.405c0,7.097-4.282,11.396-12.343,11.396h-15 c-0.553,0-0.804-0.276-0.804-0.812V229.955z"></path> <path class="st0" d="M181.516,267.908h59.404c0.796,0,1.332-0.536,1.332-1.349v-14.874c0-0.813-0.536-1.341-1.332-1.341h-40.224 c-0.544,0-0.804-0.268-0.804-0.812v-71.447c0-0.804-0.528-1.34-1.341-1.34h-17.036c-0.805,0-1.332,0.536-1.332,1.34v88.475 C180.183,267.371,180.711,267.908,181.516,267.908z"></path> <path class="st0" d="M292.708,269.374c15.963,0,28.558-7.366,33.251-22.115c2.011-6.301,2.539-11.396,2.539-24.938 c0-13.542-0.528-18.637-2.539-24.939c-4.693-14.739-17.288-22.114-33.251-22.114c-15.956,0-28.558,7.375-33.243,22.114 c-2.02,6.302-2.556,11.397-2.556,24.939c0,13.542,0.536,18.637,2.556,24.938C264.149,262.009,276.752,269.374,292.708,269.374z M278.361,202.746c2.011-6.301,6.847-10.055,14.346-10.055c7.508,0,12.335,3.754,14.346,10.055 c1.073,3.226,1.474,7.634,1.474,19.576c0,11.924-0.402,16.357-1.474,19.567c-2.011,6.31-6.838,10.072-14.346,10.072 c-7.5,0-12.335-3.763-14.346-10.072c-1.064-3.21-1.475-7.643-1.475-19.567C276.886,210.38,277.297,205.972,278.361,202.746z"></path> <path class="st0" d="M387.961,269.374c16.081,0,28.685-8.171,33.251-22.794c1.6-4.952,2.263-12.46,2.263-20.505v-7.517 c0-0.788-0.536-1.333-1.332-1.333h-31.366c-0.813,0-1.349,0.545-1.349,1.333v12.888c0,0.796,0.536,1.332,1.349,1.332h12.326 c0.536,0,0.805,0.277,0.805,0.805c0,3.879-0.403,6.703-1.073,8.991c-1.878,6.026-7.777,9.386-14.614,9.386 c-7.91,0-12.88-3.763-14.891-10.072c-1.064-3.21-1.466-7.643-1.466-19.567c0-11.941,0.402-16.223,1.466-19.441 c2.011-6.302,6.847-10.19,14.631-10.19c7.5,0,12.05,3.218,15.678,9.385c0.269,0.67,0.939,0.939,1.886,0.67l14.338-6.033 c0.796-0.402,0.947-1.206,0.536-2.019c-4.299-10.995-15.419-19.425-32.439-19.425c-16.232,0-28.835,7.375-33.527,22.114 c-2.012,6.302-2.556,11.397-2.556,24.939c0,13.542,0.545,18.637,2.556,24.938C359.126,262.009,371.73,269.374,387.961,269.374z"></path> </g> </g></svg>
+            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" width="64px" height="64px" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#37bfba;} </style> <g> <rect x="293.186" y="307.184" class="st0" width="131.572" height="112.986"></rect> <rect x="87.243" y="308.893" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="401.298" class="st0" width="154.448" height="17.162"></rect> <rect x="87.243" y="355.1" class="st0" width="154.448" height="17.162"></rect> <path class="st0" d="M416.428,0.004H95.58C42.787,0.013,0.016,42.792,0,95.577v303.685 c0.025,62.262,50.463,112.717,112.742,112.734h286.524c62.27-0.017,112.717-50.464,112.734-112.734V95.577 C511.992,42.792,469.212,0.013,416.428,0.004z M464.805,399.262c-0.008,18.15-7.308,34.424-19.198,46.34 c-11.916,11.891-28.19,19.19-46.34,19.198H112.742c-18.15-0.009-34.433-7.308-46.348-19.198 c-11.892-11.916-19.182-28.19-19.198-46.34V118.696h417.61V399.262z"></path> <path class="st0" d="M88.96,267.908h34.583c19.71,0,31.642-8.581,31.642-26.548c0-10.852-6.167-18.368-12.2-20.648v-0.268 c6.034-3.352,10.592-9.519,10.592-19.432c0-14.489-9.251-24.268-29.086-24.268H88.96c-0.796,0-1.332,0.536-1.332,1.34v88.475 C87.628,267.371,88.164,267.908,88.96,267.908z M107.338,193.495c0-0.528,0.251-0.804,0.804-0.804h13.944 c7.5,0,11.925,3.888,11.925,10.584c0,6.712-4.425,10.734-11.925,10.734h-13.944c-0.553,0-0.804-0.268-0.804-0.804V193.495z M107.338,229.955c0-0.528,0.251-0.795,0.804-0.795h15c8.061,0,12.343,4.424,12.343,11.405c0,7.097-4.282,11.396-12.343,11.396h-15 c-0.553,0-0.804-0.276-0.804-0.812V229.955z"></path> <path class="st0" d="M181.516,267.908h59.404c0.796,0,1.332-0.536,1.332-1.349v-14.874c0-0.813-0.536-1.341-1.332-1.341h-40.224 c-0.544,0-0.804-0.268-0.804-0.812v-71.447c0-0.804-0.528-1.34-1.341-1.34h-17.036c-0.805,0-1.332,0.536-1.332,1.34v88.475 C180.183,267.371,180.711,267.908,181.516,267.908z"></path> <path class="st0" d="M292.708,269.374c15.963,0,28.558-7.366,33.251-22.115c2.011-6.301,2.539-11.396,2.539-24.938 c0-13.542-0.528-18.637-2.539-24.939c-4.693-14.739-17.288-22.114-33.251-22.114c-15.956,0-28.558,7.375-33.243,22.114 c-2.02,6.302-2.556,11.397-2.556,24.939c0,13.542,0.536,18.637,2.556,24.938C264.149,262.009,276.752,269.374,292.708,269.374z M278.361,202.746c2.011-6.301,6.847-10.055,14.346-10.055c7.508,0,12.335,3.754,14.346,10.055 c1.073,3.226,1.474,7.634,1.474,19.576c0,11.924-0.402,16.357-1.474,19.567c-2.011,6.31-6.838,10.072-14.346,10.072 c-7.5,0-12.335-3.763-14.346-10.072c-1.064-3.21-1.475-7.643-1.475-19.567C276.886,210.38,277.297,205.972,278.361,202.746z"></path> <path class="st0" d="M387.961,269.374c16.081,0,28.685-8.171,33.251-22.794c1.6-4.952,2.263-12.46,2.263-20.505v-7.517 c0-0.788-0.536-1.333-1.332-1.333h-31.366c-0.813,0-1.349,0.545-1.349,1.333v12.888c0,0.796,0.536,1.332,1.349,1.332h12.326 c0.536,0,0.805,0.277,0.805,0.805c0,3.879-0.403,6.703-1.073,8.991c-1.878,6.026-7.777,9.386-14.614,9.386 c-7.91,0-12.88-3.763-14.891-10.072c-1.064-3.21-1.466-7.643-1.466-19.567c0-11.941,0.402-16.223,1.466-19.441 c2.011-6.302,6.847-10.19,14.631-10.19c7.5,0,12.05,3.218,15.678,9.385c0.269,0.67,0.939,0.939,1.886,0.67l14.338-6.033 c0.796-0.402,0.947-1.206,0.536-2.019c-4.299-10.995-15.419-19.425-32.439-19.425c-16.232,0-28.835,7.375-33.527,22.114 c-2.012,6.302-2.556,11.397-2.556,24.939c0,13.542,0.545,18.637,2.556,24.938C359.126,262.009,371.73,269.374,387.961,269.374z"></path> </g> </g></svg>
           </span>
           <button
             onclick="switchTabDetails('tab2-details', this)"
             data-tab="tab2-details"
-            class="tab-details p-1 text-sm font-semibold rounded-r-2xl shadow-md text-white transition-all
+            class="tab-details text-sm font-semibold rounded-2xl shadow-md text-white transition-all
                   bg-gradient-to-r from-purple-800 via-sky-600 to-emerald-600 hover:brightness-110">
-            <div class="bg-black/90 hover:bg-transparent focus:bg-transparent p-3 rounded-r-2xl">
+            <div class="btn-overlay bg-zinc-900 hover:bg-transparent p-5 rounded-2xl">
               Sobre N7Studio
             </div>
           </button>
@@ -177,7 +189,7 @@
         
         <!-- Contenido Tabs -->
         <section id="tab1-details" class="content-details block space-y-3 text-lg leading-relaxed text-gray-300" itemprop="description">
-          <p>Bienvenid@ a mi blog sobre tecnología, donde encontrarás <strong>artículos sobre desarrollo web</strong> (frontend y backend), <strong>diseño UI/UX</strong>, análisis de <strong>dispositivos Android</strong> y gadgets tech.</p>
+          <p>Bienvenid@ a mi blog sobre tecnología, donde encontrarás <strong>artículos sobre desarrollo web</strong>, <strong>diseño UI/UX</strong>, análisis de <strong>dispositivos Android</strong> y gadgets tech.</p>
           <p>También comparto <strong>curiosidades, recursos, herramientas</strong> y comparativas útiles para desarrolladores, emprendedores digitales o simplemente mentes inquietas con ganas de aprender y estar al día.</p>
           <p>No publico en un calendario fijo, pero sí con contenido cuidado, visual y actualizado.</p>
         </section>
@@ -185,7 +197,7 @@
         <section id="tab2-details" class="content-details hidden space-y-3 text-lg leading-relaxed text-gray-300">
           <p>Este blog lo mantengo desde mi estudio creativo <strong itemprop="author">N7Studio</strong>, con base en <strong itemprop="locationCreated">Valencia, España</strong>, pero también <strong>colaboro en proyectos internacionales</strong> de forma remota.</p>
           <p>Además de desarrollar webs a medida, me apasiona el diseño visual, los efectos interactivos y la experiencia de usuario. A través del blog intento aportar <strong>valor real</strong> y consejos prácticos que te sirvan tanto si estás empezando como si ya estás metido/a en el mundo tech.</p>
-          <p>Gracias por pasarte por aquí. ¡Explora y si algo te inspira, conéctate! 🌐</p>
+          <p>Gracias por pasarte por aquí. ¡Explora y si algo te inspira, conéctate! 🌍</p>
         </section>
       </article>      
     </details>
@@ -216,41 +228,23 @@
       );
     }
   </script>
-   
-  
-    
-<!-- 
-    <div class="absolute w-full flex justify-end px-4">
-      <details class="z-50 text-white md:w-72 w-full rounded-3xl shadow-xl transition-opacity duration-600">
-      <summary style="text-shadow: 0px -3px 6px rgba(0, 0, 0, 0.7);"
-        class="list-none cursor-pointer bg-gradient-to-r from-emerald-700 to-purple-800/50 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
-        N7·Blog - N7·Studio
-      </summary>      
-      <div class="bg-gradient-to-t from-teal-950/90 via-slate-950/95 to-neutral-950/95 p-6 mt-1.5 rounded-3xl z-50">
-            <p class="mt-4 text-gray-300 text-base leading-relaxed">
-              Este blog nace desde mi pasión por la tecnología y el desarrollo web. Aquí comparto contenidos variados sobre <strong>frontend y backend</strong>, diseño UX/UI, gadgets, <strong>modding</strong> y análisis de dispositivos. Es un espacio para aprender, explorar nuevas herramientas y encontrar inspiración para tus proyectos digitales.  
-              Si buscas información útil sobre <strong>diseño y desarrollo web en Valencia</strong> o necesitas soluciones personalizadas para tu web, este rincón puede ayudarte.  
-              Aunque vivo en España, también colaboro en <strong>proyectos internacionales</strong> de forma remota. Mi objetivo es aportar valor real, ya seas desarrollador, emprendedor o simplemente una mente curiosa.
-            </p>
-          </div>
-    </details>
-</div>
-</div>
 
-<details class="mt-4 mx-auto max-w-2xl bg-zinc-900 p-4 mb-1 rounded-lg shadow-md cursor-pointer">
-  <summary class="text-emerald-100 no-underline font-semibold hover:animate-glowText2 list-none">📰 N7Blog: Noticias y Tecnología </summary>
-  <article class="prose prose-invert">
-      <p class="mt-2 text-gray-300">
-       Bienvenid@ a mi Blog dedicado a la tecnología, descubre aquí <strong>artículos y noticias</strong> actualizadas sobre <strong>Desarrollo Web</strong>, Diseño Frontend y Backend, así como análisis y reseñas de los últimos <strong>smartphones, dispositivos y tendencias tecnológicas.</strong></p>
-      <p>Con secciones dedicadas a <strong>Noticias RSS</strong> para mantenerte al tanto de lo más relevante en <strong>tecnología</strong>, <strong>proyectos</strong> y <strong>curiosidades</strong>, y las últimas <strong>novedades en dispositivos Android</strong>, aquí encontrarás un "todo en uno" contenido relevante, <strong>consejos prácticos</strong> y <strong>comparaciones de dispositivos</strong>.</p>
-  </article>
-</details>
+  <div id="miPopup" class="hidden fixed inset-0 z-50 px-1 flex items-center justify-center">
+    <!-- SVG como fondo -->
+    <svg class="absolute inset-0 w-full h-full pointer-events-none z-0 opacity-50" viewBox="0 0 500 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <lineargradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stop-color="#5CE1E6"/>
+        <stop offset="100%" stop-color="#a78cfa"/>
+      </lineargradient>
+    </defs>
+    <path d="M0,0 C150,100 350,0 500,100 L500,0 L0,0 Z" fill="url(#grad1)" />
+    <path d="M0,100 C125,0 375,0 500,100 L500,100 L0,100 Z" fill="url(#gradBottom)" />
+  </svg>  
+        
+    <div class="bg-gray-900 bg-cover bg-center  animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.webp') ;">
 
-     -->
-
-  <div id="miPopup" class="hidden fixed inset-0 z-20 flex items-center justify-center">
-    <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop8.png');">
-      <div class="bg-black/65 px-9 pt-9 rounded-3xl text-black dark:text-white">
+      <div class="bg-black/10 px-9 pt-9 rounded-3xl text-black dark:text-white">
         <div class="text-center">
           <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
           <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
@@ -275,8 +269,8 @@
           <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="drop-shadow-md shadow-black text-white bg-blue-600 hover:bg-pink-500 p-1.5 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
             <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
           </a>
-          <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center drop-shadow-md transition duration-300 hover:scale-110">
-            <img src="https://nusky7studio.es/img/logos/nSteel.png" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
+          <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center  transition duration-300 hover:scale-110">
+            <img src="https://nusky7studio.es/img/logos/nSteel.webp" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
           </a>
           <a href="https://t.me/@_Nusky7" target="_blank" class="drop-shadow-md shadow-black text-transparent bg-blue-600 hover:bg-violet-500 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
             <svg width="30px" height="30px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="currentColor"> </path> <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"> </path> <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"> </path> <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"> </path> </g> </g></svg>
@@ -348,7 +342,7 @@
   </main>
   
       <!-- Salto PopUp -->
-      <div id="popupTrigger" class="h-1 w-full" style="animation-delay: 9s;"></div>
+      <!-- <div id="popupTrigger" class="h-1 w-full" style="animation-delay: 9s;"></div> -->
 
   <footer class="bg-neutral-950 text-zinc-300 text-sm mt-12">
     <div class="max-w-6xl mx-auto px-4 py-10">
@@ -403,8 +397,8 @@
                 </a>
               </li>
               <li>
-                <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-teal-200 transition">
-                  🪴 Tienda Natural / Aloe Vera
+                <a href="https://nusky7studio.es/presupuesto" target="_blank" class="hover:text-rose-400 transition">
+                  🧮 Calculadora Presupuesto Web
                 </a>
               </li>
             </ul>

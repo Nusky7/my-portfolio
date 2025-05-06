@@ -66,6 +66,7 @@
       <source src="/mp3/zenithGlow.mp3" type="audio/mpeg" />
       Tu navegador no soporta la reproducción de audio.
     </audio>
+
     <script type="module" src="js/animations.js" async></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <link
@@ -73,15 +74,21 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
-    <!-- <script
-      src="https://kit.fontawesome.com/a67d5af2d9.js"
-      crossorigin="anonymous"
-    ></script> -->
-    <!-- adsense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5659298995663685"
     crossorigin="anonymous"></script>
+    <!-- Font Awesome > para rateit No borrar por dioh D: ) -->
+    <script
+      src="https://kit.fontawesome.com/a67d5af2d9.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- Banderitas telefono -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.min.css" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+    <style>
+      code, strong{
+        color: pink !important;
+      }
+    </style>
   </head>
 
     <body id="body" class="m-0 text-gray-100 font-poppins z-50 h-full">
@@ -93,24 +100,21 @@
             <lineargradient id="strokeGradient" x1="0%" y1="0%" x2="100%" y2="0%">
               <stop offset="0%" stop-color="#a78cfa" />
               <stop offset="100%" stop-color="#5CE1E6" />
-            </lineargradient>
-
-        
+            </lineargradient>        
             <!-- Patrón que usa ese gradiente -->
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#strokeGradient)" stroke-width="0.7"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="url(#strokeGradient)" stroke-width="0.8"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
         </svg>
         
-        <div class="absolute inset-0 bg-black bg-opacity-60"></div>
+        <div class="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       
     <div
       id="preloader"
-      class="fixed flex flex-col top-0 left-0 w-full h-full bg-black justify-center items-center z-50"
-    >
+      class="fixed flex flex-col top-0 left-0 w-full h-full bg-black justify-center items-center z-50">
       <h2 class="font-gba text-xl animate-bounce text-gray-300">Loading</h2>
       <div class="loader"></div>
     </div>
@@ -162,7 +166,6 @@
                     version="1.1"
                     width="40px"
                     height="40px"
-                    id="des"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
                     viewBox="0 0 32 32"
@@ -175,7 +178,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></g>
-                    <g id="SVGRepo_iconCarrier">
+                    <g >
                       <style type="text/css">
                         .sketchy_een {
                           fill: #ffffff;
@@ -199,7 +202,6 @@
                 class="w-full p-4 bg-zinc-900 rounded-lg border-l-[6px] border-t-[6px] border-r-[6px] border-b-[6px] border-gray-700 border-opacity-50 shadow-inner border-t-neutral-900 border-l-neutral-700 border-b-neutral-400 border-r-neutral-500"
               >
                 <!-- Contenedor de Toggle y LEDs -->
-
                 <div
                   class="flex items-center justify-between w-full space-x-4 bg-zinc-900 bg-opacity-50 py-2 rounded-lg"
                 >
@@ -212,7 +214,6 @@
                       type="checkbox"
                       value="checked"
                       class="sr-only peer"
-                      checked
                     />
 
                     <div
@@ -230,23 +231,23 @@
                     <div class="flex flex-col items-center w-16">
                       <!-- LED Off -->
                       <span
-                        class="text-sm text-gray-300 mb-2 font-gba hidden"
+                        class="text-sm text-gray-300 mb-2 font-gba "
                         id="led-txt-off"
                         >Off</span
                       >
                       <div
-                        class="leds p-1 bg-red-500 rounded-full hidden shadow-[0_0_4px_2px_rgba(255,0,0,0.6)]"
+                        class="leds p-1 bg-red-500 rounded-full shadow-[0_0_4px_2px_rgba(255,0,0,0.6)]"
                         id="led-off"
                       ></div>
 
                       <!-- LED On -->
                       <span
-                        class="text-sm text-gray-300 mb-2 font-gba"
+                        class="text-sm text-gray-300 mb-2 font-gba hidden"
                         id="led-txt"
                         >On</span
                       >
                       <div
-                        class="leds p-1 bg-green-500 rounded-full shadow-[0_0_4px_2px_rgba(0,255,0,0.6)]"
+                        class="leds p-1 bg-green-500 rounded-full hidden shadow-[0_0_4px_2px_rgba(0,255,0,0.6)]"
                         id="led-on"
                       ></div>
                     </div>
@@ -279,7 +280,7 @@
                       ></g>
                       <g>
                         <title>volume-full</title>
-                        <desc>Created with Sketch Beta.</desc>
+                        <!-- <desc>Created with Sketch Beta.</desc> -->
                         <defs></defs>
                         <g
                           id="Page-1"
@@ -350,7 +351,7 @@
         <div id="intro-text" class="intro-text"></div>
         <div id="profile" class="profile-container">
           <img
-            src="https://nusky7studio.es/img/logos/n7Logo.png"
+            src="https://nusky7studio.es/img/logos/nSteel.webp"
             alt="Anime Profile"
             class="profile-img anime-img z-50"
           />
@@ -482,7 +483,7 @@
     <!-- Dropdown Menu -->
     <div
       id="menu-bkg"
-      class="fixed hidden inset-0 bg-zinc-900 bg-opacity-45 z-50"
+      class="fixed hidden inset-0 bg-zinc-900 h-screen md:h-auto bg-opacity-45 z-50"
     >
       <div
         id="menu"
@@ -526,60 +527,53 @@
           </svg>
            MENU
         </p>
-        <ul class="flex flex-col space-y-4 p-4 text-right w-full">
+        <ul class="flex flex-col space-y-4 p-4 text-right w-full font-medium font-orbi">
           <li>
             <a
               href="#main-content"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >Sobre mí</a
             >
           </li>
           <li>
             <a
               href="#projects"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >Proyectos</a
             >
           </li>
           <li>
             <a
               href="#skills"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >Stack</a
             >
           </li>
           <li>
             <a
               href="#player"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >Audio Player</a
             >
           </li>
           <li>
             <a
               href="#action-panel"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >CV 📃</a
             >
           </li>
           <li>
             <a
-              href="#comments-section"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
-              >Recursos &amp; Comentarios</a
-            >
-          </li>
-          <li>
-            <a
               href="#videos"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
-              >Videos 🎞️</a
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
+              >VIDEOS 🎞️</a
             >
           </li>
           <li>
             <a
               href="#contact"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110"
               >Contacto</a
             >
           </li>
@@ -589,8 +583,8 @@
               href="/blog"
               target="_blank"
               rel="noopener"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110 text-center"
-              >N7📰 Blog
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110 text-center"
+              >N7 📰 BLOG
             </a>
           </li>
           <hr class="border-rose-300 border-dashed" />
@@ -599,9 +593,8 @@
               href="https://services.nusky7studio.es"
               target="_blank"
               rel="noopener"
-              class="block hover:animate-glowText1 text-center font-gba transition duration-200 transform hover:scale-110"
-              >Intro Panel</a
-            >
+              class="block hover:animate-glowText1 text-center transition duration-200 transform hover:scale-110"
+              >Servicios Web</a>
           </li>
           <hr class="border-rose-300" />
 
@@ -610,7 +603,7 @@
               href="https://xdaforums.com/m/nusky7.6349830/"
               target="_blank"
               rel="noopener"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110 text-left"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110 text-left"
               >🔗 XDA Profile</a
             >
           </li>
@@ -619,7 +612,7 @@
               href="https://beta.facer.io/u/Nusky7"
               target="_blank"
               rel="noopener"
-              class="block hover:animate-glowText1 font-gba transition duration-200 transform hover:scale-110 text-left"
+              class="block hover:animate-glowText1 transition duration-200 transform hover:scale-110 text-left"
               >🔗 My Watchfaces</a
             >
           </li>
@@ -631,7 +624,7 @@
       <div id="header-wrapper" class="header-wrapper relative">
         <div id="header-img" class="header-container bg-zinc-950">
           <img
-            src="https://nusky7studio.es/img/logos/n7Logo.png"
+            src="https://nusky7studio.es/img/logos/nSteel.webp"
             alt="Anime Profile"
             id="perf"
             class="head-img header-anime-img drop-shadow-md cursor-pointer transition-transform ease-in-out"
@@ -645,12 +638,12 @@
           />
         </div>
 
-        <div id="social-bts" class="social flex top-3 ml-7">
+        <div id="social-bts" class="social top-4 flex ml-7">
           <a href="https://github.com/Nusky7" target="_blank" rel="noopener">
             <img
               src="img/git3.webp"
               alt="GitHub"
-              class="social-img w-20 h-20 social-img-g hover:scale-110 hover:animate-flash transition-transform ease-in-out"
+              class="social-img xl:w-20 xl:h-20 social-img-g hover:scale-110 hover:animate-flash transition-transform ease-in-out"
             />
           </a>
           <a
@@ -661,7 +654,7 @@
             <img
               src="img/in4.webp"
               alt="LinkedIn"
-              class="social-img w-20 h-20 social-img-i hover:scale-110 hover:animate-flash transition-transform ease-in-out"
+              class="social-img xl:w-20 xl:h-20 social-img-i hover:scale-110 hover:animate-flash transition-transform ease-in-out"
             />
           </a>
         </div>
@@ -669,9 +662,22 @@
     </div>
 
         <!-- PopUp Newsletter -->
-        <div id="miPopup" class="hidden fixed inset-0 bg-black/70 z-50 flex items-center justify-center">
-          <div class="bg-cover bg-center animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/nPop8.png');">
-              <div class="bg-black/65 px-9 pt-9 rounded-3xl text-black dark:text-white">
+        <div id="miPopup" class="hidden fixed inset-0 z-50 flex items-center justify-center">
+          <!-- SVG como fondo -->
+          <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-10" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <radialGradient id="grad" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stop-color="#5CE1E6" />
+                <stop offset="100%" stop-color="transparent" />
+              </radialGradient>
+            </defs>
+            <circle cx="50%" cy="50%" r="80%" fill="url(#grad)" />
+          </svg>
+          
+           
+              
+          <div class="bg-gray-900 bg-cover bg-center  animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.webp') ;">
+              <div class="bg-black/10 px-9 pt-9 rounded-3xl text-black dark:text-white">
               <div class="text-center">
                 <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
                 <h3 id="popup-title2" class="text-3xl animate-colorSlow mb-3 font-bold drop-shadow-lg">ᑎEᗯᔕᒪETTEᖇ</h3>
@@ -694,18 +700,18 @@
       
               <div id="popup-links" class="hidden mt-3 flex flex-row gap-3 items-center justify-center">
                 <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" class="drop-shadow-md shadow-black text-white bg-blue-600 hover:bg-pink-500 p-1.5 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
-                  <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
+                  <svg fill="#ffffff" height="18px" width="18px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 310 310" xml:space="preserve" stroke="#ffffff"><g  stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g > <g id="XMLID_801_"> <path id="XMLID_802_" d="M72.16,99.73H9.927c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5H72.16c2.762,0,5-2.238,5-5V104.73 C77.16,101.969,74.922,99.73,72.16,99.73z"></path> <path id="XMLID_803_" d="M41.066,0.341C18.422,0.341,0,18.743,0,41.362C0,63.991,18.422,82.4,41.066,82.4 c22.626,0,41.033-18.41,41.033-41.038C82.1,18.743,63.692,0.341,41.066,0.341z"></path> <path id="XMLID_804_" d="M230.454,94.761c-24.995,0-43.472,10.745-54.679,22.954V104.73c0-2.761-2.238-5-5-5h-59.599 c-2.762,0-5,2.239-5,5v199.928c0,2.762,2.238,5,5,5h62.097c2.762,0,5-2.238,5-5v-98.918c0-33.333,9.054-46.319,32.29-46.319 c25.306,0,27.317,20.818,27.317,48.034v97.204c0,2.762,2.238,5,5,5H305c2.762,0,5-2.238,5-5V194.995 C310,145.43,300.549,94.761,230.454,94.761z"></path> </g> </g></svg>
                 </a>
-                <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center drop-shadow-md transition duration-300 hover:scale-110">
-                  <img src="https://nusky7studio.es/img/logos/nSteel.png" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
+                <a href="https://services.nusky7studio.es" target="_blank" class="drop-shadow-md shadow-black text-white flex items-center justify-center transition duration-300 hover:scale-110">
+                  <img src="https://nusky7studio.es/img/logos/nSteel.webp" alt="N7 Services" class="w-16 h-16 rounded-lg p-0.5" />
                 </a>
                 <a href="https://t.me/@_Nusky7" target="_blank" class="drop-shadow-md shadow-black text-transparent bg-blue-600 hover:bg-violet-500 flex items-center justify-center rounded-full shadow-md transition duration-300 hover:scale-110">
-                  <svg width="30px" height="30px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="currentColor"> </path> <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"> </path> <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"> </path> <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"> </path> </g> </g></svg>
+                  <svg width="30px" height="30px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" fill="currentColor"><g  stroke-width="0"></g><g stroke-linecap="round" stroke-linejoin="round"></g><g > <g> <path d="M128,0 C57.307,0 0,57.307 0,128 L0,128 C0,198.693 57.307,256 128,256 L128,256 C198.693,256 256,198.693 256,128 L256,128 C256,57.307 198.693,0 128,0 L128,0 Z" fill="currentColor"> </path> <path d="M190.2826,73.6308 L167.4206,188.8978 C167.4206,188.8978 164.2236,196.8918 155.4306,193.0548 L102.6726,152.6068 L83.4886,143.3348 L51.1946,132.4628 C51.1946,132.4628 46.2386,130.7048 45.7586,126.8678 C45.2796,123.0308 51.3546,120.9528 51.3546,120.9528 L179.7306,70.5928 C179.7306,70.5928 190.2826,65.9568 190.2826,73.6308" fill="#FFFFFF"> </path> <path d="M98.6178,187.6035 C98.6178,187.6035 97.0778,187.4595 95.1588,181.3835 C93.2408,175.3085 83.4888,143.3345 83.4888,143.3345 L161.0258,94.0945 C161.0258,94.0945 165.5028,91.3765 165.3428,94.0945 C165.3428,94.0945 166.1418,94.5735 163.7438,96.8115 C161.3458,99.0505 102.8328,151.6475 102.8328,151.6475" fill="#D2E5F1"> </path> <path d="M122.9015,168.1154 L102.0335,187.1414 C102.0335,187.1414 100.4025,188.3794 98.6175,187.6034 L102.6135,152.2624" fill="#B5CFE4"> </path> </g> </g></svg>
                 </a>
               </div>
              
         
-              <a id="aloeLink" href="https://exialoe.nusky7studio.es" target="_blank" class="hidden flex items-center justify-center w-8 h-8 mb-7 mt-1 transition-all rounded-full bg-green-200/20 hover:bg-green-100/10 m-auto text-lg block shadow-md shadow-black hover:shadow-none hover:text-lg transition duration-300 hover:scale-110">
+              <a id="aloeLink" href="https://exialoe.nusky7studio.es" target="_blank" class="hidden flex items-center justify-center w-8 h-8 mb-7 mt-1 transition-all rounded-full bg-green-200/20 hover:bg-green-100/10 m-auto text-lg  shadow-md shadow-black hover:shadow-none hover:text-lg  duration-300 hover:scale-110">
                 <svg height="27px" width="27px" version="1.1" class="drop-shadow-md" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g  stroke-width="0"></g><g  stroke-linecap="round" stroke-linejoin="round"></g><g > <path style="fill:#287731;" d="M256,4.267c-9.97,55.101-55.226,176.557-82.942,280.574v184.681L256,507.258l82.942-37.736V284.841 C311.226,180.823,265.97,59.367,256,4.267z"></path> <g> <path style="fill:#76987a;" d="M151.241,59.93c21.848,46.417,2.71,69.064-18.861,184.68c-7.621,40.847-7.133,77.791-0.594,110.345 L256,507.247c0-107.676-57.513-164.879-68.692-265.213C174.286,125.145,185.729,97.91,151.241,59.93z"></path> <path style="fill:#76987a;" d="M379.619,244.609c-21.57-115.615-40.708-138.263-18.861-184.68 c-34.486,37.98-23.044,65.215-36.066,182.102C313.514,342.366,256,399.568,256,507.245l124.214-152.292 C386.751,322.399,387.24,285.456,379.619,244.609z"></path> </g> <g> <path style="fill:#287731;" d="M0,172.266c43.181,18.801,43.866,45.911,98.81,138.856 c47.165,79.782,152.541,133.041,157.44,196.137c-78.883,6.123-171.672-46.694-202.45-173.283 C28.292,229.062,35.78,202.89,0,172.266"></path> <path style="fill:#287731;" d="M512,172.266c-43.181,18.801-43.866,45.911-98.812,138.856 c-47.165,79.782-152.541,133.041-157.44,196.137c78.883,6.123,171.673-46.694,202.45-173.283 C483.708,229.062,476.22,202.89,512,172.266"></path> </g> </g></svg>
               </a>
       
@@ -725,7 +731,7 @@
       <div id="header-content" class="flex justify-center z-50">
         <h1
           id="name"
-          class="font-bold inline-block md:text-5xl sm:text-2xl text-rose-200 font-gba animate-glowText hover:animate-colorSlow mr-3"
+          class="font-bold inline-block md:text-5xl text-3xl text-rose-200 font-orbi md:font-gba animate-glowText hover:animate-colorSlow mr-3"
         >
           <button onclick="window.location.reload()" class="hover:text-rose-200">Alba Tolosa Bonora</button>
         </h1>
@@ -879,9 +885,9 @@
       </div>
     </div>
 
-    <section id="about" class="bg-gray-700/50 p-8 pb-12 rounded-3xl md:rounded-full">
+    <section id="about" class="bg-gray-700/50 p-8 mx-3 pb-12 rounded-3xl md:rounded-full">
       <div class="max-w-4xl mx-auto text-center">
-        <h2 id="about-heading" class="text-xl font-bold mb-4 text-rose-200 font-gba p-3">
+        <h2 id="about-heading" class="text-2xl font-bold mb-4 text-rose-200 font-orbi p-3">
           <span>Sobre mí</span>
           <i class="fas fa-heart text-rose-300"></i>
         </h2>
@@ -889,19 +895,8 @@
         <p
           id="about-description"
           class="text-lg leading-7 text-gray-200 font-mono max-h-[8.5rem] overflow-hidden transition-all duration-500 md:max-h-none"
-        >
-          Soy una desarrolladora FullStack apasionada por la tecnología con una
-          gran motivación por el diseño y desarrollo frontend. Mi especialidad
-          radica en crear interfaces modernas e intuitivas que conecten a las
-          personas con la tecnología de forma fluida y atractiva.<br />
-          Aunque trabajo tanto el desarrollo backend como la gestión de bases de
-          datos, encuentro mi mayor pasión en dar vida al frontend, donde el
-          diseño y la experiencia del usuario se unen. <br /><br />
-          Siempre busco innovar y explorar nuevas herramientas, tecnologías y
-          métodos para construir soluciones web impactantes y efectivas. Me
-          gusta trabajar con un enfoque práctico y creativo, combinando
-          funcionalidad y sensibilidad estética para entregar resultados que
-          superen expectativas.
+        >         
+        Soy desarrolladora <strong>Frontend</strong> resolutiva, apasionada por crear interfaces atractivas, funcionales y centradas en la experiencia de usuario. Disfruto especialmente diseñando con <code>Tailwind CSS</code> y dando vida a ideas con <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code> y frameworks como <code>Angular</code>.<br><br>Me gusta cuidar los detalles visuales, pero también sé construir mis propios <strong>backends</strong> cuando hace falta, integrando APIs, bases de datos o soluciones personalizadas con <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code> o <code>Firebase</code>.<br><br>Trabajo de forma práctica, creativa y autónoma, con el objetivo de desarrollar webs modernas, responsivas y bien optimizadas para buscadores. Siempre estoy aprendiendo y explorando nuevas herramientas que me permitan entregar resultados que realmente conecten.
         </p>
     
         <!-- Botón para expandir -->
@@ -916,10 +911,10 @@
     </section>
 
 
-    <section id="projects" class="p-8 bg-black/10 h-auto">
+    <section id="projects" class=" bg-black/10 h-auto">
       <h2
         id="project-title"
-        class="text-xl font-bold text-rose-300 text-center font-gba pt-3 flex items-center justify-center"
+        class="text-2xl font-semibold text-rose-300 text-center font-orbi pt-3 mt-6 flex items-center justify-center"
       >
         Proyectos
       </h2>
@@ -929,23 +924,23 @@
           <!-- Trabajando... -->
 
           <div
-            class="swiper-slide bg-neutral-800 rounded-xl shadow-xl pb-3 text-center animate-glowRose flex flex-col"
+            class="swiper-slide bg-gradient-to-br from-slate-950 via-black to-slate-950 rounded-xl shadow-xl pb-3 text-center flex flex-col"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/NSystemsMobile.png"
+                  src="https://nusky7studio.es/img/projects/NSystemsMobile.webp"
                   alt="NSystems"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/ns4.webp"
                   alt="NSystems"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl p-1 font-bold text-neutral-500 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-neutral-500 font-orbi mb-1"
               >
                 NSystems
               </h3>
@@ -969,25 +964,124 @@
             </div>
           </div>
 
+          <!-- Calculadora de presupuestos web -->
+          <div class="swiper-slide">
+            <!-- Borde degradado exterior -->
+            <div class="bg-gradient-to-br from-indigo-700 via-fuchsia-600 to-teal-400 p-[2px] rounded-3xl h-full">
+              <!-- Capa interna -->
+              <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-fuchsia flex flex-col justify-between h-full">
+                <div class="h-auto">
+                  <div class="relative group w-full h-auto">
+                    <img loading="lazy"
+                      src="https://nusky7studio.es/img/projects/calculadora-presupuesto-web-movil.webp"
+                      alt="Calculadora Honorarios"
+                      class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <img loading="lazy"
+                      src="https://nusky7studio.es/img/projects/calculadora-presupuesto-web-online.webp"
+                      alt="Calculadora Honorarios"
+                      class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  </div>
+                  <h3 id="pWeb-title" class="text-xl md:text-3xl p-2 pt-4 font-medium text-fuchsia-300 font-orbi mb-1">
+                    Calculadora de Presupuestos
+                  </h3>
+                  <div class="flex space-x-4 mx-0 p-1.5 justify-center">
+                    <img src="img/ico/html.webp" alt="html" class="icons" />
+                    <img src="img/ico/tw.webp" alt="tailwind" class="icons" />
+                    <img src="img/ico/js.webp" alt="javascript" class="icons" />
+                    <img src="img/ico/php.webp" alt="php" class="icons" />
+                  </div>
+                  <p id="presupuestoWeb" class="text-gray-300 text-lg text-left px-5 pb-3 mt-1 mb-2 leading-relaxed">
+                    Calculadora web interactiva para estimar honorarios según variables de tiempo, urgencia y trabajo adicional. Visual moderna con resultados en tiempo real y animaciones suaves.
+                  </p>
+                  <div class="flex mt-auto justify-center">
+                    <button
+                      type="button"
+                      class="block w-11/12 text-center bg-gradient-to-br from-indigo-700/80 via-fuchsia-600/80 to-teal-500/70  rounded-2xl hover:scale-105 transition ease-in-out text-white w-15 hover:px-3 px-6 p-1.5 justify-center items-center mt-auto m-3 drop-shadow-md shadow-black"
+                    >
+                      <a
+                        href="https://nusky7studio.es/presupuesto"
+                        target="_blank"
+                        rel="noopener"
+                        class="text-white block text-4xl"
+                        >🌍</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Gala Valencia -->
+          <div class="swiper-slide">
+            <!-- Borde degradado exterior -->
+            <div class="bg-gradient-to-br from-orange-500 via-pink-600 to-amber-400 p-[2px] rounded-3xl h-full">
+              <!-- Capa interna con fondo oscuro igual que las otras tarjetas -->
+              <div class="bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-fuchsia flex flex-col justify-between h-full">
+                <div class="h-auto">
+                  <div class="relative group w-full h-auto">
+                    <img loading="lazy"
+                      src="https://nusky7studio.es/img/projects/gala-valencia-movil.webp"
+                      alt="Gala Valencia Web"
+                      class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                    />
+                    <img loading="lazy"
+                      src="https://nusky7studio.es/img/projects/gala-valencia.webp"
+                      alt="Gala Valencia Web"
+                      class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    />
+                  </div>
+                  <h3 class="text-xl md:text-3xl p-2 pt-4 font-medium text-rose-300 font-orbi mb-1">
+                    Gala Valencia
+                  </h3>
+                  <div class="flex space-x-4 mx-0 p-1.5 justify-center">
+                    <img src="img/ico/html.webp" alt="html" class="icons" />
+                    <img src="img/ico/tw.webp" alt="tailwind" class="icons" />
+                    <img src="img/ico/js.webp" alt="javascript" class="icons" />
+                    <img src="img/ico/php.webp" alt="php" class="icons" />
+                    <img src="img/ico/json.webp" alt="json" class="icons" />
+                  </div>
+                  <p id="galaVlc" class="text-gray-300 text-lg text-left px-5 pb-3 mt-1 mb-2 leading-relaxed">
+                    Sitio web moderno para eventos en Valencia. 3 secciones de servicios y 3 formularios personalizados con Emails personalizados al cliente.... Desarrollo desde 0 con tailwind y javascript </p>
+                  <div class="flex mt-auto justify-center">
+                    <button
+                      type="button"
+                      class="block w-11/12 text-center bg-gradient-to-br from-orange-500/80 via-pink-600/80 to-amber-400/70  rounded-2xl hover:bg-zinc-900 hover:scale-105 transition ease-in-out text-white w-15 hover:px-3 px-6 p-1.5 justify-center items-center mt-auto m-3 drop-shadow-md shadow-black"
+                    >
+                      <a
+                        href="https://galavalencia.es"
+                        target="_blank"
+                        rel="noopener"
+                        class="text-white block text-4xl"
+                        >🌍</a
+                      >
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <!-- Landing Inmobiliaria  -->
           <div
-          class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-fuchsia flex flex-col justify-between"
-          >
+          class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-fuchsia flex flex-col justify-between">
           <div class="h-auto">
             <div class="relative group w-full h-auto">
               <img loading="lazy"
-                src="https://nusky7studio.es/img/gieMobile.png"
+                src="https://nusky7studio.es/img/projects/gieMobile.webp"
                 alt="Landing Inmobiliaria"
-                class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
               />
               <img loading="lazy"
                 src="https://nusky7studio.es/img/LandingPisos/gie.png"
                 alt="Landing Inmobiliaria"
-                class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
               />
             </div>
             <h3
-              class="text-3xl p-1 font-bold text-fuchsia-300 font-sourceCode mb-1"
+              class="text-xl md:text-3xl p-2 pt-4 font-medium text-fuchsia-300 font-orbi mb-1"
             >
               Landing Inmobiliaria
             </h3>
@@ -1004,14 +1098,13 @@
             <div class="flex mt-auto justify-center">
               <button
                 type="button"
-                class="bg-fuchsia-400 bg-opacity-30 rounded-full hover:bg-zinc-900 hover:animate-none text-white w-15 hover:px-3 px-6 p-3 flex justify-center items-center mt-auto mx-3 mb-3"
-              >
+                class="block w-11/12 text-center bg-gradient-to-br from-fuchsia-300/80 to-purple-950/80 bg-opacity-30 rounded-3xl hover:bg-zinc-900 hover:scale-105 transition ease-in-out text-white w-15 hover:px-3 px-6 p-1.5 justify-center items-center mt-auto m-3 drop-shadow-md shadow-black">
                 <a
                   href="https://giegestion.com/tasacion-vivienda-2025/"
                   target="_blank"
                   rel="noopener"
-                  class="text-white block text-2xl"
-                  >🌐</a
+                  class="text-white block text-4xl"
+                  >🌍</a
                 >
               </button>
             </div>
@@ -1020,23 +1113,23 @@
 
           <!-- Blog -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-teal flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-teal flex flex-col justify-between"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/N7Tools/n7blogMobile.png"
+                  src="https://nusky7studio.es/img/projects/n7blogMobile.webp"
                   alt="N7Blog"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/n7blog.webp"
                   alt="N7Blog"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl p-1 font-bold text-teal-500 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-teal-500 font-orbi mb-1"
               >
                 N7Blog
               </h3>
@@ -1076,7 +1169,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white block text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1085,23 +1178,23 @@
 
           <!-- N7Tools -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-pink flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-pink flex flex-col justify-between"
           >
               <div class="h-auto">
                 <div class="relative group w-full h-auto">
                   <img loading="lazy"
-                    src="https://nusky7studio.es/img/N7Tools/n7toolsMobile.png"
+                    src="https://nusky7studio.es/img/projects/n7toolsMobile.webp"
                     alt="N7Tools"
-                    class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                    class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                   />
                   <img loading="lazy"
                     src="./img/n7tools.webp"
                     alt="N7Tools"
-                    class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
               <h3
-                class="text-3xl p-1 font-bold text-rose-400 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-rose-400 font-orbi mb-1"
               >
                 N7Tools
               </h3>
@@ -1141,7 +1234,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white block text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1150,23 +1243,23 @@
 
           <!-- Proyecto 1 -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-amber flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-amber flex flex-col justify-between"
           >
             <div class="h-auto">
                 <div class="relative group w-full h-auto">
                   <img loading="lazy"
-                    src="https://nusky7studio.es/img/vPlacesMobile.png"
+                    src="https://nusky7studio.es/img/projects/vPlacesMobile.webp"
                     alt="ValenciaPlaces"
-                    class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                    class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                   />
                   <img loading="lazy"
                     src="https://nusky7studio.es/img/vlPlaces.png"
                     alt="ValenciaPlaces"
-                    class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                    class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                   />
                 </div>
               <h3
-                class="text-3xl p-1 font-bold text-amber-400 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-amber-400 font-orbi mb-1"
               >
                 Valencia Places
               </h3>
@@ -1208,7 +1301,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white hover:text-amber-100 block hover:animate-colorCycle text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1217,23 +1310,23 @@
 
           <!-- Proyecto 2 -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-orange flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-orange flex flex-col justify-between"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/transfersMobile.png"
+                  src="https://nusky7studio.es/img/projects/transfersMobile.webp"
                   alt="TransfersVIP"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/transfers.webp"
                   alt="TransfersVIP"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl font-bold text-orange-400 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-orange-400 font-orbi mb-1"
               >
                 Deluxe Transfers
               </h3>
@@ -1274,7 +1367,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white hover:text-orange-200 block hover:animate-colorCycle text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1283,23 +1376,23 @@
 
           <!-- Tattoo Studio -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-purple flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-purple flex flex-col justify-between"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/tattooMobile.png"
+                  src="https://nusky7studio.es/img/projects/tattooMobile.webp"
                   alt="MaMTattoo"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/tattoo.webp"
                   alt="MaMTattoo"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl p-1 font-bold text-violet-400 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-violet-400 font-orbi mb-1"
               >
                 MaM Tattoo
               </h3>
@@ -1339,7 +1432,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white hover:text-violet-300 block text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1348,23 +1441,23 @@
 
           <!-- Smart Time -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-emerald flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-emerald flex flex-col justify-between"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/sTimeMobile.png"
+                  src="https://nusky7studio.es/img/projects/sTimeMobile.webp"
                   alt="SmartTime"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/st.webp"
                   alt="SmartTime"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl p-1 font-bold text-green-300 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-green-300 font-orbi mb-1"
               >
                 Smart Time
               </h3>
@@ -1403,7 +1496,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white hover:text-green-200 block hover:animate-colorCycle text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1412,23 +1505,23 @@
 
           <!-- Proyecto 5 -->
           <div
-            class="swiper-slide bg-zinc-900 rounded-xl pb-3 text-center shadow-rose flex flex-col justify-between"
+            class="swiper-slide  bg-gradient-to-br from-black via-zinc-900 to-black rounded-3xl pb-3 text-center shadow-rose flex flex-col justify-between"
           >
             <div class="h-auto">
               <div class="relative group w-full h-auto">
                 <img loading="lazy"
-                  src="https://nusky7studio.es/img/pokeMobile.png"
+                  src="https://nusky7studio.es/img/projects/pokeMobile.webp"
                   alt="Pokedex"
-                  class="project-img rounded-md mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
+                  class="project-img rounded-3xl mb-4 w-full h-auto transition-opacity duration-300 group-hover:opacity-0"
                 />
                 <img loading="lazy"
                   src="https://nusky7studio.es/img/poke.webp"
                   alt="Pokedex"
-                  class="project-img rounded-md mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
+                  class="project-img rounded-3xl mb-4 w-full h-auto absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
                 />
               </div>
               <h3
-                class="text-3xl p-1 font-bold text-red-600 font-sourceCode mb-1"
+                class="text-xl md:text-3xl p-2 pt-4 font-medium text-red-600 font-orbi mb-1"
               >
                 Pokédex!
               </h3>
@@ -1466,7 +1559,7 @@
                     target="_blank"
                     rel="noopener"
                     class="text-white hover:text-green-200 block hover:animate-colorCycle text-xl"
-                    >🌐</a
+                    >🌍</a
                   >
                 </button>
               </div>
@@ -1476,16 +1569,16 @@
         <!-- Botones de navegación -->
         <div class="swiper-button-next animate-glowColorCycle"></div>
         <div class="swiper-button-prev animate-glowColorCycle"></div>
-        <br />
+        <br/>
         <!-- Paginación -->
         <div class="swiper-pagination"></div>
       </div>
     </section>
-
-    <section id="skills" class="bg-gray-700/50 py-10 rounded-full px-2 md:px-3">
+    <br>
+    <section id="skills" class="bg-gray-700/50 py-10 rounded-3xl md:rounded-full mx-3 lg:mx-36 px-2 md:px-3">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-xl font-bold text-rose-400 text-center font-gba mb-8">
-          Stack
+        <h2 class="text-2xl font-semibold text-rose-400 text-center font-orbi mb-8">
+          S T A C K
         </h2>
         <div class="flex flex-wrap justify-center gap-8">
           <div class="relative group text-center">
@@ -1648,7 +1741,7 @@
       >
         <div class="grid">
           <div
-            class="player-screen mb-0 pb-6 w-120 h-72 bg-gray-700/50 rounded-lg flex items-center justify-center overflow-hidden"
+            class="player-screen mb-0 pb-6 w-120 h-72 bg-gray-700/50 rounded-t-3xl rounded-b-lg flex items-center justify-center overflow-hidden"
           >
             <div class="grid w-full">
               <p
@@ -1666,17 +1759,17 @@
             preload="auto"
             id="audio"
             controls
-            class="pt-0 mt-0 h-9 w-full rounded-md bg-violet-400 text-amber-400"
+            class="pt-0 mt-0 h-9 w-full rounded-2xl bg-violet-400 text-amber-400"
           >
             Tu navegador no soporta nah...
           </audio>
         </div>
         <div
           id="songs-container"
-          class="audio-controls grid gap-4 text-white max-h-80 overflow-x-hidden text-base bg-gray-950/30 rounded-lg"
+          class="audio-controls grid gap-4 text-white max-h-80 overflow-x-hidden text-md bg-gray-900/30 rounded-3xl"
         >
           <p
-            class="text-xl text-center text-violet-300 font-orbi font-semibold animate-glowText1 bg-gray-700/50 w-full rounded-full p-4"
+            class="text-xl text-center text-violet-300 font-orbi font-semibold animate-glowText1 bg-gray-700/50 w-full rounded-t-3xl p-4"
           >
             ELECTRO 🎧 SYNTH
           </p>
@@ -1686,112 +1779,112 @@
           >
             Zenith Glow ❤ Astro Kid
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="lowx.mp3"
             class="song-btn mx-2 py-3 text-rose-400 rounded-lg font-orbi"
           >
             LOWX ❤ Crystal Dreams
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="c152.mp3"
             class="song-btn mx-2 py-3 text-orange-400 rounded-lg font-orbi"
           >
             Illusions ❤ C-152
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="amiga.mp3"
             class="song-btn mx-2 py-3 text-lime-400 rounded-lg font-orbi"
           >
             Amiga ❤ LukHash
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="duneRiders.mp3"
             class="song-btn mx-2 py-3 text-cyan-500 rounded-lg font-orbi"
           >
             Dune Riders ❤ Ferus Melek
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="havoc.mp3"
             class="song-btn mx-2 py-3 text-blue-500 rounded-lg font-orbi"
           >
             Hooker Havoc ❤ Nightstop
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="proxima.mp3"
             class="song-btn mx-2 py-3 text-indigo-500 rounded-lg font-orbi"
           >
             Proxima ❤ LukHash
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="destination.mp3"
             class="song-btn mx-2 py-3 text-purple-500 rounded-lg font-orbi"
           >
             Destination ❤ Fantom '87
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="retroSynth.mp3"
             class="song-btn mx-2 py-3 text-pink-500 rounded-lg font-orbi"
           >
             Retro Nightscape ❤ 80's synthwave
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="perpetual.mp3"
             class="song-btn mx-2 py-3 text-red-500 rounded-lg font-orbi"
           >
             Perpetual Motion ❤ LukHash
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="aloneTogether.mp3"
             class="song-btn mx-2 py-3 text-orange-500 rounded-lg font-orbi"
           >
             Alone Together ❤ LukHash
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="mountains.mp3"
             class="song-btn mx-2 py-3 text-yellow-500 rounded-lg font-orbi"
           >
             Mountains ❤ Saffari
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="release.mp3"
             class="song-btn mx-2 py-3 text-lime-500 rounded-lg font-orbi"
           >
             Release ❤ Adieu Aru
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="egerie.mp3"
             class="song-btn mx-2 py-3 text-green-500 rounded-lg font-orbi"
           >
             Égérie ❤ Adieu Aru ＆ VIQ
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="euphorie.mp3"
             class="song-btn mx-2 py-3 text-teal-500 rounded-lg font-orbi"
           >
             Euphorie ❤ Adieu Aru
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="memoryReboot.mp3"
             class="song-btn mx-2 py-3 text-blue-400 rounded-lg font-orbi"
           >
             Memory Reboot ❤ Narvent
           </button>
-          <hr class="border-zinc-950" />
+          <hr class="border-gray-700/60" />
           <button
             data-file="fearless.mp3"
             class="song-btn mx-2 py-3 text-indigo-400 rounded-lg font-orbi"
@@ -1837,7 +1930,7 @@
 
       <h3
         id="panel-title"
-        class="text-2xl md:text-5xl font-orbi font-semibold mb-3 text-rose-400 animate-colorSlow drop-shadow"
+        class="text-2xl md:4xl font-orbi font-semibold mb-3 text-rose-400 animate-colorSlow drop-shadow"
       >
         ¿Te gusta mi trabajo?
       </h3>
@@ -1859,7 +1952,7 @@
       <div class="flex flex-wrap justify-center gap-4">
         <a
           id="download-cv"
-          class="btn-download px-4 py-2 text-white hover:text-black bg-fuchsia-800 rounded-full hover:animate-bgColorCycle hover:scale-105 transition hover:bg-fuchsia-600 inline-flex items-center"
+          class="btn-download px-4 py-2 text-white hover:text-black bg-fuchsia-800 rounded-full hover:animate-colorSlow hover:scale-105 transition hover:bg-black inline-flex items-center"
         >
           <svg
             class="fill-current w-4 h-4 mr-2"
@@ -1875,7 +1968,7 @@
           href="https://nusky7studio.es/presupuesto"
           target="_blank"
           rel="noopener"
-          class="btn-visit px-4 py-2 text-white hover:text-black hover:font-bold bg-teal-600 rounded-full hover:animate-bgColorCycle hover:scale-105 transition hover:bg-teal-500 inline-flex items-center"
+          class="btn-visit px-4 py-2 text-white hover:text-black hover:font-bold bg-teal-600 rounded-full hover:animate-colorSlow hover:scale-105 transition hover:bg-black inline-flex items-center"
         >
           <span id="button-text1" class="drop-shadow-md"
             >🌏 Calcular Presupuesto</span
@@ -1887,9 +1980,9 @@
       <div class="mt-6">
         <button
           id="subscribe-button"
-          class="bg-rose-700 hover:bg-rose-500 hover:scale-105 transition px-6 py-2 rounded-full hover:animate-bgColorCycle text-white hover:text-black font-semibold shadow drop-shadow"
+          class="bg-gradient-to-r from-teal-600 via-amber-600 to-purple-800 hover:bg-black hover:scale-105 transition px-6 py-2 rounded-full hover:animate-borderGlow3 text-white hover:text-black font-semibold shadow-md drop-shadow-md shadow-black font-orbi uppercase"
         >
-          💌 Suscribirme a la Newsletter
+          💌 Newsletter
         </button>
       </div>
     </div>
@@ -2690,67 +2783,11 @@
         </div>
       </div>
 
-      <!-- Giscus a la derecha -->
-      <div
-        id="giscus-container"
-        class="bg-gray-700/50 p-3 rounded-lg"
-      >
-        <h2
-          id="comments-title"
-          class="text-xl text-center text-emerald-500 font-semibold mb-4 font-gba"
-        >
-          ¡Comenta tus ideas!
-        </h2>
-        <div class="bg-black rounded-lg p-4">
-          <script
-            src="https://giscus.app/client.js"
-            data-repo="Nusky7/N7Comments"
-            data-repo-id="R_kgDONiskbw"
-            data-category="General"
-            data-category-id="DIC_kwDONiskb84ClimC"
-            data-mapping="pathname"
-            data-strict="0"
-            data-reactions-enabled="1"
-            data-emit-metadata="0"
-            data-input-position="top"
-            data-theme="noborder_dark"
-            data-lang="es"
-            data-loading="lazy"
-            crossorigin="anonymous"
-            async
-          ></script>
-          <noscript
-            >Por favor habilita JavaScript para ver los comentarios.</noscript
-          >
-        </div>
-      </div>
-    </div>
-
-    <div
-      id="videos"
-      class="w-full h-auto p-10 py-14 mb-12 bg-gray-700/50 rounded-3xl overflow-x-auto"
-    >
-      <h2
-        id="videos-title"
-        class="text-xl font-bold text-emerald-600 text-center font-gba mb-8 justify-center items-center"
-      >
-        <span>  Some Videos  </span>
-      </h2>
-      <!-- Contenedor para mensajes de error -->
-      <div id="video-message" class="text-center mb-8 text-gray-200"></div>
-      <!-- Contenedor para los videos -->
-      <div id="youtube-videos" class="flex w-full h-auto gap-8"></div>
-    </div>
-
-        <!-- Salto del PopUp -->
-        <!-- <div id="popupTrigger" class="h-1 w-full"></div> -->
-
-    <!-- CONTACTO -->
-    <section id="contact" class="p-3">
-      <div class="max-w-4xl mx-auto text-center">
+      <!-- Contacto a la derecha -->
+      <div  id="contact"  class="max-w-4xl mx-auto text-center">
         <h2
         id="contact-title"
-        class="text-2xl font-gba mb-3 text-emerald-700 p-6"
+        class="text-3xl font-orbi font-semibold mb-3 text-emerald-700 p-6"
       >
         Contacto
       </h2>
@@ -2836,7 +2873,7 @@
                       stroke-linecap="round"
                       stroke-linejoin="round"
                     ></g>
-                    <g id="SVGRepo_iconCarrier">
+                    <g >
                       <g id="XMLID_468_">
                         <path
                           id="XMLID_469_"
@@ -2912,6 +2949,7 @@
                   <input type="checkbox" name="branding" value="Sí" class="accent-fuchsia-500" />
                   Dominio + Correo profesional
                 </label>
+                <br>
               </div>
             
               <!-- Mensaje -->
@@ -3003,6 +3041,7 @@
                     <input type="checkbox" name="branding" value="Sí" class="accent-fuchsia-500 p-1 rounded-full" />
                     Dominio + Correo profesional
                   </label>
+                  <br>
                 </div>
             
                 <div>
@@ -3088,6 +3127,7 @@
                     <input type="checkbox" name="branding" value="Sí" class="accent-fuchsia-500" />
                     Dominio + Correo profesional
                   </label>
+                  <br>
                 </div>
 
                 <div>
@@ -3118,8 +3158,27 @@
           </div>       
         </div>        
       </div>    
-    </section>
+    <!-- </section> -->
+    </div>
 
+    <div
+      id="videos"
+      class="w-full h-auto p-10 py-14 mb-12 bg-gray-700/50 rounded-3xl overflow-x-auto"
+    >
+      <h2
+        id="videos-title"
+        class="text-xl font-bold text-emerald-600 text-center font-gba mb-8 justify-center items-center"
+      >
+        <span>  Some Videos  </span>
+      </h2>
+      <!-- Contenedor para mensajes de error -->
+      <div id="video-message" class="text-center mb-8 text-gray-200"></div>
+      <!-- Contenedor para los videos -->
+      <div id="youtube-videos" class="flex w-full h-auto gap-8"></div>
+    </div>
+
+        <!-- Salto del PopUp -->
+        <!-- <div id="popupTrigger" class="h-1 w-full"></div> -->
 
     <footer class="bg-black text-gray-200 text-sm mt-12">
       <div class="max-w-6xl mx-auto px-4 py-10">
@@ -3128,7 +3187,7 @@
           <!-- Branding -->
           <div>
             <h2 class="text-lg font-semibold font-gba"><span class="text-teal-200">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-orange-200">Bonora</span>  </h2>
-            <img src="https://nusky7studio.es/img/logos/n7LogoS.png" alt="Logo de N7Studio" class="w-32 h-auto" />
+            <img src="https://nusky7studio.es/img/logos/n7NoBkg.webp" alt="Logo de N7Studio" class="w-32 h-auto" />
             <p class="mt-2 max-w-xs">
               Diseño web, desarrollo y creatividad digital. Portfolio y Blog personal.
             </p>
@@ -3165,20 +3224,20 @@
               <ul class="text-sm space-y-1">
                 <li>
                   <a href="https://services.nusky7studio.es" target="_blank" class="hover:text-rose-400 transition">
-                    🌐 Servicios Web
+                    🌍 Servicios Web
+                  </a>
+                </li>
+                <li>
+                  <a href="https://nusky7studio.es/presupuesto" target="_blank" class="hover:text-rose-400 transition">
+                    🧮 Calculadora Presupuesto Web
                   </a>
                 </li>
                 <li>
                   <a href="https://nusky7studio.es/blog" target="_blank" class="hover:text-rose-400 transition">
                     📰 N7Blog: Noticias y Tecnología
                   </a>
-                </li>
-                <li>
-                  <a href="https://exialoe.nusky7studio.es" target="_blank" class="hover:text-rose-400 transition">
-                    🪴 Tienda Natural / Aloe Vera
-                  </a>
-                </li>
-              </ul>
+                </li>               
+              </ul> 
             </div>
           </div>    
         </div>
@@ -3201,9 +3260,6 @@
       src="https://cdn.jsdelivr.net/npm/typewriter-effect@2.18.0/dist/core.js"
       defer
     ></script>
-    <script defer>
-      emailjs.init("39FmjBf7JrQSw9E-2");
-    </script>
     <!-- Scripts -->
     <script type="module" src="js/donations.js" defer></script>
     <script type="module" src="js/youtubeVideos.js" defer></script>
