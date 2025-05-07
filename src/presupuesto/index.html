@@ -122,7 +122,7 @@
         </a>
       </div>
     </div>
-    <h1 class="text-xl md:text-3xl font-medium border-b-2 border-b-emerald-200 font-orbi mt-1 mb-6 text-center animate-glowText2">Calculadora de Presupuesto Web</h1>
+    <h1 class="text-crisp text-xl md:text-3xl font-medium border-b-2 border-b-emerald-200 font-orbi mt-1 mb-6 text-center animate-glowText2">Calculadora de Presupuesto Web</h1>
     <form id="quoteForm" class="space-y-4">
 
       <!-- Tipo de web -->
@@ -164,7 +164,7 @@
     <!-- Nº de páginas -->
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
         <div>
-            <label for="pages" class="block font-medium mb-2 font-orbi text-purple-200">Número de secciones:</label>
+            <label for="pages" class="block font-medium mb-2 font-orbi text-purple-200 text-crisp">Número de secciones:</label>
             <select id="pages" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
                 <option value="1">1 página</option>
                 <option value="2">2 páginas</option>
@@ -179,7 +179,7 @@
         </div>  
         <!-- Soporte en festivos  -->
         <div >
-            <label for="supportLevel" class="block font-medium mb-2 font-orbi text-purple-200">Atención fin de semana:</label>
+            <label for="supportLevel" class="block font-medium mb-2 font-orbi text-purple-200 text-crisp">Atención fin de semana:</label>
             <select id="supportLevel" class="w-full p-2 rounded-3xl bg-gray-700/80 focus:ring-2 focus:ring-purple-200 shadow-md shadow-gray-950">
                 <option value="0" selected>No</option>
                 <option value="90">Atención puntual durante el proyecto (único) – +90 €</option>
@@ -223,12 +223,12 @@
     <div>
     <label class="block mb-2 font-medium font-orbi text-center text-lg text-purple-300">Funcionalidades</label>
         <div class="space-y-2 grid grid-cols-1 md:grid-cols-2 bg-gray-700/80 rounded-3xl p-6 shadow-lg shadow-gray-950">
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-cyan-500" value="75"> Formulario de contacto <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+75 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-cyan-500" value="75"> Formulario de contacto <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+75 </span></label>
             
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-pink-500" value="150"> Blog autogestionable <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+150 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-pink-500" value="150"> Blog autogestionable <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+150 </span></label>
             <div>
             <label for="formCount" class="block font-medium mb-2">
-                <input type="checkbox" id="customForm" class="mr-2 w-4 h-4 align-middle accent-emerald-400" onchange="toggleFormOptions()" />
+                <input type="checkbox" id="customForm" class="mr-2 w-4 h-4 text-crisp align-middle accent-emerald-400" onchange="toggleFormOptions()" />
                 ¿Formularios adicionales?
             </label>
             <div id="formOptions" class="hidden mt-2">
@@ -239,28 +239,28 @@
                 </select>
             </div>
             </div> 
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-sky-500" value="100"> Multilenguaje 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+100 </span></label>
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-yellow-400" value="210"> Pasarela de pago 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+210 </span></label>                  
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-amber-500" value="40"> Integración con redes sociales 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+40 </span></label>
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-teal-500" value="60"> Carga inicial de contenido 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+60 </span></label>
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-lime-500" value="120"> Optimización SEO básica 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+120 </span></label>
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-red-500" value="70"> Versión exportable a PDF 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+70 </span></label>
-            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-purple-500" value="50"> Instalación en hosting cliente 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>     -->
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-fuchsia-500" value="50"> Animaciones 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>
-            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-rose-500" value="80"> Hosting 1 año 
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+80 </span></label> -->
-            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 accent-orange-500" value="50"> Mantenimiento  
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">+50 €/mes</span></label>  
-            <label class="block"><input type="checkbox" id="includeIVA" class="mr-2 w-4 h-4 text-rose-400 accent-green-600"> Incluir IVA  
-                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 hover:text-sm transform cursor-pointer p-1.5 text-xs rounded-xl">21%</span>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-sky-500" value="100"> Multilenguaje 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+100 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-yellow-400" value="210"> Pasarela de pago 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+210 </span></label>                  
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-amber-500" value="40"> Integración con redes sociales 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+40 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-teal-500" value="60"> Carga inicial de contenido 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+60 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-lime-500" value="120"> Optimización SEO básica 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+120 </span></label>
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-red-500" value="70"> Versión exportable a PDF 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+70 </span></label>
+            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-purple-500" value="50"> Instalación en hosting cliente 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>     -->
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-fuchsia-500" value="50"> Animaciones 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+50 </span></label>
+            <!-- <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-rose-500" value="80"> Hosting 1 año 
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+80 </span></label> -->
+            <label class="block"><input type="checkbox" class="mr-2 w-4 h-4 text-crisp accent-orange-500" value="50"> Mantenimiento  
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">+50 €/mes</span></label>  
+            <label class="block"><input type="checkbox" id="includeIVA" class="mr-2 w-4 h-4 text-crisp text-rose-400 accent-green-600"> Incluir IVA  
+                <span class="bg-gray-950 text-purple-200 hover:bg-black hover:text-emerald-200 cursor-pointer p-1.5 text-xs rounded-xl">21%</span>
             </label>
         </div>
     </div>

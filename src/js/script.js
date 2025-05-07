@@ -1,8 +1,6 @@
  
 document.addEventListener("DOMContentLoaded", () => {
-
-const subtitle = document.getElementById("panel-subtitle");
-
+  
 function toggleAboutText() {
   const desc = document.getElementById("about-description");
   const btn = document.getElementById("toggle-about");
@@ -14,53 +12,11 @@ function toggleAboutText() {
   }
 }
 
-document.getElementById("toggle-about").addEventListener("click", toggleAboutText);
+const toggleBtn = document.getElementById("toggle-about");
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", toggleAboutText);
+}
 
-  new Swiper('.swiper-container', {
-    effect: 'cards',
-    cardsEffect: {
-      rotate: true,
-      slideShadows: true,
-      perSlideOffset: 15,
-      perSlideRotate: 6,
-    },
-    autoHeight: true,
-    centeredSlides: true, 
-    loop: true,
-    slidesPerView: 1,
-    zoom: {
-      limitToOriginalSize: false,
-      minRatio: 0.3,
-      maxRatio: 2,
-      panOnMouseMove: true,
-      toggle: true,
-    },
-    autoplay: {
-      delay: 5100,
-      pauseOnMouseEnter: true,
-      disableOnInteraction: true 
-    },
-    
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1,
-    },
-    768: {
-      slidesPerView: 2,
-    },
-    1500: {
-      slidesPerView: 3,
-    },
-  },
-  });
   
 changeCVLang('es');
 
@@ -76,20 +32,9 @@ function showToast(msg) {
   }, 3900);
 }
 
-// Animación CV - Contrata mis servicios hoy misme
-function startAnimation() {
-  subtitle.classList.add("animate-blinkAndBounce");
-
-  setTimeout(() => {
-    subtitle.classList.remove("animate-blinkAndBounce");
-  }, 4000);
-  setTimeout(startAnimation, 9999);
-}
-startAnimation();
-
 const loadTranslations = async (lang) => {
   try {
-    const response = await fetch(`./locales/${lang}.json`);
+    const response = await fetch(`https://nusky7studio.es/locales/${lang}.json`);
     translations = await response.json();
     console.log("Translations loaded:", translations);
     applyTranslations(translations); 
@@ -182,6 +127,12 @@ const loadTranslations = async (lang) => {
           `;
         }
       });
+
+      document.querySelectorAll(".form-extra").forEach(el => {
+        if (translations.form.extra) {
+          el.textContent = translations.form.extra;
+        }
+      });      
      
       // Botón submit
       const submitButton = form.querySelector("button[type='submit']");
@@ -217,8 +168,7 @@ const loadTranslations = async (lang) => {
   document.getElementById("design").innerHTML = translations.terminal.design;
   document.getElementById("community").innerHTML = translations.terminal.community;  
 
-    };
-     
+    };     
 
 // Ratings ★ 
 let translations = {};
@@ -234,18 +184,6 @@ function t(key, variables = {}) {
   });
   return text;
 }
-
-  // Obtener estadísticas de valoraciones
-  // function fetchRatings() {
-  //   $.get('https://nusky7studio.es/php/get_ratings.php', function (res) {
-  //       if (res.status === 'success') {
-  //           $('#total-votes').text(t('ratingStats.votes', { total: res.total_votes }));
-  //           $('#average-rating').text(t('ratingStats.average', { average: res.average_rating.toFixed(1) }));
-  //           $('.rateit').rateit('value', res.average_rating); // Mostrar promedio
-  //       }
-  //   });
-  // }
-
   function fetchRatings() {
     console.log("Llamando a fetchRatings...");
     $.get('https://nusky7studio.es/php/get_ratings.php', function (res) {
@@ -332,7 +270,6 @@ document.getElementById("lang-switch-en").addEventListener("click", () => {
 });
 
 
-
 function changeCVLang(language) {
   const downloadButton = document.getElementById('download-cv');
 
@@ -355,6 +292,19 @@ function changeCVLang(language) {
     tempLink.click();
   };
 }
+
+// function changeCVLang(language) {
+//   let url;
+
+//   if (language === 'en') {
+//     url = 'https://nusky7studio.es/cv/en/';
+//   } else {
+//     url = 'https://nusky7studio.es/cv/es/';
+//   }
+
+//   window.open(url, '_blank'); // Abre en una nueva pestaña
+// }
+
 
 document.getElementById('lang-switch-en').onclick = function() {
   changeCVLang('en');

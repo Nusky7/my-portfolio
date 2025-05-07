@@ -1,7 +1,8 @@
+
 const promoCodes = {
-    "N7STUDIO10": 0.10,
+    "NUSKY710": 0.10,
     "LANZADERA5": 0.05,
-    "CLIENTEVIP": 0.20
+    "N7VIPS": 0.20 
   };
   
   let appliedDiscount = 0;

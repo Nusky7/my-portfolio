@@ -1,6 +1,6 @@
 {
     "header": {
-      "subtitle": "FrontEnd Lover &nbsp;<span style='color: lightcoral'>❤</span> &nbsp; FullStack Developer"
+      "subtitle": "<span style='color: lightcoral'>—</span> &nbsp; Diseñadora &amp; Desarrolladora Web &nbsp;<span style='color: lightcoral'>—</span>"
     },
     "intro": {
       "welcome": "Hola, soy",
@@ -9,7 +9,7 @@
     },
     "about": {
       "heading": "¡HOLA MUNDO!",
-      "description": "Soy desarrolladora <strong>Frontend</strong> resolutiva, apasionada por crear interfaces atractivas, funcionales y centradas en la experiencia de usuario. Disfruto especialmente diseñando con <code>Tailwind CSS</code> y dando vida a ideas con <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code> y frameworks como <code>Angular</code>.<br><br>Me gusta cuidar los detalles visuales, pero también sé construir mis propios <strong>backends</strong> cuando hace falta, integrando APIs, bases de datos o soluciones personalizadas con <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code> o <code>Firebase</code>.<br><br>Trabajo de forma práctica, creativa y autónoma, con el objetivo de desarrollar webs modernas, responsivas y bien optimizadas para buscadores. Siempre estoy aprendiendo y explorando nuevas herramientas que me permitan entregar resultados que realmente conecten."
+      "description": "Soy desarrolladora <strong>Frontend ❤</strong> resolutiva, apasionada por crear interfaces atractivas, funcionales y centradas en la experiencia de usuario. Disfruto especialmente diseñando con <code>Tailwind CSS</code> y dando vida a ideas con <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code> y frameworks como <code>Angular</code>.<br><br>Me gusta cuidar los detalles visuales, pero también sé construir mis propios <strong>backends</strong> cuando hace falta, integrando APIs, bases de datos o soluciones personalizadas con <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code> o <code>Firebase</code>.<br><br>Trabajo de forma práctica, creativa y autónoma, con el objetivo de desarrollar webs modernas, responsivas y bien optimizadas para buscadores. Siempre estoy aprendiendo y explorando nuevas herramientas que me permitan entregar resultados que realmente conecten."
     },
     "projects": {
         "title": "P R O Y E C T O S",
@@ -47,6 +47,7 @@
       "web": "🌐 ¿Tienes una web actual?",
       "message": "💌 Cuéntame más sobre tu proyecto o necesidades...",
       "submit": "Enviar 📩",
+      "extra": "Anything else?",
       "interest": "Me interesa...",
       "express": "Quiero una Landing Page",
       "seo": "Necesito mejorar el SEO",
@@ -104,7 +105,25 @@
   "ratingStats": {
     "votes": "{total} Votos",
     "average": "Promedio ▲ {average}"
-  }
+  },
+  "lanzadera": {
+  "title": "🛰️ LANZADERA N7S",
+  "contact": "— &nbsp; &nbsp; P I D E &nbsp; C I T A &nbsp; P A R A &nbsp; T U &nbsp; P R O Y E C T O &nbsp; &nbsp; —",
+  "ogDescription": "Acceso directo a mis sitios más relevantes.",
+  "servicesTitle": "Servicios Web",
+  "servicesText": "Diseño, mantenimiento y soluciones personalizadas.",
+  "portfolioTitle": "Portfolio",
+  "portfolioText": "Explora mis proyectos y skills como Web Developer.",
+  "blogTitle": "N7Blog",
+  "blogText": "Noticias, gadgets y creatividad para mentes techies.",
+  "newsletterTitle": "Newsletter",
+  "newsletterText": "Contenido exclusivo, sin spam. ¡Apúntate!",
+  "cvTitle": "Currículum Vitae",
+  "cvText": "Mi CV Online con opción a descarga en PDF.",
+  "quoteBtn": "CALCULAR PRESUPUESTO",
+  "quoteTxt": "Pide cita para tu proyecto web y descubre en segundos cuánto podría costar. <br>Recuerda que esta herramienta es orientativa y que para obtener un presupuesto definitivo necesitaremos conocer mejor tus necesidades."
+}
+
 
   }
   

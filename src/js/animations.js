@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById('menu-toggle');
   const menu = document.getElementById('menu');
   const menuBkg = document.getElementById('menu-bkg');
+  const subtitle = document.getElementById("panel-subtitle");
+  
   // Variables e Inicializadores
   // MusicOn - Delay
   let isMusicOn = false;
@@ -56,6 +58,17 @@ document.addEventListener("DOMContentLoaded", function () {
   // Inicializar los sliders
   volumeSlider.value = 60;
   toggleMusic.checked = false;
+
+  // Animación CV - Contrata mis servicios hoy misme
+function startAnimation() {
+  subtitle.classList.add("animate-blinkAndBounce");
+
+  setTimeout(() => {
+    subtitle.classList.remove("animate-blinkAndBounce");
+  }, 4000);
+  setTimeout(startAnimation, 9999);
+}
+startAnimation();
   
   // Al cargar la pagina
   window.addEventListener('load', () => {
@@ -64,6 +77,7 @@ document.addEventListener("DOMContentLoaded", function () {
     updateSliderBackground(volumeSlider);
     updateSliderBackground(volumeSlider2);
   });
+  
   
   // Alternar el menú al hacer clic
   menuToggle.addEventListener('click', () => {
@@ -487,5 +501,7 @@ document.getElementById('channelBtn').addEventListener('click', function () {
     channelIndicator.classList.add('hidden');
     }, 3000);
   });
+
+
  
 });

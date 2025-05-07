@@ -3,6 +3,18 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-crisp {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+}
+
+.emoji {
+  font-family: 'Segoe UI Emoji', 'Noto Color Emoji', 'Apple Color Emoji', sans-serif;
+}
+
 .iti__country-list {
   background-color: #09090B  !important;
   color: white;
@@ -565,7 +577,6 @@ a, button, summary {
 .lang {
   width: 6%;
   padding: 6px;
-  border-radius: 100px;
   margin: 0 auto;
   margin-top: 5px;
 }
