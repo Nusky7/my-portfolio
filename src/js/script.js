@@ -18,7 +18,7 @@ if (toggleBtn) {
 }
 
   
-changeCVLang('es');
+// changeCVLang('es');
 
 function showToast(msg) {
   const toast = document.getElementById('toast');
@@ -34,7 +34,7 @@ function showToast(msg) {
 
 const loadTranslations = async (lang) => {
   try {
-    const response = await fetch(`https://nusky7studio.es/locales/${lang}.json`);
+    const response = await fetch(`./locales/${lang}.json`);
     translations = await response.json();
     console.log("Translations loaded:", translations);
     applyTranslations(translations); 
@@ -45,6 +45,13 @@ const loadTranslations = async (lang) => {
 };
 
   const applyTranslations = (translations) => {
+
+  //Cambiar URL CV
+  const cvLink = document.getElementById("cv");
+    if (cvLink && translations.lanzadera?.cvUrl) {
+      cvLink.href = translations.lanzadera.cvUrl;
+    }
+
   // Menu
   document.querySelector('a[href="#main-content"]').textContent = translations.menu.about_me;
   document.querySelector('a[href="#projects"]').textContent = translations.menu.projects;
@@ -83,6 +90,8 @@ const loadTranslations = async (lang) => {
   document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
   document.getElementById("panel-text").innerHTML = translations.panel.panelText;
   document.getElementById("contact-title").innerHTML = translations.panel.contact;
+  // Banner final
+  document.getElementById("ban2txt").innerHTML = translations.panel.bannerTxt;
   // Player
   document.getElementById("song-title").innerHTML = translations.player.songs;
   document.getElementById("videos-title").innerHTML = translations.player.videos;
@@ -148,10 +157,21 @@ const loadTranslations = async (lang) => {
     });
   
   // Donations 
-  // document.getElementById('donation-title').innerHTML = translations.donations.title;
-  // document.getElementById('donate-with').innerHTML = translations.donations.text;
-  // document.getElementById('coffee').innerHTML = translations.donations.button;
-  // document.getElementById('btext').innerHTML = translations.donations.btext;
+  const donateWith = document.getElementById('donate-with');
+  if (donateWith && translations.donations?.text) {
+    donateWith.innerHTML = translations.donations.text;
+  }
+
+  const coffeeButton = document.getElementById('coffee');
+  if (coffeeButton && translations.donations?.button) {
+    coffeeButton.innerHTML = translations.donations.button;
+  }
+
+  const btext = document.getElementById('btext');
+  if (btext && translations.donations?.btext) {
+    btext.innerHTML = translations.donations.btext;
+}
+
   // Terminal
   document.getElementById('t-text').innerHTML = translations.terminal.title;
   document.getElementById('t-text1').innerHTML = translations.terminal.txt;
@@ -268,51 +288,6 @@ document.getElementById("lang-switch-es").addEventListener("click", () => {
 document.getElementById("lang-switch-en").addEventListener("click", () => {
   loadTranslations("en");
 });
-
-
-function changeCVLang(language) {
-  const downloadButton = document.getElementById('download-cv');
-
-  let fileUrl;
-  let fileName;
-
-  if (language === 'en') {
-    fileUrl = 'https://nusky7studio.es/cv/cv-en.pdf';
-    fileName = 'cv-en.pdf';
-  } else if (language === 'es') {
-    fileUrl = 'https://nusky7studio.es/cv/cv-es.pdf';
-    fileName = 'cv-es.pdf';
-  }
-
-  downloadButton.onclick = function() {
-    const tempLink = document.createElement('a');
-    tempLink.href = fileUrl;
-    tempLink.target = '_blank'; 
-    tempLink.download = fileName; 
-    tempLink.click();
-  };
-}
-
-// function changeCVLang(language) {
-//   let url;
-
-//   if (language === 'en') {
-//     url = 'https://nusky7studio.es/cv/en/';
-//   } else {
-//     url = 'https://nusky7studio.es/cv/es/';
-//   }
-
-//   window.open(url, '_blank'); // Abre en una nueva pestaña
-// }
-
-
-document.getElementById('lang-switch-en').onclick = function() {
-  changeCVLang('en');
-};
-
-document.getElementById('lang-switch-es').onclick = function() {
-  changeCVLang('es');
-  };
 
   loadTranslations("es"); 
 

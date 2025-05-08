@@ -71,7 +71,7 @@ paypalBtn.addEventListener('click', () => {
  * Redirige al usuario a la página de Ko-fi para donaciones.
  */
 kofiBtn.addEventListener('click', () => {
-    window.open('https://ko-fi.com/nusky7', '_blank'); 
+    window.open('https://revolut.me/nusky7', '_blank'); 
     donationModal.classList.add('hidden'); 
     donateBtn.classList.remove('scale-110');
     coffee.classList.add('opacity-0');

@@ -1,4 +1,4 @@
-const API_KEY = "";
+const API_KEY = "AIzaSyAytU59yF9oUxQ3tsrvglwR-D6QIbz3F5o";
 // const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
 const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
 const MAX_RESULTS = 5; 
@@ -48,6 +48,7 @@ function displayVideos(videos) {
         const videoId = video.id.videoId || video.id; 
 
         return `
+        
            <div class="p-2.5 w-full h-auto shadow-md rounded-md hover:shadow-lg transition-shadow duration-300 overflow-hidden" style="background: linear-gradient(180deg, #3b3b3b, #262626);">
                 <a href="https://www.youtube.com/watch?v=${videoId}" target="_blank" class="block">
                     <div class="aspect-w-16 aspect-h-9">

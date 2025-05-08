@@ -117,6 +117,13 @@ const frases = [
         const cvText = document.querySelector('[alt="CV Online"] + div p');
         if (cvTitle) cvTitle.textContent = translations.lanzadera.cvTitle;
         if (cvText) cvText.textContent = translations.lanzadera.cvText;
+
+        // Cambiar el enlace del CV según idioma
+        const cvLink = document.getElementById("cv");
+        if (cvLink) {
+          cvLink.href = translations.lanzadera.cvUrl;
+}
+
   
       // Forms
     document.querySelectorAll("form").forEach(form => {

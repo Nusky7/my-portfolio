@@ -41,7 +41,6 @@ select:-webkit-autofill:focus,
 .rateit .rateit-selected {
     /* color: #AA1C59 !important;  */
     color: #F7931A !important; 
-    /* @apply animate-borderGlow1; */
     cursor: url('/img/pointer.png') 16 16, pointer !important;
     filter: drop-shadow(0px 0px 6px rgba(0, 0, 0, 0.9)) !important;
 }
@@ -63,7 +62,7 @@ select:-webkit-autofill:focus,
 }
 
 html, body{
-  cursor: url('/img/cursor.png') 16 16, cursor !important;
+  cursor: url('/img/cursor.png') 16 16, auto !important;
   margin: 0;
   overflow-x: hidden; 
   height: 100%;
@@ -74,9 +73,9 @@ html, body{
 body, p, li, h1, h2, h3, h4, h5, h6, a {
   cursor: url('/img/cursor.png') 16 16, cursor !important;
 }
-#name{
+/* #name{
   cursor: url('/img/pointer.png') 16 16, pointer !important;
-}
+} */
 
 @font-face {
   font-family: 'pix'; 

@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const extras = getExtras(emailForm);
 
     if (!name || !email || !phone) {
-      alert("Por favor, completa todos los campos obligatorios.");
+      showToast("⚠️ Por favor, completa todos los campos obligatorios.");
       loadingSpinner.classList.add("hidden");
       return;
     }
@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     } catch (error) {
       console.error(error);
-      showToast("Hubo un error al enviar tu mensaje. Inténtalo más tarde o utiliza los otros formularios");
+      showToast("❌ Hubo un error al enviar tu mensaje. Inténtalo más tarde o utiliza los otros formularios");
     } finally {
       loadingSpinner.classList.add("hidden");
     }
@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const extras = getExtras(telegramForm);
 
     if (!username || !message) {
-      alert("Por favor, completa los campos obligatorios.");
+      showToast("⚠️ Por favor, completa los campos obligatorios.");
       return;
     }
 
@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const extras = getExtras(whatsappForm);
 
     if (!name || !message) {
-      alert("Por favor, completa los campos obligatorios.");
+      showToast("⚠️ Por favor, completa los campos obligatorios.");
       return;
     }
 

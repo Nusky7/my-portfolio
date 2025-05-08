@@ -36,59 +36,73 @@ document.addEventListener('DOMContentLoaded', () => {
     return container;
   }
 
-  // Precargar ondas
-  playlist.forEach((song, index) => {
-    const container = createWaveformContainer(index); 
-
-    const waveInstance = WaveSurfer.create({
-      container: container, 
-      waveColor: 'rgb(170, 248, 212)',
-      progressColor: 'rgb(60,179,113)',
-      backgroundColor: 'rgb(0,0,0)',
-      barWidth: 4,
-      barGap: 3,
-      barRadius: 9,
-      height: 128,
-      responsive: false,
-      backend: 'MediaElement',
-      media: audio, 
-    });
-
-    // Precargar audio
-    waveInstance.load(`/mp3/${song.file}`);
-    waveSurferInstances.set(song.file, waveInstance);
-  });
-
   function playSong(songFile, button) {
+    // Detener todas las otras ondas si están activas
     waveSurferInstances.forEach((instance, file) => {
       if (file !== songFile) instance.stop();
     });
-
+  
+    // Ocultar todas las ondas previas
     document.querySelectorAll('[id^="waveform-"]').forEach((container) => {
       container.style.display = 'none';
     });
-
-    const waveContainer = document.getElementById(`waveform-${currentIndex}`);
-    waveContainer.style.display = 'block'; 
-
-    audio.src = `/mp3/${songFile}`;
-    audio.load();
-
+  
+    // Mostrar contenedor correcto
+    let waveformDiv = document.getElementById(`waveform-${currentIndex}`);
+    if (!waveformDiv) {
+      waveformDiv = createWaveformContainer(currentIndex);
+    }
+    waveformDiv.style.display = 'block';
+  
+    // Cambiar título
     const songTitle = button.textContent.trim();
     title.textContent = songTitle;
-
+  
+    // Cambiar estilo visual del botón
     if (currentPlayingButton) {
-      currentPlayingButton.classList.remove('animate-glowGreenShadowCycle', 'animate-flashSlow', 'drop-shadow-xl');
+      currentPlayingButton.classList.remove(
+        'animate-glowGreenShadowCycle',
+        'animate-flashSlow',
+        'drop-shadow-xl'
+      );
     }
     currentPlayingButton = button;
     button.classList.add('animate-glowGreenShadowCycle', 'drop-shadow-xl');
     title.classList.add('animate-glowText', 'text-green-300');
-
-    const waveInstance = waveSurferInstances.get(songFile);
-    if (waveInstance) {
+  
+    // Verificar si ya existe la onda para este archivo
+    let waveInstance = waveSurferInstances.get(songFile);
+    if (!waveInstance) {
+      waveInstance = WaveSurfer.create({
+        container: waveformDiv,
+        waveColor: 'rgb(170, 248, 212)',
+        progressColor: 'rgb(60,179,113)',
+        backgroundColor: 'rgb(0,0,0)',
+        barWidth: 4,
+        barGap: 3,
+        barRadius: 9,
+        height: 128,
+        responsive: false,
+        backend: 'MediaElement',
+        media: audio,
+      });
+  
+      waveSurferInstances.set(songFile, waveInstance);
+  
+      // Esperar a que la onda esté lista 
+      waveInstance.once('ready', () => {
+        audio.play();
+      });
+  
+      waveInstance.load(`/mp3/${songFile}`);
+    } else {
+      // Si ya existe reproducir
+      audio.src = `/mp3/${songFile}`;
+      audio.load();
       audio.play();
     }
   }
+  
 
   function playNext() {
     currentIndex = (currentIndex + 1) % playlist.length;

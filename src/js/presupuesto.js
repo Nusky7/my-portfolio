@@ -4,6 +4,17 @@ const promoCodes = {
     "LANZADERA5": 0.05,
     "N7VIPS": 0.20 
   };
+
+// const email = document.getElementById("clientEmail").value.trim();
+// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+// if (!emailRegex.test(email)) {
+//   showToast("❌ Introduce un correo electrónico válido.");
+//   return;
+// }
+
+
+
   
   let appliedDiscount = 0;
 
@@ -261,11 +272,20 @@ function toggleFormOptions() {
       const clientPhone = document.getElementById("clientPhone").value.trim(); 
       const totalValue = document.getElementById("total").textContent.trim();
 
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+ 
       // Requerir datos cliente para enviar
       if (!clientName || !clientEmail || !clientPhone) {
         showToast("⚠️ Por favor, completa todos los datos del cliente antes de enviar tu propuesta.");
         return;
       }  
+
+      if (!emailRegex.test(clientEmail)) {
+        showToast("⚠️ Introduce un correo electrónico válido.");
+        return;
+      }
+
       // Calcular antes de enviar (si no se envian los valores preseleccionados)
       if (!totalValue || totalValue === "0 €" || totalValue === "0.00 €") {
         showToast("⚠️ Calcula el presupuesto antes de enviarlo.");

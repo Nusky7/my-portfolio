@@ -33,11 +33,12 @@
       "panelTitle": " <span class='ask'>?</span>TE GUSTA MI TRABAJO?",
       "panelSubitle": "<span class='ask mr-1'>?</span>Necesitas tu propia Web?",
       "panelText": "¡Hablemos sobre tu próximo proyecto!<br>Descarga mi CV para más detalles o contáctame directamente.",
-      "contact": "CONTACTO"
+      "contact": "CONTACTO",
+      "bannerTxt": "Descubre mis otros sitios, artículos y formas de estar en contacto conmigo."
     },
     "player": {
-      "songs": "Mientras trabajo...",
-      "videos": "Algunos Videos..."
+      "songs": "CREANDO...",
+      "videos": "ALGUNOS VIDEOS..."
     },
     "form": {
       "name": "🙂 Nombre",
@@ -47,7 +48,7 @@
       "web": "🌐 ¿Tienes una web actual?",
       "message": "💌 Cuéntame más sobre tu proyecto o necesidades...",
       "submit": "Enviar 📩",
-      "extra": "Anything else?",
+      "extra": "Algo Más?",
       "interest": "Me interesa...",
       "express": "Quiero una Landing Page",
       "seo": "Necesito mejorar el SEO",
@@ -64,7 +65,7 @@
     },
     
     "donations": {
-      "title": "☕︎ Elige tu opcion",
+      "title": "☕︎ ELIGE TU OPCIÓN",
       "text": "Donar con ",
       "button": "Invítame<br>a Café ☕︎",
       "btext": "Copiar"
@@ -120,6 +121,7 @@
   "newsletterText": "Contenido exclusivo, sin spam. ¡Apúntate!",
   "cvTitle": "Currículum Vitae",
   "cvText": "Mi CV Online con opción a descarga en PDF.",
+   "cvUrl": "https://nusky7studio.es/cv/es/",
   "quoteBtn": "CALCULAR PRESUPUESTO",
   "quoteTxt": "Pide cita para tu proyecto web y descubre en segundos cuánto podría costar. <br>Recuerda que esta herramienta es orientativa y que para obtener un presupuesto definitivo necesitaremos conocer mejor tus necesidades."
 }

@@ -74,8 +74,8 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/rateit.css"
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.rateit/1.1.1/jquery.rateit.min.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5659298995663685"
-    crossorigin="anonymous"></script>
+    <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5659298995663685"
+    crossorigin="anonymous"></script> -->
     <!-- Font Awesome > para rateit No borrar por dioh D: ) -->
     <script
       src="https://kit.fontawesome.com/a67d5af2d9.js"
@@ -676,7 +676,7 @@
           
            
               
-          <div class="bg-gray-900 bg-cover bg-center  animate-borderGlow2 rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.webp') ;">
+          <div class="bg-gray-900 bg-cover bg-center  animate-tvflickerRoseTeal rounded-3xl max-w-md w-full shadow-lg" style="background-image: url('https://nusky7studio.es/img/backgrounds/nebuPinkDark.webp') ;">
               <div class="bg-black/10 px-9 pt-9 rounded-3xl text-black dark:text-white">
               <div class="text-center">
                 <h2 id="popup-title" class="text-xl font-semibold animate-blinkAndBounce1 font-orbi drop-shadow-lg">​𝙎𝙐𝙎𝘾𝙍𝙄𝘽𝙀𝙏𝙀 𝘼 𝙈𝙄​</h2>
@@ -765,7 +765,7 @@
           id="lang-switch-es"
           data-lang="es"
           class="lang-btn active-lang p-1 hover:animate-spin"
-          onclick="changeCVLang('es') "
+     
         >
           <img src="img/es.webp" alt="es" class="w-full h-7" />
         </button>
@@ -773,7 +773,7 @@
           id="lang-switch-en"
           data-lang="en"
           class="lang-btn p-1 hover:animate-spin"
-          onclick="changeCVLang('en')"
+      
         >
           <img src="img/en.webp" alt="en" class="w-full h-7" />
         </button>
@@ -1950,8 +1950,7 @@
       </p>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a
-          id="download-cv"
+        <a id="cv" href="https://nusky7studio.es/cv/es/" target="_blank"
           class="btn-download px-4 py-2 text-white hover:text-black bg-fuchsia-800 rounded-full hover:animate-colorSlow hover:scale-105 transition hover:bg-black inline-flex items-center"
         >
           <svg
@@ -1977,14 +1976,14 @@
       </div>
 
       <!-- Botón de suscripción -->
-      <div class="mt-6">
+      <!-- <div class="mt-6">
         <button
           id="subscribe-button"
           class="bg-gradient-to-r from-teal-600 via-amber-600 to-purple-800 hover:bg-black hover:scale-105 transition px-6 py-2 rounded-full hover:animate-borderGlow3 text-white hover:text-black font-semibold shadow-md drop-shadow-md shadow-black font-orbi uppercase"
         >
           💌 Newsletter
         </button>
-      </div>
+      </div> -->
     </div>
 
     <!-- Seccion comentarios y recursosTV -->
@@ -3161,33 +3160,66 @@
     <!-- </section> -->
     </div>
 
+    
+    <!-- <div class="grid md:grid-cols-3">           -->
+    <!-- VIDEOS -->
     <div
-      id="videos"
-      class="w-full h-auto p-10 py-14 mb-12 bg-gray-700/50 rounded-3xl overflow-x-auto"
+    id="videos"
+    class="md:col-span-2 w-full h-auto p-10 py-14 mb-12  rounded-3xl "
+  >
+    <h2
+      id="videos-title"
+      class=" text-2xl font-bold text-emerald-600 text-center font-orbi mb-8 justify-center items-center"
     >
-      <h2
-        id="videos-title"
-        class="text-2xl font-bold text-emerald-600 text-center font-orbi mb-8 justify-center items-center"
-      >
-        <span>  Some Videos  </span>
-      </h2>
-      <!-- Contenedor para mensajes de error -->
-      <div id="video-message" class="text-center mb-8 text-gray-200"></div>
-      <!-- Contenedor para los videos -->
-      <div id="youtube-videos" class="flex w-full h-auto gap-8"></div>
+      <span>  Some Videos  </span>
+    </h2>
+    <!-- Contenedor para mensajes de error -->
+    <div id="video-message" class="text-center mb-8 text-gray-200"></div>
+    <!-- Contenedor para los videos -->
+    <div class=" h-auto">
+      <div id="youtube-videos" class="grid grid-cols-1 md:grid-cols-2 gap-8"></div>
     </div>
+  </div>
+
+    <section class="relative md:col-span-1 bg-gray-900/30 text-white py-6 px-20 mt-12 shadow-2xl rounded-3xl md:rounded-t-full">   
+      <div class="max-w-4xl mx-auto text-center relative z-10 ">
+        <img src="https://nusky7studio.es/img/logos/n7NoBkg.webp" alt="N7Studio Logo" class="mx-auto w-32 hover:animate-shake sm:w-56 mb-4">
+
+        <p id="ban2txt" class="mb-6 text-gray-100">Descubre mis otros sitios, artículos y formas de estar en contacto conmigo.</p>
+        
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="https://nusky7studio.es/sites" target="_blank" 
+          class="bg-gradient-to-r from-pink-600 via-violet-500 to-sky-600 hover:scale-105 transition-all duration-300 px-6 py-2 rounded-full hover:animate-borderGlow3 text-black font-bold shadow-md drop-shadow-md shadow-black font-orbi uppercase">
+           🛰️ Lanzadera
+          </a>
+          <a href="https://nusky7studio.es/blog"
+            class="bg-gradient-to-r from-cyan-600 via-teal-500 to-emerald-700 hover:scale-105 transition-all duration-300 px-6 py-2 rounded-full hover:animate-borderGlow3 text-black font-bold shadow-md drop-shadow-md shadow-black font-orbi uppercase">
+            📰 N7 Blog
+          </a>
+
+          <button
+            id="subscribe-button"
+            class="bg-gradient-to-r from-teal-600 via-amber-600 to-purple-800 hover:bg-black hover:scale-105 transition px-6 py-2 rounded-full hover:animate-borderGlow3 text-black font-bold shadow-md drop-shadow-md shadow-black font-orbi uppercase"
+          >
+            💌 Newsletter
+        </button>
+        </div>
+      </div>
+    </section>
+   <!-- </div> -->
+
 
         <!-- Salto del PopUp -->
         <!-- <div id="popupTrigger" class="h-1 w-full"></div> -->
 
-    <footer class="bg-black text-gray-200 text-sm mt-12">
+    <footer class="bg-black text-gray-200 text-sm">
       <div class="max-w-6xl mx-auto px-4 py-10">
         <div class="flex flex-col md:flex-row justify-between items-start gap-8">
           
           <!-- Branding -->
           <div>
             <h2 class="text-lg font-semibold font-gba"><span class="text-teal-200">Alba</span> <span class="text-violet-300">Tolosa</span> <span class="text-orange-200">Bonora</span>  </h2>
-            <img src="https://nusky7studio.es/img/logos/n7NoBkg.webp" alt="Logo de N7Studio" class="w-32 h-auto" />
+            <!-- <img src="https://nusky7studio.es/img/logos/nSteel.webp" alt="Logo de N7Studio" class="w-32 h-auto" /> -->
             <p class="mt-2 max-w-xs">
               Diseño web, desarrollo y creatividad digital. Portfolio y Blog personal.
             </p>

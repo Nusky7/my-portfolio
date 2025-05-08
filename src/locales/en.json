@@ -35,11 +35,12 @@
       "panelTitle": "DO YOU LIKE MY WORK?",
       "panelSubitle": "Need your own Website?",
       "panelText": " Let's talk about your next project!<br>Download my CV for more details or contact me directly",
-      "contact": "CONTACT"
+      "contact": "CONTACT",
+      "bannerTxt": "Discover my other sites, articles, and ways to get in touch with me."
     },
     "player": {
-      "songs": "While i'm Working...",
-      "videos": "Some Videos..."
+      "songs": "CREATING...",
+      "videos": "SOME VIDEOS..."
     },
     "form": {
       "name": "🙂 Name",
@@ -64,7 +65,7 @@
       "privacy": "By sending this form you accept the <a href='/politica-privacidad' class='underline text-rose-950 hover:text-rose-300'>Privacy Policy</a>."
     },
     "donations": {
-      "title": "☕︎ Pick your method",
+      "title": "☕︎ PICK YOUR METHOD",
       "text": "Donate with ",
       "button": "Get me<br>Coffee ☕︎",
       "btext": "Copy"
@@ -119,6 +120,7 @@
     "newsletterText": "<p class='flex justify-center gap-3'>Exclusive content, no spam. Sign up! <img src='https://upload.wikimedia.org/wikipedia/commons/0/0d/Bandera_Nacional_de_Espa%C3%B1a_sin_escudo.png' alt='🇪🇸' class='inline w-5 h-4 rounded' /></p>",
     "cvTitle": "Curriculum Vitae",
     "cvText": "My online CV with PDF download option.",
+     "cvUrl": "https://nusky7studio.es/cv/en/",
     "quoteBtn": "QUOTE CALCULATOR",
     "quoteTxt": "Book an appointment for your web project and find out in seconds how much it might cost. <br>Keep in mind this tool gives an estimate, and we’ll need to understand your needs better for a final quote."
 
