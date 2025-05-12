@@ -5,16 +5,20 @@ const promoCodes = {
     "N7VIPS": 0.20 
   };
 
-// const email = document.getElementById("clientEmail").value.trim();
-// const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  document.querySelectorAll('.leer-mas-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const container = btn.closest('.leer-mas-container');
+      const expanded = container.classList.toggle('expanded');
 
-// if (!emailRegex.test(email)) {
-//   showToast("❌ Introduce un correo electrónico válido.");
-//   return;
-// }
-
-
-
+      if (expanded) {
+        container.style.maxHeight = container.scrollHeight + "px";
+        btn.textContent = "Leer menos";
+      } else {
+        container.style.maxHeight = "300px";
+        btn.textContent = "Leer más";
+      }
+    });
+  });
   
   let appliedDiscount = 0;
 
@@ -81,7 +85,10 @@ function toggleFormOptions() {
     const hostingCost = parseFloat(document.getElementById("hostingOption").value) || 0;
     const extraDomainsCost = parseFloat(document.getElementById("extraDomains").value) || 0;
   
-    const subtotal = base + extras + extraForms + pageCost + supportExtra + hostingCost + extraDomainsCost;
+    const customHours = parseInt(document.getElementById("customHours").value) || 0;
+    const hourlyRate = 30;
+    const hourlyCost = customHours * hourlyRate;
+    const subtotal = base + extras + extraForms + pageCost + supportExtra + hostingCost + extraDomainsCost + hourlyCost;
     const totalBase = subtotal * urgency;
     const ivaCheckbox = document.getElementById("includeIVA");
     const ivaRate = ivaCheckbox && ivaCheckbox.checked ? 0.21 : 0;
@@ -207,7 +214,11 @@ function toggleFormOptions() {
       if (checkboxes.length > 0) {
         docWithLogo.text("• Funcionalidades:", 20, y); y += 7;
         checkboxes.forEach(cb => {
-          const cleanLabel = cb.parentElement.textContent.trim().replace(/\+\d+[\s€]*$/, '').trim();
+          // const cleanLabel = cb.parentElement.textContent.trim().replace(/\+\d+[\s€]*$/, " ").trim();
+          const cleanLabel = cb.parentElement.textContent
+            .replace(/\+\d+[^\d\w\n\r]+(€|€\/mes)?/gi, "")
+            .replace(/\s+/g, " ")
+            .trim();
           const price = parseInt(cb.value);
           const wrapped = docWithLogo.splitTextToSize(`- ${cleanLabel}: +${price} €`, maxWidth);
           docWithLogo.text(wrapped, 24, y);
@@ -218,7 +229,14 @@ function toggleFormOptions() {
       const base = parseInt(document.getElementById("webType").value);
       const supportExtra = parseInt(document.getElementById("supportLevel").value) || 0;
       const extras = checkboxes.reduce((sum, el) => sum + parseInt(el.value), 0);
-      const subtotal = base + extras + extraForms + pageExtra + supportExtra + hostingCost + extraDomainsCost;
+      const customHours = parseInt(document.getElementById("customHours").value) || 0;
+      const hourlyRate = 30;
+      const hourlyCost = customHours * hourlyRate;
+
+      if (customHours > 0) {
+        docWithLogo.text(`• Contratación por horas: (x${customHours}) +${hourlyCost} €`, 20, y); y += 8;
+      }
+      const subtotal = base + extras + extraForms + pageExtra + supportExtra + hostingCost + extraDomainsCost + hourlyCost;
   
       y += 5;
       docWithLogo.text(`Subtotal (sin IVA): ${subtotal.toFixed(2)} €`, 20, y); y += 8;

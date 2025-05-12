@@ -1,7 +1,10 @@
 <!-- Modal de opciones de donación -->
 <div id="donationModal" class="fixed flex hidden inset-0 bg-black bg-opacity-60 justify-center items-center z-50">
+           
+    <div class="bg-neutral-800 p-7 rounded-lg w-90">
+
          <!-- SVG como fondo -->
-         <svg class="inset-0 w-full h-full pointer-events-none opacity-10 z-10" xmlns="http://www.w3.org/2000/svg">
+         <svg class="absolute inset-0 w-full h-full pointer-events-none opacity-10 z-10" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <radialGradient id="grad" cx="50%" cy="50%" r="50%">
                 <stop offset="0%" stop-color="#5CE1E6" />
@@ -11,8 +14,7 @@
             <circle cx="50%" cy="50%" r="80%" fill="url(#grad)" />
           </svg>
           
-           
-    <div class="bg-neutral-800 p-7 rounded-lg w-90">
+
         <div class="w-full flex items-center align-middle justify-between">
             <h2 id="donation-title" class="font-semibold mb-4 text-rose-100 text-lg animate-glowText1 inline-block font-orbi">☕︎ Elige tu opcion</h2>
             <button id="closeModal" class="w-8 h-8 mb-4 hover:animate-spin hover:bg-transparent rounded-lg bg-rose-500 bg-opacity-20">❌</button>

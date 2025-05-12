@@ -56,7 +56,6 @@
 </head>
 
 <body id="body" class="text-white font-poppins w-full h-full bg-[#040405]" style="background-image: url('https://nusky7studio.es/img/backgrounds/wolrd.webp');">
-  
     <!-- SVG fondo -->
     <div class="fixed inset-0 pointer-events-none ">
       <svg class="w-full h-full opacity-20 animate-pulse -z-10" xmlns="http://www.w3.org/2000/svg">
@@ -71,51 +70,49 @@
         </defs>
         <rect width="100%" height="100%" fill="url(#squareGrid)" />
       </svg>
-    
     </div>
     <div class="absolute inset-0 bg-gradient-to-b from-black/60 to-black/40 pointer-events-none z-10 will-change-transform"></div>
   <div id="blurOverlay" class="absolute top-16 inset-0 bg-black/40 z-40 hidden transition-opacity duration-500" ></div>
 
-    
 <!-- Encabezado -->
-<div>
+
 <header id="header" class="z-50 w-full bg-gradient-to-r from-zinc-800 via-black/80 to-zinc-800 text-white text-center py-16">
-    <div class="absolute top-7 left-7">
-        <img src="https://nusky7studio.es/img/logos/nSteel.webp" width="36%" height="auto" alt="Logo" class="hidden lg:block shadow-black drop-shadow-md">
+    <div class="absolute top-12 left-10">
+        <img src="https://nusky7studio.es/img/logos/nSteel.webp" width="150" height="150" alt="Logo" class="hidden lg:block shadow-black drop-shadow-md">
 
     </div>
-    <h1 class="text-3xl md:text-5xl font-semibold font-orbi tracking-wide animate-glowText2">
+    <h1 class="text-3xl pt-9 md:pt-0 md:text-5xl xs:text-2xl font-semibold font-orbi tracking-wide animate-glowText2">
       ⋯ N7 📰 Blog ⋯
     </h1>
     <h2 class="text-xl my-3 font-orbi font-medium ">Diseño Web, Creatividad &amp; Tendencias Tech </h2>
-    <p class="text-gray-400 text-lg mb-2">
+    <p class="text-gray-400 text-lg mb-2 md:px-6 px-9">
       Aprende, crea y conéctate con lo último en desarrollo web, gadgets y recursos digitales.
-    </p>  
+    </p>
 
     <nav class="absolute bottom-0 left-0 w-full bggradient-to-b from-zinc-900 to-black overflow-x-auto whitespace-nowrap snap-x snap-mandatory">
         <div class="max-w-3xl mx-auto flex space-x-4 px-2">
-            <button data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+            <button type="button" data-category="dispositivos-android" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('dispositivos-android')">
                 📟 Tecnología
             </button>
-            <button data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-gray-700 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
+            <button type="button" data-category="desarrollo-web" class="tab-btn font-orbi flex-shrink-0 text-lg text-emerald-100 bg-gray-700 rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors"
                 onclick="showCategory('desarrollo-web')">
                 💻 Desarrollo Web
             </button>
-            <button data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
+            <button type="button" data-category="noticias-rrss" class="tab-btn font-orbi flex-shrink-0 text-lg text-white rounded-t-md py-3 px-4 border border-b-0 border-transparent hover:bg-gray-600 transition-colors flex items-center justify-center space-x-2"
                 onclick="showCategory('noticias-rrss')">
                 <svg width="20px" height="20px" viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" fill="#FF9A00">
                     <path d="M0 37.7143C0 34.243 2.8144 31.4286 6.28571 31.4286C9.75702 31.4286 12.5714 34.243 12.5714 37.7143C12.5714 41.1856 9.75702 44 6.28571 44C2.8144 44 0 41.1856 0 37.7143ZM44 44H35.619C35.619 24.3587 19.641 8.3804 0 8.3804V0C24.261 0 44 19.7387 44 44ZM29.3333 44H20.9524C20.9524 32.4469 11.5524 23.0481 0 23.0481V14.6661C16.1746 14.6661 29.3333 27.8253 29.3333 44Z"/>
                 </svg>
                 <span>Noticias RSS</span>
-            </button>           
+            </button>
         </div>
-    </nav>      
+    </nav>
     <!-- Contenedor de Botones -->
     <div class="absolute items-center top-6 p-1 left-1/2 transform -translate-x-1/2 flex flex-row gap-4 space-y-1.5
-            min-[840px]:left-auto min-[840px]:right-5 min-[840px]:transform-none min-[840px]:flex-col min-[840px]:gap-y-4 max-[840px]:top-0">
+            min-[760px]:left-auto min-[760px]:right-5 min-[760px]:transform-none min-[760px]:flex-col min-[760px]:gap-y-4 max-[760px]:top-0">
         <!-- Botón Donaciones -->
-        <button id="donateBtn" class="group w-12 h-12 flex items-center justify-center bg-amber-800 rounded-full transition hover:scale-110 shadow-md">
+        <button type="button" id="donateBtn" class="group w-12 h-12 flex items-center justify-center bg-amber-800 rounded-full transition hover:scale-110 shadow-md">
             <span id="coffee-txt"
                 class="absolute top-3 left-[-165px] font-orbi shadow-lg text-base font-semibold animate-bounce pr-4 py-1 rounded opacity-0 group-hover:opacity-100 group-hover:left-[-165px] transition-all duration-300">
                 Invítame a Café ☕︎
@@ -128,11 +125,11 @@
                     <path d="M688.51712 331.392c-0.6656-0.63488-1.40288-1.15712-2.0736-1.78688l-351.77984 368.98816c0.66048 0.64 1.21344 1.35168 1.88416 1.98656 101.94944 97.19296 263.38304 93.3376 360.58112-8.61184 97.19296-101.94432 93.3376-263.38304-8.61184-360.576z" fill="#8D3F07"></path>
                 </g>
             </svg>
-        </button>    
+        </button>
 
             <!-- Botón Newsletter -->
             <div class="relative group flex ">
-              <button
+              <button type="button"
               id="subscribe-button"
               class=" header-btn w-12 h-12 flex items-center justify-center bg-rose-500/30  rounded-full 
                   hover:bg-rose-500/80 hover:scale-110 hover:animate-tadaTwo transition shadow-md">           
@@ -144,9 +141,9 @@
             </div>
 
                  <!-- Botón Lanzadera / sitios -->
-          <div class="relative group flex">            
+          <div class="relative group flex">
             <a href="https://nusky7studio.es/sites" rel="noopener noreferrer" title="" target="_blank"
-            class="header-btn w-24 h-24 flex items-center justify-center
+            class="header-btn w-20 md:w-24 h-auto flex items-center justify-center
                 hover:animate-shake transition shadow-lg">
             <img src="https://nusky7studio.es/img/logos/nClone.png" alt="n7studio"  width="100"  height="100"  class="pointer-events-none drop-shadow-md shadow-black">
           </a>
@@ -160,12 +157,12 @@
   <!-- Detalles -->
   <div class="w-full flex justify-center px-4">
     <details id="blogDetails" class="z-40 text-white md:w-2/5 w-full rounded-3xl shadow-xl transition-all duration-500">
-  
+
       <summary
         style="text-shadow: 0px -3px 6px rgba(0, 0, 0, 0.7);"
         class="list-none cursor-pointer bg-gradient-to-r from-pink-600/70 via-purple-900/80 to-emerald-500/90 text-white text-center text-xl sm:text-lg font-bold py-4 px-6 rounded-b-3xl font-orbi tracking-wider transition-all hover:brightness-110 hover:py-6">
-        📰 N7 B l o g
-      </summary>  
+        Noticias &amp; Tecnología
+      </summary> 
       <!-- Contenido del details -->
       <article class="bg-gradient-to-t from-slate-950  to-neutral-950/95 px-16 py-6 mt-1.5 rounded-3xl space-y-4" itemscope itemtype="https://schema.org/Blog">
         <!-- Botones Tabs -->
