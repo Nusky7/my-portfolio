@@ -63,7 +63,7 @@
     />
 
     <audio preload="auto" id="miAudio" hidden>
-      <source src="/mp3/zenithGlow.mp3" type="audio/mpeg" />
+      <source src="/mp3/ciberVibes.mp3" type="audio/mpeg" />
       Tu navegador no soporta la reproducción de audio.
     </audio>
 
@@ -231,23 +231,23 @@
                     <div class="flex flex-col items-center w-16">
                       <!-- LED Off -->
                       <span
-                        class="text-sm text-gray-300 mb-2 font-gba "
+                        class="text-sm text-gray-300 mb-2 font-gba hidden"
                         id="led-txt-off"
                         >Off</span
                       >
                       <div
-                        class="leds p-1 bg-red-500 rounded-full shadow-[0_0_4px_2px_rgba(255,0,0,0.6)]"
+                        class="leds p-1 bg-red-500 rounded-full hidden shadow-[0_0_4px_2px_rgba(255,0,0,0.6)]"
                         id="led-off"
                       ></div>
 
                       <!-- LED On -->
                       <span
-                        class="text-sm text-gray-300 mb-2 font-gba hidden"
+                        class="text-sm text-gray-300 mb-2 font-gba "
                         id="led-txt"
                         >On</span
                       >
                       <div
-                        class="leds p-1 bg-green-500 rounded-full hidden shadow-[0_0_4px_2px_rgba(0,255,0,0.6)]"
+                        class="leds p-1 bg-green-500 rounded-full  shadow-[0_0_4px_2px_rgba(0,255,0,0.6)]"
                         id="led-on"
                       ></div>
                     </div>
@@ -1567,8 +1567,8 @@
           </div>
         </div>
         <!-- Botones de navegación -->
-        <div class="swiper-button-next animate-glowColorCycle"></div>
-        <div class="swiper-button-prev animate-glowColorCycle"></div>
+        <div class="swiper-button-next animate-glowColorCycle z-50 mr-20"></div>
+        <div class="swiper-button-prev animate-glowColorCycle z-50 ml-20"></div>
         <br/>
         <!-- Paginación -->
         <div class="swiper-pagination"></div>
@@ -1778,6 +1778,13 @@
             class="song-btn mx-2 py-3 text-violet-400 rounded-lg font-orbi"
           >
             Zenith Glow ❤ Astro Kid
+          </button>
+          <hr class="border-gray-700/60" /> 
+          <button
+            data-file="ciberVibes.mp3"
+            class="song-btn mx-2 py-3 text-fuchsia-400 rounded-lg font-orbi"
+          >
+            Ciber Vibes ❤ Neon Panther
           </button>
           <hr class="border-gray-700/60" />
           <button

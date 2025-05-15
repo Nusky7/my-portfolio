@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const playlist = [
     { file: "zenithGlow.mp3" },
+    { file: "ciberVibes.mp3" },
     { file: "lowx.mp3" },
     { file: "c152.mp3" },
     { file: "amiga.mp3" },

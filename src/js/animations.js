@@ -50,14 +50,15 @@ document.addEventListener("DOMContentLoaded", function () {
   
   // Variables e Inicializadores
   // MusicOn - Delay
-  let isMusicOn = false;
-  const startFromSecond = 120;
+  let isMusicOn = true;
+  const startFromSecond = 106.2;
   let isFF = true;
   // IntroScreen - cPanel - Volume
   audio.load();
   // Inicializar los sliders
-  volumeSlider.value = 60;
-  toggleMusic.checked = false;
+  volumeSlider.value = 66;
+  volumeSlider2.value = volumeSlider.value;
+  toggleMusic.checked = true;
 
   // Animación CV - Contrata mis servicios hoy misme
 function startAnimation() {
@@ -212,7 +213,7 @@ if (isFF) {
 
 // Función para saltar la introducción
 function skipIntro() {
-let startFromSecond = 132;
+let startFromSecond = 118;
 introScreen.classList.add("hidden");
 introContent.classList.add("hidden");
 skipBtn2.classList.add("hidden");
@@ -280,7 +281,7 @@ startBtn.addEventListener("click", () => {
         introText.classList.add("hidden");
         profile.classList.remove("hidden");
         profile.style.display = "block";
-        profile.style.animation = "rotateImage 4s forwards";
+        profile.style.animation = "rotateImage 3.5s forwards";
 
         setTimeout(() => {
           animeImg.style.opacity = "0";
