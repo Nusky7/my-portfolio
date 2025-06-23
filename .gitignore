@@ -2,3 +2,7 @@ node_modules/
 *.log
 img/
 /php/suscribe.php
+.env
+/php/chat.php
+/php/save_rating.php
+

@@ -59,11 +59,8 @@ $htmlMessage = '
   N7Studio · Diseño & Desarrollo Web<br>
   <a href="https://nusky7studio.es/sites" style="color:#A259FF; text-decoration:none;" target="_blank">www.nusky7studio.es</a>
 </p>
-
-
 </div>
 ';
-
 
 // Preparar el archivo
 $file = $_FILES['pdf']['tmp_name'];

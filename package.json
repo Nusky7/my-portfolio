@@ -11,6 +11,7 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@midudev/tailwind-animations": "^0.2.0",
     "@tailwindcss/typography": "^0.5.16",
     "jquery": "^3.6.0",
     "jquery.rateit": "^1.1.6",

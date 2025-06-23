@@ -7,6 +7,9 @@ window.cerrarPopup = function () {
 window.addEventListener("pageshow", () => {
   const popup = document.getElementById("miPopup");
   popup?.classList.add("hidden");
+  if (popup) {
+    popup.classList.add("hidden");
+  }
 });
 
 function mostrarPopup() {
