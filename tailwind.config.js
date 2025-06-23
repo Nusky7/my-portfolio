@@ -90,6 +90,7 @@ module.exports = {
         orbi: ['Orbitron', 'sans-serif'],
         mono: ['Roboto Mono', 'monospace'],
         sourceCode: ['Source Code Pro', 'monospace'], 
+        space: ['Space Grotesk', 'sans-serif'],
       },
       animation: {
         'bounce-slow': 'bounce 3s ease-in-out infinite',

@@ -34,7 +34,7 @@ function showToast(msg) {
 
 const loadTranslations = async (lang) => {
   try {
-    const response = await fetch(`./locales/${lang}.json`);
+    const response = await fetch(`https://nusky7studio.es/locales/${lang}.json`);
     translations = await response.json();
     console.log("Translations loaded:", translations);
     applyTranslations(translations); 
