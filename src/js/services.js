@@ -1,7 +1,7 @@
 
     // Anima el SVG al cargar la página
    gsap.from(".hero", { opacity: 0, y: -120, duration: 1 });
-//    gsap.from(".svg", { opacity: 0, x: 40, delay: 1, duration: 0.6 });
+
 
 function toggleService(btn) {
   const card = btn.closest(".service-card");

@@ -4,7 +4,6 @@
 @tailwind utilities;
 
 
-
 @layer utilities {
     .text-crisp {
         -webkit-font-smoothing: antialiased;
