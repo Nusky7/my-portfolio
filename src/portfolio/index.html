@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Alba Tolosa Bonora ✧ Portfolio</title>
   <meta name="description" content="Portfolio de Alba Tolosa Bonora - Frontend Developer y UI/UX Designer. Proyectos únicos, diseño web creativo y soluciones funcionales.">
+    <meta
+      property="og:image"
+      content="https://nusky7studio.es/img/ogImages/ogPortfolio.png"
+    />
   <link rel="icon" href="https://nusky7studio.es/favicon.ico" type="image/x-icon" />
   <link rel="apple-touch-icon" sizes="180x180" href="https://nusky7studio.es/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://nusky7studio.es/favicon-32x32.png">
@@ -29,8 +33,10 @@
     #tech{
       cursor: url('https://nusky7studio.es/img/cursor.png') 16 16, cursor !important;
     }
-
-
+     .hero-foto{
+      mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
+    }
   </style>
 </head>
 
@@ -41,11 +47,29 @@
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-30 z-0">
       <source src="https://nusky7studio.es/media/hero/Sstars.mp4" type="video/mp4"/>
     </video>
+
+    <!-- Language Selector -->
+    <div class="absolute top-4 left-4 z-50">
+      <div class="relative inline-block text-left">
+        <button id="langBtn" type="button" class="inline-flex justify-center items-center gap-2 w-full rounded-md text-sm font-semibold text-purple-400 hover:text-purple-300 focus:outline-none">
+          <img src="https://nusky7studio.es/img/flags/es.webp" alt="EN" class="w-5 h-5 rounded-full">
+        </button>
+
+        <div id="langMenu" class="hidden absolute left-0 mt-2 text-center w-32 bg-purple-950/40 rounded-b-3xl rounded-tr-3xl shadow-lg z-50">
+          <!-- <a href="https://nusky7studio.es/portfolio/" class="flex items-center gap-2 px-6 py-2 text-sm rounded-3xl text-white hover:bg-purple-950 transition">
+            <img src="https://nusky7studio.es/img/flags/es.webp" alt="ES" class="w-5 h-5 rounded-full"> Español
+          </a> -->
+          <a href="https://nusky7studio.es/portfolio/en/" class="flex items-center gap-2 px-6 py-2 text-sm rounded-3xl text-white hover:bg-purple-950 transition">
+            <img src="https://nusky7studio.es/img/flags/en.webp" alt="EN" class="w-5 h-5 rounded-full"> English
+          </a>
+        </div>
+      </div>
+    </div>
+
     <img src="https://nusky7studio.es/img/colaboradores/albaNoBkg.webp"
      alt="Foto de Alba"
      class="hero-foto hidden xl:block absolute right-[-6%] bottom-0 h-5/6 drop-shadow-lg shadow-black object-contain opacity-90 mix-blend-lighten pointer-events-none"
-     style="mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);
-            -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1) 40%, transparent 100%);">
+     >
 
     <div class="relative z-10">
       <h1 class="text-4xl md:text-6xl font-bold mb-6 font-space animate-glowText5">Alba Tolosa Bonora</h1>
@@ -261,7 +285,7 @@
             <h2 class="text-3xl font-bold mb-6 font-space">¿Trabajamos junt@s?</h2>
             <p class="text-zinc-400 mb-8">Has abierto una ventana a mi mundo creativo, no dudes en escribirme.<br> También puedes encontrarme en mis redes profesionales.</p>
             <div class="flex justify-center gap-4 flex-wrap">
-            <a href="mailto:info@nusky7studio.es" class="px-6 py-3 bg-purple-600 rounded-xl hover:bg-purple-700 hover:animate-pop transition">Enviar correo</a>
+            <a href="mailto:info@nusky7studio.es" class="px-6 py-3 bg-purple-900 rounded-xl hover:bg-purple-700 hover:animate-pop transition">Enviar correo</a>
             
             <a href="https://t.me/Nusky_7" target="_blank" class="px-6 py-3 border border-purple-500 animate-borderGlow3 text-purple-300 rounded-xl hover:animate-rotational-wave hover:bg-white hover:text-black transition">Telegram</a>
     

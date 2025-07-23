@@ -1,5 +1,16 @@
 document.addEventListener("DOMContentLoaded", () => {
 
+    langBtn.addEventListener('click', () => {
+    langMenu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
+
+
   const scroller = document.querySelector("#scroll-container");
   const scrollbar = Scrollbar.init(scroller, {
     damping: 0.07
@@ -100,11 +111,13 @@ gsap.from(".about", {
 
   document.querySelector('a[href="#proyectos"]').addEventListener("click", (e) => {
     e.preventDefault();
-    document.querySelector("#proyectos").scrollIntoView({
-      behavior: "smooth"
-    });
-    setTimeout(() => ScrollTrigger.refresh(), 300);
+    const target = document.querySelector("#proyectos");
+    const offset = target.getBoundingClientRect().top + scrollbar.offset.y;
+
+    scrollbar.scrollTo(0, offset, 800); // 800 ms animación
+    setTimeout(() => ScrollTrigger.refresh(), 1000); // refresca tras el scroll
   });
+
 
 
   const lang = document.documentElement.lang || "es";

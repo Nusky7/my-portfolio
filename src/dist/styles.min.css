@@ -3086,6 +3086,10 @@ video {
   border-top-left-radius: 1.5rem;
 }
 
+.rounded-tr-3xl {
+  border-top-right-radius: 1.5rem;
+}
+
 .border {
   border-width: 1px;
 }
