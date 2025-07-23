@@ -1,7 +1,19 @@
 
     // Anima el SVG al cargar la página
-   gsap.from(".hero", { opacity: 0, y: -120, duration: 1 });
+gsap.from(".hero", { opacity: 0, y: -120, duration: 1 });
+   
+  const langBtn = document.getElementById('langBtn');
+  const langMenu = document.getElementById('langMenu');
 
+  langBtn.addEventListener('click', () => {
+    langMenu.classList.toggle('hidden');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
+      langMenu.classList.add('hidden');
+    }
+  });
 
 function toggleService(btn) {
   const card = btn.closest(".service-card");

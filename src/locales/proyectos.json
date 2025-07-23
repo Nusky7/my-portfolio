@@ -1,0 +1,101 @@
+[
+  {
+    "id": "presupuesto-web",
+    "nombre": "Calculadora Web",
+    "descripcion": "Herramienta de N7Studio. Calculadora de presupuestos web online. Estima precios con generación de PDF y envío por email. Desarrollada con TW JS y PHP.",
+    "tipo": "Herramienta Propia",
+    "tecnologias": ["TW", "JS", "PHP"],
+        "imagen": ["https://nusky7studio.es/img/projects/calculadora-presupuesto-web-online.webp", "https://nusky7studio.es/img/projects/calculadora-presupuesto-web-movil.webp"],
+    "demo": "https://nusky7studio.es/presupuesto"
+  },
+  {
+    "id": "portfolio-sorianord",
+    "nombre": "Portfolio SorianoRD",
+    "descripcion": "Portfolio del artista Sorianord, representa su trabajo y experiencia como cantante, showman y animador. Desarrollada con TW, JS y PHP",
+    "tipo": "Proyecto Personal",
+    "tecnologias": ["TW", "JS", "PHP"],
+    "imagen": ["https://nusky7studio.es/img/projects/portfolio-sorianord.webp", "https://nusky7studio.es/img/projects/sorianord-movil.webp"],
+    "demo": "https://soriano.galavalencia.es"
+  },
+  {
+    "id": "gala-valencia",
+    "nombre": " Gala Valencia ",
+    "descripcion": "Proyecto cliente. Web profesional de eventos y alquiler de locales en Valencia. 3 secciones, galería y formularios conectados con PHP y JS.",
+    "tipo": "Proyecto Cliente",
+    "tecnologias": ["TW", "JS", "PHP"],
+    "imagen": ["https://nusky7studio.es/img/projects/gala-valencia.webp", "https://nusky7studio.es/img/projects/gala-valencia-movil.webp"],
+    "demo": "https://galavalencia.es"
+  },
+  {
+    "id": "landing-inmo",
+    "nombre": "Landing Inmobiliaria",
+    "descripcion": "Proyecto cliente. Landing con CMS WordPress + TW personalizado. Formulario multistep sin Elementor Pro, optimizada para captación de leads.",
+    "tipo": "Proyecto Cliente",
+    "tecnologias": ["WP", "CSS", "TW"],
+    "imagen": ["https://nusky7studio.es/img/projects/gie.webp", "https://nusky7studio.es/img/projects/gieMobile.webp"],
+    "demo": "https://giegestion.com/tasacion-vivienda-2025/"
+  },
+  {
+    "id": "blog",
+    "nombre": "N7 Tech Blog",
+    "descripcion": "Extensión del portfolio. Publicación de artículos tech con integración de noticias mediante RSS y feed propio.",
+    "tipo": "Proyecto Personal",
+    "tecnologias": ["TW", "JS", "JSON", "RSS"],
+    "imagen": ["https://nusky7studio.es/img/projects/n7blog.webp", "https://nusky7studio.es/img/projects/n7blogMobile.webp"],
+    "demo": "https://nusky7studio.es/blog"
+  },
+  {
+    "id": "format-converter",
+    "nombre": "&nbsp; N7 Tools &nbsp;",
+    "descripcion": "Conversión de imágenes, fuentes y vídeos. Las imágenes se procesan en frontend. Backend opcional para vídeo, MP3 y fuentes.",
+    "tipo": "Herramienta Propia",
+    "tecnologias": ["TW", "JS", "Node"],
+    "imagen": ["https://nusky7studio.es/img/n7tools.webp", "https://nusky7studio.es/img/projects/n7toolsMobile.webp"],
+    "demo": "https://nusky7studio.es/N7Tools/"
+  },
+  {
+    "id": "valencia-maps",
+    "nombre": "Valencia Places",
+    "descripcion": "Mapa interactivo para explorar puntos clave de Valencia. Soporta tema claro/oscuro y multi-idioma.",
+    "tipo": "Proyecto Personal",
+    "tecnologias": ["Boots", "JS", "JSON", "Leaflet"],
+    "imagen": [ "https://nusky7studio.es/img/vlPlaces.png", "https://nusky7studio.es/img/projects/vPlacesMobile.webp"],
+    "demo": "https://nusky7studio.es/ValenciaPlaces/"
+  },
+  {
+    "id": "transfers-lujo",
+    "nombre": "Deluxe Transfers",
+    "descripcion": "Prototipo frontend de web de reservas para transfers privados en Valencia. Desarrollado en Angular 17 y Bootstrap.",
+    "tipo": "Prototipo",
+    "tecnologias": ["Angular", "Boots"],
+    "imagen": ["https://nusky7studio.es/img/transfers.webp", "https://nusky7studio.es/img/projects/transfersMobile.webp"],
+    "demo": "https://nusky7studio.es/DeluxeTransfer/"
+  },
+  {
+    "id": "portfolio-tatuajes",
+    "nombre": "Tattoo Portfolio",
+    "descripcion": "Web renovada con Tailwind CSS y Swiper. Galería de fotos, contacto y asistente virtual.",
+    "tipo": "Proyecto Cliente",
+    "tecnologias": ["TW", "CSS", "JS"],
+    "imagen": ["https://nusky7studio.es/img/tattoo.webp" ,"https://nusky7studio.es/img/projects/tattooMobile.webp"],
+    "demo": "https://mamtattoo.nusky7studio.es/"
+  },
+  {
+    "id": "smart-time",
+    "nombre": "&nbsp; Smart Time",
+    "descripcion": "Proyecto final del CFGS. App de gestión de proyectos y tareas con calendario, eventos y notas.",
+    "tipo": "Proyecto Académico",
+    "tecnologias": ["Angular", "CSS", "PHP", "SQL"],
+    "imagen": ["https://nusky7studio.es/img/st.webp", "https://nusky7studio.es/img/projects/sTimeMobile.webp"],
+    "demo": "https://nusky7studio.es/smarTime/login"
+  },
+  {
+    "id": "pokemon-api",
+    "nombre": "Pokémon API",
+    "descripcion": "Cliente PHP que consume la API de Pokémon y muestra 20 Pokémon con sus imágenes y sonidos.",
+    "tipo": "Demo Técnica",
+    "tecnologias": ["HTML", "CSS", "PHP"],
+    "imagen": ["https://nusky7studio.es/img/poke.webp", "https://nusky7studio.es/img/projects/pokeMobile.webp"],
+    "demo": "https://nusky7studio.es/PokedexV1/cliente.PHP"
+  }
+]

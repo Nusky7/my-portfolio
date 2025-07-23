@@ -64,15 +64,52 @@ select:-webkit-autofill:focus,
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto !important;
   margin: 0;
-  overflow-x: hidden; 
-  height: 100%;
+  overflow: hidden !important;
+  min-height: 100%;
+  max-width: 100%;
   scrollbar-width: thin; 
-  scrollbar-color: #AAF8D4 #09090B;  
+  /* scrollbar-color: #AAF8D4 #09090B;   */
+  scrollbar-color: #8544ba #09090B;  
 }
 
 body, p, li, h1, h2, h3, h4, h5, h6, a {
   cursor: url('/img/cursor.png') 16 16, cursor !important;
 }
+
+#scroll-container {
+  position: relative;
+  box-sizing: border-box;
+  height: 100vh;
+  overflow: hidden;
+  overflow-x: hidden !important;
+  max-width: 100vw !important;
+}
+.scrollbar-track.scrollbar-track-x {
+  display: none !important;
+
+}
+
+
+.scroll-content {
+  width: 100% !important;
+  max-width: 100vw !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+  transform-style: flat !important;
+}
+
+.scrollbar-track {
+  background: transparent !important;
+  border-radius: 10px;
+  width: 7px !important;
+}
+
+.scrollbar-thumb {
+  background-color: #8544ba !important;
+  border-radius: 10px;
+  opacity: 0.8;
+}
+
 /* #name{
   cursor: url('/img/pointer.png') 16 16, pointer !important;
 } */
@@ -638,12 +675,13 @@ h1 {
 }
 /* Cambiar el color de los puntos */
 .swiper-pagination-bullet {
-  opacity: 0.3 !important;
+  opacity: 0.6 !important;
   background-color: #ffffff !important;
 }
 /* Cambiar el color del punto activo */
 .swiper-pagination-bullet-active {
-  background-color: #f43f5e !important; 
+  /* background-color: #f43f5e !important;  */
+  background-color: #8544ba !important; 
   opacity: 1 !important;
 }
 

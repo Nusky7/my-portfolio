@@ -138,6 +138,7 @@ module.exports = {
         glowText2: 'glowText2 1.5s ease-in-out infinite alternate',
         glowText3: 'glowText3 1.5s ease-in-out infinite alternate',
         glowText4: 'glowText4 1.5s ease-in-out infinite alternate',
+        glowText5: 'glowText5 2s ease-in-out infinite alternate',
         fadeOutScale: 'fadeOutScale 0.5s ease-out forwards',
         disappear: 'disappear 1.5s ease-out forwards',
         reduceAndFade: 'reduceAndFade 0.1s ease-out forwards',
@@ -312,6 +313,10 @@ module.exports = {
         borderGlow3: {
         '0%': { boxShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #581C87' },
         '100%': { boxShadow: '0 0 10px #10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1' },
+        },
+        glowText5: {
+          '0%': { textShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #581C87', color: '#ffffff' },
+        '100%': { textShadow: '0 0 10px #10B981, 0 0 13px #4B0082, 0 0 18px #ae60e1', color: '#ffffff' },
         },
       glowText1: {
         '0%': { textShadow: '0 0 1px #000, 0 0 3px #FF69B4, 0 0 6px #ea3376' },

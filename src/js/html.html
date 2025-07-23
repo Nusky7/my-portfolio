@@ -1,0 +1,19 @@
+<body>
+  <div style="height: 120vh; background: #111"></div>
+  <div class="box" style="width: 100px; height: 100px; background: fuchsia"></div>
+  <script src="https://unpkg.com/gsap@3/dist/gsap.min.js"></script>
+  <script src="https://unpkg.com/gsap@3/dist/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.from(".box", {
+      opacity: 0,
+      y: 100,
+      duration: 1,
+      scrollTrigger: {
+        trigger: ".box",
+        start: "top 80%",
+        toggleActions: "play none none none"
+      }
+    });
+  </script>
+</body>
