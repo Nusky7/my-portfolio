@@ -64,7 +64,7 @@ select:-webkit-autofill:focus,
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto !important;
   margin: 0;
-  overflow: hidden !important;
+  overflow-x: hidden;
   min-height: 100%;
   max-width: 100%;
   scrollbar-width: thin; 
@@ -74,6 +74,11 @@ html, body{
 
 body, p, li, h1, h2, h3, h4, h5, h6, a {
   cursor: url('/img/cursor.png') 16 16, cursor !important;
+}
+
+#diary .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
 #scroll-container {
@@ -89,7 +94,6 @@ body, p, li, h1, h2, h3, h4, h5, h6, a {
 
 }
 
-
 .scroll-content {
   width: 100% !important;
   max-width: 100vw !important;
@@ -102,12 +106,14 @@ body, p, li, h1, h2, h3, h4, h5, h6, a {
   background: transparent !important;
   border-radius: 10px;
   width: 7px !important;
+  cursor: url('/img/cursor.png') 16 16, auto !important;
 }
 
 .scrollbar-thumb {
   background-color: #8544ba !important;
   border-radius: 10px;
   opacity: 0.8;
+  cursor: url('/img/cursor.png') 16 16, auto !important;
 }
 
 /* #name{

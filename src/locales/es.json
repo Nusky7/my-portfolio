@@ -8,24 +8,8 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "¡HOLA MUNDO!",
-      "description": "Soy desarrolladora <strong>Frontend ❤</strong> resolutiva, apasionada por crear interfaces atractivas, funcionales y centradas en la experiencia de usuario. Disfruto especialmente diseñando con <code>Tailwind CSS</code> y dando vida a ideas con <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code> y frameworks como <code>Angular</code>.<br><br>Me gusta cuidar los detalles visuales, pero también sé construir mis propios <strong>backends</strong> cuando hace falta, integrando APIs, bases de datos o soluciones personalizadas con <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code> o <code>Firebase</code>.<br><br>Trabajo de forma práctica, creativa y autónoma, con el objetivo de desarrollar webs modernas, responsivas y bien optimizadas para buscadores. Siempre estoy aprendiendo y explorando nuevas herramientas que me permitan entregar resultados que realmente conecten."
-    },
-    "projects": {
-        "title": "P R O Y E C T O S",
-        "show": "Ver Codigo",
-        "working": "<p class='text-rose-400 text-xl text-center'>Proyecto en desarrollo.</p>Este sistema busca optimizar procesos de gestión y administración mediante una arquitectura full-stack moderna.",
-        "pWebTitle": "Calculadora de Presupuestos",
-        "presupuestoWeb": "<p class='text-fuchsia-300'>Herramienta de N7Studio.</p>Calculadora de presupuestos web online. Estima precios para proyectos web según las opciones seleccionadas, con generación de PDF y envío por email integrado con JS + PHP.",
-        "galaValencia": "<p class='text-rose-200'>Proyecto Cliente.</p>Diseño completo desde cero. Web profesional para eventos, fiestas y alquiler de locales en Valencia. Incluye 3 secciones personalizadas, galería de imágenes, y formularios conectados con PHP + JS.",
-        "landingInmo": "<p class='text-fuchsia-300'>Proyecto Cliente.</p>Landing inmobiliaria desarrollada con CMS WP + CSS y TailwindCSS personalizado. + Formulario multistep sin Elementor Pro, optimizado para leads.",
-        "blog": "<p class='text-teal-400 text-xl'>Blog - Noticias y Tecnología.</p>Extensión del Portfolio en la que publico artículos sobre tecnología, combinados con las noticias más relevantes extraídas de mi feed de RRSS.",
-        "project": "<p class='text-rose-300'>Conversión de Formatos.</p>Herramienta online para convertir imágenes, fuentes y videos. Las imágenes se convierten en el frontend.<br> El backend puede usarse en local; necesario para convertir videos, archivos mp3 y fuentes.",
-        "project1": "<p class='text-amber-400'>Mapas Integrados.</p>Un mapa interactivo para explorar los lugares más importantes de Valencia, con opción de tema Claro/Oscuro y soporte multi-idioma.",
-        "project2": "<p class='text-orange-400'>Prototipo FrontEnd.</p>Una web de transfers de lujo en la comunidad Valenciana para reservar viajes privados. <br>Prototipo con Angular 17 y Bootstap.<br>",
-        "project3": "<p class='text-violet-300'>2.0 🡩 Mejorada con Tailwind & Swiper.</p>Portafolio de tatuajes.<br>+ Galería de fotos deslizable, formulario de contacto, asistente virtual y enlaces a sus RRSS.",
-        "project4": "<p class='text-emerald-300'>Proyecto final | Ciclo Formativo (CFGS).</p>Smart Time es una aplicación de gestión de proyectos y tareas, con funcionalidades como notas, calendario y eventos.",
-        "project5": "<p class='text-red-600'>Permite el sonido para oír la música de fondo.</p>Cliente PHP que consume la API de Pokémon y muestra 20 Pokémon con sus imágenes, movimientos y sonidos."
+      "heading": "¡BIENVENID@ A MI RINCÓN CREATIVO!",
+      "description": "Hola 😊 Si estás aquí es porque he querido compartir contigo este trocito de mi alma.<br><br>En este espacio encontrarás textos personales escritos en distintas épocas, algunos con forma poética, otros simplemente sinceros. También podrás escuchar mi propia música, que he subido con la mejor calidad posible al reproductor, y si te apetece guardarlas para otras ocasiones, los vídeos de YouTube están disponibles en las mini TV’s más abajo.<br><br>Este lugar nace como refugio y recopilación de algunas de mis creaciones que han estado dispersas por mi mundo. Ahora, por fin, reunidas en un mismo lugar para poder expresarme, conocerme mejor… y mostrarme a quienes sientan afinidad con esta vena artística y creativa.<br><br>Gracias por estar aquí, espero que algo de lo que veas o escuches también resuene contigo.<br><br>¡Las votaciones siguen activas, así que si algo de aquí te gustó, déjame tus estrellas! ⭐"
     },
     "panel": {
       "buttonText": "Descargar CV",
@@ -124,8 +108,130 @@
    "cvUrl": "https://nusky7studio.es/cv/es/",
   "quoteBtn": "CALCULAR PRESUPUESTO",
   "quoteTxt": "Pide cita para tu proyecto web y descubre en segundos cuánto podría costar. <br>Recuerda que esta herramienta es orientativa y que para obtener un presupuesto definitivo necesitaremos conocer mejor tus necesidades."
+},
+"artworks": [    
+    {
+      "titulo": "Todo en formación",
+      "texto": "Donde las cosas no suceden, el tiempo aguanta las malas cargas, rarezas y cosas varias...<br>el escapismo del mundo que sueña con despertar y rellena huecos con corcho mientras lo intenta.<br><br>El ayer, hoy y mañana me miran con su mala cara mientras vivo en esta amnesia que nada me anestesia.<br>Y es que aunque sepamos que todo baja, nos gusta subir escaleras y retorcerlas hasta que sean imposibles,<br>hasta que el descenso sea tangible...<br>Algo visible desde el principio de los tiempos, que vive en nuestro conocimiento más lo negamos en vano para luego pagarlo, claro.<br><br>Para las cosas claras, tontas no disgustan, pues degustan fácilmente los estragos que a la mente insultan.<br>Pero esta complicación, este todo en proceso de formación... es algo que nunca perece y todos merecen aunque pocos lo practiquen.<br>Algo que se paga con creces...<br><br>Pero tristemente hoy se apuesta por caras de plástico antes que por cerebros prácticos,<br>intentando que lo estético sea estático en medio de tanto cataclismo.",
+      "año": 2012,
+      "imagenes": [   
+        "../img/art/albaold.jpg",
+        "../img/art/albita2.jpg",
+        "../img/art/20121.jpg",
+        "../img/art/albita.jpg"
+      ]
+    },
+    {
+      "titulo": "El Retorno del Navío",
+      "texto": "Tras mucho tiempo perdido, este navío tiene ganas de navegar.<br>Aún con algunos tablones agrietados, al mar más sombrío podría enfrentar...<br><br>No es que este barco haya cambiado,<br>ya por fríos ríos ha pasado...<br>es quien maneja el timón del barco<br>con la consciencia de lo ya surcado.",
+      "año": 2018,
+      "imagenes": [
+        "../img/art/navigation2.jpg",
+        "../img/art/navigation1.jpg",
+        "../img/art/navigation3.jpg",
+        "../img/art/beach.jpg",
+        "../img/art/beachcorner1.jpg",
+        "../img/art/sea.jpg",
+        "../img/art/beachcorner.jpg"
+      ]
+    },
+    {
+      "titulo": "Prison of Mind",
+      "texto": "A la mierda.<br><br>Soy libre en mi prisión mental, vuelo...<br><br>Veo sus almas a través de los ojos, la mayoría podridas, inexistentes...<br>Las más brillantes...<br><br>Seguro que puedes oír sus corazones llorar.",
+      "año": 2018,
+      "imagenes": [
+        "../img/art/free.jpg",
+        "../img/art/free2.jpg",
+        "../img/art/free3.jpg",
+        "../img/art/brightness2.jpg"
+      ]
+    },
+    {
+      "titulo": "Brightness Search",
+      "texto": "Vengo de la oscuridad en busca de algo de luz,<br> casi siempre ausente.<br><br>¿Qué puedes dar? ¿Qué estás dispuesto a recibir?<br><br>Los grandes corazones duelen en almas solitarias, suelen romperse pero lo intentarán de nuevo.<br>Hasta que el caos lo cubra todo... rendirse es morir.",
+      "año": 2018,
+      "imagenes": [
+        "../img/art/darkness.png",
+        "../img/art/dark1.jpg",
+        "../img/art/brightness.jpg",
+        "../img/art/brightness3.jpg"
+        
+      ]
+    },
+    {
+      "titulo": "Always Loved",
+      "texto": "M · ost beautiful things<br>A · re not always possible.<br>N · o, ain't pain — these tears are love.<br>D · ifferent things for us will come.<br>Y · ou deserve best, always will be loved.<br> 💔",
+      "texto_es": "Las cosas más bellas<br>no siempre son posibles.<br>No es dolor — estas lágrimas son amor.<br>Vendrán cosas distintas para cada una.<br>Tú mereces lo mejor, siempre serás amada.",
+      "año": 2018,
+      "imagenes": [
+        "../img/art/mandy.jpg",
+        "../img/art/loveumandy.jpg",
+         "../img/art/mandybb.jpg"
+      ]
+    },
+    {
+      "titulo": "Cenizas",
+      "texto": "En sus cenizas todavía se podía leer lo que el fuego de la pasión consumió...<br><br>Mientras las llamas de la incomprensión quemaban el resto.<br><br>Podría reescribirlo para no perderlo.<br>Podría dejar que soplase el viento...",
+      "año": 2018,
+      "imagenes": [
+        "../img/art/hamburgo.jpg",
+        "../img/art/hamburgo2.jpg",
+        "../img/art/fix.jpg"
+      ]
+    },
+    {
+      "titulo": "La Guerra Interior",
+      "texto": "Aunque supure, seguiré empuñando mi espada desde el corazón.<br>Aún tras mil batallas perdidas, seguiré mirando al frente, pues la guerra que nunca cesa es la que nace desde el interior.<br><br>No busques entre escombros la grandeza que ya posees,<br>aunque no la puedas ver, aunque te hieran, aunque te cueste caminar...<br>Por más que duela, no te conformes con poco, no te compadezcas.<br><br>Sigue luchando por algo tan valioso como lo que ya eres,<br>por quienes ya lucharon,<br>por quienes aún caminan y luchan contigo,<br>por ti, a tu lado.",
+      "año": 2019,
+      "imagenes": [
+        "../img/art/thoughts.jpg",
+        "../img/art/warriors.jpg"
+      ]
+    },
+     {
+      "titulo": "Desde lo Alto",
+      "texto": "Subo al octavo en ascensor.<br>Y al noveno por escaleras.<br>Después, cruzo la última puerta y llego al tejado: mi hogar.<br>Allí vivo. Allí creo.<br><br>Desde lo alto, las canciones parecen hablar de mí.<br>De paredes llenas de notas, de puertas cerradas,<br>de esperanzas que nacen cada mañana.<br><br>Aquí diseño. Aquí compongo.<br>Aquí respiro mi propia libertad.",
+       "año": 2025,
+      "imagenes": [
+        "../img/art/myspace.jpg",
+        "../img/art/myspace2.jpg"
+      ]
+    },
+    {
+      "titulo": "Manifiesto del Tejado",
+      "texto": "Vivo en el tejado.<br> Donde empiezan los días y se proyectan las sombras.<br> Donde el cielo me acaricia las ideas y la ciudad murmura a mis pies. <br><br>Aquí tengo todo lo que importa: mi arte, mi libertad y un rincón donde sentarme a respirar con el sol en la cara.<br><br>Soy rica. Porque tengo mi espacio, mi visión <br>y todo un universo por observar y transformar desde aquí arriba.",
+       "año": 2025,
+      "imagenes": [
+        "../img/art/onthetop.jpg",
+        "../img/art/myRoof.jpg",
+        "../img/art/myRoof2.jpg"
+      ]
+    },
+    {
+      "titulo": "Cara B",
+      "texto": "Mis sueños no estaban rotos, tan solo guardados, escondidos.<br>Se comprimieron por la presión del entorno, encogieron...<br>Y tan pequeños quedaron que parecían invisibles, inservibles, tan pretenciosos...<br><br>Que preferí guardarlos en el cajón del olvido, junto al vinilo que grabó estos versos.<br>Pero cuando lo volví a abrir, habían crecido y estaban del reverso.<br><br>Los desempolvé y dejando el vinilo sonar, ellos hicieron el resto...",
+      "texto_en": "My dreams weren’t broken — just stored away, hidden.<br>They shrank under the pressure of the world around me...<br>So small they seemed invisible, useless, even arrogant.<br><br>So I tucked them in the drawer of oblivion, next to the vinyl that recorded these verses.<br>But when I opened it again, they had grown — and flipped to the B side.<br><br>I dusted them off, and as the vinyl began to play... they did the rest.",
+      "año": 2025,
+      "imagenes": [
+        "../img/art/stare.jpg",
+        "../img/art/serious.jpg",
+        "../img/art/red.jpg"
+        
+      ]
+    },
+    {
+      "titulo": "Tan puta, tan hermosa",
+      "texto": "Lo veo, lo pruebo, lo noto, lo pienso.<br>Lo siento, lo creo, lo estropeo, lo compongo...<br><br>Con tiento lo intento, pero me rompo, me recompongo.<br>Me lleno, me vacío, me quedo mirando al hastío...<br><br>Me ilusiona, me impresiona, me decepciona, me conmociona.<br>Me da una patada, después una rosa, y no es poca cosa...<br><br>Que la vida sea tan puta, y a la vez tan hermosa.",
+      "año": 2025,
+      "imagenes": [
+        "../img/art/hermosa1.jpg",
+        "../img/art/hermosa2.jpg",
+        "../img/art/local333.jpg",
+        "../img/art/local.jpg",
+        "../img/art/local2.jpg"
+      ]
+    }
+  
+  ]
 }
-
-
-  }
   

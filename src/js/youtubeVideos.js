@@ -1,22 +1,28 @@
-const API_KEY = "AIzaSyAytU59yF9oUxQ3tsrvglwR-D6QIbz3F5o";
-// const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
-const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
-const MAX_RESULTS = 5; 
-const VIDEO_ID_DESTACADO = "ID_DEL_VIDEO_DESTACADO";
+// let API_KEY = "";
 
+// fetch('../../config.json')
+//   .then(res => res.json())
+//   .then(config => {
+//       API_KEY = config.API_KEY;
+//       fetchYouTubeVideos(); 
+//   });
+
+// const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
+// const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";
+const MAX_RESULTS = 6; 
+const VIDEO_ID_DESTACADO = "y_3FGZGlCIc";
 const videoContainer = document.getElementById('youtube-videos');
 const videoMsg = document.getElementById('video-message');
 
 async function fetchYouTubeVideos() {
-    const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${"X_uG-RKarYk"}&key=${API_KEY}`;
-    const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(SEARCH_QUERY)}&maxResults=${MAX_RESULTS}&order=date&type=video&key=${API_KEY}`;
+    const videoUrl = `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${VIDEO_ID_DESTACADO}&key=${API_KEY}`;
+    const searchUrl = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet&playlistId=PLMtUu92TsgfXSMpuo9e3mdUqwp6G7ThG1&maxResults=${MAX_RESULTS}&key=${API_KEY}`;
 
     try {
-        // Hacemos ambas peticiones a la vez
         const [videoResponse, searchResponse] = await Promise.all([
             fetch(videoUrl),
             fetch(searchUrl)
-        ]);        
+        ]);
 
         const videoData = await videoResponse.json();
         const searchData = await searchResponse.json();
@@ -26,13 +32,19 @@ async function fetchYouTubeVideos() {
             videoMsg.innerHTML = `<p class="text-center text-emerald-100">Error al cargar videos.</p>`;
             return;
         }
-        // Extraer mi video
+
         let featuredVideo = videoData.items.length > 0 ? videoData.items[0] : null;
-        // Extraer los otros videos
-        let otherVideos = searchData.items || [];
-        // Unimor el video destacado
+
+        let otherVideos = (searchData.items || [])
+        .map(item => ({
+            id: item.snippet.resourceId.videoId,
+            snippet: item.snippet
+        }))
+        .filter(video => video.id !== VIDEO_ID_DESTACADO); 
+
         let finalVideos = [...otherVideos];
-            finalVideos.splice(2, 0, featuredVideo); // Meto mi video en el 3 porque me gusta para verse bonito
+        finalVideos.splice(2, 0, featuredVideo); 
+
         displayVideos(finalVideos);
 
     } catch (error) {
@@ -40,6 +52,7 @@ async function fetchYouTubeVideos() {
         videoMsg.innerHTML = `<p class="text-center text-emerald-100">Error al cargar los videos.</p>`;
     }
 }
+
 
 // Función para mostrar los videos
 function displayVideos(videos) {

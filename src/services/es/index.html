@@ -39,22 +39,20 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <!-- Estilos -->
-  <!-- <link rel="stylesheet" href="https://nusky7studio.es/dist/services.min.css"> -->
-  <link rel="stylesheet" href="../../dist/services.min.css">
-  <style>
-    body {
-      font-family: 'DM Sans', sans-serif;
-    }
-  </style>
+  <link rel="stylesheet" href="https://nusky7studio.es/dist/services.min.css">
+  <!-- <link rel="stylesheet" href="../../dist/services.min.css"> -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Mrs+Saint+Delafield&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 
   <!-- GSAP Animaciones -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/smooth-scrollbar@8.8.4/dist/smooth-scrollbar.js"></script>
 </head>
 
 <body class="bg-slate-200 text-zinc-900 overflow-x-hidden">
+  <div id="scroll-container" class="h-screen">
   <div class="absolute top-4 right-4 z-50">
   <div class="relative inline-block text-left">
     <button id="langBtn" type="button" class="inline-flex justify-center items-center gap-2 w-full rounded-md text-sm font-semibold text-purple-400 hover:text-purple-300 focus:outline-none">
@@ -62,9 +60,6 @@
     </button>
 
     <div id="langMenu" class="hidden absolute right-0 mt-2 text-center w-32 bg-purple-950/40 rounded-b-3xl rounded-tl-3xl shadow-lg z-50">
-      <!-- <a href="index.html" class="flex items-center gap-2 px-6 py-2 text-sm rounded-3xl text-white hover:bg-purple-950 transition">
-        <img src="https://nusky7studio.es/img/flags/es.webp" alt="ES" class="w-5 h-5 rounded-full"> Español
-      </a> -->
       <a href="https://nusky7studio.es/en/" class="flex items-center gap-2 px-6 py-2 text-sm rounded-3xl text-white hover:bg-purple-950 transition">
         <img src="https://nusky7studio.es/img/flags/en.webp" alt="EN" class="w-5 h-5 rounded-full"> English
       </a>
@@ -72,44 +67,31 @@
   </div>
 </div>
 
-<!-- <script>
-  const langBtn = document.getElementById('langBtn');
-  const langMenu = document.getElementById('langMenu');
-
-  langBtn.addEventListener('click', () => {
-    langMenu.classList.toggle('hidden');
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!langBtn.contains(e.target) && !langMenu.contains(e.target)) {
-      langMenu.classList.add('hidden');
-    }
-  });
-</script> -->
-
   <!-- HERO -->
-  <section class="hero relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-black overflow-hidden">
+  <section id="top" class="hero relative min-h-screen flex flex-col justify-center items-center text-center px-6 py-20 bg-black overflow-hidden">
     <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-40 z-0">
       <source src="https://nusky7studio.es/media/hero/Sstars.mp4" type="video/mp4" />
       Tu navegador no soporta vídeos en HTML5.
     </video>
     <div class="relative z-10 ">
       
-      <h1 class="text-4xl text-white md:text-5xl font-bold mb-6 max-w-xl mx-auto animate-pulsing delay-1000 font-space">Tu web no debería parecer una plantilla.</h1>
+      <h1 class="text-4xl text-white md:text-5xl font-bold mb-6 max-w-xl mx-auto delay-1000 font-space animate-glowText5">Tu web no debería parecer una plantilla.</h1>
       <p class="text-lg text-slate-200 mx-auto md:text-xl mb-8">Tu proyecto web merece diseño único,<br> desarrollo a medida y resultados reales.
 </p>
       <div class="flex gap-4 justify-center">
         <a href="#servicios" class="px-6 py-3 bg-purple-900 text-white rounded-xl hover:bg-slate-100 hover:text-black hover:animate-swing transition duration-300">Ver servicios</a>
-        <a href="https://nusky7studio.es/presupuesto" target="_blank" rel="noopener noreferrer" class="px-6 py-3  border-white animate-borderGlow3 text-white rounded-xl hover:bg-slate-100 hover:text-black hover:animate-pulse-fade-in hover:transition duration-300">Calcular presupuesto</a>
+        <a id="btnPresupuesto" href="https://nusky7studio.es/presupuesto" target="_blank" rel="noopener noreferrer" class="px-6 py-3  border-white animate-borderGlow3 text-white rounded-xl hover:bg-slate-100 hover:text-black hover:animate-pulse-fade-in hover:transition duration-300">Calcular presupuesto</a>
       </div>
     </div>
     <div class="hidden xl:block absolute top-0 left-0 mt-7 ml-7">
-      <img src="https://nusky7studio.es/img/logos/nBkg.png" alt="Logo de N7Studio" class="w-96 h-auto drop-shadow-sm shadow-black mb-2">
+      <a href="https://nusky7studio.es/portfolio/" target="_blank" rel="noopener noreferrer">
+        <img id="logoHero" src="https://nusky7studio.es/img/logos/nBkg.png" alt="Logo de N7Studio" class="w-96 h-auto drop-shadow-sm shadow-black mb-2 hover:animate-rotational-wave">
+      </a>
     </div>
   </section>
 
 <!-- SERVICIOS -->
-<section id="servicios" class="py-24 px-6 max-w-6xl mx-auto cursor-default">
+<section id="servicios" class="py-24 px-6 max-w-6xl mx-auto h-screen">
   <h2 class="text-3xl font-bold mb-16 text-center font-space">Diseño y Desarrollo Web</h2>
   <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-10 items-start">
 
@@ -163,7 +145,6 @@
         </span>
       </button>
 
-
       <div class="service-content max-h-0 overflow-hidden transition-all duration-500 text-sm text-zinc-400 leading-relaxed">
         Detectamos y corregimos fallos técnicos que afectan tu posicionamiento. Mejoramos estructura, velocidad, contenido y experiencia de usuario para escalar posiciones en Google y atraer tráfico cualificado.
       </div>
@@ -172,7 +153,7 @@
     <!-- Card: Soporte -->
     <div class="service-card bg-zinc-800 p-6 rounded-b-3xl rounded-tl-3xl shadow-sm hover:shadow-lg transition-all duration-300 hover:animate-scale ">
       <div class="mb-2 text-purple-500">
-        <svg class="main-icon w-9 h-9 mx-auto" fill=currentColor width="64px" height="64px" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet " xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>update-line</title> <path d="M19.5,28.1h-2.9c-0.5,0-0.9-0.3-1-0.8l-0.5-1.8c-0.2-0.1-0.2-0.1-0.4-0.2l-1.6,0.9c-0.4,0.2-0.9,0.2-1.2-0.2l-2.1-2.1 c-0.3-0.3-0.4-0.8-0.2-1.2l0.9-1.6c-0.1-0.2-0.1-0.2-0.2-0.4l-1.8-0.5c-0.4-0.1-0.8-0.5-0.8-1v-2.9c0-0.5,0.3-0.9,0.8-1l1.8-0.5 c0.1-0.2,0.1-0.2,0.2-0.4l-0.9-1.6c-0.2-0.4-0.2-0.9,0.2-1.2l2.1-2.1c0.3-0.3,0.8-0.4,1.2-0.2l1.6,0.9c0.2-0.1,0.2-0.1,0.4-0.2 l0.5-1.8c0.1-0.4,0.5-0.8,1-0.8h2.9c0.5,0,0.9,0.3,1,0.8l0.5,1.8c0.2,0.1,0.2,0.1,0.4,0.2l1.6-0.9c0.4-0.2,0.9-0.2,1.2,0.2 l2.1,2.1c0.3,0.3,0.4,0.8,0.2,1.2l-0.9,1.6c0.1,0.2,0.1,0.2,0.2,0.4l1.8,0.5c0.4,0.1,0.8,0.5,0.8,1v2.9c0,0.5-0.3,0.9-0.8,1 l-1.8,0.5c-0.1,0.2-0.1,0.2-0.2,0.4l0.9,1.6c0.2,0.4,0.2,0.9-0.2,1.2l-2.1,2.1c-0.3,0.3-0.8,0.4-1.2,0.2l-1.6-0.9 c-0.2,0.1-0.2,0.1-0.4,0.2l-0.5,1.8C20.3,27.8,19.9,28.1,19.5,28.1z M17.3,26.1h1.4l0.5-2.1l0.5-0.2c0.4-0.1,0.7-0.3,1.1-0.4 l0.5-0.3l1.9,1.1l1-1l-1.1-1.9l0.3-0.5c0.2-0.3,0.3-0.7,0.4-1.1l0.2-0.5l2.1-0.5v-1.4L24,16.8l-0.2-0.5c-0.1-0.4-0.3-0.7-0.4-1.1 l-0.3-0.5l1.1-1.9l-1-1l-1.9,1.1l-0.5-0.3c-0.3-0.2-0.7-0.3-1.1-0.4L19.2,12l-0.5-2.1h-1.4L16.8,12l-0.5,0.2 c-0.4,0.1-0.7,0.3-1.1,0.4l-0.5,0.3l-1.9-1.1l-1,1l1.1,1.9l-0.3,0.5c-0.2,0.3-0.3,0.7-0.4,1.1L12,16.8l-2.1,0.5v1.4l2.1,0.5 l0.2,0.5c0.1,0.4,0.3,0.7,0.4,1.1l0.3,0.5l-1.1,1.9l1,1l1.9-1.1l0.5,0.3c0.3,0.2,0.7,0.3,1.1,0.4l0.5,0.2L17.3,26.1z M27.1,19.5 L27.1,19.5L27.1,19.5z"></path> <path d="M18,22.3c-2.4,0-4.3-1.9-4.3-4.3s1.9-4.3,4.3-4.3c2.4,0,4.3,1.9,4.3,4.3S20.4,22.3,18,22.3z M18,15.7 c-1.3,0-2.3,1-2.3,2.3s1,2.3,2.3,2.3c1.3,0,2.3-1,2.3-2.3S19.3,15.7,18,15.7z"></path> <path d="M18,2c-0.6,0-1,0.4-1,1s0.4,1,1,1c7.7,0,14,6.3,14,14s-6.3,14-14,14S4,25.7,4,18c0-2.8,0.8-5.5,2.4-7.8v1.2 c0,0.6,0.4,1,1,1s1-0.4,1-1v-5h-5c-0.6,0-1,0.4-1,1s0.4,1,1,1h1.8C3.1,11.1,2,14.5,2,18c0,8.8,7.2,16,16,16s16-7.2,16-16 S26.8,2,18,2z"></path> <rect width="36" height="36" fill-opacity="0"></rect> </g></svg>
+        <svg class="main-icon w-9 h-9 mx-auto" fill="currentColor" width="64px" height="64px" viewBox="0 0 36 36" version="1.1" preserveAspectRatio="xMidYMid meet " xmlns="http://www.w3.org/2000/svg" transform="matrix(-1, 0, 0, -1, 0, 0)" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>update-line</title> <path d="M19.5,28.1h-2.9c-0.5,0-0.9-0.3-1-0.8l-0.5-1.8c-0.2-0.1-0.2-0.1-0.4-0.2l-1.6,0.9c-0.4,0.2-0.9,0.2-1.2-0.2l-2.1-2.1 c-0.3-0.3-0.4-0.8-0.2-1.2l0.9-1.6c-0.1-0.2-0.1-0.2-0.2-0.4l-1.8-0.5c-0.4-0.1-0.8-0.5-0.8-1v-2.9c0-0.5,0.3-0.9,0.8-1l1.8-0.5 c0.1-0.2,0.1-0.2,0.2-0.4l-0.9-1.6c-0.2-0.4-0.2-0.9,0.2-1.2l2.1-2.1c0.3-0.3,0.8-0.4,1.2-0.2l1.6,0.9c0.2-0.1,0.2-0.1,0.4-0.2 l0.5-1.8c0.1-0.4,0.5-0.8,1-0.8h2.9c0.5,0,0.9,0.3,1,0.8l0.5,1.8c0.2,0.1,0.2,0.1,0.4,0.2l1.6-0.9c0.4-0.2,0.9-0.2,1.2,0.2 l2.1,2.1c0.3,0.3,0.4,0.8,0.2,1.2l-0.9,1.6c0.1,0.2,0.1,0.2,0.2,0.4l1.8,0.5c0.4,0.1,0.8,0.5,0.8,1v2.9c0,0.5-0.3,0.9-0.8,1 l-1.8,0.5c-0.1,0.2-0.1,0.2-0.2,0.4l0.9,1.6c0.2,0.4,0.2,0.9-0.2,1.2l-2.1,2.1c-0.3,0.3-0.8,0.4-1.2,0.2l-1.6-0.9 c-0.2,0.1-0.2,0.1-0.4,0.2l-0.5,1.8C20.3,27.8,19.9,28.1,19.5,28.1z M17.3,26.1h1.4l0.5-2.1l0.5-0.2c0.4-0.1,0.7-0.3,1.1-0.4 l0.5-0.3l1.9,1.1l1-1l-1.1-1.9l0.3-0.5c0.2-0.3,0.3-0.7,0.4-1.1l0.2-0.5l2.1-0.5v-1.4L24,16.8l-0.2-0.5c-0.1-0.4-0.3-0.7-0.4-1.1 l-0.3-0.5l1.1-1.9l-1-1l-1.9,1.1l-0.5-0.3c-0.3-0.2-0.7-0.3-1.1-0.4L19.2,12l-0.5-2.1h-1.4L16.8,12l-0.5,0.2 c-0.4,0.1-0.7,0.3-1.1,0.4l-0.5,0.3l-1.9-1.1l-1,1l1.1,1.9l-0.3,0.5c-0.2,0.3-0.3,0.7-0.4,1.1L12,16.8l-2.1,0.5v1.4l2.1,0.5 l0.2,0.5c0.1,0.4,0.3,0.7,0.4,1.1l0.3,0.5l-1.1,1.9l1,1l1.9-1.1l0.5,0.3c0.3,0.2,0.7,0.3,1.1,0.4l0.5,0.2L17.3,26.1z M27.1,19.5 L27.1,19.5L27.1,19.5z"></path> <path d="M18,22.3c-2.4,0-4.3-1.9-4.3-4.3s1.9-4.3,4.3-4.3c2.4,0,4.3,1.9,4.3,4.3S20.4,22.3,18,22.3z M18,15.7 c-1.3,0-2.3,1-2.3,2.3s1,2.3,2.3,2.3c1.3,0,2.3-1,2.3-2.3S19.3,15.7,18,15.7z"></path> <path d="M18,2c-0.6,0-1,0.4-1,1s0.4,1,1,1c7.7,0,14,6.3,14,14s-6.3,14-14,14S4,25.7,4,18c0-2.8,0.8-5.5,2.4-7.8v1.2 c0,0.6,0.4,1,1,1s1-0.4,1-1v-5h-5c-0.6,0-1,0.4-1,1s0.4,1,1,1h1.8C3.1,11.1,2,14.5,2,18c0,8.8,7.2,16,16,16s16-7.2,16-16 S26.8,2,18,2z"></path> <rect width="36" height="36" fill-opacity="0"></rect> </g></svg>
       </div>
       <h3 class="font-semibold text-xl mb-2 text-white text-center font-space">Soporte</h3>
       <p class="text-sm text-zinc-300 text-center">Hosting, actualizaciones, mantenimiento y mejoras continuas.</p>
@@ -189,10 +170,11 @@
   </div>
 </section>
 
+
   <!-- PROCESO -->
-  <section class="proceso bg-zinc-900 text-white py-24 px-6 mx-auto text-center">
-   <h2 class="text-3xl font-bold mb-8 text-center max-w-6xl mx-auto font-space">¿Cómo trabajamos en N7Studio?</h2>
-  <p class="text-lg text-slate-300 max-w-4xl mx-auto mb-12 text-center">
+  <section class="proceso bg-zinc-900 text-white py-24 px-6 mx-auto text-center h-screen">
+   <h2 class="process-title text-3xl font-bold mb-8 text-center max-w-6xl mx-auto font-space">¿Cómo trabajamos en N7Studio?</h2>
+  <p class="process-text text-lg text-slate-300 max-w-4xl mx-auto mb-12 text-center">
     En N7Studio puedes contar con una atención directa y personalizada.<br> Si tienes un gran proyecto en mente y necesitas un equipo completo, nos coordinamos con otros colaboradores y profesionales para ofrecerte una solución profesional, completa y totalmente a medida.
   </p>
 
@@ -200,19 +182,19 @@
     <!-- Paso 1 -->
     <div class="paso  bg-zinc-800 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300">
       <h3 class="title text-xl font-semibold text-white mb-2 font-space">1. Escuchamos tu idea</h3>
-      <p class="text-slate-300 text-sm">Nos reunimos contigo para entender qué quieres conseguir y qué necesita tu proyecto para hacerlo realidad.</p>
+      <p class="text-slate-300 text-md">Nos reunimos contigo para entender qué quieres conseguir y qué necesita tu proyecto para hacerlo realidad.</p>
     </div>
 
     <!-- Paso 2 -->
     <div class="paso  bg-zinc-800 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300">
       <h3 class="title text-xl font-semibold text-white mb-2 font-space">2. Propuesta a medida</h3>
-      <p class="text-slate-300 text-sm">Creamos una propuesta honesta y realista, adaptada a tu presupuesto y objetivos.<br> El objetivo es que tus metas cobren vida.</p>
+      <p class="text-slate-300 text-md">Creamos una propuesta honesta y realista, adaptada a tu presupuesto y objetivos.<br> El objetivo es que tus metas cobren vida.</p>
     </div>
 
     <!-- Paso 3 -->
     <div class="paso  bg-zinc-800 p-6 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300">
       <h3 class="title text-xl font-semibold text-white mb-2 font-space">3. Desarrollo y colaboración</h3>
-      <p class="text-slate-300 text-sm">Desarrollamos tu proyecto con cariño, detalle y profesionalidad. Si es necesario, ampliamos el equipo con colaboradores del sector para llegar aún más lejos.</p>
+      <p class="text-slate-300 text-md">Desarrollamos tu proyecto con cariño, detalle y profesionalidad. Si es necesario, ampliamos el equipo con colaboradores del sector para llegar aún más lejos.</p>
     </div>
   </div>
   </section>
@@ -224,13 +206,13 @@
     <source src="https://nusky7studio.es/media/hero/Sstars.mp4" type="video/mp4" />
     Tu navegador no soporta vídeos en HTML5.
   </video>
-  <h2 class="text-3xl font-bold mb-10 text-white font-space">Colaboradores y Profesionales</h2>
-  <p class="text-slate-400 mb-12 max-w-2xl mx-auto">En N7Studio contamos con una red de colaboradores y profesionales especialistas en distintas áreas para abarcar proyectos de cualquier envergadura.</p>
+  <h2 class="proceso-colabs-title text-3xl font-bold mb-10 text-white font-space">Colaboradores y Profesionales</h2>
+  <p class="proceso-colabs-text text-slate-400 mb-12 max-w-2xl mx-auto">En N7Studio contamos con una red de colaboradores y profesionales especialistas en distintas áreas para abarcar proyectos de cualquier envergadura.</p>
 
   <div class="relative z-10 grid md:grid-cols-2 lg:grid-cols-3 max-w-7xl gap-8 text-left mx-auto">
  
         <!-- Jorge -->
-    <div class="bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
+    <div class="colab-card bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
       <div class="flex justify-center mb-2">
         <img src="https://nusky7studio.es/img/colaboradores/jorge.png" alt="Jorge [Apellidos]" class="w-32 h-32 rounded-full mb-2">
       </div>
@@ -240,21 +222,29 @@
     </div>
 
        <!-- Alba - N7Studio -->
-    <div class="relative bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto overflow-hidden">
-     <span class="absolute top-1 left-1 p-1 rounded-full shadow-lg ">
+    <div class="colab-card relative bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto overflow-hidden">
+     <span class="absolute top-1 left-1 p-1 rounded-full ">
         <img src="https://nusky7studio.es/img/logos/nPurple.png" alt="N7Studio" class="w-16 h-16">
       </span>
 
       <div class="flex justify-center mb-2">
-        <img src="https://nusky7studio.es/img/yo2.webp" alt="Alba Tolosa Bonora" class="w-32 h-32 rounded-full animate-borderGlow3">
+        <a href="https://nusky7studio.es/portfolio/" target="_blank" rel="noopener noreferrer">
+          <img
+            id="alba"
+            src="https://nusky7studio.es/img/yo2.webp"
+            alt="Alba Tolosa Bonora"
+            class="w-32 h-32 rounded-full animate-borderGlow3 hover:animate-scale"
+          >
+        </a>
       </div>
+
       <h3 class="text-xl font-semibold text-white mb-1 text-center font-space">Alba Tolosa Bonora</h3>
       <p class="text-purple-400 mb-1 text-center">Frontend Developer &amp; UI/UX</p>
       <p class="text-zinc-400 text-sm text-center">Fundadora de N7Studio. Diseño de interfaces, desarrollo frontend y experiencia de usuario.</p>
     </div>
 
     <!-- Iker -->
-    <div class="bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
+    <div class="colab-card bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
       <div class="flex justify-center mb-2">
         <img src="https://nusky7studio.es/img/colaboradores/iker.jpeg" alt="Iker Fernández Guinea" class="w-32 h-32 rounded-full mb-2">
       </div>
@@ -264,7 +254,7 @@
     </div>
 
     <!-- Ángel -->
-    <div class="bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
+    <div class="colab-card bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
       <div class="flex justify-center mb-2">
         <img src="https://nusky7studio.es/img/colaboradores/angel.png" alt="Ángel Navarro López" class="w-32 h-32 rounded-full mb-2">
       </div>
@@ -274,7 +264,7 @@
     </div>
 
     <!-- Sebastian -->
-    <div class="bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
+    <div class="colab-card bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
       <div class="flex justify-center mb-2">
         <img src="https://nusky7studio.es/img/colaboradores/sebastian.jpeg" alt="Sebastian Vaisov" class="w-32 h-32 rounded-full mb-2">
       </div>
@@ -284,7 +274,7 @@
     </div>
 
     <!-- Sesec Pro - Sergio Espi -->
-    <div class="bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
+    <div class="colab-card bg-zinc-800 p-6 rounded-br-3xl rounded-tl-3xl mx-auto">
       <div class="flex justify-center mb-2">
         <img src="https://nusky7studio.es/img/colaboradores/sesecpro.jpg" alt="Sesec Pro" class="w-28 h-28 object-contain rounded-full bg-white p-2">
       </div>
@@ -300,21 +290,12 @@
   <section id="contacto" class="contacto-decorado py-24 px-6 max-w-xl mx-auto text-center" >
     
     <h2 class="text-3xl font-bold mb-6">¿Hablamos?</h2>
-    <p class="text-zinc-600 mb-8">Cuéntame qué necesitas o qué idea tienes en mente. <br>Habla con mi asistente virtual, <a href="#top" onclick="blinkPresupuesto()" class="inline-block font-semibold text-purple-500 underline hover:text-purple-800 transition">calcula tu presupuesto aproximado</a>  o contacta directamente para comenzar tu próximo proyecto web. </p>
-  <div div="flex gap-7 justify-center">
-    <a href="mailto:info@nusky7studio.es" class="inline-block px-6 py-3 bg-zinc-900 text-white rounded-xl hover:bg-zinc-800 transition">Enviar un correo</a>
-    <a href="tel:+34675260296" class="inline-block px-6 py-3 bg-zinc-900 text-white rounded-xl hover:bg-zinc-800 transition">Llamar</a>
+    <p class="text-zinc-600 mb-8">Cuéntame qué necesitas o qué idea tienes en mente. <br>Habla con mi asistente virtual, <a href="#top" class="inline-block font-semibold text-purple-500 underline hover:text-purple-800 transition">calcula tu presupuesto aproximado</a>  o contacta directamente para comenzar tu próximo proyecto web. </p>
+  <div class="botones-contacto flex gap-3 justify-center">
+    <a href="mailto:info@nusky7studio.es" class="inline-block px-6 py-3 bg-zinc-900 text-white rounded-xl hover:bg-purple-800 transition hover:animate-pop">Enviar un correo</a>
+    <a href="tel:+34675260296" class="inline-block px-6 py-3 bg-zinc-900 text-white rounded-xl hover:bg-purple-800 transition hover:animate-jelly">Llamar</a>
   </div>
   </section>
-  
-
-  <a href="https://wa.me/34675260296" 
-    class="fixed bottom-4 right-4 bg-purple-700 text-white p-3 rounded-full shadow-lg hover:bg-purple-800 transition z-50" 
-    target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
-  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374A9.86 9.86 0 012.1 11.893C2.1 6.477 6.574 2 12 2c2.652 0 5.146 1.037 7.027 2.919A9.825 9.825 0 0122 12.005c-.003 5.426-4.477 9.994-9.949 9.994zm8.413-18.407A11.815 11.815 0 0012 0C5.373 0 0 5.373 0 12c0 2.121.553 4.197 1.601 6.032L.057 23.925a1 1 0 001.225 1.225l5.893-1.545A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12 0-3.192-1.246-6.191-3.536-8.382z"/>
-</svg>
-  </a>
 
 
 <footer class="bg-zinc-950 text-zinc-300 text-sm relative z-10">
@@ -322,50 +303,69 @@
 
     <!-- Branding -->
     <div>
-      <!-- <img src="https://nusky7studio.es/img/logos/nPurple.png" alt="Logo de N7Studio" class="rounded-full w-16 h-auto mx-auto shadow-lg mb-2"> -->
-      
-      <p class="mt-3 font-orbi text-md font-bold text-purple-200 animate-glowText1">N 7 S T U D I O </p>
-      <p class="text-xs text-gray-500">Diseño y Desarrollo Web</p>
+      <p class="n7s mt-3 font-orbi text-lg font-bold text-purple-200 flex justify-center gap-2 animate-glowText1">
+        <span class="n7-letter">N</span>
+        <span class="n7-letter">7</span>
+        <span class="n7-letter">S</span>
+        <span class="n7-letter">T</span>
+        <span class="n7-letter">U</span>
+        <span class="n7-letter">D</span>
+        <span class="n7-letter">I</span>
+        <span class="n7-letter">O</span>
+      </p>
+      <p class="n7s-text text-xs text-gray-500">Diseño y Desarrollo Web</p>
     </div>
-    
-    <!-- Enlaces legales -->
-    <ul class="flex flex-wrap items-center justify-center gap-4 text-xs text-zinc-400">
-      <li><a href="/privacidad.html" target="_blank" class="hover:text-fuchsia-400 transition">Privacidad</a></li>
-      <li><a href="/aviso-legal.html" target="_blank" class="hover:text-fuchsia-400 transition">Aviso Legal</a></li>
-      <li><a href="/cookies.html" target="_blank" class="hover:text-fuchsia-400 transition">Cookies</a></li>
-      <li><a href="tel:+34675260296" class="hover:text-fuchsia-400 transition">Contacto</a></li>
-    </ul>
 
     <!-- ENLACES Y REDES -->
-    <div class="flex gap-4 justify-center text-fuchsia-400">
-      <a href="https://nusky7studio.es/portfolio" target="_blank" aria-label="Portfolio" class="hover:text-fuchsia-300 transition">
-        <svg fill="#A855F7" width="25px" height="25px" viewBox="-3 0 19 19" xmlns="http://www.w3.org/2000/svg" class="cf-icon-svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12.517 12.834v1.9a1.27 1.27 0 0 1-1.267 1.267h-9.5a1.27 1.27 0 0 1-1.267-1.267v-1.9A3.176 3.176 0 0 1 3.65 9.667h5.7a3.176 3.176 0 0 1 3.167 3.167zM3.264 5.48A3.236 3.236 0 1 1 6.5 8.717a3.236 3.236 0 0 1-3.236-3.236z"></path></g></svg>
+    <div class="flex gap-4 justify-center text-purple-400">
+      <a href="https://nusky7studio.es/portfolio" target="_blank" title="Portfolio" aria-label="Portfolio" class="hover:text-purple-300 transition hover:animate-pulsing">
+        <svg class="icon" fill="#A855F7" width="25px" height="25px" viewBox="-3 0 19 19" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12.517 12.834v1.9a1.27 1.27 0 0 1-1.267 1.267h-9.5a1.27 1.27 0 0 1-1.267-1.267v-1.9A3.176 3.176 0 0 1 3.65 9.667h5.7a3.176 3.176 0 0 1 3.167 3.167zM3.264 5.48A3.236 3.236 0 1 1 6.5 8.717a3.236 3.236 0 0 1-3.236-3.236z"></path></g></svg>
       </a>
-      <a href="https://nusky7studio.es/blog/" target="_blank" aria-label="Blog" class="hover:text-fuchsia-300 transition">
-      <svg fill="#A855F7" width="20px" height="20px" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g> <path d="M12,72A12,12,0,1,0,24,84,12.0119,12.0119,0,0,0,12,72Z"></path> <path d="M12,36a6,6,0,0,0,0,12A36.0393,36.0393,0,0,1,48,84a6,6,0,0,0,12,0A48.0512,48.0512,0,0,0,12,36Z"></path> <path d="M12,0a6,6,0,0,0,0,12A72.0788,72.0788,0,0,1,84,84a6,6,0,0,0,12,0A84.0981,84.0981,0,0,0,12,0Z"></path> </g> </g></svg>
+      <a href="https://nusky7studio.es/blog/" target="_blank" title="Blog" aria-label="Blog" class="hover:text-purple-300 transition hover:animate-pulsing">
+      <svg class="icon" fill="#A855F7" width="20px" height="20px" viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title></title> <g> <path d="M12,72A12,12,0,1,0,24,84,12.0119,12.0119,0,0,0,12,72Z"></path> <path d="M12,36a6,6,0,0,0,0,12A36.0393,36.0393,0,0,1,48,84a6,6,0,0,0,12,0A48.0512,48.0512,0,0,0,12,36Z"></path> <path d="M12,0a6,6,0,0,0,0,12A72.0788,72.0788,0,0,1,84,84a6,6,0,0,0,12,0A84.0981,84.0981,0,0,0,12,0Z"></path> </g> </g></svg>
       </a>
-      <a href="https://nusky7studio.es/newsletter/" target="_blank" aria-label="Newsletter" class="hover:text-fuchsia-300 transition">
-       <svg fill="#A855F7" width="25px" height="25px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M18 3H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM4 10h6v1H4v-1zm8 4H4v-1h8v1zm5-6h-3V5h3v3z"></path></g></svg>
+      <a href="https://nusky7studio.es/newsletter/" target="_blank" title="Newsletter" aria-label="Newsletter" class="hover:text-purple-300 transition hover:animate-pulsing">
+       <svg class="icon" fill="#A855F7" width="25px" height="25px" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M18 3H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM4 10h6v1H4v-1zm8 4H4v-1h8v1zm5-6h-3V5h3v3z"></path></g></svg>
       </a>
-      <a href="https://t.me/Nusky_7" target="_blank" aria-label="Telegram" class="hover:text-fuchsia-300 transition">
-       <svg fill="#A855F7" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></g></svg>
+      <a href="https://t.me/Nusky_7" target="_blank" title="Telegram" aria-label="Telegram" class="hover:text-purple-300 transition hover:animate-pulsing">
+       <svg class="icon" fill="#A855F7" width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="m20.665 3.717-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.785l3.019-14.228c.309-1.239-.473-1.8-1.282-1.434z"></path></g></svg>
       </a>
-      <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" aria-label="LinkedIn" class="hover:text-fuchsia-300 transition">
-        <svg width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#A855F7"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>linkedin [#A855F7]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#A855F7"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#E879F9]"> </path> </g> </g> </g> </g></svg>
+      <a href="https://es.linkedin.com/in/alba-tolosa-bonora-792b7a291" target="_blank" title="LinkedIn" aria-label="LinkedIn" class="hover:text-purple-300 transition hover:animate-pulsing">
+        <svg class="icon" width="20px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#A855F7"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>linkedin [#A855F7]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-180.000000, -7479.000000)" fill="#A855F7"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M144,7339 L140,7339 L140,7332.001 C140,7330.081 139.153,7329.01 137.634,7329.01 C135.981,7329.01 135,7330.126 135,7332.001 L135,7339 L131,7339 L131,7326 L135,7326 L135,7327.462 C135,7327.462 136.255,7325.26 139.083,7325.26 C141.912,7325.26 144,7326.986 144,7330.558 L144,7339 L144,7339 Z M126.442,7323.921 C125.093,7323.921 124,7322.819 124,7321.46 C124,7320.102 125.093,7319 126.442,7319 C127.79,7319 128.883,7320.102 128.883,7321.46 C128.884,7322.819 127.79,7323.921 126.442,7323.921 L126.442,7323.921 Z M124,7339 L129,7339 L129,7326 L124,7326 L124,7339 Z" id="linkedin-[#E879F9]"> </path> </g> </g> </g> </g></svg>
       </a>
     </div>
+
+    <!-- Enlaces legales -->
+    <ul class="flex flex-wrap items-center justify-center gap-4 text-xs text-zinc-400">
+      <li class="hover:animate-scale"><a href="/privacidad.html" target="_blank" class="hover:text-purple-400 transition">Privacidad</a></li>
+      <li class="hover:animate-scale"><a href="/aviso-legal.html" target="_blank" class="hover:text-purple-400 transition">Aviso Legal</a></li>
+      <li class="hover:animate-scale"><a href="/cookies.html" target="_blank" class="hover:text-purple-400 transition">Cookies</a></li>
+      <li class="hover:animate-scale"><a href="tel:+34675260296" class="hover:text-purple-400 transition">Contacto</a></li>
+    </ul>
+
   </div>
 
   <div class="text-center text-xs text-zinc-600 border-t border-zinc-800 p-3">
     &copy; 2025 N7Studio · Todos los derechos reservados
   </div>
 </footer>
+</div>
+
+  <a href="https://wa.me/34675260296" 
+    class="hover:animate-pulsing fixed bottom-4 right-4 bg-purple-700 text-white p-3 rounded-full shadow-lg hover:bg-purple-800 transition z-50" 
+    target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="w-6 h-6" viewBox="0 0 24 24">
+  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.472-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.447-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.206-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.2 5.077 4.363.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982 1-3.648-.235-.374A9.86 9.86 0 012.1 11.893C2.1 6.477 6.574 2 12 2c2.652 0 5.146 1.037 7.027 2.919A9.825 9.825 0 0122 12.005c-.003 5.426-4.477 9.994-9.949 9.994zm8.413-18.407A11.815 11.815 0 0012 0C5.373 0 0 5.373 0 12c0 2.121.553 4.197 1.601 6.032L.057 23.925a1 1 0 001.225 1.225l5.893-1.545A11.934 11.934 0 0012 24c6.627 0 12-5.373 12-12 0-3.192-1.246-6.191-3.536-8.382z"/>
+</svg>
+<span class="sr-only">WhatsApp</span>
+  </a>
+
 
 <!-- ChatBase -->
 <script>
 (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="HtcKIqBesNpD8zTzdveJW";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
 </script>
-<script src="../../js/services.js"></script>
-<!-- <script src="https://nusky7studio.es/js/services.js"></script> -->
+<!-- <script src="../../js/services.js"></script> -->
+<script src="https://nusky7studio.es/js/services.js"></script>
 </body>
 </html>

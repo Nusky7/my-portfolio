@@ -61,15 +61,15 @@ document.addEventListener("DOMContentLoaded", function () {
   toggleMusic.checked = true;
 
   // Animación CV - Contrata mis servicios hoy misme
-function startAnimation() {
-  subtitle.classList.add("animate-blinkAndBounce");
+// function startAnimation() {
+//   subtitle.classList.add("animate-blinkAndBounce");
 
-  setTimeout(() => {
-    subtitle.classList.remove("animate-blinkAndBounce");
-  }, 4000);
-  setTimeout(startAnimation, 9999);
-}
-startAnimation();
+//   setTimeout(() => {
+//     subtitle.classList.remove("animate-blinkAndBounce");
+//   }, 4000);
+//   setTimeout(startAnimation, 9999);
+// }
+// startAnimation();
   
   // Al cargar la pagina
   window.addEventListener('load', () => {

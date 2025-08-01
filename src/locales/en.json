@@ -8,31 +8,14 @@
       "username": "@Nusky7"
     },
     "about": {
-      "heading": "HELLO WORLD!",
-    "description": "I’m a resolute <strong>Frontend ❤</strong> developer, passionate about creating attractive, functional interfaces focused on user experience. I especially enjoy designing with <code>Tailwind CSS</code> and bringing ideas to life using <code>JavaScript</code>, <code>HTML</code>, <code>CSS</code>, and frameworks like <code>Angular</code>.<br><br>I care about visual details, but I also know how to build my own <strong>backends</strong> when needed, integrating APIs, databases, or custom solutions using <code>Node.js</code>, <code>MongoDB</code>, <code>PHP</code>, or <code>Firebase</code>.<br><br>I work in a practical, creative, and autonomous way, aiming to develop modern, responsive websites that are well optimized for search engines. I’m always learning and exploring new tools that help me deliver results that truly connect."
+    "heading": "WELCOME TO MY CREATIVE SPACE!",
+    "description": "Hi there 😊 If you're here, it's because I wanted to share this little piece of my soul with you.<br><br>In this space you'll find personal writings from different moments in my life — some poetic, others just honest thoughts. You can also listen to my own music, which I’ve uploaded to the player in the highest quality possible. And if you’d like to save them for later, the YouTube videos are available on the mini TVs below.<br><br>This place was born as a refuge and a collection to gather some of my creations that are once scattered across my world. Now, finally gathered in one place, it allows me to express myself, reflect, and share my creativity and artistic side with anyone who feels a connection.<br><br>Thank you for being here. I hope that something you see or hear resonates with you too.<br><br>Voting is still open, so if you enjoyed anything, feel free to leave your stars! ⭐"
+  },
 
-    },
-    "projects": {
-        "title": "PROJECTS",
-        "show": "See Code",
-        "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
-        "pWebTitle": "Online Qote Calculator",
-        "presupuestoWeb": "<p class='text-fuchsia-300'>Proprietary tool by N7Studio.</p>Online web quote calculator. Estimates web projects prices based on selected options, with integrated PDF generation and email sending with JS + PHP.",
-        "galaValencia": "<p class='text-pink-300'>Client Project.</p>Custom design from scratch. Professional website for events, parties, and venue rentals in Valencia. Includes 3 service sections, image gallery, and contact forms built with PHP + JS.",
-        "landingInmo": "<p class='text-fuchsia-300'>Client Project.</p>Real estate landing page built with WP CMS and styled using CSS and Tailwind CSS. Custom multistep form (no Elementor Pro) optimized for lead generation.",
-        "blog": "<p class='text-teal-400 text-xl text-center'>Blog - News and Technology.</p>Portfolio extension where I publish articles on technology, combined with the most relevant news extracted from my social media feed.",
-        "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Online tool to convert images, fonts, and videos. Images are converted on the frontend.<br> The backend can be used locally and is required for video, mp3, and font conversions.",
-        "project1": "<p class='text-amber-300'>Integrated Maps.</p>An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
-        "project2": "<p class='text-orange-400'>FrontEnd prototype.</p>A transfer website in the Valencia area for booking private trips. <br>Prototype with Angular 17 and Bootstrap<br>",
-        "project3": "<p class='text-violet-300'>2.0 🡩 Updated with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant & links to his SM.",
-        "project4": "<p class='text-emerald-200'>Higher Education program. | Final Project.</p>Smart Time is a project and task management application with features like notes, a calendar, and events.",
-        "project5": "<p class='text-red-600'>Allow sound to hear background music.</p>PHP client that consumes the Pokémon API and displays 20 Pokémon with their images, moves, and sounds."
-       
-    },
     "panel": {
       "buttonText": "Download CV",
       "buttonText1": "🧮 Calculate Quote",
-      "panelTitle": "DO YOU LIKE MY WORK?",
+      "panelTitle": "Custom Watchfaces for Smartwatches",
       "panelSubitle": "Need your own Website?",
       "panelText": " Let's talk about your next project!<br>Download my CV for more details or contact me directly",
       "contact": "CONTACT",
@@ -124,7 +107,75 @@
     "quoteBtn": "QUOTE CALCULATOR",
     "quoteTxt": "Book an appointment for your web project and find out in seconds how much it might cost. <br>Keep in mind this tool gives an estimate, and we’ll need to understand your needs better for a final quote."
 
+  },
+  "artworks": [    
+  {
+    "titulo": "Everything in Formation",
+    "texto": "Where things don’t happen, time holds the weight of oddities and other strange loads...<br>escapism of a world dreaming to wake up, stuffing its holes with cork as it tries.<br><br>Yesterday, today and tomorrow glare at me while I live in this amnesia that nothing can anesthetize.<br>And even though we know everything descends, we still love to climb stairs and twist them until they become impossible,<br>until the fall becomes tangible...<br>Something visible since the dawn of time, living in our knowledge — yet we deny it in vain, and pay for it later, of course.<br><br>As for plain and silly things, they don’t offend — they’re easy to taste, and leave the mind distressed.<br>But this complication, this everything in the process of formation... is something that never perishes, something all deserve, though few practice it.<br>Something paid for dearly...<br><br>But sadly, nowadays we bet on plastic faces rather than practical minds,<br>trying to make aesthetics static amidst all this cataclysm.",
+    "año": 2012,
+    "imagenes": ["../img/art/albaold.jpg","../img/art/albita2.jpg","../img/art/20121.jpg","../img/art/albita.jpg"]
+  },
+  {
+    "titulo": "The Return of the Ship",
+    "texto": "After a long time lost, this ship longs to sail again.<br>Even with a few cracked planks, it could face the darkest sea...<br><br>It’s not that this ship has changed —<br>it’s already sailed through cold rivers...<br>it’s the one steering the helm<br>who now holds the awareness of all that’s been crossed.",
+    "año": 2018,
+    "imagenes": ["../img/art/navigation2.jpg","../img/art/navigation1.jpg","../img/art/navigation3.jpg","../img/art/beach.jpg","../img/art/beachcorner1.jpg","../img/art/sea.jpg","../img/art/beachcorner.jpg"]
+  },
+  {
+    "titulo": "Prison of Mind",
+    "texto": "Fuck it.<br><br>I’m free in my mental prison, flying...<br><br>I see their souls through their eyes — most are rotten, nonexistent...<br>The brightest ones...<br><br>I’m sure you can hear their hearts cry.",
+    "año": 2018,
+    "imagenes": ["../img/art/free.jpg","../img/art/free2.jpg","../img/art/free3.jpg","../img/art/brightness2.jpg"]
+  },
+  {
+    "titulo": "Brightness Search",
+    "texto": "I come from darkness, looking for some light —<br>almost always absent.<br><br>What can you give? What are you willing to receive?<br><br>Big hearts ache in lonely souls, they often break but will try again.<br>Until chaos covers it all... giving up is dying.",
+    "año": 2018,
+    "imagenes": ["../img/art/darkness.png","../img/art/dark1.jpg","../img/art/brightness.jpg","../img/art/brightness3.jpg"]
+  },
+  {
+    "titulo": "Always Loved",
+    "texto": "M · ost beautiful things<br>A · re not always possible.<br>N · o, ain’t pain — these tears are love.<br>D · ifferent things for us will come.<br>Y · ou deserve best, always will be loved. 💔",
+    "año": 2018,
+    "imagenes": ["../img/art/mandy.jpg","../img/art/loveumandy.jpg","../img/art/mandybb.jpg"]
+  },
+  {
+    "titulo": "Ashes",
+    "texto": "In her ashes, you could still read what the fire of passion consumed...<br><br>While the flames of misunderstanding burned the rest.<br><br>I could rewrite it, so as not to lose it.<br>I could let the wind blow it away...",
+    "año": 2018,
+    "imagenes": ["../img/art/hamburgo.jpg","../img/art/hamburgo2.jpg","../img/art/fix.jpg"]
+  },
+  {
+    "titulo": "Inner War",
+    "texto": "Even if I fester, I will keep wielding my sword from the heart.<br>Even after a thousand lost battles, I’ll keep looking forward — for the war that never ends is the one born within.<br><br>Don’t search through ruins for the greatness you already carry,<br>even if you can’t see it, even if they hurt you, even if walking becomes hard...<br>No matter the pain, don’t settle for less, don’t pity yourself.<br><br>Keep fighting for something as valuable as who you already are,<br>for those who once fought,<br>for those still walking and fighting beside you,<br>for you, at your side.",
+    "año": 2019,
+    "imagenes": ["../img/art/thoughts.jpg","../img/art/warriors.jpg"]
+  },
+  {
+    "titulo": "From Above",
+    "texto": "I take the elevator to the eighth floor.<br>Then I climb one more flight of stairs.<br>After that, I cross the last door and reach the rooftop: my home.<br>That’s where I live. That’s where I create.<br><br>From above, songs seem to speak about me.<br>Of walls full of notes, of locked doors,<br>of hopes that are born each morning.<br><br>Here I design. Here I compose.<br>Here I breathe my own freedom.",
+    "año": 2025,
+    "imagenes": ["../img/art/myspace.jpg","../img/art/myspace2.jpg"]
+  },
+  {
+    "titulo": "Rooftop Manifesto",
+    "texto": "I live on the rooftop.<br>Where days begin and shadows stretch.<br>Where the sky brushes my thoughts and the city whispers below.<br><br>Here I have everything that matters: my art, my freedom, and a place to sit and breathe with the sun on my face.<br><br>I am rich. Because I have my space, my vision,<br>and a whole universe to observe and transform from up here.",
+    "año": 2025,
+    "imagenes": ["../img/art/onthetop.jpg","../img/art/myRoof.jpg","../img/art/myRoof2.jpg"]
+  },
+  {
+    "titulo": "B Side",
+    "texto": "My dreams weren’t broken — just stored away, hidden.<br>They shrank under the pressure of the world around me...<br>So small they seemed invisible, useless, even arrogant.<br><br>So I tucked them in the drawer of oblivion, next to the vinyl that recorded these verses.<br>But when I opened it again, they had grown — and flipped to the B side.<br><br>I dusted them off, and as the vinyl began to play... they did the rest.",
+    "año": 2025,
+    "imagenes": ["../img/art/stare.jpg","../img/art/serious.jpg","../img/art/red.jpg"]
+  },
+  {
+    "titulo": "So Cruel, So Beautiful",
+    "texto": "I see it, I try it, I feel it, I think it.<br>I sense it, believe it, ruin it, compose it...<br><br>Gently I try, but I break, then rebuild.<br>I fill up, empty out, and stare into weariness...<br><br>It excites me, impresses me, disappoints me, shocks me.<br>Kicks me down, then offers a rose — and that’s no small thing...<br><br>That life can be so cruel... and yet so beautiful.",
+    "año": 2025,
+    "imagenes": ["../img/art/hermosa1.jpg","../img/art/hermosa2.jpg","../img/art/local333.jpg","../img/art/local.jpg","../img/art/local2.jpg"]
   }
+]
 
-  }
+}
   

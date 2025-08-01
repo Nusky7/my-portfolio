@@ -1617,6 +1617,10 @@ video {
   display: none;
 }
 
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
 .h-1 {
   height: 0.25rem;
 }
@@ -1723,6 +1727,10 @@ video {
 
 .max-h-\[400px\] {
   max-height: 400px;
+}
+
+.max-h-\[530px\] {
+  max-height: 530px;
 }
 
 .max-h-\[8\.5rem\] {
@@ -1859,6 +1867,10 @@ video {
 
 .max-w-7xl {
   max-width: 80rem;
+}
+
+.max-w-\[900px\] {
+  max-width: 900px;
 }
 
 .max-w-full {
@@ -2843,6 +2855,10 @@ video {
   flex-wrap: wrap;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-start {
   align-items: flex-start;
 }
@@ -3291,6 +3307,10 @@ video {
   border-color: rgb(255 255 255 / var(--tw-border-opacity, 1));
 }
 
+.border-white\/20 {
+  border-color: rgb(255 255 255 / 0.2);
+}
+
 .border-zinc-700 {
   --tw-border-opacity: 1;
   border-color: rgb(63 63 70 / var(--tw-border-opacity, 1));
@@ -3370,6 +3390,10 @@ video {
 
 .bg-black\/10 {
   background-color: rgb(0 0 0 / 0.1);
+}
+
+.bg-black\/30 {
+  background-color: rgb(0 0 0 / 0.3);
 }
 
 .bg-black\/40 {
@@ -3482,6 +3506,10 @@ video {
 
 .bg-gray-800\/50 {
   background-color: rgb(31 41 55 / 0.5);
+}
+
+.bg-gray-800\/60 {
+  background-color: rgb(31 41 55 / 0.6);
 }
 
 .bg-gray-900 {
@@ -4165,6 +4193,10 @@ video {
   padding: 2.5rem;
 }
 
+.p-12 {
+  padding: 3rem;
+}
+
 .p-2 {
   padding: 0.5rem;
 }
@@ -4764,6 +4796,16 @@ video {
   color: rgb(132 204 22 / var(--tw-text-opacity, 1));
 }
 
+.text-neutral-200 {
+  --tw-text-opacity: 1;
+  color: rgb(229 229 229 / var(--tw-text-opacity, 1));
+}
+
+.text-neutral-300 {
+  --tw-text-opacity: 1;
+  color: rgb(212 212 212 / var(--tw-text-opacity, 1));
+}
+
 .text-neutral-500 {
   --tw-text-opacity: 1;
   color: rgb(115 115 115 / var(--tw-text-opacity, 1));
@@ -4951,6 +4993,14 @@ video {
 .text-white {
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+}
+
+.text-white\/60 {
+  color: rgb(255 255 255 / 0.6);
+}
+
+.text-white\/90 {
+  color: rgb(255 255 255 / 0.9);
 }
 
 .text-yellow-100 {
@@ -5266,6 +5316,11 @@ video {
   --tw-shadow: var(--tw-shadow-colored);
 }
 
+.shadow-black\/80 {
+  --tw-shadow-color: rgb(0 0 0 / 0.8);
+  --tw-shadow: var(--tw-shadow-colored);
+}
+
 .shadow-gray-950 {
   --tw-shadow-color: #030712;
   --tw-shadow: var(--tw-shadow-colored);
@@ -5287,6 +5342,16 @@ video {
 
 .brightness-\[\.35\] {
   --tw-brightness: brightness(.35);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.brightness-\[0\.8\] {
+  --tw-brightness: brightness(0.8);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
+.contrast-\[1\.1\] {
+  --tw-contrast: contrast(1.1);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 
@@ -5509,7 +5574,7 @@ select:-webkit-autofill:focus,
 html, body{
   cursor: url('/img/cursor.png') 16 16, auto !important;
   margin: 0;
-  overflow: hidden !important;
+  overflow-x: hidden;
   min-height: 100%;
   max-width: 100%;
   scrollbar-width: thin;
@@ -5519,6 +5584,11 @@ html, body{
 
 body, p, li, h1, h2, h3, h4, h5, h6, a {
   cursor: url('/img/cursor.png') 16 16, cursor !important;
+}
+
+#diary .swiper-slide {
+  display: flex;
+  justify-content: center;
 }
 
 #scroll-container {
@@ -7784,6 +7854,10 @@ audio::-webkit-media-controls-play-button {
     width: 14rem;
   }
 
+  .sm\:max-w-\[950px\] {
+    max-width: 950px;
+  }
+
   .sm\:scale-125 {
     --tw-scale-x: 1.25;
     --tw-scale-y: 1.25;
@@ -8013,6 +8087,10 @@ audio::-webkit-media-controls-play-button {
     width: 25%;
   }
 
+  .lg\:max-w-\[1200px\] {
+    max-width: 1200px;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -8065,6 +8143,12 @@ audio::-webkit-media-controls-play-button {
 
   .xl\:w-20 {
     width: 5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:grid-cols-6 {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 }
 

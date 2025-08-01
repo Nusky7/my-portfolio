@@ -1,0 +1,17 @@
+  "projects": {
+        "title": "PROJECTS",
+        "show": "See Code",
+        "working": "<p class='text-rose-400 text-xl text-center'>Project under development.</p>This system aims to optimize management and administrative processes through modern full-stack architecture.",
+        "pWebTitle": "Online Qote Calculator",
+        "presupuestoWeb": "<p class='text-fuchsia-300'>Proprietary tool by N7Studio.</p>Online web quote calculator. Estimates web projects prices based on selected options, with integrated PDF generation and email sending with JS + PHP.",
+        "galaValencia": "<p class='text-pink-300'>Client Project.</p>Custom design from scratch. Professional website for events, parties, and venue rentals in Valencia. Includes 3 service sections, image gallery, and contact forms built with PHP + JS.",
+        "landingInmo": "<p class='text-fuchsia-300'>Client Project.</p>Real estate landing page built with WP CMS and styled using CSS and Tailwind CSS. Custom multistep form (no Elementor Pro) optimized for lead generation.",
+        "blog": "<p class='text-teal-400 text-xl text-center'>Blog - News and Technology.</p>Portfolio extension where I publish articles on technology, combined with the most relevant news extracted from my social media feed.",
+        "project": "<p class='text-rose-300'>Format Conversion Tool.</p>Online tool to convert images, fonts, and videos. Images are converted on the frontend.<br> The backend can be used locally and is required for video, mp3, and font conversions.",
+        "project1": "<p class='text-amber-300'>Integrated Maps.</p>An interactive map to explore the most important places in Valencia, offers Light/Dark theme and multi-language support. HTML/CSS/JS + Bootstrap",
+        "project2": "<p class='text-orange-400'>FrontEnd prototype.</p>A transfer website in the Valencia area for booking private trips. <br>Prototype with Angular 17 and Bootstrap<br>",
+        "project3": "<p class='text-violet-300'>2.0 🡩 Updated with Tailwind & Swiper.</p>Tattoo Portfolio designed for a friend. Includes a swiping photo gallery, a contact form, a virtual assistant & links to his SM.",
+        "project4": "<p class='text-emerald-200'>Higher Education program. | Final Project.</p>Smart Time is a project and task management application with features like notes, a calendar, and events.",
+        "project5": "<p class='text-red-600'>Allow sound to hear background music.</p>PHP client that consumes the Pokémon API and displays 20 Pokémon with their images, moves, and sounds."
+       
+    },

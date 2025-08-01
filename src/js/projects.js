@@ -261,6 +261,6 @@ console.log(`%c
 
 
 console.log(
-  "%c ✦ Nusky7 ✦\nWeb design, development, and digital craft with interstellar love. 👽 \nhttps://nusky7studio.es",
-  "background: black; color: #d8b2ff; font-family: monospace; font-size: 12px; padding: 8px; border: 1px solid #d8b2ff; border-radius: 1rem; text-align: center;"
+  "\n\n%c ✦ Nusky7 ✦\n\nWeb design, development, and digital craft with interstellar love. 👽 \n\nhttps://nusky7studio.es",
+  "background: black; color: #d8b2ff; font-family: monospace; font-size: 12px; padding: 8px; margin: 7px; border: 1px solid #d8b2ff; border-radius: 1rem; text-align: center;"
 );

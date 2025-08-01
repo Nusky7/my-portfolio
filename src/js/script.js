@@ -1,5 +1,163 @@
  
 document.addEventListener("DOMContentLoaded", () => {
+
+  function insertArtworks(translations) {
+  const wrapper = document.querySelector("#diary .swiper-wrapper");
+
+  if (!wrapper) {
+    console.error("No se encontró el wrapper de artworks.");
+    return;
+  }
+  // Limpiar contenido previo
+  wrapper.innerHTML = "";
+
+  if (translations.artworks && Array.isArray(translations.artworks)) {
+    translations.artworks.forEach((art) => {
+      const slide = document.createElement("div");
+      slide.className = "swiper-slide w-full max-w-[900px] sm:max-w-[950px] lg:max-w-[1200px] bg-zinc-950 border border-white/20 rounded-xl p-12 mb-6 text-white flex flex-col items-center shadow-lg transition-all duration-500 shadow-xl shadow-black/80";
+
+      const swiperId = `swiper-${Math.random().toString(36).substring(2, 9)}`;
+
+      const imagesHTML = `
+      <div class="swiper-img ${swiperId} w-full max-w-xl relative">
+        <div class="swiper-wrapper">
+          ${art.imagenes
+            .map(
+              (src) =>
+                `<div class="swiper-slide">
+                  <img src="${src}" alt="${art.titulo}" class="rounded-lg max-h-[530px] mx-auto shadow-md object-contain">
+                </div>`
+            )
+            .join("")}
+        </div>
+          <!-- <div class="swiper-button-next absolute animate-glowText5 right-0 top-1/2 -translate-y-1/2 z-10"></div> -->
+          <div class="swiper-pagination mt-2"></div>
+        </div>
+      `;
+
+      slide.innerHTML = `
+        <h3 class="text-2xl text-rose-200 text-center font-semibold font-orbi mb-2">${art.titulo}</h3>
+        <p class="text-base text-white/60 font-light text-center max-w-3xl mt-2">${art.año}</p>
+        <div class="flex flex-col items-center">${imagesHTML}</div>
+       <p class="text-lg text-white/90 font-light text-left max-w-xl mt-2 leer-mas-parrafo" data-full="${art.texto}">
+          ${art.texto.length > 400 ? art.texto.slice(0, 400) + '...' : art.texto}
+        </p>
+        ${art.texto.length > 400 ? `<button class="mt-2 text-sm text-purple-400 underline leer-mas-btn">Leer más</button>` : ''}       
+      `;
+
+    wrapper.appendChild(slide);
+
+    const leerMasBtn = slide.querySelector('.leer-mas-btn');
+    const parrafo = slide.querySelector('.leer-mas-parrafo');
+
+    if (leerMasBtn && parrafo) {
+      let expanded = false;
+      leerMasBtn.addEventListener('click', () => {
+        if (expanded) {
+          parrafo.innerHTML = parrafo.dataset.full.slice(0, 400) + '...';
+          leerMasBtn.textContent = 'Leer más';
+        } else {
+          parrafo.innerHTML = parrafo.dataset.full;
+          leerMasBtn.textContent = 'Leer menos';
+        }
+        expanded = !expanded;
+        //  setTimeout(() => {
+        //   swiper.update();
+        //   swiper.updateAutoHeight();
+        // }, 200);
+
+      });
+    }
+
+      
+    new Swiper(`.${swiperId}`, {
+      loop: true,
+      effect: 'flip',
+      nested: true, // Swiper anidado
+      pagination: {
+        el: `.${swiperId} .swiper-pagination`,
+        clickable: true,
+      },
+      navigation: {
+        nextEl: `.${swiperId} .swiper-button-next`,
+        prevEl: `.${swiperId} .swiper-button-prev`,
+      },
+    });
+
+    
+     
+    }); 
+    
+    
+
+    console.log("Slides encontrados:", document.querySelectorAll("#diary .swiper-slide").length);
+    console.log("Swiper container:", document.querySelector("#diary .swiper"));
+    
+   new Swiper('.swiper', {   
+    // effect: 'cards',
+    // cardsEffect: {
+    //   rotate: true,
+    //   nested: true,
+    //   slideShadows: true,
+    //   perSlideOffset: 15,
+    //   perSlideRotate: 6,
+    //  },
+
+     effect: 'creative',
+    creativeEffect: {
+      prev: {
+        shadow: true,
+        translate: ['-120%', 0, -700],
+        rotate: [0, 0, -10],
+      },
+      next: {
+        shadow: true,
+        translate: ['120%', 0, -500],
+        rotate: [0, 0, 10],
+      },
+    },
+    autoHeight: true,
+    centeredSlides: true, 
+    loop: true,
+    slidesPerView: 1,
+    zoom: {
+      limitToOriginalSize: false,
+      minRatio: 0.3,
+      maxRatio: 2,
+      panOnMouseMove: true,
+      toggle: true,
+    },
+    // autoplay: {
+    //   delay: 5100,
+    //   pauseOnMouseEnter: true,
+    //   disableOnInteraction: true 
+    // },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1500: {
+        slidesPerView: 3,
+      },
+    },
+  });
+  } else {
+    console.warn("No artworks found in translations.");
+  }
+}
+
+
   
 function toggleAboutText() {
   const desc = document.getElementById("about-description");
@@ -29,15 +187,16 @@ function showToast(msg) {
 
   setTimeout(() => {
     toast.classList.add('hidden');
-  }, 3900);
+  }, 4000);
 }
 
 const loadTranslations = async (lang) => {
   try {
-    const response = await fetch(`https://nusky7studio.es/locales/${lang}.json`);
+    const response = await fetch(`/src/locales/${lang}.json`);
     translations = await response.json();
     console.log("Translations loaded:", translations);
     applyTranslations(translations); 
+    insertArtworks(translations); 
     initializeRateIt(); 
   } catch (error) {
     console.error("Error loading translations:", error);
@@ -58,7 +217,7 @@ const loadTranslations = async (lang) => {
   document.querySelector('a[href="#skills"]').textContent = translations.menu.stack;
   document.querySelector('a[href="#player"]').textContent = translations.menu.audio_player;
   // document.querySelector('a[href="#comments-section"]').innerHTML = translations.menu.resources_comments;
-  document.querySelector('a[href="#action-panel"]').innerHTML = translations.menu.download_cv;
+  // document.querySelector('a[href="#action-panel"]').innerHTML = translations.menu.download_cv;
   document.querySelector('a[href="#contact"]').textContent = translations.menu.contact;
   document.querySelector('a[href="https://services.nusky7studio.es"]').textContent = translations.menu.intro_panel;
   // Principal
@@ -66,32 +225,32 @@ const loadTranslations = async (lang) => {
   document.getElementById("about-heading").innerHTML = translations.about.heading;
   document.getElementById("about-description").innerHTML = translations.about.description;
   // Proyectos
-  const showElements = document.querySelectorAll(".show");
-    showElements.forEach((element) => {
-      element.innerHTML = translations.projects.show;
-    });
-  document.getElementById("project-title").textContent = translations.projects.title;
-  document.getElementById("working").innerHTML = translations.projects.working;
-  document.getElementById("pWeb-title").innerHTML = translations.projects.pWebTitle;
-  document.getElementById("presupuestoWeb").innerHTML = translations.projects.presupuestoWeb;
-  document.getElementById("galaVlc").innerHTML = translations.projects.galaValencia;
-  document.getElementById("landingInmo").innerHTML = translations.projects.landingInmo;
-  document.getElementById("blog").innerHTML = translations.projects.blog;
-  document.getElementById("project").innerHTML = translations.projects.project;
-  document.getElementById("project1").innerHTML = translations.projects.project1;
-  document.getElementById("project2").innerHTML = translations.projects.project2;
-  document.getElementById("project3").innerHTML = translations.projects.project3;
-  document.getElementById("project4").innerHTML = translations.projects.project4;
-  document.getElementById("project5").innerHTML = translations.projects.project5;
+  // const showElements = document.querySelectorAll(".show");
+  //   showElements.forEach((element) => {
+  //     element.innerHTML = translations.projects.show;
+  //   });
+  // document.getElementById("project-title").textContent = translations.projects.title;
+  // document.getElementById("working").innerHTML = translations.projects.working;
+  // document.getElementById("pWeb-title").innerHTML = translations.projects.pWebTitle;
+  // document.getElementById("presupuestoWeb").innerHTML = translations.projects.presupuestoWeb;
+  // document.getElementById("galaVlc").innerHTML = translations.projects.galaValencia;
+  // document.getElementById("landingInmo").innerHTML = translations.projects.landingInmo;
+  // document.getElementById("blog").innerHTML = translations.projects.blog;
+  // document.getElementById("project").innerHTML = translations.projects.project;
+  // document.getElementById("project1").innerHTML = translations.projects.project1;
+  // document.getElementById("project2").innerHTML = translations.projects.project2;
+  // document.getElementById("project3").innerHTML = translations.projects.project3;
+  // document.getElementById("project4").innerHTML = translations.projects.project4;
+  // document.getElementById("project5").innerHTML = translations.projects.project5;
   //Action Panel
-  document.getElementById("button-text").innerHTML = translations.panel.buttonText;
-  document.getElementById("button-text1").innerHTML = translations.panel.buttonText1;
-  document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
-  document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
-  document.getElementById("panel-text").innerHTML = translations.panel.panelText;
-  document.getElementById("contact-title").innerHTML = translations.panel.contact;
+  // document.getElementById("button-text").innerHTML = translations.panel.buttonText;
+  // document.getElementById("button-text1").innerHTML = translations.panel.buttonText1;
+  // document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
+  // document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
+  // document.getElementById("panel-text").innerHTML = translations.panel.panelText;
+  // document.getElementById("contact-title").innerHTML = translations.panel.contact;
   // Banner final
-  document.getElementById("ban2txt").innerHTML = translations.panel.bannerTxt;
+  // document.getElementById("ban2txt").innerHTML = translations.panel.bannerTxt;
   // Player
   document.getElementById("song-title").innerHTML = translations.player.songs;
   document.getElementById("videos-title").innerHTML = translations.player.videos;
@@ -186,10 +345,13 @@ const loadTranslations = async (lang) => {
   document.getElementById("databases").innerHTML = translations.terminal.databases;
   document.getElementById("maps").innerHTML = translations.terminal.maps;
   document.getElementById("design").innerHTML = translations.terminal.design;
-  document.getElementById("community").innerHTML = translations.terminal.community;  
+    document.getElementById("community").innerHTML = translations.terminal.community;  
 
-    };     
+    
 
+
+  };   
+  
 // Ratings ★ 
 let translations = {};
 // Función para obtener el texto traducido
