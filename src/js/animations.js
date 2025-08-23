@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Variables e Inicializadores
   // MusicOn - Delay
   let isMusicOn = true;
-  const startFromSecond = 106.2;
+  const startFromSecond = 120;
   let isFF = true;
   // IntroScreen - cPanel - Volume
   audio.load();
@@ -60,16 +60,6 @@ document.addEventListener("DOMContentLoaded", function () {
   volumeSlider2.value = volumeSlider.value;
   toggleMusic.checked = true;
 
-  // Animación CV - Contrata mis servicios hoy misme
-// function startAnimation() {
-//   subtitle.classList.add("animate-blinkAndBounce");
-
-//   setTimeout(() => {
-//     subtitle.classList.remove("animate-blinkAndBounce");
-//   }, 4000);
-//   setTimeout(startAnimation, 9999);
-// }
-// startAnimation();
   
   // Al cargar la pagina
   window.addEventListener('load', () => {

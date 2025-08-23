@@ -1,11 +1,11 @@
-// let API_KEY = "";
+let API_KEY = "";
 
-// fetch('../../config.json')
-//   .then(res => res.json())
-//   .then(config => {
-//       API_KEY = config.API_KEY;
-//       fetchYouTubeVideos(); 
-//   });
+fetch('../../config.json')
+  .then(res => res.json())
+  .then(config => {
+      API_KEY = config.API_KEY;
+      fetchYouTubeVideos(); 
+  });
 
 // const CHANNEL_ID = "UCPq_GszDHaxqJYOfTT9mwxw"; 
 // const SEARCH_QUERY = "tutorial Tailwind CSS JavaScript";

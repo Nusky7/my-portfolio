@@ -82,7 +82,7 @@ module.exports = {
         pixel: ['pixel', 'sans-serif'],
         kiwi: ['kiwi', 'sans-serif'],
         pixround: ['pixround', 'sans-serif'],
-        // pubpixel: ['pubpixel', 'sans-serif'],
+        PixelText: ['PixelText', 'sans-serif'],
         poppins: ['Poppins', 'sans-serif'],
         chakra: ['Chakra Petch', 'sans-serif'],
         gotic: ['DotGothic16', 'sans-serif'],

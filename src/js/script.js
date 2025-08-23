@@ -1,4 +1,3 @@
- 
 document.addEventListener("DOMContentLoaded", () => {
 
   function insertArtworks(translations) {
@@ -192,7 +191,7 @@ function showToast(msg) {
 
 const loadTranslations = async (lang) => {
   try {
-    const response = await fetch(`/src/locales/${lang}.json`);
+    const response = await fetch(`../locales/${lang}.json`);
     translations = await response.json();
     console.log("Translations loaded:", translations);
     applyTranslations(translations); 
@@ -213,7 +212,7 @@ const loadTranslations = async (lang) => {
 
   // Menu
   document.querySelector('a[href="#main-content"]').textContent = translations.menu.about_me;
-  document.querySelector('a[href="#projects"]').textContent = translations.menu.projects;
+  document.querySelector('a[href="#diary"]').textContent = translations.menu.projects;
   document.querySelector('a[href="#skills"]').textContent = translations.menu.stack;
   document.querySelector('a[href="#player"]').textContent = translations.menu.audio_player;
   // document.querySelector('a[href="#comments-section"]').innerHTML = translations.menu.resources_comments;
@@ -224,36 +223,33 @@ const loadTranslations = async (lang) => {
   document.getElementById("header-subtitle").innerHTML = translations.header.subtitle;
   document.getElementById("about-heading").innerHTML = translations.about.heading;
   document.getElementById("about-description").innerHTML = translations.about.description;
-  // Proyectos
-  // const showElements = document.querySelectorAll(".show");
-  //   showElements.forEach((element) => {
-  //     element.innerHTML = translations.projects.show;
-  //   });
-  // document.getElementById("project-title").textContent = translations.projects.title;
-  // document.getElementById("working").innerHTML = translations.projects.working;
-  // document.getElementById("pWeb-title").innerHTML = translations.projects.pWebTitle;
-  // document.getElementById("presupuestoWeb").innerHTML = translations.projects.presupuestoWeb;
-  // document.getElementById("galaVlc").innerHTML = translations.projects.galaValencia;
-  // document.getElementById("landingInmo").innerHTML = translations.projects.landingInmo;
-  // document.getElementById("blog").innerHTML = translations.projects.blog;
-  // document.getElementById("project").innerHTML = translations.projects.project;
-  // document.getElementById("project1").innerHTML = translations.projects.project1;
-  // document.getElementById("project2").innerHTML = translations.projects.project2;
-  // document.getElementById("project3").innerHTML = translations.projects.project3;
-  // document.getElementById("project4").innerHTML = translations.projects.project4;
-  // document.getElementById("project5").innerHTML = translations.projects.project5;
   //Action Panel
   // document.getElementById("button-text").innerHTML = translations.panel.buttonText;
   // document.getElementById("button-text1").innerHTML = translations.panel.buttonText1;
-  // document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
-  // document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
-  // document.getElementById("panel-text").innerHTML = translations.panel.panelText;
+  document.getElementById("panel-title").innerHTML = translations.panel.panelTitle;
+  document.getElementById("panel-subtitle").innerHTML = translations.panel.panelSubitle;
+  document.getElementById("panel-text").innerHTML = translations.panel.panelText;
   // document.getElementById("contact-title").innerHTML = translations.panel.contact;
   // Banner final
-  // document.getElementById("ban2txt").innerHTML = translations.panel.bannerTxt;
+  document.getElementById("ban2txt").innerHTML = translations.panel.bannerTxt;
   // Player
   document.getElementById("song-title").innerHTML = translations.player.songs;
   document.getElementById("videos-title").innerHTML = translations.player.videos;
+  //Footer
+    document.getElementById("footext").innerHTML = translations.footer.footext;
+    document.getElementById("footer-privacy").textContent = translations.footer.privacy;
+    document.getElementById("footer-legal").textContent = translations.footer.legalNotice;
+    document.getElementById("footer-cookies").textContent = translations.footer.cookies;
+    document.getElementById("footer-contact").textContent = translations.footer.contact;
+    document.getElementById("footer-social-title").textContent = translations.footer.socialTitle;
+    document.getElementById("footer-portfolio").textContent  = translations.footer.portfolio;
+    document.getElementById("footer-calculator").textContent = translations.footer.calculator;
+    document.getElementById("footer-blog").textContent = translations.footer.blog;
+
+// copyright con año dinámico
+document.getElementById("footer-copy").textContent =
+  translations.footer.copyright.replace("{year}", new Date().getFullYear());
+    
     // Forms
     document.querySelectorAll("form").forEach(form => {
       // Inputs y textareas

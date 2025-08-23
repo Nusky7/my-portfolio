@@ -289,7 +289,7 @@
   
 
   <!-- CONTACTO -->
-  <section class="contact relative py-24 px-24 max-w-3xl mx-auto text-center rounded-t-full " >
+  <section class="contact relative py-20 px-24 max-w-3xl mx-auto text-center rounded-t-full " >
     <video autoplay muted loop playsinline class="absolute inset-0 rounded-t-full w-full h-full object-cover opacity-30 z-0 animate-borderGlow3">
       <source src="https://nusky7studio.es/media/hero/Sstars.mp4" type="video/mp4"/>
     </video>
@@ -300,8 +300,13 @@
             <a href="mailto:info@nusky7studio.es" class="px-6 py-3 bg-purple-900 rounded-xl hover:bg-purple-700 hover:animate-pop transition">Send email</a>
             
             <a href="https://t.me/Nusky_7" target="_blank" class="px-6 py-3 border border-purple-500 animate-borderGlow3 text-white rounded-xl hover:animate-rotational-wave hover:bg-white hover:text-black transition">Telegram</a>
-    
         </div>
+         <div class="flex justify-center mt-6 flex-wrap">
+          <a href="https://ko-fi.com/nusky7" target="_blank" class=" border border-purple-500 animate-borderGlow3 text-purple-300 rounded-xl hover:animate-jelly hover:bg-white hover:text-black transition flex items-center gap-2">
+            <img src="https://nusky7studio.es/img/ico/kofi_badge.png" alt="Ko-fi" class="w-auto h-16">
+            <span class="sr-only">Support me on Ko-fi</span>
+          </a>
+        </div> 
     </div> 
     
   </section>
@@ -346,7 +351,9 @@
   </div>
 
   <div class="text-center text-xs text-zinc-600 border-t border-zinc-800 p-3">
-    &copy; 2025 N7Studio · All rights reserved
+    &copy; <span id="year">x</span> N7Studio Systems Ltd · All rights reserved. <br>
+    Company Number: 16647538 · 
+    71-75 Shelton Street, Covent Garden, London, WC2H 9JQ
   </div>
 </footer>
 </div>
@@ -367,5 +374,13 @@
   <script type="module" src="../../js/donations.js" defer></script>
   <script src="../../js/projects.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const yearSpan = document.getElementById("year");
+    if (yearSpan) {
+      yearSpan.textContent = new Date().getFullYear();
+    }
+  });
+</script>
 </body>
 </html>

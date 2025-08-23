@@ -142,6 +142,13 @@ body, p, li, h1, h2, h3, h4, h5, h6, a {
        url('/fonts/pixround.ttf') format('truetype');
        font-display: swap;
 }
+
+@font-face {
+  font-family: 'PixelText';
+  src: url(https://assets.codepen.io/36869/Grand9KPixel.ttf);
+  font-display: swap;
+}
+
 @font-face {
   font-family: 'gba'; 
   src: url('/fonts/gba.woff2') format('woff2'), 

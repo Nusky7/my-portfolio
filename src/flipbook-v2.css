@@ -1,0 +1,308 @@
+/* Flipbook V2 – sin sprite, con portada morada */
+.flipbook-v2 {
+    --spread-w: clamp(320px, 75vw, 980px);
+    --spread-h: clamp(220px, 60vh, 640px);
+    --gap: 2rem;
+    --purple-800: #6b21a8;
+    --purple-700: #7e22ce;
+    --paper: #0f0f13;
+    /* “papel” oscuro */
+    width: min(100%, calc(var(--spread-w) + 2rem));
+    padding: 1rem;
+    position: relative;
+}
+
+.spreads-wrapper {
+    display: grid;
+    grid-auto-flow: column;
+    gap: var(--gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: .5rem 0 2.5rem;
+}
+
+.spread {
+    width: var(--spread-w);
+    height: var(--spread-h);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    scroll-snap-align: start;
+    position: relative;
+    border-radius: 14px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, .35), inset 0 0 0 1px rgba(255, 255, 255, .06);
+    overflow: clip;
+    background: linear-gradient(90deg, rgba(255, 255, 255, .03), rgba(255, 255, 255, .01));
+}
+
+.page {
+    background: var(--paper);
+    position: relative;
+    padding: 16px;
+    display: grid;
+    grid-template-rows: 1fr auto;
+}
+
+/* numeración */
+.page::after {
+    content: attr(data-page);
+    position: absolute;
+    bottom: 10px;
+    font-size: .75rem;
+    opacity: .5;
+}
+
+/* Portada */
+.cover {
+    width: var(--spread-w);
+    height: var(--spread-h);
+    border-radius: 16px;
+    background: linear-gradient(135deg, var(--purple-800), var(--purple-700));
+    position: relative;
+    box-shadow: 0 14px 42px rgba(107, 33, 168, .45);
+}
+
+.cover-page {
+    background: transparent;
+    position: relative;
+}
+
+.cover::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0, 0, 0, .35) 0 2%, transparent 2% 98%, rgba(0, 0, 0, .4) 98% 100%);
+    /* “lomo” */
+    pointer-events: none;
+}
+
+.cover-inner {
+    height: 100%;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+.cover .title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800;
+    letter-spacing: .04em;
+}
+
+.cover .subtitle {
+    opacity: .85;
+    margin-top: .25rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    display: inline-block;
+    background: rgba(0, 0, 0, .25);
+    border: 1px solid rgba(255, 255, 255, .25);
+    padding: .6rem 1rem;
+    border-radius: .8rem;
+    backdrop-filter: blur(6px);
+    transition: transform .2s ease, background .2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    background: rgba(0, 0, 0, .35);
+}
+
+/* Contraportada */
+.back-cover,
+.back-page {
+    background: #0d0d12;
+}
+
+.back-inner {
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+/* Contenido páginas */
+.page .content {
+    overflow: auto;
+    scrollbar-gutter: stable both-edges;
+}
+
+.page .title {
+    font-weight: 700;
+    margin: 0 0 .25rem 0;
+}
+
+.page .year {
+    opacity: .7;
+    margin: 0 0 .75rem 0;
+}
+
+.page .text {
+    line-height: 1.45;
+}
+
+/* Bloque imágenes + thumbs */
+.media {
+    display: grid;
+    gap: .75rem;
+}
+
+.media .main {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: #0b0b10;
+    display: grid;
+    place-items: center;
+    border-radius: .6rem;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .06);
+}
+
+.media .main img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+.thumbs {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
+    gap: .4rem;
+}
+
+.thumb {
+    border: 1px solid rgba(255, 255, 255, .08);
+    border-radius: .4rem;
+    overflow: hidden;
+    background: #0b0b10;
+    cursor: pointer;
+    line-height: 0;
+    transition: transform .15s ease;
+}
+
+.thumb:hover {
+    transform: translateY(-1px);
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.thumb.active {
+    outline: 2px solid #f5c86c;
+}
+
+/* Controles */
+.controls {
+    display: flex;
+    gap: .75rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: .75rem;
+}
+
+.nav-btn {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    border-radius: .8rem;
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, .04);
+    backdrop-filter: blur(6px);
+}
+
+.nav-btn:disabled {
+    opacity: .4;
+}
+
+.indicator {
+    font-size: .9rem;
+    opacity: .8;
+}
+
+/* Idiomas */
+.lang-switch {
+    position: fixed;
+    bottom: 14px;
+    right: 14px;
+    display: flex;
+    gap: .4rem;
+}
+
+.lang-btn {
+    padding: .35rem .6rem;
+    border-radius: .6rem;
+    border: 1px solid rgba(255, 255, 255, .15);
+    background: rgba(255, 255, 255, .04);
+    font-size: .85rem;
+}
+
+.lang-btn.active {
+    outline: 2px solid #f5c86c;
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+    .spread {
+        grid-template-columns: 1fr;
+    }
+
+    .page::after {
+        right: 10px;
+    }
+}
+
+/* Solo el slide activo acepta interacción */
+.container.flipbook .sprite {
+    pointer-events: none;
+}
+
+.container.flipbook .carousel-item .page-container {
+    pointer-events: none;
+    z-index: 0;
+}
+
+.container.flipbook .carousel-item.is-active .page-container {
+    pointer-events: auto;
+    z-index: 3;
+}
+
+/* (si tu navegador los soporta) evita que marcadores coman clics */
+/* .container.flipbook .carousel::scroll-marker-group,
+.container.flipbook .carousel-item::scroll-marker {
+    pointer-events: none;
+} */
+
+/* Tamaño consistente de imagen principal */
+.container.flipbook {
+    --img-box-h: calc(1px * (var(--sprite-th) * 0.6107) - 120px);
+}
+
+.container.flipbook .image-box {
+    height: var(--img-box-h);
+    max-height: var(--img-box-h);
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.container.flipbook .image-box .main-img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    -webkit-user-drag: none;
+    user-select: none;
+    touch-action: manipulation;
+}

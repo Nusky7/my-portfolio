@@ -1,9 +1,11 @@
 node_modules/
 *.log
-img/
+/src/img/*
+/img/*
 /php/suscribe.php
 .env
 /php/chat.php
 /php/save_rating.php
 /mp3/*
 /video/*
+/src/n7verse/*

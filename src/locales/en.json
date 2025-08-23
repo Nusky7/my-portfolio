@@ -8,7 +8,7 @@
       "username": "@Nusky7"
     },
     "about": {
-    "heading": "WELCOME TO MY CREATIVE SPACE!",
+    "heading": "Welcome to my personal space!",
     "description": "Hi there 😊 If you're here, it's because I wanted to share this little piece of my soul with you.<br><br>In this space you'll find personal writings from different moments in my life — some poetic, others just honest thoughts. You can also listen to my own music, which I’ve uploaded to the player in the highest quality possible. And if you’d like to save them for later, the YouTube videos are available on the mini TVs below.<br><br>This place was born as a refuge and a collection to gather some of my creations that are once scattered across my world. Now, finally gathered in one place, it allows me to express myself, reflect, and share my creativity and artistic side with anyone who feels a connection.<br><br>Thank you for being here. I hope that something you see or hear resonates with you too.<br><br>Voting is still open, so if you enjoyed anything, feel free to leave your stars! ⭐"
   },
 
@@ -16,14 +16,14 @@
       "buttonText": "Download CV",
       "buttonText1": "🧮 Calculate Quote",
       "panelTitle": "Custom Watchfaces for Smartwatches",
-      "panelSubitle": "Need your own Website?",
-      "panelText": " Let's talk about your next project!<br>Download my CV for more details or contact me directly",
+      "panelSubitle": "Interested in a personalized watchface or want to see more? Visit my &nbsp; <a href='https://beta.facer.io/u/Nusky7' target='_blank' rel='noopener' class='font-PixelText animate-glowColorCycle hover:underline'> Facer creator page</a>.",
+      "panelText": " Discover my favorite custom-designed watchfaces for Wear OS, Tizen, and Apple Watch. Each watchface is crafted for style, readability, and unique digital expression. Enhance your smartwatch experience with designs optimized for battery life, clarity, and personal flair.",
       "contact": "CONTACT",
-      "bannerTxt": "Discover my other sites, articles, and ways to get in touch with me."
+      "bannerTxt": "Let's create your space on the web<br>A website with your identity, tailored to your business or creations.<br> Message me or explore my other sites:"
     },
     "player": {
       "songs": "CREATING...",
-      "videos": "SOME VIDEOS..."
+      "videos": "My YouTube Videos"
     },
     "form": {
       "name": "🙂 Name",
@@ -71,8 +71,8 @@
     },
     "menu": {
       "about_me": "ABOUT ME 👩🏼‍💻",
-      "projects": "PROJECTS 💻",
-      "stack": "STACK ⚙️",
+      "projects": "DIARY 📒",
+      "stack": "WATCHFACES ⌚",
       "audio_player": "AUDIO PLAYER 🔊",
       "download_cv": "DOWNLOAD CV 📋",
       "contact": "CONTACT ✉️",
@@ -108,48 +108,101 @@
     "quoteTxt": "Book an appointment for your web project and find out in seconds how much it might cost. <br>Keep in mind this tool gives an estimate, and we’ll need to understand your needs better for a final quote."
 
   },
+   "footer": {
+  "footext": "Web design, development and digital creativity. Portfolio and personal blog.",
+  "privacy": "Privacy Policy",
+  "legalNotice": "Legal Notice",
+  "cookies": "Cookie Policy",
+  "contact": "Contact",
+  "socialTitle": "Social & Sites",
+  "portfolio": "🌍 Portfolio",
+  "calculator": "🧮 Web Quote Calculator",
+  "blog": "📰 N7Blog: News & Technology",
+  "copyright": "© {year} N7Studio Systems Ltd. All rights reserved."
+ },
   "artworks": [    
   {
     "titulo": "Everything in Formation",
-    "texto": "Where things don’t happen, time holds the weight of oddities and other strange loads...<br>escapism of a world dreaming to wake up, stuffing its holes with cork as it tries.<br><br>Yesterday, today and tomorrow glare at me while I live in this amnesia that nothing can anesthetize.<br>And even though we know everything descends, we still love to climb stairs and twist them until they become impossible,<br>until the fall becomes tangible...<br>Something visible since the dawn of time, living in our knowledge — yet we deny it in vain, and pay for it later, of course.<br><br>As for plain and silly things, they don’t offend — they’re easy to taste, and leave the mind distressed.<br>But this complication, this everything in the process of formation... is something that never perishes, something all deserve, though few practice it.<br>Something paid for dearly...<br><br>But sadly, nowadays we bet on plastic faces rather than practical minds,<br>trying to make aesthetics static amidst all this cataclysm.",
+    "texto": "Where things don’t happen, time holds the weight of oddities and other strange loads...<br>escapism of a world dreaming to wake up, stuffing its holes with cork as it tries.<br><br>Yesterday, today and tomorrow glare at me while I live in this amnesia that nothing can anesthetize.<br>And even though we know everything descends, we still love to climb stairs and twist them until they become impossible,<br>until the fall becomes tangible...<br> 🡲",
     "año": 2012,
+    "imagenes": ["../img/art/albaold.jpg","../img/art/albita2.jpg","../img/art/20121.jpg","../img/art/albita.jpg"]
+  },
+   {
+    "titulo": "",
+    "texto": "Something visible since the dawn of time, living in our knowledge — yet we deny it in vain, and pay for it later, of course.<br><br>As for plain and silly things, they don’t offend — they’re easy to taste, and leave the mind distressed.<br>But this complication, this everything in the process of formation... is something that never perishes, something all deserve, though few practice it.<br>Something paid for dearly...<br><br>But sadly, nowadays we bet on plastic faces rather than practical minds,<br>trying to make aesthetics static amidst all this cataclysm.",
+    "año": "",
     "imagenes": ["../img/art/albaold.jpg","../img/art/albita2.jpg","../img/art/20121.jpg","../img/art/albita.jpg"]
   },
   {
     "titulo": "The Return of the Ship",
     "texto": "After a long time lost, this ship longs to sail again.<br>Even with a few cracked planks, it could face the darkest sea...<br><br>It’s not that this ship has changed —<br>it’s already sailed through cold rivers...<br>it’s the one steering the helm<br>who now holds the awareness of all that’s been crossed.",
     "año": 2018,
-    "imagenes": ["../img/art/navigation2.jpg","../img/art/navigation1.jpg","../img/art/navigation3.jpg","../img/art/beach.jpg","../img/art/beachcorner1.jpg","../img/art/sea.jpg","../img/art/beachcorner.jpg"]
+     "imagenes": [
+        "../img/art/navigation3.jpg",
+        "../img/art/navigation1.jpg",
+        "../img/art/navigation2.jpg",
+        "../img/art/beach.jpg",
+        "../img/art/sea.jpg",
+        "../img/art/beachcorner.jpg"
+      ]
   },
   {
     "titulo": "Prison of Mind",
     "texto": "Fuck it.<br><br>I’m free in my mental prison, flying...<br><br>I see their souls through their eyes — most are rotten, nonexistent...<br>The brightest ones...<br><br>I’m sure you can hear their hearts cry.",
     "año": 2018,
-    "imagenes": ["../img/art/free.jpg","../img/art/free2.jpg","../img/art/free3.jpg","../img/art/brightness2.jpg"]
+     "imagenes": [
+        "../img/art/brightness3.jpg",
+        "../img/art/free2.jpg",
+        "../img/art/free3.jpg",
+        "../img/art/brightness2.jpg"
+      ]
   },
   {
     "titulo": "Brightness Search",
     "texto": "I come from darkness, looking for some light —<br>almost always absent.<br><br>What can you give? What are you willing to receive?<br><br>Big hearts ache in lonely souls, they often break but will try again.<br>Until chaos covers it all... giving up is dying.",
     "año": 2018,
-    "imagenes": ["../img/art/darkness.png","../img/art/dark1.jpg","../img/art/brightness.jpg","../img/art/brightness3.jpg"]
+    "imagenes": [
+        "../img/art/darkness.png",
+        "../img/art/dark1.jpg",
+        "../img/art/free.jpg",
+        "../img/art/brightness.jpg"
+      ]
   },
   {
     "titulo": "Always Loved",
     "texto": "M · ost beautiful things<br>A · re not always possible.<br>N · o, ain’t pain — these tears are love.<br>D · ifferent things for us will come.<br>Y · ou deserve best, always will be loved. 💔",
     "año": 2018,
-    "imagenes": ["../img/art/mandy.jpg","../img/art/loveumandy.jpg","../img/art/mandybb.jpg"]
+    "imagenes": [
+        "../img/art/mandy.jpg",
+        "../img/art/loveumandy.jpg",
+         "../img/art/mandybb.jpg",
+         "../img/art/mandybig.jpg",
+         "../img/art/mandyball.jpg"
+      ]
   },
   {
     "titulo": "Ashes",
     "texto": "In her ashes, you could still read what the fire of passion consumed...<br><br>While the flames of misunderstanding burned the rest.<br><br>I could rewrite it, so as not to lose it.<br>I could let the wind blow it away...",
     "año": 2018,
-    "imagenes": ["../img/art/hamburgo.jpg","../img/art/hamburgo2.jpg","../img/art/fix.jpg"]
+    "imagenes": ["../img/art/hamburgo.jpg","../img/art/hamburgo2.jpg","../img/art/ashes.jpg","../img/art/fix.jpg","../img/art/fix2.jpg"]
   },
   {
     "titulo": "Inner War",
-    "texto": "Even if I fester, I will keep wielding my sword from the heart.<br>Even after a thousand lost battles, I’ll keep looking forward — for the war that never ends is the one born within.<br><br>Don’t search through ruins for the greatness you already carry,<br>even if you can’t see it, even if they hurt you, even if walking becomes hard...<br>No matter the pain, don’t settle for less, don’t pity yourself.<br><br>Keep fighting for something as valuable as who you already are,<br>for those who once fought,<br>for those still walking and fighting beside you,<br>for you, at your side.",
+    "texto": "Even if I fester, I will keep wielding my sword from the heart.<br>Even after a thousand lost battles, I’ll keep looking forward — for the war that never ends is the one born within.<br><br>Don’t search through ruins for the greatness you already carry,<br>even if you can’t see it, even if they hurt you, even if walking becomes hard...<br>No matter the pain, don’t settle for less, don’t pity yourself.<br> 🡲",
     "año": 2019,
-    "imagenes": ["../img/art/thoughts.jpg","../img/art/warriors.jpg"]
+    "imagenes": [
+        "../img/art/thoughts.jpg",
+        "../img/art/warriors.jpg"
+      ]
+  },
+  {
+    "titulo": "",
+    "texto": "<br>Keep fighting for something as valuable as who you already are,<br>for those who once fought,<br>for those still walking and fighting beside you,<br>for you, at your side.",
+    "año": "",
+    "imagenes": [
+        "../img/art/thoughts.jpg",
+        "../img/art/warriors.jpg"
+      ]
   },
   {
     "titulo": "From Above",
